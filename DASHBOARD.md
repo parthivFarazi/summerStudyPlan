@@ -34,7 +34,7 @@
 ## Next Session Focus  → **Day 9**
 1. **Block 1 — due recalls** (re-solve cold, *before* opening notes): **Valid Palindrome (#125)** — decayed last time, treat as a real drill — and **Longest Substring No Repeat (#3)**.
 2. **Watch:** the 4 watchlist slips (forgot `return`, `()` vs `[]`, `range(len(x))`, hidden Big-O cost).
-3. **Block 2 — new:** **Binary Search (#704)** per `Day-by-Day-Roadmap.md`. Pre-teach `while left <= right` + `mid=(l+r)//2` first.
+3. **Block 2 — new:** **Binary Search (#704)** per `plan/Day-by-Day-Roadmap.md`. Pre-teach `while left <= right` + `mid=(l+r)//2` first.
 
 ---
 *Weekly snapshots can be appended below as the sprint progresses.*

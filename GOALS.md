@@ -4,7 +4,7 @@
 Be able to **answer the technical questions at any company I'm eligible for** (new-grad, graduating **Dec 2026**). Application window opens late Jul–Oct 2026; be ready to *start* interviewing by ~September. Interviews in **Python**.
 
 ## The Aug 20 pivot
-Fall semester starts **Aug 20** → time collapses. So all heavy new-pattern learning is front-loaded into a **summer sprint**; fall is maintenance + mocks while interviewing. (Full day-by-day: `Day-by-Day-Roadmap.md`.)
+Fall semester starts **Aug 20** → time collapses. So all heavy new-pattern learning is front-loaded into a **summer sprint**; fall is maintenance + mocks while interviewing. (Full day-by-day: `plan/Day-by-Day-Roadmap.md`.)
 
 ## Pace floors (the thing the DASHBOARD checks)
 - **Summer Sprint (now → Aug 19):** ≥ **2 new problems/day**, ≥ **6 sessions/week**. This requires ~doubling the current ~1/day pace — it's the single most important number.

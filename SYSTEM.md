@@ -13,8 +13,8 @@ Two layers. The **event layer** (`logs/LOG.md`) is an append-only diary of what 
 | `SYSTEM.md` | This file. Architecture + protocols. Read first. |
 | `DASHBOARD.md` | 2-minute status: pace-health, mastery, due count, next-session focus. Regenerated each update. |
 | `GOALS.md` | The goal, the Aug 20 pivot, pace floors, readiness gates, review schedule. |
-| `Day-by-Day-Roadmap.md` | The curriculum: what to learn each day (Summer Sprint → Fall Maintenance). |
-| `FAANG-Prep-Plan.md` · `Learning-Science-Playbook.md` | The strategy + the evidence base. |
+| `plan/Day-by-Day-Roadmap.md` | The curriculum: what to learn each day (Summer Sprint → Fall Maintenance). |
+| `plan/FAANG-Prep-Plan.md` · `plan/Learning-Science-Playbook.md` | The strategy + the evidence base. |
 | `patterns/` | **Knowledge layer.** One file per pattern (template, triggers, complexity, *your* gotchas) + `INDEX.md`. |
 | `review/QUEUE.md` | **Spaced-rep engine.** Single source of truth for what's due. Ladder + reset-on-fail. |
 | `review/MISTAKES.md` | **Error engine.** Root-caused, recurrence-counted. |
@@ -36,7 +36,7 @@ When Parthiv opens a new chat with this folder selected, do this in order:
 1. **Read `DASHBOARD.md`** (pace-health first — are we on the sprint?).
 2. **Pull due items from `review/QUEUE.md`** (`Next due ≤ today`, by age). Have Parthiv **re-solve them from a blank screen *before* opening any pattern file** — that's the retrieval rep. Cap ~3 in the sprint.
 3. **Glance at `review/BLOCKERS.md`** — any "drill-now" mistakes to watch this session.
-4. **Pick new material** from `Day-by-Day-Roadmap.md` at the current Day (or the largest mastery gap if behind). Pre-teach any new Python concept in isolation first (Parthiv is a beginner — one new thing at a time).
+4. **Pick new material** from `plan/Day-by-Day-Roadmap.md` at the current Day (or the largest mastery gap if behind). Pre-teach any new Python concept in isolation first (Parthiv is a beginner — one new thing at a time).
 
 ## Session-end protocol (the "ingest")
 

@@ -8,7 +8,7 @@ A self-contained system so **any new chat can pick up exactly where I left off.*
 Read SYSTEM.md, then DASHBOARD.md, GOALS.md, and the due rows in review/QUEUE.md
 and review/BLOCKERS.md. Run the session-start protocol: give me my due recalls
 (re-solve from scratch), flag my watchlist mistakes, then start today's new problem
-from Day-by-Day-Roadmap.md.
+from plan/Day-by-Day-Roadmap.md.
 ```
 
 ## Log a session when done
@@ -26,8 +26,8 @@ Ingest this session. Day {N}, ~{minutes}, {source}.
 | **SYSTEM.md** | How it all works + the session protocols. **Read first.** |
 | **DASHBOARD.md** | 2-minute status: pace-health, mastery, what's due, next focus. |
 | **GOALS.md** | The goal, the Aug 20 pivot, pace floors, readiness gates. |
-| **Day-by-Day-Roadmap.md** | The curriculum: what to learn each day. |
-| **FAANG-Prep-Plan.md** / **Learning-Science-Playbook.md** | Strategy + the evidence base. |
+| **plan/Day-by-Day-Roadmap.md** | The curriculum: what to learn each day. |
+| **plan/FAANG-Prep-Plan.md** / **plan/Learning-Science-Playbook.md** | Strategy + the evidence base. |
 | **patterns/** | One living file per pattern (template, triggers, complexity, my gotchas) + INDEX. |
 | **review/** | `QUEUE.md` (spaced reps), `MISTAKES.md` (root-caused), `BLOCKERS.md` (drill-now). |
 | **logs/** | `LOG.md` — append-only session diary. |
