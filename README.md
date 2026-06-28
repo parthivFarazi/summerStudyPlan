@@ -30,7 +30,8 @@ Ingest this session. Day {N}, ~{minutes}, {source}.
 | **plan/FAANG-Prep-Plan.md** / **plan/Learning-Science-Playbook.md** | Strategy + the evidence base. |
 | **patterns/** | One living file per pattern (template, triggers, complexity, my gotchas) + INDEX. |
 | **review/** | `QUEUE.md` (spaced reps), `MISTAKES.md` (root-caused), `BLOCKERS.md` (drill-now). |
-| **logs/** | `LOG.md` — append-only session diary. |
+| **logs/** | `LOG.md` — append-only session index (one line per day). |
+| **notebooks/** | Full copy of each day's practice notebook (code + coaching). |
 
 ## The daily loop
 Block 1 (review due recalls cold) → Block 2 (new problem, narrate aloud, re-implement from scratch) → log + commit.

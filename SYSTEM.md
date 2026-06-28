@@ -19,7 +19,8 @@ Two layers. The **event layer** (`logs/LOG.md`) is an append-only diary of what 
 | `review/QUEUE.md` | **Spaced-rep engine.** Single source of truth for what's due. Ladder + reset-on-fail. |
 | `review/MISTAKES.md` | **Error engine.** Root-caused, recurrence-counted. |
 | `review/BLOCKERS.md` | Mistakes that recurred ≥3× → drill now. |
-| `logs/LOG.md` | **Event layer.** Append-only daily session notebook. |
+| `logs/LOG.md` | **Event layer.** Append-only short index, one entry per day. |
+| `notebooks/` | Full per-day notebook copies (verbatim: code + coaching), archived from your working folder. |
 
 ## Conventions (kept deliberately light)
 
@@ -42,7 +43,7 @@ When Parthiv opens a new chat with this folder selected, do this in order:
 
 After studying, record it — this is ~5 minutes and keeps the system alive:
 
-1. **Append** a dated entry to `logs/LOG.md` (Day N, duration, problems, what happened — keep struggles and dead ends in; tag inline with `[STRUGGLE] [INSIGHT] [NEEDS_RECALL]`).
+1. **Notebook + log.** Save the day's full notebook (verbatim: code + coaching) to `notebooks/DayN-Practice-Notebook.md`, and append a short dated entry to `logs/LOG.md` (Day N, problems, what happened — keep struggles and dead ends in; tag `[STRUGGLE] [INSIGHT] [NEEDS_RECALL]`).
 2. **QUEUE:** add the new problem at rung 1d; for each re-solve, advance on pass / **reset to 1d on fail**.
 3. **MISTAKES:** log each slip with a root cause. Same root cause as before ⇒ increment its recurrence; at **≥3 ⇒ escalate to `BLOCKERS.md`**.
 4. **Pattern file:** if a new pattern was learned or a new insight/gotcha surfaced, update `patterns/<name>.md` in place (bump mastery if earned).
