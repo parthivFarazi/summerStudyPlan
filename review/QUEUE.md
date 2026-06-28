@@ -1,0 +1,32 @@
+# Spaced-Repetition QUEUE — single source of truth for review state
+
+> **Ladder:** `1d → 3d → 7d → 21d → 60d` → graduated. **Pass** = advance one rung. **Fail** (needed a hint, blanked, or a bug you couldn't self-fix) = **reset to 1d** + log the cause in `MISTAKES.md`. Re-solves are **from a blank screen**, never re-reading the solution.
+
+## How to use each session
+1. At session start, pull rows with **Next due ≤ today**, oldest first (cap ~3 in the sprint).
+2. Re-solve from scratch *before* opening the pattern file.
+3. Update the row: new rung + new due date + append result to `Results` (`P`/`F`). One write, here only.
+
+## Overflow rule
+If **due count > 8**, do reviews only (no new problem) until it's back under control — decay is the enemy, not volume.
+
+## Due / Active
+*(Seeded from Days 1–8. This is the live starting state — correct rungs as you actually re-solve.)*
+
+| Problem | Pattern | Rung | Next due | Streak | Results |
+|---|---|---|---|---|---|
+| Valid Palindrome (#125) | two-pointers | 1d | 2026-06-29 | 0 | F·F |
+| Longest Substring No Repeat (#3) | sliding-window | 1d | 2026-06-29 | 0 | (new) |
+| Best Time to Buy/Sell (#121) | sliding-window | 3d | 2026-06-30 | 1 | P |
+| Two Sum II (#167) | two-pointers | 3d | 2026-07-01 | 1 | P |
+| Container With Most Water (#11) | two-pointers | 3d | 2026-07-01 | 1 | P |
+| Top K Frequent (#347) | arrays-hashing | 7d | 2026-07-01 | 2 | P·P |
+| Product of Array Except Self (#238) | arrays-hashing | 7d | 2026-07-03 | 2 | P·P |
+| Two Sum (#1) | arrays-hashing | 21d | 2026-07-10 | 3 | P·P·P |
+| Contains Duplicate (#217) | arrays-hashing | 21d | 2026-07-10 | 3 | P·P·P |
+| Valid Anagram (#242) | arrays-hashing | 21d | 2026-07-11 | 3 | P·P·P |
+| Group Anagrams (#49) | arrays-hashing | 21d | 2026-07-11 | 3 | P·P·P |
+
+## Graduated (≥60d, never deleted)
+| Problem | Pattern | Graduated | Results |
+|---|---|---|---|
