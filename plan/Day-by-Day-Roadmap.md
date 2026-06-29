@@ -28,9 +28,22 @@ Fall semester starts **Aug 20** and your time collapses. New-pattern learning is
 
 ---
 
-## Where you are now (done)
+## Days 1–8 — completed ✅ (the foundation, before the sprint)
 
-**Days 1–8.** Arrays & Hashing, Two Pointers, Sliding Window, plus Big-O + amortized analysis. Interleaving started Day 6. You're mid-Block-A.
+These pre-sprint days built the base patterns + Big-O fluency. Full write-ups live in [`notebooks/`](../notebooks/).
+
+| Day | Date | Block 1 — Review | Block 2 — New | New Python / skill | Big-O |
+|----|----|----|----|----|----|
+| 1 | Jun 19 | — (first day) | **Arrays & Hashing** — Two Sum (#1, E) · Contains Duplicate (#217, E) | `dict`/`set`; `range(len(x))`; `return` vs `print` | O(1) hash lookup; O(n) |
+| 2 | Jun 20 | Two Sum; Contains Duplicate | **Arrays & Hashing** — Valid Anagram (#242, E) · Group Anagrams (#49, M) | `Counter`; sorted-string / char-count key | O(n); group-by-key |
+| 3 | Jun 20 | Anagrams | **Arrays & Hashing** — Top K Frequent (#347, M) | bucket sort (list of buckets) | O(n) time + space (derived it himself) |
+| 4 | Jun 22 | Bucket sort (cold) | **Arrays & Hashing** — Product of Array Except Self (#238, M) | prefix/suffix passes | O(n) time, O(1) extra |
+| 5 | Jun 24 | Product (cold) | **Two Pointers** — Valid Palindrome (#125, E) · Two Sum II (#167, M) | `while`/`elif`; `.lower()`/`.isalnum()` | O(n); O(n) space when cleaning a string |
+| 6 | Jun 26 | Interleave: Contains Dup · Two Sum · Product | **Two Pointers** — Container With Most Water (#11, M) | `left`/`right` pointers; move-the-shorter-wall | O(n) greedy |
+| 7 | Jun 26 | Warm-up retrieval | **Sliding Window** — Best Time to Buy/Sell (#121, E) | running-min + best-profit (2 vars) | O(n) |
+| 8 | Jun 28 | Valid Palindrome (decay caught) | **Sliding Window** — Longest Substring No Repeat (#3, M) | set + shrink-from-left | O(n) amortized |
+
+> **Currently:** Day 9 ✅ done (Binary Search #704/#74) — see the sprint table below. **Day 10 is next.**
 
 ---
 

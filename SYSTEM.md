@@ -47,7 +47,7 @@ After studying, record it — this is ~5 minutes and keeps the system alive:
 2. **QUEUE:** add the new problem at rung 1d; for each re-solve, advance on pass / **reset to 1d on fail**.
 3. **MISTAKES:** log each slip with a root cause. Same root cause as before ⇒ increment its recurrence; at **≥3 ⇒ escalate to `BLOCKERS.md`**.
 4. **Pattern file:** if a new pattern was learned or a new insight/gotcha surfaced, update `patterns/<name>.md` in place (bump mastery if earned).
-5. **DASHBOARD:** refresh status, pace-health, mastery, due count, next-session focus.
+5. **DASHBOARD + README:** refresh `DASHBOARD.md` (status, pace-health, mastery, due count, next focus) **and** the README's *Where I'm at* block + badges, so the public landing page always shows the current stage.
 6. **Commit** (see below).
 
 ## Spaced-repetition ladder
