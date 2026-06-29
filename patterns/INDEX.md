@@ -9,13 +9,13 @@ One file per pattern: template, when-to-use triggers, complexity, and *your* got
 | Big-O & complexity | 3/5 | [big-o](big-o.md) |
 | Arrays & Hashing | 3/5 | [arrays-hashing](arrays-hashing.md) |
 | Two Pointers | 3/5 | [two-pointers](two-pointers.md) |
-| Sliding Window | 2/5 | [sliding-window](sliding-window.md) |
+| Sliding Window | 3/5 | [sliding-window](sliding-window.md) |
+| Binary Search | 2/5 | [binary-search](binary-search.md) |
 
 ## Upcoming
 
 | Pattern | Starts | File |
 |---|---|---|
-| Binary Search | Day 9 | [binary-search](binary-search.md) |
 | Stack | Day ~13 | [stack](stack.md) |
 | Linked List | Day ~19 | [linked-list](linked-list.md) |
 | Trees & BFS/DFS | Day ~21 | [trees](trees.md) |

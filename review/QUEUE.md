@@ -15,8 +15,10 @@ If **due count > 8**, do reviews only (no new problem) until it's back under con
 
 | Problem | Pattern | Rung | Next due | Streak | Results |
 |---|---|---|---|---|---|
-| Valid Palindrome (#125) | two-pointers | 1d | 2026-06-29 | 0 | F·F |
-| Longest Substring No Repeat (#3) | sliding-window | 1d | 2026-06-29 | 0 | (new) |
+| Valid Palindrome (#125) | two-pointers | 1d | 2026-06-30 | 0 | F·F·F |
+| Binary Search (#704) | binary-search | 1d | 2026-06-30 | 0 | (new) |
+| Search a 2D Matrix (#74) | binary-search | 1d | 2026-06-30 | 0 | (new) |
+| Longest Substring No Repeat (#3) | sliding-window | 3d | 2026-07-02 | 1 | P |
 | Best Time to Buy/Sell (#121) | sliding-window | 3d | 2026-06-30 | 1 | P |
 | Two Sum II (#167) | two-pointers | 3d | 2026-07-01 | 1 | P |
 | Container With Most Water (#11) | two-pointers | 3d | 2026-07-01 | 1 | P |

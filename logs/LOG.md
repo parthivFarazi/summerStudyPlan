@@ -29,4 +29,7 @@ Best Time to Buy/Sell Stock (#121). First attempt over-engineered (4 vars + time
 ## Day 8 — 2026-06-28 — Sliding Window (variable-size)
 Longest Substring Without Repeating (#3) through self-driven iteration: clear-set (wrong) → shrink-from-left → +maxLen (correct). Taught **amortized analysis** (forward-only pointer ⇒ O(n), not O(n²)) [INSIGHT]. Slips: carried `k log k` from Group Anagrams (no sort here) [STRUGGLE]; under-read the spec ("alphanumeric only"). Spaced review caught real decay on Valid Palindrome (had dropped cleaning + reintroduced an infinite loop) [NEEDS_RECALL] → reset to 1d. Good: correctly called Valid Palindrome O(n) space — the Day-5 correction stuck.
 
-<!-- Append Day 9+ below. Format: ## Day N — YYYY-MM-DD — topic / problems / [tags] -->
+## Day 9 — 2026-06-29 — Binary Search (new) · #704, #74
+Block 1 reviews: Longest Substring (#3) **PASS** with unprompted amortized O(n) reasoning [INSIGHT]; Valid Palindrome (#125) **FAIL** again — compared `s` instead of the cleaned string [STRUGGLE][NEEDS_RECALL] → reset to 1d (root cause: wrong-variable reference, **M-004 now 2×**). Binary Search (#704): inverted the discard direction first (**M-012**), fixed after reasoning *small→right / big→left*. Search a 2D Matrix (#74): correct first try via the **virtual-flattened index** (`mid//cols`, `mid%cols`), complexity stated unprompted [INSIGHT]. Hit the **2-new/day sprint pace**.
+
+<!-- Append Day 10+ below. Format: ## Day N — YYYY-MM-DD — topic / problems / [tags] -->
