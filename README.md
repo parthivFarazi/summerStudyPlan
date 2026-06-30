@@ -2,22 +2,27 @@
 
 A beginner working from near-zero toward **FAANG-ready by interview season**, one tracked day at a time. This repo *is* my real prep — the plan, the daily notebooks, the mistakes, and the spaced-repetition system that ties it together. Not polished-for-show: the actual journey, decay and dumb bugs included.
 
-![Day](https://img.shields.io/badge/Day-9-2563eb)
+<!-- README-LIVE:START -->
+![Day](https://img.shields.io/badge/Day-10-2563eb)
 ![Phase](https://img.shields.io/badge/Phase-Summer_Sprint-7c3aed)
 ![Focus](https://img.shields.io/badge/Focus-Binary_Search-0891b2)
-![Pace](https://img.shields.io/badge/Pace-2_per_day-16a34a)
+![Pace](https://img.shields.io/badge/Pace-on_plan-16a34a)
 ![Goal](https://img.shields.io/badge/Goal-FAANG_ready_by_Sept-ea580c)
 ![Language](https://img.shields.io/badge/Language-Python-3776ab)
 
 ## 📍 Where I'm at right now
 
-- **Day 9** · **Summer Sprint → Block A** (the core pattern toolkit)
-- **Just did:** Binary Search (#704, #74) — and hit the 2-problems/day sprint pace ✅
-- **Up next (Day 10):** Koko Eating Bananas — *binary search on the answer*
-- **The deadline I'm holding:** finish every core pattern before **Aug 20** (fall classes start), interview-ready by **September**
+- **Day 10** · **Summer Sprint → Block A**
+- **Current focus:** Binary Search
+- **Up next (Day 11):** Find Min in Rotated Sorted Array (#153)
+- **Tracker totals:** 10 sessions · 5 patterns learned · 13 mistakes tracked
+- **Open blockers:** 0 (5 on watchlist)
+- **Review queue:** 4 due 2026-07-01 (#125, #875, #167, #11); 5 by Jul 2
+- **Last dashboard update:** 2026-06-30
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 
-*This block is the 20-second "is he keeping up?" view; the dashboard is the full picture. Both update at the end of every session.*
+*This block is generated from `DASHBOARD.md`. Run `python3 scripts/sync_readme.py` after dashboard edits; the pre-commit hook also runs it automatically.*
+<!-- README-LIVE:END -->
 
 ## Why this repo exists
 
