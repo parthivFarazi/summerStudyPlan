@@ -4,37 +4,37 @@
 > "Current Status" is regenerated each update. Readable in under 2 minutes.
 
 ## Current Status
-- **Last updated:** 2026-06-29 (Day 9 logged)
-- **Phase:** Summer Sprint · Block A — *Binary Search (continuing); next new: Koko Eating Bananas (#875)*
-- **Sessions logged:** 9 · **Patterns learned:** 5 · **Mistakes tracked:** 12 · **Open blockers:** 0 (5 on watchlist)
-- **Review queue:** 4 due 2026-06-30 (#125, #704, #74, #121); 7 by Jul 1
+- **Last updated:** 2026-06-30 (Day 10 logged)
+- **Phase:** Summer Sprint · Block A — *Binary Search (continuing); next new: Find Min in Rotated Sorted Array (#153)*
+- **Sessions logged:** 10 · **Patterns learned:** 5 · **Mistakes tracked:** 13 · **Open blockers:** 0 (5 on watchlist)
+- **Review queue:** 4 due 2026-07-01 (#125, #875, #167, #11); 5 by Jul 2
 
 ## Pace Health
 *(🟡 = off the sprint target · 🔴 = at risk. Refreshed each session.)*
 
 | Indicator | Value | Status |
 |---|---|---|
-| Days to Aug 20 pivot | 52 | 🟢 runway exists |
-| **Sprint throughput** (new/day, target ~2) | **Day 9 hit 2** ✅ (cumulative ~1.2) | 🟢 target hit — hold it |
+| Days to Aug 20 pivot | 51 | 🟢 runway exists |
+| **Sprint throughput** (new/day) | Day 9 = 2, Day 10 = 1 (roadmap planned 1) | 🟢 on plan |
 | Sessions last 7 days (target ≥ 6) | 6 | 🟢 |
 | Days since last session | 1 | 🟢 |
-| Queue due (next 2 days) | 7 | 🟡 watch decay |
+| Queue due (next 2 days) | 5 | 🟡 stay on top of it |
 | Open blockers | 0 | 🟢 |
 
 ## Pattern Mastery  *(1–5; 5 = solve a novel one cold while narrating)*
 
 | Pattern | Mastery | Note |
 |---|---|---|
-| Big-O & complexity | 3/5 | amortized analysis reused correctly Day 9 |
-| Arrays & Hashing | 3/5 | solid; watch hidden in-loop cost |
+| Big-O & complexity | 3/5 | states time+space unprompted most of the time |
+| Arrays & Hashing | 3/5 | bucket sort reproduced cold Day 10 |
 | Two Pointers | 3/5 | solid |
-| Sliding Window | 3/5 | reproduced #3 cold with amortized reasoning |
-| Binary Search | 2/5 | mechanics solid; build the discard-direction reflex |
+| Sliding Window | 3/5 | reproduced #3 cold w/ amortized reasoning |
+| Binary Search | 3/5 | classic + 2D + answer-search; direction & boundary reflexes still settling |
 
-## Next Session Focus  → **Day 10**
-1. **Block 1 — due recalls** (cold, before notes): **Valid Palindrome (#125)** — *3rd fail; drill the wrong-variable habit (M-004)* · **Binary Search (#704)** · **Search a 2D Matrix (#74)** · **Best Time to Buy/Sell (#121)**.
-2. **Watch:** the 5 watchlist slips — especially **M-004 (wrong variable)** and **M-012 (binary-search direction)**.
-3. **Block 2 — new:** **Koko Eating Bananas (#875)** = *binary search on the answer*. Pre-teach `math.ceil` + a helper function first.
+## Next Session Focus  → **Day 11**
+1. **Block 1 — due recalls** (cold, before notes): **Valid Palindrome (#125)** — *just the `.isalnum` typo left; should finally go green* · **Koko (#875)** · **Two Sum II (#167)** · **Container With Most Water (#11)**.
+2. **Watch:** M-013 (boundary: record + shrink, never return on `==`), M-012 (binary-search direction), and the `.isalum`→`.isalnum` typo.
+3. **Block 2 — new:** **Find Min in Rotated Sorted Array (#153)** — compare `mid` vs `right`; the rotated-array invariant.
 
 ---
 *Weekly snapshots can be appended below as the sprint progresses.*

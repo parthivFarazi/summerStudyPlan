@@ -21,6 +21,7 @@
 | M-010 | 2026-06-28 | strategy | Missed "alphanumeric only" in the spec = real work to do | Under-reading the problem statement / examples | 1 | Day 8 | active |
 | M-011 | 2026-06-26 | impl | Dropped the anagram length check (then re-added) | Incomplete validation in a warm-up re-solve | 1 | Day 7 | active |
 | M-012 | 2026-06-29 | strategy | Inverted binary-search branches — moved toward the wrong half | Not reasoning which half to discard from the `mid` comparison | 1 | Day 9 | active |
+| M-013 | 2026-06-30 | strategy | Returned on exact match (`hours == h`) in a find-minimum binary search → returned a non-minimal value | In boundary search an exact hit is still just a *candidate* — record it and keep shrinking | 1 | Day 10 | active |
 
 ## Recurrence Watchlist (count ≥ 2 — one rep from escalating)
 

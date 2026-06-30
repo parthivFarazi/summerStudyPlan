@@ -32,4 +32,7 @@ Longest Substring Without Repeating (#3) through self-driven iteration: clear-se
 ## Day 9 — 2026-06-29 — Binary Search (new) · #704, #74
 Block 1 reviews: Longest Substring (#3) **PASS** with unprompted amortized O(n) reasoning [INSIGHT]; Valid Palindrome (#125) **FAIL** again — compared `s` instead of the cleaned string [STRUGGLE][NEEDS_RECALL] → reset to 1d (root cause: wrong-variable reference, **M-004 now 2×**). Binary Search (#704): inverted the discard direction first (**M-012**), fixed after reasoning *small→right / big→left*. Search a 2D Matrix (#74): correct first try via the **virtual-flattened index** (`mid//cols`, `mid%cols`), complexity stated unprompted [INSIGHT]. Hit the **2-new/day sprint pace**.
 
-<!-- Append Day 10+ below. Format: ## Day N — YYYY-MM-DD — topic / problems / [tags] -->
+## Day 10 — 2026-06-30 — Binary search ON THE ANSWER · Koko #875
+Block 1 (5 re-solves): #704, #74, #347, #121 all **PASS** clean; **#125 Valid Palindrome** — the recurring wrong-variable bug (M-004) **did NOT recur** (pre-empt worked ✅), but a fresh typo `.isalum`→`.isalnum` keeps it red [NEEDS_RECALL]. **Koko (#875):** learned to search the *answer space* — speed `[1, max(piles)]`, hours = Σ`ceil(p/k)`, monotonic. Took 3 tries on the boundary logic: returned only on `==` → `None` on an early finish; then returned on `==` too eagerly → wrong on `[21],h=3` (got 8, answer 7); fixed with `h >= hours` → record + shrink + return `result` [INSIGHT] (**M-013**: never return on an exact match in a find-minimum search). All 6 test cases pass. O(n·log k)/O(1). (Day-10 = single new problem per roadmap.)
+
+<!-- Append Day 11+ below. Format: ## Day N — YYYY-MM-DD — topic / problems / [tags] -->
