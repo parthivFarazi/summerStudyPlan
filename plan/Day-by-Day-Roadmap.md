@@ -22,7 +22,7 @@ Fall semester starts **Aug 20** and your time collapses. New-pattern learning is
 
 ## How to read each day
 
-- **Block 1 — Review (~10 min):** re-solve a *due* problem cold (spaced at +3/+7/+21 days). If none due, free-pick your weakest.
+- **Block 1 — Review (~10 min):** re-solve the *due* problems cold. ⚠️ **The specific "Block 1 — Review" problems named in the daily tables below are a stale Jun-28 projection — do NOT use them.** Always pull the actual due items from the live **`review/QUEUE.md`** (the single source of truth; it shifts with every pass/fail, so it's the only accurate schedule). Nothing is ever skipped — the ladder resurfaces every problem on its own timer. If none are due, free-pick your weakest.
 - **Block 2 — New (~40–60 min in sprint):** the day's new problem(s). Timer on, narrate aloud, then close everything and re-implement from scratch.
 - **Interleave day** (every 6th session): mixed *unlabeled* set — trains pattern-spotting. **Mock day** (from Aug): add a timed think-aloud round.
 

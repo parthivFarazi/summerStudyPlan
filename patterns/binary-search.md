@@ -1,58 +1,64 @@
 # Binary Search
 
-**Status:** learned (Day 9–10) · **Mastery: 3/5** · Block A
+**Status:** learned (Day 9–11) · **Mastery: 3/5** · Block A
 
 ## In one line
-Halve a sorted search space — an **array index range** OR a **monotonic answer range** — each step → O(log n).
+Halve a sorted / monotonic search space each step → O(log n). Three shapes: **index-search**, **answer-search**, **converge-to-a-boundary**.
 
 ## Reach for it when
-- Input is sorted (or you can sort it cheaply)
-- "Find min / first / last that satisfies…"
-- **Searching a monotonic answer space** (min speed, min capacity, smallest divisor) — Koko #875
-- You need better than O(n) on a sorted array
+- Sorted input; "find min / first / last that satisfies…"; a monotonic **answer** space; the **pivot/min of a rotated** array; need better than O(n).
 
 ## Template 1 — classic index search (#704)
 ```python
 left, right = 0, len(nums) - 1
-while left <= right:                  # <= : single-element case still checked
+while left <= right:                  # target search → <=
     mid = (left + right) // 2
-    if nums[mid] < target:            # middle too SMALL → go RIGHT
+    if nums[mid] < target:            # too SMALL → go RIGHT
         left = mid + 1
-    elif nums[mid] > target:          # middle too BIG → go LEFT
+    elif nums[mid] > target:          # too BIG → go LEFT
         right = mid - 1
     else:
         return mid
 return -1
 ```
 ### Variant — 2D matrix (#74)
-Binary-search the virtual flattened index `0 … rows*cols-1`; `val = matrix[mid // cols][mid % cols]`.
+Search the virtual flattened index `0…rows*cols-1`; `val = matrix[mid // cols][mid % cols]`.
 
 ## Template 2 — binary search ON THE ANSWER + boundary (Koko #875)
-Search a **value range**, not the array — for "smallest value that satisfies a condition":
+Search a **value range**, not the array; for "smallest value that satisfies X":
 ```python
-import math
-left, right = 1, max(piles)      # the ANSWER range, not indices
-result = right                   # a known-valid fallback (max speed always works)
+left, right, result = 1, max(piles), max(piles)
 while left <= right:
     mid = (left + right) // 2
-    if hours_needed(mid) <= h:   # works → record candidate...
+    if hours_needed(mid) <= h:   # works → record + shrink for a smaller one
         result = mid
-        right = mid - 1          # ...and keep shrinking for a smaller one
-    else:                        # too slow → go faster
+        right = mid - 1
+    else:
         left = mid + 1
 return result
-
-def hours_needed(k):             # the O(n) "works?" check
-    return sum(math.ceil(p / k) for p in piles)
 ```
-- **Never `return mid` on an exact match** in a find-minimum search — an exact hit is still just a *candidate* (**M-013**). Record + shrink + return `result`.
+- **Never `return mid` on an exact match** in a find-minimum search (M-013).
+
+## Template 3 — CONVERGING search / find-min in rotated array (#153)
+No explicit target — converge two pointers onto the answer:
+```python
+left, right = 0, len(nums) - 1
+while left < right:                # STRICT < (converging), NOT <=
+    mid = (left + right) // 2
+    if nums[mid] <= nums[right]:   # mid in the lower run → min is mid or left
+        right = mid                # keep mid — it might BE the min (NOT mid-1)
+    else:                          # mid in the higher run → min is to the right
+        left = mid + 1
+return nums[left]                  # they meet ON the answer
+```
+- Compare `mid` to an **end** (`nums[right]`), not a target.
+- **`<=` + `right = mid` → infinite loop (M-014).**
 
 ## Complexity
-- Classic / 2D: **O(log n)** / **O(log(m·n))** time, **O(1)** space.
-- Answer-search: **O(n · log(range))** — `log(range)` search steps × an O(n) check each. O(1) space.
+- Index / 2D / converging: **O(log n)** / **O(log(m·n))** / **O(log n)** time, **O(1)** space.
+- Answer-search: **O(n · log(range))**, O(1) space.
 
 ## Your gotchas
-- **Direction (M-012):** small middle → go right; big middle → go left. *Re-reason it*, don't memorize symbols.
-- **`<=` not `<`** in the loop condition; **±1** on the bound after checking `mid`.
-- **Boundary search (M-013):** record candidate + keep shrinking; never bail out on `==`.
-- `math.ceil(a / b)` rounds up (needs `import math`).
+- Direction (M-012): small mid → right, big mid → left. Boundary (M-013): record + shrink, never return on `==`. Converge (M-014): strict `<` + `right = mid`.
+- **Rule of thumb:** *has a target →* `<=`, `mid ± 1`. *Converging to a spot →* `<`, `right = mid`, `return nums[left]`.
+- `math.ceil(a / b)` rounds up (`import math`).

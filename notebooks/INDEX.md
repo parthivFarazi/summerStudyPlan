@@ -16,5 +16,6 @@ A verbatim copy of each day's practice notebook: your raw answers (bugs and all)
 | [Day 8](Day8-Practice-Notebook.md) | Jun 28 | Variable-size window · Longest Substring No Repeat |
 | [Day 9](Day9-Practice-Notebook.md) | Jun 29 | Binary Search · #704, Search a 2D Matrix #74 |
 | [Day 10](Day10-Practice-Notebook.md) | Jun 30 | Binary search on the answer · Koko Eating Bananas #875 |
+| [Day 11](Day11-Practice-Notebook.md) | Jul 1 | Converging binary search · Find Min in Rotated Sorted Array #153 |
 
 *New day → save `DayN-Practice-Notebook.md` here and add a row.*

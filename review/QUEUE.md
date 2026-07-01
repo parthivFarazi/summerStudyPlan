@@ -15,14 +15,15 @@ If **due count > 8**, do reviews only (no new problem) until it's back under con
 
 | Problem | Pattern | Rung | Next due | Streak | Results |
 |---|---|---|---|---|---|
-| Valid Palindrome (#125) | two-pointers | 1d | 2026-07-01 | 0 | F·F·F·F |
+| Valid Palindrome (#125) | two-pointers | 3d | 2026-07-04 | 1 | F·F·F·F·P |
 | Binary Search (#704) | binary-search | 3d | 2026-07-03 | 1 | P |
 | Search a 2D Matrix (#74) | binary-search | 3d | 2026-07-03 | 1 | P |
-| Koko Eating Bananas (#875) | binary-search | 1d | 2026-07-01 | 0 | (new) |
+| Koko Eating Bananas (#875) | binary-search | 3d | 2026-07-04 | 1 | P |
+| Find Min in Rotated Sorted Array (#153) | binary-search | 1d | 2026-07-02 | 0 | (new) |
 | Longest Substring No Repeat (#3) | sliding-window | 3d | 2026-07-02 | 1 | P |
 | Best Time to Buy/Sell (#121) | sliding-window | 7d | 2026-07-07 | 2 | P·P |
-| Two Sum II (#167) | two-pointers | 3d | 2026-07-01 | 1 | P |
-| Container With Most Water (#11) | two-pointers | 3d | 2026-07-01 | 1 | P |
+| Two Sum II (#167) | two-pointers | 7d | 2026-07-08 | 2 | P·P |
+| Container With Most Water (#11) | two-pointers | 7d | 2026-07-08 | 2 | P·P |
 | Top K Frequent (#347) | arrays-hashing | 21d | 2026-07-21 | 3 | P·P·P |
 | Product of Array Except Self (#238) | arrays-hashing | 7d | 2026-07-03 | 2 | P·P |
 | Two Sum (#1) | arrays-hashing | 21d | 2026-07-10 | 3 | P·P·P |
