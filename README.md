@@ -3,22 +3,22 @@
 A beginner working from near-zero toward **FAANG-ready by interview season**, one tracked day at a time. This repo *is* my real prep — the plan, the daily notebooks, the mistakes, and the spaced-repetition system that ties it together. Not polished-for-show: the actual journey, decay and dumb bugs included.
 
 <!-- README-LIVE:START -->
-![Day](https://img.shields.io/badge/Day-11-2563eb)
+![Day](https://img.shields.io/badge/Day-12-2563eb)
 ![Phase](https://img.shields.io/badge/Phase-Summer_Sprint-7c3aed)
-![Focus](https://img.shields.io/badge/Focus-Binary_Search_wrapping_Day_12_Interleave_day-0891b2)
+![Focus](https://img.shields.io/badge/Focus-Interleave_day_done_Day_13_Search_in_Rotated_Array_Valid_Parentheses-0891b2)
 ![Pace](https://img.shields.io/badge/Pace-on_plan-16a34a)
 ![Goal](https://img.shields.io/badge/Goal-FAANG_ready_by_Sept-ea580c)
 ![Language](https://img.shields.io/badge/Language-Python-3776ab)
 
 ## 📍 Where I'm at right now
 
-- **Day 11** · **Summer Sprint → Block A**
-- **Current focus:** Binary Search wrapping. Day 12 = Interleave day
-- **Up next (Day 12):** interleave day
-- **Tracker totals:** 11 sessions · 5 patterns learned · 14 mistakes tracked
+- **Day 12** · **Summer Sprint → Block A**
+- **Current focus:** Interleave day done. Day 13 = Search in Rotated Array + Valid Parentheses.
+- **Up next (Day 13):** Search in Rotated Array (#33, binary search); Valid Parentheses (#20, stack
+- **Tracker totals:** 12 sessions · 5 patterns learned · 15 mistakes tracked
 - **Open blockers:** 1 (B-1: variable audit)
-- **Review queue:** 2 due 2026-07-02 (#153, #3); 5 by Jul 3
-- **Last dashboard update:** 2026-07-01
+- **Review queue:** 3 due 2026-07-03 (#153, #704, #74); #125 & #875 Jul 4
+- **Last dashboard update:** 2026-07-02
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 
 *This block is generated from `DASHBOARD.md`. Run `python3 scripts/sync_readme.py` after dashboard edits; the pre-commit hook also runs it automatically.*

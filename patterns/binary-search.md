@@ -1,6 +1,6 @@
 # Binary Search
 
-**Status:** learned (Day 9–11) · **Mastery: 3/5** · Block A
+**Status:** learned (Day 9–12) · **Mastery: 3/5** · Block A
 
 ## In one line
 Halve a sorted / monotonic search space each step → O(log n). Three shapes: **index-search**, **answer-search**, **converge-to-a-boundary**.
@@ -61,4 +61,5 @@ return nums[left]                  # they meet ON the answer
 ## Your gotchas
 - Direction (M-012): small mid → right, big mid → left. Boundary (M-013): record + shrink, never return on `==`. Converge (M-014): strict `<` + `right = mid`.
 - **Rule of thumb:** *has a target →* `<=`, `mid ± 1`. *Converging to a spot →* `<`, `right = mid`, `return nums[left]`.
+- **Converge-return (M-015):** the loop-exit index IS the answer — `return nums[left]`. Don't reintroduce a tracked `answer`; a default (`answer = 0`) leaks on `[2,1]` / single-element `[5]`. (Had it right Day 11, regressed Day 12.)
 - `math.ceil(a / b)` rounds up (`import math`).
