@@ -48,7 +48,7 @@ After studying, record it — this is ~5 minutes and keeps the system alive:
 3. **MISTAKES:** log each slip with a root cause. Same root cause as before ⇒ increment its recurrence; at **≥3 ⇒ escalate to `BLOCKERS.md`**.
 4. **Pattern file:** if a new pattern was learned or a new insight/gotcha surfaced, update `patterns/<name>.md` in place (bump mastery if earned).
 5. **DASHBOARD + README:** refresh `DASHBOARD.md` (status, pace-health, mastery, due count, next focus), then run `python3 scripts/sync_readme.py` to regenerate the README's live block + badges from the dashboard. The repo-local pre-commit hook also runs this sync automatically.
-6. **Commit** (see below).
+6. **Hand Parthiv the git command** (see below) — Claude does *not* run git itself.
 
 ## Spaced-repetition ladder
 
@@ -56,14 +56,16 @@ After studying, record it — this is ~5 minutes and keeps the system alive:
 
 ## Git (your "GitHub-like" layer)
 
-This folder is a git repo. After each session:
+This folder is a git repo (remote `origin` → github.com/parthivFarazi/summerStudyPlan, branch `master`).
+
+**Claude does NOT run git in the sandbox.** The mounted filesystem can't unlink git's `.git/*.lock` files, so ANY in-sandbox git — even a read-only `git status` — leaves stale locks (e.g. `.git/index.lock`, `.git/HEAD.lock`, `.git/objects/maintenance.lock`) that jam the next real commit. Claude only Writes/Edits the tracker files. At session end Claude hands Parthiv ONE command to run on his own machine:
 
 ```bash
-cd "path/to/LeetCode Practice"
-git add -A && git commit -m "Day N: <topic>"
+cd ~/Documents/Claude/Projects/LeetCode\ Practice
+git add -A && git commit -m "Day N: <topic>" && git push
 ```
 
-To back it up to GitHub, create an empty repo there and `git remote add origin <url> && git push -u origin main` (one-time). Never force-push. Git is the real undo button; the log is the human-readable history.
+Never force-push. Git is the real undo button; the log is the human-readable history. *(Workflow confirmed with Parthiv 2026-07-02, after sandbox commits left stale locks twice.)*
 
 ## Invariants (what keeps it honest)
 
