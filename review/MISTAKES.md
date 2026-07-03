@@ -20,10 +20,11 @@
 | M-009 | 2026-06-28 | strategy | Imported `k log k` from Group Anagrams into Longest Substring (no sort) | Carrying complexity assumptions across problems without re-deriving | 1 | Day 8 | active |
 | M-010 | 2026-06-28 | strategy | Missed "alphanumeric only" in the spec = real work to do | Under-reading the problem statement / examples | 1 | Day 8 | active |
 | M-011 | 2026-06-26 | impl | Dropped the anagram length check (then re-added) | Incomplete validation in a warm-up re-solve | 1 | Day 7 | active |
-| M-012 | 2026-06-29 | strategy | Inverted binary-search branches — moved toward the wrong half | Not reasoning which half to discard from the `mid` comparison | 1 | Day 9 | active |
+| M-012 | 2026-06-29 | strategy | Inverted binary-search branches — moved toward the wrong half; on #33 inverted all four pointer updates (`left=mid-1`/`right=mid+1`) | The pointer you move is the OPPOSITE wall from the direction you go (go left → `right=mid-1`; go right → `left=mid+1`) | 2 | Day 9, Day 13 | active |
 | M-013 | 2026-06-30 | strategy | Returned on exact match (`hours == h`) in a find-minimum binary search → returned a non-minimal value | In boundary search an exact hit is still just a *candidate* — record it and keep shrinking | 1 | Day 10 | active |
 | M-014 | 2026-07-01 | impl | Converging binary search with `while left <= right` + `right = mid` → infinite loop | `<=` never terminates when two pointers converge to one spot; use strict `<` | 1 | Day 11 | active |
 | M-015 | 2026-07-02 | strategy | Converging binary search: tracked a separate `answer` (init 0) instead of returning the convergence point → returned 0 on `[2,1]` and single-element `[5]` | In a converge-to-boundary search the loop-exit index IS the answer (`return nums[left]`); a tracked candidate/default leaks on edge cases. Kin to M-007 (unnecessary state) | 1 | Day 12 | active |
+| M-016 | 2026-07-03 | impl | Wrote `for left <= right:` instead of `while` in a binary search | `for` needs `for x in iterable`; use `while` for a condition-controlled loop (self-owned typo, fixed instantly) | 1 | Day 13 | active |
 
 ## Recurrence Watchlist (count ≥ 2 — one rep from escalating)
 
@@ -33,5 +34,6 @@
 | M-002 | impl | `()` call vs `[]` index | 2 |
 | M-003 | impl | `range(len(x))` for index loops | 2 |
 | M-006 | strategy | Counting hidden in-loop cost in Big-O | 2 |
+| M-012 | strategy | Binary-search direction — pointer = opposite wall | 2 |
 
-*Pre-empt these four at the start of each session. (M-004 escalated to a **BLOCKER** on Day 11 — see `BLOCKERS.md`.)*
+*Pre-empt these at the start of each session. (M-004 escalated to a **BLOCKER** on Day 11 — see `BLOCKERS.md`.)*

@@ -3,22 +3,22 @@
 A beginner working from near-zero toward **FAANG-ready by interview season**, one tracked day at a time. This repo *is* my real prep — the plan, the daily notebooks, the mistakes, and the spaced-repetition system that ties it together. Not polished-for-show: the actual journey, decay and dumb bugs included.
 
 <!-- README-LIVE:START -->
-![Day](https://img.shields.io/badge/Day-12-2563eb)
+![Day](https://img.shields.io/badge/Day-13-2563eb)
 ![Phase](https://img.shields.io/badge/Phase-Summer_Sprint-7c3aed)
-![Focus](https://img.shields.io/badge/Focus-Interleave_day_done_Day_13_Search_in_Rotated_Array_Valid_Parentheses-0891b2)
-![Pace](https://img.shields.io/badge/Pace-on_plan-16a34a)
+![Focus](https://img.shields.io/badge/Focus-Binary_Search_complete_Stack_started_Day_14_Min_Stack-0891b2)
+![Pace](https://img.shields.io/badge/Pace-on_the_2_new_day_pace-16a34a)
 ![Goal](https://img.shields.io/badge/Goal-FAANG_ready_by_Sept-ea580c)
 ![Language](https://img.shields.io/badge/Language-Python-3776ab)
 
 ## 📍 Where I'm at right now
 
-- **Day 12** · **Summer Sprint → Block A**
-- **Current focus:** Interleave day done. Day 13 = Search in Rotated Array + Valid Parentheses.
-- **Up next (Day 13):** Search in Rotated Array (#33, binary search); Valid Parentheses (#20, stack
-- **Tracker totals:** 12 sessions · 5 patterns learned · 15 mistakes tracked
+- **Day 13** · **Summer Sprint → Block A**
+- **Current focus:** Binary Search complete. Stack started. Day 14 = Min Stack.
+- **Up next (Day 14):** Min Stack (#155)
+- **Tracker totals:** 13 sessions · 6 patterns learned · 16 mistakes tracked
 - **Open blockers:** 1 (B-1: variable audit)
-- **Review queue:** 3 due 2026-07-03 (#153, #704, #74); #125 & #875 Jul 4
-- **Last dashboard update:** 2026-07-02
+- **Review queue:** 4 due 2026-07-04 (#125, #875, #33, #20)
+- **Last dashboard update:** 2026-07-03
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 
 *This block is generated from `DASHBOARD.md`. Run `python3 scripts/sync_readme.py` after dashboard edits; the pre-commit hook also runs it automatically.*

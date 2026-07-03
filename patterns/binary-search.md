@@ -1,6 +1,6 @@
 # Binary Search
 
-**Status:** learned (Day 9–12) · **Mastery: 3/5** · Block A
+**Status:** learned (Day 9–13) · **Mastery: 3/5** · Block A
 
 ## In one line
 Halve a sorted / monotonic search space each step → O(log n). Three shapes: **index-search**, **answer-search**, **converge-to-a-boundary**.
@@ -53,6 +53,28 @@ return nums[left]                  # they meet ON the answer
 ```
 - Compare `mid` to an **end** (`nums[right]`), not a target.
 - **`<=` + `right = mid` → infinite loop (M-014).**
+
+## Template 4 — search a ROTATED array for a target (#33)
+Target search (`while left <= right`, `mid ± 1`), but pick the side by which half is **sorted**:
+```python
+while left <= right:
+    mid = (left + right) // 2
+    if nums[mid] == target:
+        return mid
+    if nums[left] <= nums[mid]:                 # LEFT half sorted
+        if nums[left] <= target < nums[mid]:
+            right = mid - 1                     # go left
+        else:
+            left = mid + 1                      # go right
+    else:                                        # RIGHT half sorted
+        if nums[mid] < target <= nums[right]:
+            left = mid + 1                      # go right
+        else:
+            right = mid - 1                     # go left
+return -1
+```
+- One half is **always** sorted; the range-test lives **nested inside** its "this half is sorted" guard, so the unsorted half never gets the wrong test.
+- **Pointer = the OPPOSITE wall from where you go** (go left → `right = mid - 1`; go right → `left = mid + 1`). Inverting these = **M-012** (Day 9, again Day 13).
 
 ## Complexity
 - Index / 2D / converging: **O(log n)** / **O(log(m·n))** / **O(log n)** time, **O(1)** space.
