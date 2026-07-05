@@ -1,6 +1,6 @@
 # Stack
 
-**Status:** learned (Day 13) · **Mastery: 1/5** · Block A
+**Status:** learned (Day 13–14) · **Mastery: 2/5** · Block A
 
 ## In one line
 LIFO (last-in, first-out) structure for matching, undo, or 'nearest greater/smaller' scans. In Python it's just a **list** — only ever touch the end.
@@ -33,6 +33,26 @@ for ch in s:
             return False
 return not stack                 # valid ONLY if nothing is left unclosed
 ```
+
+## Template — Min Stack (#155): O(1) minimum via a second stack
+Keep a parallel `minStack` whose top is always the current min (conditional push saves space):
+```python
+class MinStack:
+    def __init__(self):
+        self.stack = []
+        self.minStack = []
+    def push(self, val):
+        self.stack.append(val)
+        if not self.minStack or val <= self.minStack[-1]:   # <= keeps duplicate mins
+            self.minStack.append(val)
+    def pop(self):
+        if self.stack.pop() == self.minStack[-1]:
+            self.minStack.pop()
+    def top(self):    return self.stack[-1]
+    def getMin(self): return self.minStack[-1]
+```
+- Why not a single min variable? Popping the current min can't recover the previous min without an O(n) scan; the min-stack holds the min at every level. O(n) space buys **O(1) pop + getMin**.
+- Compare to **`self.minStack[-1]`**, not `self.stack[-1]` (after append that's `val` itself) — wrong-container slip, M-004. (Day 14)
 
 ## Complexity
 - Time **O(n)** (one pass). Space **O(n)** for the stack (worst case: all openings).

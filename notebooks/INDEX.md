@@ -19,5 +19,6 @@ A verbatim copy of each day's practice notebook: your raw answers (bugs and all)
 | [Day 11](Day11-Practice-Notebook.md) | Jul 1 | Converging binary search · Find Min in Rotated Sorted Array #153 |
 | [Day 12](Day12-Practice-Notebook.md) | Jul 2 | Interleave (name-the-pattern) · #238, #3, #153 |
 | [Day 13](Day13-Practice-Notebook.md) | Jul 3 | Binary-search reviews + Rotated Search #33 + first Stack #20 |
+| [Day 14](Day14-Practice-Notebook.md) | Jul 5 | Stack reviews + Min Stack #155 (first class) |
 
 *New day → save `DayN-Practice-Notebook.md` here and add a row.*

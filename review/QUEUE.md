@@ -15,13 +15,14 @@ If **due count > 8**, do reviews only (no new problem) until it's back under con
 
 | Problem | Pattern | Rung | Next due | Streak | Results |
 |---|---|---|---|---|---|
-| Valid Palindrome (#125) | two-pointers | 3d | 2026-07-04 | 1 | F·F·F·F·P |
+| Valid Palindrome (#125) | two-pointers | 7d | 2026-07-12 | 2 | F·F·F·F·P·P |
 | Binary Search (#704) | binary-search | 7d | 2026-07-10 | 2 | P·P |
 | Search a 2D Matrix (#74) | binary-search | 7d | 2026-07-10 | 2 | P·P |
 | Koko Eating Bananas (#875) | binary-search | 3d | 2026-07-04 | 1 | P |
 | Find Min in Rotated Sorted Array (#153) | binary-search | 3d | 2026-07-06 | 1 | F·P |
-| Search in Rotated Array (#33) | binary-search | 1d | 2026-07-04 | 0 | (new) |
-| Valid Parentheses (#20) | stack | 1d | 2026-07-04 | 0 | (new) |
+| Search in Rotated Array (#33) | binary-search | 3d | 2026-07-08 | 1 | P |
+| Valid Parentheses (#20) | stack | 3d | 2026-07-08 | 1 | P |
+| Min Stack (#155) | stack | 1d | 2026-07-06 | 0 | (new) |
 | Longest Substring No Repeat (#3) | sliding-window | 7d | 2026-07-09 | 2 | P·P |
 | Best Time to Buy/Sell (#121) | sliding-window | 7d | 2026-07-07 | 2 | P·P |
 | Two Sum II (#167) | two-pointers | 7d | 2026-07-08 | 2 | P·P |
