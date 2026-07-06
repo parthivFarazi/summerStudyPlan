@@ -11,7 +11,7 @@ One file per pattern: template, when-to-use triggers, complexity, and *your* got
 | Two Pointers | 3/5 | [two-pointers](two-pointers.md) |
 | Sliding Window | 3/5 | [sliding-window](sliding-window.md) |
 | Binary Search | 3/5 | [binary-search](binary-search.md) |
-| Stack | 2/5 | [stack](stack.md) |
+| Stack | 3/5 | [stack](stack.md) |
 
 ## Upcoming
 

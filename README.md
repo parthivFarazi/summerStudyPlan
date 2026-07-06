@@ -3,22 +3,22 @@
 A beginner working from near-zero toward **FAANG-ready by interview season**, one tracked day at a time. This repo *is* my real prep — the plan, the daily notebooks, the mistakes, and the spaced-repetition system that ties it together. Not polished-for-show: the actual journey, decay and dumb bugs included.
 
 <!-- README-LIVE:START -->
-![Day](https://img.shields.io/badge/Day-14-2563eb)
+![Day](https://img.shields.io/badge/Day-15-2563eb)
 ![Phase](https://img.shields.io/badge/Phase-Summer_Sprint-7c3aed)
-![Focus](https://img.shields.io/badge/Focus-Stack_deepening_Day_15_RPN_Daily_Temperatures-0891b2)
+![Focus](https://img.shields.io/badge/Focus-Stack_complete_Day_16_3Sum_Longest_Repeating_Char_Replacement-0891b2)
 ![Pace](https://img.shields.io/badge/Pace-on_plan-16a34a)
 ![Goal](https://img.shields.io/badge/Goal-FAANG_ready_by_Sept-ea580c)
 ![Language](https://img.shields.io/badge/Language-Python-3776ab)
 
 ## 📍 Where I'm at right now
 
-- **Day 14** · **Summer Sprint → Block A**
-- **Current focus:** Stack deepening. Day 15 = RPN + Daily Temperatures.
-- **Up next (Day 15):** Eval Reverse Polish Notation (#150)
-- **Tracker totals:** 14 sessions · 6 patterns learned · 16 mistakes tracked
+- **Day 15** · **Summer Sprint → Block A**
+- **Current focus:** Stack complete. Day 16 = 3Sum + Longest Repeating Char Replacement.
+- **Up next (Day 16):** 3Sum (#15, two pointers
+- **Tracker totals:** 15 sessions · 6 patterns learned · 17 mistakes tracked
 - **Open blockers:** 1 (B-1: variable audit)
-- **Review queue:** 3 due 2026-07-06 (#875 carry-over, #153, #155)
-- **Last dashboard update:** 2026-07-05
+- **Review queue:** 5 due 2026-07-07 (#875, #153, #121, #150, #739) — review-heavy
+- **Last dashboard update:** 2026-07-06
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 
 *This block is generated from `DASHBOARD.md`. Run `python3 scripts/sync_readme.py` after dashboard edits; the pre-commit hook also runs it automatically.*

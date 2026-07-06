@@ -1,6 +1,6 @@
 # Stack
 
-**Status:** learned (Day 13–14) · **Mastery: 2/5** · Block A
+**Status:** learned (Day 13–15) · **Mastery: 3/5** · Block A
 
 ## In one line
 LIFO (last-in, first-out) structure for matching, undo, or 'nearest greater/smaller' scans. In Python it's just a **list** — only ever touch the end.
@@ -53,6 +53,39 @@ class MinStack:
 ```
 - Why not a single min variable? Popping the current min can't recover the previous min without an O(n) scan; the min-stack holds the min at every level. O(n) space buys **O(1) pop + getMin**.
 - Compare to **`self.minStack[-1]`**, not `self.stack[-1]` (after append that's `val` itself) — wrong-container slip, M-004. (Day 14)
+
+## Template — Evaluate RPN (#150): stack as a calculator
+Push numbers; on an operator pop two and combine (**2nd pop = LEFT operand**):
+```python
+for token in tokens:
+    if token in ("+", "-", "*", "/"):
+        b = stack.pop(); a = stack.pop()          # b = right, a = left
+        if   token == "+": stack.append(a + b)
+        elif token == "-": stack.append(a - b)
+        elif token == "*": stack.append(a * b)
+        else:              stack.append(int(a / b))   # int() truncates toward 0 (// floors!)
+    else:
+        stack.append(int(token))
+return stack[-1]
+```
+- Operand order matters for `-` and `/`: the second value popped is the left operand.
+- `int(a / b)` truncates toward zero; `a // b` floors (wrong for negatives). (Day 15)
+
+## Template — Monotonic stack / Daily Temperatures (#739): next-greater
+Stack of **indices**, kept decreasing; each index pushed/popped once → amortized O(n):
+```python
+answer = [0] * len(temps)
+stack = []                                       # indices, decreasing temps
+for i in range(len(temps)):
+    while stack and temps[i] > temps[stack[-1]]:   # guard FIRST (short-circuit)
+        j = stack.pop()
+        answer[j] = i - j
+    stack.append(i)
+return answer
+```
+- Store **indices** (answer is a distance `i - j`); double lookup `temps[stack[-1]]`.
+- **Guard the stack first** in the `while` (`stack and temps[...]`) — short-circuit avoids `stack[-1]` on an empty stack. (Day 15)
+- Leftover indices never found a warmer day → stay 0.
 
 ## Complexity
 - Time **O(n)** (one pass). Space **O(n)** for the stack (worst case: all openings).

@@ -20,5 +20,6 @@ A verbatim copy of each day's practice notebook: your raw answers (bugs and all)
 | [Day 12](Day12-Practice-Notebook.md) | Jul 2 | Interleave (name-the-pattern) · #238, #3, #153 |
 | [Day 13](Day13-Practice-Notebook.md) | Jul 3 | Binary-search reviews + Rotated Search #33 + first Stack #20 |
 | [Day 14](Day14-Practice-Notebook.md) | Jul 5 | Stack reviews + Min Stack #155 (first class) |
+| [Day 15](Day15-Practice-Notebook.md) | Jul 6 | Stack reviews + RPN #150 + Daily Temperatures #739 (monotonic stack) |
 
 *New day → save `DayN-Practice-Notebook.md` here and add a row.*
