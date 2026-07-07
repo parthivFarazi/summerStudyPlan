@@ -1,6 +1,6 @@
 # Two Pointers
 
-**Status:** learned (Days 5–6) · **Mastery: 3/5** · Block A
+**Status:** learned (Days 5–6, 16) · **Mastery: 3/5** · Block A
 
 ## In one line
 Two indices walking a (usually sorted) sequence to avoid an O(n²) scan.
@@ -15,6 +15,7 @@ Two indices walking a (usually sorted) sequence to avoid an O(n²) scan.
 - Both-ends symmetry — Valid Palindrome (#125)
 - Sorted-pair search — Two Sum II (#167)
 - Greedy move-the-shorter-wall — Container With Most Water (#11)
+- **Fix-one + two-pointer + dedup — 3Sum (#15)**
 
 ## Template
 ```python
@@ -26,6 +27,12 @@ while left < right:
 
 ## Complexity
 O(n) time, **O(1) space** — *if* you work in place. (Cleaning a string into a new one = O(n) space.)
+
+## 3Sum pattern (#15) — sort → pin → two-pointer → dedup
+Sort. Loop `i` as the first number (skip dup pins: `if i>0 and nums[i]==nums[i-1]: continue`). Two-pointer `left=i+1`/`right=end` for target `-nums[i]`. On a match: append, move BOTH inward, then skip dup lefts (`while left<right and nums[left]==nums[left-1]: left+=1`). O(n²).
+- The `==` branch MUST move the pointers (`if/elif` is exclusive → infinite loop otherwise).
+- Don't `break` on a match — more pairs may exist for the same pin.
+- Left-skip alone suffices for dedup: a triplet is fixed by its first two numbers; `right` is forced. (Day 16)
 
 ## Your gotchas (from the log)
 - Name them `left`/`right`, not `i`/`j`.

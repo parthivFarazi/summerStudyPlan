@@ -1,6 +1,6 @@
 # Sliding Window
 
-**Status:** learned (Days 7–8) · **Mastery: 2/5** (still firming up) · Block A
+**Status:** learned (Days 7–8, 16) · **Mastery: 3/5** · Block A
 
 ## In one line
 A moving window over a sequence that maintains *running state*; expand the right edge, shrink the left to keep the window valid.
@@ -13,6 +13,7 @@ A moving window over a sequence that maintains *running state*; expand the right
 ## Sub-techniques you've done
 - Running-state form — Best Time to Buy/Sell Stock (#121): track running-min + best-profit (just 2 vars).
 - Variable-size window — Longest Substring Without Repeating (#3): set + shrink-from-left.
+- **Freq-map + validity rule — Longest Repeating Char Replacement (#424): window OK while `(len - maxFreq) <= k`; `maxFreq = max(count.values())`; dict capped at 26 → O(1) space.**
 
 ## Template
 ```python

@@ -4,14 +4,18 @@
 
 ## Active blockers
 
-### B-1 · M-004 — wrong-variable / naming imprecision  🔴 *(escalated Day 11)*
-The algorithm is never the problem — a wrong variable name is. History: `nums.add`/`seen.add` (Day 1), `s`/`clean` (Day 9), `.isalum` typo (Day 10), `strs`/`s` + `nums`/`numbers` (Day 11), `appened`/`append` (Day 12), `self.stack`/`self.minStack` (#155, Day 14). It kept #125 red for **5 sessions**.
+### B-2 · M-003 — `range(len(x))` scramble  🟡 *(escalated Day 16 — light)*
+Index-loop range/len ordering keeps getting scrambled: `range(x)` (Day 1), `range(x)` (Day 4), `len(range(s))` (Day 16). He *knows* the idiom (fixes it instantly on a nudge) — a low-frequency slip under load, so this is a **light** drill, not a heavy one.
 
-**Drill — "variable audit before every submit":** before sending any solution, scan each variable/method name against the names actually declared (parameters + your own vars): *"is it `s` or `strs`? `numbers` or `nums`? is `append` spelled right?"* Do it on every submit for the next 2–3 sessions.
-**Clears when:** two consecutive sessions with **zero** wrong-name slips, self-caught (no nudge) ⇒ back to `MISTAKES.md` as dormant.
-*(Day 11: audit cleared #125 ✅. Day 12: audit caught `appened`→`append` on #238 (nudged) — counter didn't advance. Day 14: #125 re-solved **fully clean** ✅ (correct `clean` / `.isalnum()`), BUT a `self.stack`/`self.minStack` mixup on the new #155 keeps the blocker active — clearing needs a session clean on BOTH reviews and new problems. Day 15: clean on names ✅ (correct `self.minStack` on #155) — 1st of 2 clean-on-names sessions; one more clean session clears it.)*
+**Drill — 5-second pre-empt:** at session start, write `for i in range(len(x)):` once from memory; on any index loop, read it back — is it `range(len(x))`, not `len(range(x))`?
+**Clears when:** two consecutive sessions with zero range/len scrambles ⇒ back to `MISTAKES.md` as dormant.
 
-*(Also on the watchlist at recurrence 2, one repeat from escalating: forgetting `return`, `()` vs `[]`, `range(len(x))`, hidden in-loop Big-O cost.)*
+*(Also on the watchlist at recurrence 2: forgetting `return`, `()` vs `[]`, hidden in-loop Big-O cost, binary-search direction (M-012), converging-return (M-015).)*
+
+## Resolved / dormant
+
+### B-1 · M-004 — wrong-variable / naming imprecision  ✅ *(CLEARED Day 16)*
+Escalated Day 11 (kept #125 red for 5 sessions). **Cleared after two consecutive clean-on-names sessions (Day 15 + Day 16)**, capped by a fully clean #125 (Day 14) and clean 3Sum/#424 (Day 16). History: `nums.add`/`seen.add` (Day 1), `s`/`clean` (Day 9), `.isalum` (Day 10), `strs`/`s` + `nums`/`numbers` (Day 11), `appened`/`append` (Day 12), `self.stack`/`self.minStack` (Day 14). **Keep the variable audit as a standing habit** — if a wrong-name slip recurs, re-escalate.
 
 ## How a blocker clears
 1. A targeted micro-drill at the start of the next 2–3 sessions (e.g., write 3 list-method calls correctly from memory).
