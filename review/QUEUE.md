@@ -23,10 +23,12 @@ If **due count > 8**, do reviews only (no new problem) until it's back under con
 | Search in Rotated Array (#33) | binary-search | 3d | 2026-07-08 | 1 | P |
 | Valid Parentheses (#20) | stack | 3d | 2026-07-08 | 1 | P |
 | Min Stack (#155) | stack | 3d | 2026-07-09 | 1 | P |
-| Evaluate RPN (#150) | stack | 1d | 2026-07-07 | 0 | (new) |
+| Evaluate RPN (#150) | stack | 3d | 2026-07-11 | 1 | P |
 | Daily Temperatures (#739) | stack | 3d | 2026-07-10 | 1 | P |
-| 3Sum (#15) | two-pointers | 1d | 2026-07-08 | 0 | (new) |
-| Longest Repeating Char Replace (#424) | sliding-window | 1d | 2026-07-08 | 0 | (new) |
+| 3Sum (#15) | two-pointers | 1d | 2026-07-09 | 0 | F |
+| Longest Repeating Char Replace (#424) | sliding-window | 3d | 2026-07-11 | 1 | P |
+| Longest Consecutive Sequence (#128) | arrays-hashing | 1d | 2026-07-09 | 0 | (new) |
+| Encode/Decode Strings (#271) | arrays-hashing | 1d | 2026-07-09 | 0 | (new) |
 | Longest Substring No Repeat (#3) | sliding-window | 7d | 2026-07-09 | 2 | P·P |
 | Best Time to Buy/Sell (#121) | sliding-window | 7d | 2026-07-07 | 2 | P·P |
 | Two Sum II (#167) | two-pointers | 7d | 2026-07-08 | 2 | P·P |

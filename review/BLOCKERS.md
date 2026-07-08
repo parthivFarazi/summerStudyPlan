@@ -8,7 +8,7 @@
 Index-loop range/len ordering keeps getting scrambled: `range(x)` (Day 1), `range(x)` (Day 4), `len(range(s))` (Day 16). He *knows* the idiom (fixes it instantly on a nudge) — a low-frequency slip under load, so this is a **light** drill, not a heavy one.
 
 **Drill — 5-second pre-empt:** at session start, write `for i in range(len(x)):` once from memory; on any index loop, read it back — is it `range(len(x))`, not `len(range(x))`?
-**Clears when:** two consecutive sessions with zero range/len scrambles ⇒ back to `MISTAKES.md` as dormant.
+**Clears when:** two consecutive sessions with zero range/len scrambles ⇒ back to `MISTAKES.md` as dormant. *(Day 17: clean ✅ — `range(len(nums))` / `range(len(s))` correct — 1 of 2.)*
 
 *(Also on the watchlist at recurrence 2: forgetting `return`, `()` vs `[]`, hidden in-loop Big-O cost, binary-search direction (M-012), converging-return (M-015).)*
 

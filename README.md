@@ -3,22 +3,22 @@
 A beginner working from near-zero toward **FAANG-ready by interview season**, one tracked day at a time. This repo *is* my real prep — the plan, the daily notebooks, the mistakes, and the spaced-repetition system that ties it together. Not polished-for-show: the actual journey, decay and dumb bugs included.
 
 <!-- README-LIVE:START -->
-![Day](https://img.shields.io/badge/Day-16-2563eb)
+![Day](https://img.shields.io/badge/Day-17-2563eb)
 ![Phase](https://img.shields.io/badge/Phase-Summer_Sprint-7c3aed)
-![Focus](https://img.shields.io/badge/Focus-3Sum_sliding_window_deepening_Day_17_Longest_Consecutive_Sequence_Encode_Decode_Strings-0891b2)
+![Focus](https://img.shields.io/badge/Focus-Arrays_Hashing_round_done_Day_18_Interleave_no_new-0891b2)
 ![Pace](https://img.shields.io/badge/Pace-on_plan-16a34a)
 ![Goal](https://img.shields.io/badge/Goal-FAANG_ready_by_Sept-ea580c)
 ![Language](https://img.shields.io/badge/Language-Python-3776ab)
 
 ## 📍 Where I'm at right now
 
-- **Day 16** · **Summer Sprint → Block A**
-- **Current focus:** 3Sum + sliding-window deepening. Day 17 = Longest Consecutive Sequence + Encode/Decode Strings.
-- **Up next (Day 17):** Longest Consecutive Sequence (#128, Arrays & Hashing
-- **Tracker totals:** 16 sessions · 6 patterns learned · 17 mistakes tracked
+- **Day 17** · **Summer Sprint → Block A**
+- **Current focus:** Arrays & Hashing round done. Day 18 = Interleave (no new
+- **Up next (Day 18):** interleave day
+- **Tracker totals:** 17 sessions · 6 patterns learned · 18 mistakes tracked
 - **Open blockers:** 1 (B-2: range/len — light) · B-1 cleared ✅
-- **Review queue:** 8 due 2026-07-08 — review-heavy (#150, #121, #33, #20, #167, #11, #15, #424)
-- **Last dashboard update:** 2026-07-07
+- **Review queue:** ~10 due by 2026-07-09 — Day 18 interleave clears the backlog (rolled #33, #20, #121, #167, #11 + Jul-9 dues)
+- **Last dashboard update:** 2026-07-08
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 
 *This block is generated from `DASHBOARD.md`. Run `python3 scripts/sync_readme.py` after dashboard edits; the pre-commit hook also runs it automatically.*

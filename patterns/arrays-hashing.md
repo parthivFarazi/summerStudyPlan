@@ -1,6 +1,6 @@
 # Arrays & Hashing
 
-**Status:** learned (Days 1–3) · **Mastery: 3/5** · Block A
+**Status:** learned (Days 1–3, 17) · **Mastery: 3/5** · Block A
 
 ## In one line
 Trade space for time: a hash map/set gives **O(1) lookup**, frequency counting, or grouping by a canonical key — usually to kill a nested-loop scan.
@@ -17,6 +17,8 @@ Trade space for time: a hash map/set gives **O(1) lookup**, frequency counting, 
 - Group-by-canonical-key — Group Anagrams (#49)
 - Bucket sort — Top K Frequent (#347) — derived O(n) yourself
 - Prefix/suffix products — Product of Array Except Self (#238), incl. O(1)-extra-space
+- **Set + only-start gate — Longest Consecutive Sequence (#128): `x-1 not in set` starts a run → count forward; amortized O(n)**
+- **Length-prefix encoding — Encode/Decode Strings (#271): `len#string`; decode reads by COUNT, not by hunting a delimiter**
 
 ## Template
 ```python
