@@ -35,7 +35,10 @@ Two layers. The **event layer** (`logs/LOG.md`) is an append-only diary of what 
 When Parthiv opens a new chat with this folder selected, do this in order:
 
 1. **Read `DASHBOARD.md`** (pace-health first — are we on the sprint?).
-2. **Pull due items from `review/QUEUE.md`** (`Next due ≤ today`, by age). Have Parthiv **re-solve them from a blank screen *before* opening any pattern file** — that's the retrieval rep. Cap ~3 in the sprint.
+2. **Pull due items from `review/QUEUE.md`** (`Next due ≤ today`), ordered **resets → 1d → 3d → oldest**. Work a **review budget of ~6–8 items, time-boxed ~30–40 min** (overflow rolls forward — don't try to clear everything):
+   - **Full re-solve from a blank screen** for *fragile* items (resets, 1d, anything learned in the last ~week).
+   - **30-second verbal recall** for *mastered* items (**21d rung, streak ≥ 3**): state the *pattern + approach + time/space* out loud; only convert to a full solve if he blanks.
+   - Claude pulls, orders, and labels each item (full vs verbal); Parthiv just works the list.
 3. **Glance at `review/BLOCKERS.md`** — any "drill-now" mistakes to watch this session.
 4. **Pick new material** from `plan/Day-by-Day-Roadmap.md` at the current Day (or the largest mastery gap if behind). Pre-teach any new Python concept in isolation first (Parthiv is a beginner — one new thing at a time).
 
@@ -52,7 +55,13 @@ After studying, record it — this is ~5 minutes and keeps the system alive:
 
 ## Spaced-repetition ladder
 
-`1d → 3d → 7d → 21d → 60d`, then graduated. **Pass = advance one rung. Fail (needed a hint, blanked, or bug you couldn't self-fix) = reset to 1d** and log the cause in MISTAKES. Re-solves are *from scratch*, never re-reading the solution. Full rules live in `review/QUEUE.md`.
+`1d → 3d → 7d → 21d → 60d`, then graduated. **Pass = advance one rung. Fail (needed a hint, blanked, or bug you couldn't self-fix) = reset to 1d** and log the cause in MISTAKES. (Research-backed: reset on lapse, don't *soften* it — softening intervals hides the problem items.) Re-solves are *from scratch*, never re-reading the solution.
+
+**Load management (added Day 18 — the queue hit its ~10/day steady-state ceiling):**
+- **Fuzz / load-balance due dates:** when setting a new due date, jitter it **±1–2 days toward the lightest upcoming day** so items learned together stop clustering. Keep any single day **≤ ~6–8 due**.
+- **Verbal tier:** once an item passes at the **21d** rung, it becomes a **30-second verbal recall** (pattern + approach + complexity), not a full re-solve — full-solve only if he blanks (then reset). This is the big time-saver.
+
+Full rules live in `review/QUEUE.md`.
 
 ## Git (your "GitHub-like" layer)
 

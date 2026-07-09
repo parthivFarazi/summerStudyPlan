@@ -17,7 +17,7 @@ A beginner working from near-zero toward **FAANG-ready by interview season**, on
 - **Up next (Day 19):** Linked Lists
 - **Tracker totals:** 18 sessions · 6 patterns learned · 18 mistakes tracked
 - **Open blockers:** 0 ✅ (B-1 cleared Day 16, B-2 cleared Day 18)
-- **Review queue:** ~11 due by 2026-07-10 (#20 reset, #875, #153, #739, #704, #74, #1, #217 + rolled #121/#167/#11) — still review-heavy
+- **Review queue:** Day 19 (Jul 10) = 5 due (#121, #155, #875, #153, #20) — queue re-fuzzed + new review protocol (budget ~6–8, 30-sec verbal tier for 21d items, load-balanced dates)
 - **Last dashboard update:** 2026-07-09
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 
