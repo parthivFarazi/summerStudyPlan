@@ -23,5 +23,6 @@ A verbatim copy of each day's practice notebook: your raw answers (bugs and all)
 | [Day 15](Day15-Practice-Notebook.md) | Jul 6 | Stack reviews + RPN #150 + Daily Temperatures #739 (monotonic stack) |
 | [Day 16](Day16-Practice-Notebook.md) | Jul 7 | Converging retests + 3Sum #15 + Longest Repeating Char Replacement #424 |
 | [Day 17](Day17-Practice-Notebook.md) | Jul 8 | RPN/#15/#424 reviews + Longest Consecutive #128 + Encode/Decode #271 |
+| [Day 18](Day18-Practice-Notebook.md) | Jul 9 | Interleave — #15, #128, #20, #3, #271, #33 |
 
 *New day → save `DayN-Practice-Notebook.md` here and add a row.*

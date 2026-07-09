@@ -20,16 +20,16 @@ If **due count > 8**, do reviews only (no new problem) until it's back under con
 | Search a 2D Matrix (#74) | binary-search | 7d | 2026-07-10 | 2 | P·P |
 | Koko Eating Bananas (#875) | binary-search | 3d | 2026-07-10 | 1 | P·F·P |
 | Find Min in Rotated Sorted Array (#153) | binary-search | 3d | 2026-07-10 | 1 | F·P·F·P |
-| Search in Rotated Array (#33) | binary-search | 3d | 2026-07-08 | 1 | P |
-| Valid Parentheses (#20) | stack | 3d | 2026-07-08 | 1 | P |
+| Search in Rotated Array (#33) | binary-search | 7d | 2026-07-16 | 2 | P·P |
+| Valid Parentheses (#20) | stack | 1d | 2026-07-10 | 0 | P·F |
 | Min Stack (#155) | stack | 3d | 2026-07-09 | 1 | P |
 | Evaluate RPN (#150) | stack | 3d | 2026-07-11 | 1 | P |
 | Daily Temperatures (#739) | stack | 3d | 2026-07-10 | 1 | P |
-| 3Sum (#15) | two-pointers | 1d | 2026-07-09 | 0 | F |
+| 3Sum (#15) | two-pointers | 3d | 2026-07-12 | 1 | F·P |
 | Longest Repeating Char Replace (#424) | sliding-window | 3d | 2026-07-11 | 1 | P |
-| Longest Consecutive Sequence (#128) | arrays-hashing | 1d | 2026-07-09 | 0 | (new) |
-| Encode/Decode Strings (#271) | arrays-hashing | 1d | 2026-07-09 | 0 | (new) |
-| Longest Substring No Repeat (#3) | sliding-window | 7d | 2026-07-09 | 2 | P·P |
+| Longest Consecutive Sequence (#128) | arrays-hashing | 3d | 2026-07-12 | 1 | P |
+| Encode/Decode Strings (#271) | arrays-hashing | 3d | 2026-07-12 | 1 | P |
+| Longest Substring No Repeat (#3) | sliding-window | 21d | 2026-07-30 | 3 | P·P·P |
 | Best Time to Buy/Sell (#121) | sliding-window | 7d | 2026-07-07 | 2 | P·P |
 | Two Sum II (#167) | two-pointers | 7d | 2026-07-08 | 2 | P·P |
 | Container With Most Water (#11) | two-pointers | 7d | 2026-07-08 | 2 | P·P |

@@ -4,18 +4,17 @@
 
 ## Active blockers
 
-### B-2 · M-003 — `range(len(x))` scramble  🟡 *(escalated Day 16 — light)*
-Index-loop range/len ordering keeps getting scrambled: `range(x)` (Day 1), `range(x)` (Day 4), `len(range(s))` (Day 16). He *knows* the idiom (fixes it instantly on a nudge) — a low-frequency slip under load, so this is a **light** drill, not a heavy one.
+**None active** 🎉 — both B-1 and B-2 cleared. Keep the standing habits: the **variable audit** (B-1) and the **`range(len(x))` pre-empt** (B-2).
 
-**Drill — 5-second pre-empt:** at session start, write `for i in range(len(x)):` once from memory; on any index loop, read it back — is it `range(len(x))`, not `len(range(x))`?
-**Clears when:** two consecutive sessions with zero range/len scrambles ⇒ back to `MISTAKES.md` as dormant. *(Day 17: clean ✅ — `range(len(nums))` / `range(len(s))` correct — 1 of 2.)*
-
-*(Also on the watchlist at recurrence 2: forgetting `return`, `()` vs `[]`, hidden in-loop Big-O cost, binary-search direction (M-012), converging-return (M-015).)*
+*(Watchlist at recurrence 2, one repeat from escalating: `return` (M-001), `()` vs `[]` (M-002), hidden in-loop Big-O (M-006), binary-search direction (M-012), converging-return (M-015), space-scales=O(n) (M-005), dropped guard (M-011), for/while (M-016).)*
 
 ## Resolved / dormant
 
 ### B-1 · M-004 — wrong-variable / naming imprecision  ✅ *(CLEARED Day 16)*
 Escalated Day 11 (kept #125 red for 5 sessions). **Cleared after two consecutive clean-on-names sessions (Day 15 + Day 16)**, capped by a fully clean #125 (Day 14) and clean 3Sum/#424 (Day 16). History: `nums.add`/`seen.add` (Day 1), `s`/`clean` (Day 9), `.isalum` (Day 10), `strs`/`s` + `nums`/`numbers` (Day 11), `appened`/`append` (Day 12), `self.stack`/`self.minStack` (Day 14). **Keep the variable audit as a standing habit** — if a wrong-name slip recurs, re-escalate.
+
+### B-2 · M-003 — `range(len(x))` scramble  ✅ *(CLEARED Day 18)*
+Escalated Day 16 (3rd occurrence: `range(x)` Day 1 & Day 4, `len(range(s))` Day 16). Cleared after two clean range/len sessions (Day 17 + Day 18). **Keep the 5-sec `range(len(x))` pre-empt** as a standing habit; re-escalate if it recurs.
 
 ## How a blocker clears
 1. A targeted micro-drill at the start of the next 2–3 sessions (e.g., write 3 list-method calls correctly from memory).
