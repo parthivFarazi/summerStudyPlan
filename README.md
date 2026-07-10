@@ -3,22 +3,22 @@
 A beginner working from near-zero toward **FAANG-ready by interview season**, one tracked day at a time. This repo *is* my real prep — the plan, the daily notebooks, the mistakes, and the spaced-repetition system that ties it together. Not polished-for-show: the actual journey, decay and dumb bugs included.
 
 <!-- README-LIVE:START -->
-![Day](https://img.shields.io/badge/Day-18-2563eb)
+![Day](https://img.shields.io/badge/Day-19-2563eb)
 ![Phase](https://img.shields.io/badge/Phase-Summer_Sprint-7c3aed)
-![Focus](https://img.shields.io/badge/Focus-Interleave_done-0891b2)
-![Pace](https://img.shields.io/badge/Pace-on_plan-16a34a)
+![Focus](https://img.shields.io/badge/Focus-Linked_Lists_started_Day_20_Reorder_List_Remove_Nth_Node-0891b2)
+![Pace](https://img.shields.io/badge/Pace-ahead-16a34a)
 ![Goal](https://img.shields.io/badge/Goal-FAANG_ready_by_Sept-ea580c)
 ![Language](https://img.shields.io/badge/Language-Python-3776ab)
 
 ## 📍 Where I'm at right now
 
-- **Day 18** · **Summer Sprint → Block A → B**
-- **Current focus:** Interleave done
-- **Up next (Day 19):** Linked Lists
-- **Tracker totals:** 18 sessions · 6 patterns learned · 18 mistakes tracked
-- **Open blockers:** 0 ✅ (B-1 cleared Day 16, B-2 cleared Day 18)
-- **Review queue:** Day 19 (Jul 10) = 5 due (#121, #155, #875, #153, #20) — queue re-fuzzed + new review protocol (budget ~6–8, 30-sec verbal tier for 21d items, load-balanced dates)
-- **Last dashboard update:** 2026-07-09
+- **Day 19** · **Summer Sprint → Block B**
+- **Current focus:** Linked Lists started. Day 20 = Reorder List + Remove Nth Node.
+- **Up next (Day 20):** Linked List Mediums
+- **Tracker totals:** 19 sessions · 7 patterns learned · 20 mistakes tracked
+- **Open blockers:** 1 (B-3: forgetting `return` — light)
+- **Review queue:** Day 20 (Jul 11) ≈ 7 due (#875 reset + 6, incl. 2 verbal) — new protocol keeps it smoothed
+- **Last dashboard update:** 2026-07-10
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 
 *This block is generated from `DASHBOARD.md`. Run `python3 scripts/sync_readme.py` after dashboard edits; the pre-commit hook also runs it automatically.*

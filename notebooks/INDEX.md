@@ -24,5 +24,6 @@ A verbatim copy of each day's practice notebook: your raw answers (bugs and all)
 | [Day 16](Day16-Practice-Notebook.md) | Jul 7 | Converging retests + 3Sum #15 + Longest Repeating Char Replacement #424 |
 | [Day 17](Day17-Practice-Notebook.md) | Jul 8 | RPN/#15/#424 reviews + Longest Consecutive #128 + Encode/Decode #271 |
 | [Day 18](Day18-Practice-Notebook.md) | Jul 9 | Interleave — #15, #128, #20, #3, #271, #33 |
+| [Day 19](Day19-Practice-Notebook.md) | Jul 10 | Linked Lists — Reverse #206, Merge #21, Cycle #141 (+ basics drill) |
 
 *New day → save `DayN-Practice-Notebook.md` here and add a row.*

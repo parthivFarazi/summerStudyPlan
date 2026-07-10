@@ -9,7 +9,7 @@
 
 | ID | Date | Type | What happened | Root cause | Recur | Sessions | Status |
 |---|---|---|---|---|---|---|---|
-| M-001 | 2026-06-22 | impl | Wrote the logic but forgot to `return` the value | Conflating *computing* a value with *returning* it (`return` vs `print`) | 2 | Day 4, Day 6 | active |
+| M-001 | 2026-06-22 | impl | Forgot to `return` the value — Day 4/6, and `return prev` on #206 (Day 19) | Conflating *computing* a value with *returning* it | 3 | Day 4, Day 6, Day 19 | **→ BLOCKER (B-3)** |
 | M-002 | 2026-06-24 | impl | `.append[x]` with brackets instead of `.append(x)` | Method **calls** use `()`; `[]` is indexing | 2 | Day 5, Day 8 | active |
 | M-003 | 2026-06-19 | impl | `range(x)` / `len(range(x))` instead of `range(len(x))` when looping indexes | Scrambling the `range(len(x))` index-loop idiom | 3 | Day 1, Day 4, Day 16 | dormant (B-2 cleared Day 18) |
 | M-004 | 2026-06-19 | impl | Wrong variable/container — `nums.add`/`seen.add`, `s`/`clean`, `strs`/`s` (#125), `nums`/`numbers` (#167), `appened`/`append` (#238), `self.stack`/`self.minStack` (#155) | Variable-name imprecision — losing track of which name holds what | 5 | Day 1, Day 9, Day 11, Day 12, Day 14 | **→ BLOCKER (B-1)** |
@@ -27,12 +27,13 @@
 | M-016 | 2026-07-03 | impl | for/while mix-up: `for left <= right` (#704, Day 13); `while n in range(l)` (#271, Day 18) | Pick the loop keyword: `for x in iterable` to iterate; `while cond` for a condition | 2 | Day 13, Day 18 | active |
 | M-017 | 2026-07-06 | strategy | Converging find-min used `right = mid - 1` (discarded the candidate min) instead of `right = mid` → failed `[3,1,2]` | On the keep-candidate side of a converging search, `mid` might BE the answer — move `right = mid`, never `mid - 1` | 1 | Day 15 | active |
 | M-018 | 2026-07-08 | strategy | 3Sum review: omitted the `while left < right` wrapper → the two-pointer body ran once per pin and never swept | The two-pointer scan is a LOOP — wrap the match/move logic in `while left < right`, not a bare if/elif | 1 | Day 17 | active |
+| M-019 | 2026-07-10 | impl | Koko search used `left = 0` (min speed is 1) → `mid=0` → `math.ceil(p/0)` division by zero on `[1]` | Respect the valid LOWER bound of an answer-search range (eating speed ≥ 1) | 1 | Day 19 | active |
+| M-020 | 2026-07-10 | impl | Dropped `self.` on an instance attribute inside a class method (`minStack` vs `self.minStack`, #155) | Instance data inside a method is ALWAYS `self.x` — new-to-classes slip; kin to M-004 | 1 | Day 19 | active |
 
 ## Recurrence Watchlist (count ≥ 2 — one rep from escalating)
 
 | ID | Type | Root cause | Count |
 |---|---|---|---|
-| M-001 | impl | Forgetting `return` | 2 |
 | M-002 | impl | `()` call vs `[]` index | 2 |
 | M-006 | strategy | Counting hidden in-loop cost in Big-O | 2 |
 | M-012 | strategy | Binary-search direction — pointer = opposite wall | 2 |
@@ -41,4 +42,4 @@
 | M-011 | impl | Dropping a required guard (e.g. empty-stack before `pop()`) | 2 |
 | M-016 | impl | for/while mix-up | 2 |
 
-*Pre-empt these at the start of each session. (M-004 → B-1 cleared Day 16; M-003 → B-2 cleared Day 18 — both blockers dormant.)*
+*Pre-empt these at the start of each session. (M-004 → B-1 cleared Day 16; M-003 → B-2 cleared Day 18. **M-001 → B-3 Day 19** — active; see `BLOCKERS.md`.)*

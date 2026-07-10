@@ -4,43 +4,42 @@
 > "Current Status" is regenerated each update. Readable in under 2 minutes.
 
 ## Current Status
-- **Last updated:** 2026-07-09 (Day 18 logged)
-- **Phase:** Summer Sprint · Block A → B — *Interleave done; **both blockers cleared**. Day 19 = **Linked Lists** (Reverse #206, Merge #21, Cycle #141).*
-- **Sessions logged:** 18 · **Patterns learned:** 6 · **Mistakes tracked:** 18 · **Open blockers:** 0 ✅ (B-1 cleared Day 16, B-2 cleared Day 18)
-- **Review queue:** Day 19 (Jul 10) = **5 due** (#121, #155, #875, #153, #20) — queue **re-fuzzed + new review protocol** (budget ~6–8, 30-sec verbal tier for 21d items, load-balanced dates)
+- **Last updated:** 2026-07-10 (Day 19 logged)
+- **Phase:** Summer Sprint · Block B — *Linked Lists started (Reverse/Merge/Cycle). Day 20 = **Reorder List (#143)** + **Remove Nth Node (#19)**.*
+- **Sessions logged:** 19 · **Patterns learned:** 7 · **Mistakes tracked:** 20 · **Open blockers:** 1 (B-3: forgetting `return` — light)
+- **Review queue:** Day 20 (Jul 11) ≈ **7 due** (#875 reset + 6, incl. 2 verbal) — new protocol keeps it smoothed
 
 ## Pace Health
 *(🟡 = off the sprint target · 🔴 = at risk. Refreshed each session.)*
 
 | Indicator | Value | Status |
 |---|---|---|
-| Days to Aug 20 pivot | 42 | 🟢 runway exists |
-| **Sprint throughput** (new/day) | Day 18 = interleave (0 new by design) | 🟢 on plan |
+| Days to Aug 20 pivot | 41 | 🟢 runway exists |
+| **Sprint throughput** (new/day) | Day 19 = 3 (#206, #21, #141) | 🟢 ahead |
 | Sessions last 7 days (target ≥ 6) | 6 | 🟢 |
 | Days since last session | 1 | 🟢 |
-| Queue due (next 2 days) | ~11 raw (~6–7 effective w/ verbal tier) | 🟢 smoothed — fuzz + budget + roll-forward |
-| **Open blockers** | 0 ✅ | 🟢 both cleared |
+| Queue due (next 2 days) | ~13 raw (~10 effective) | 🟢 smoothed by fuzz + verbal tier |
+| **Open blockers** | 1 (B-3, light) | 🟢 low-freq |
 
 ## Pattern Mastery  *(1–5; 5 = solve a novel one cold while narrating)*
 
 | Pattern | Mastery | Note |
 |---|---|---|
-| Big-O & complexity | 3/5 | space reflex **held all of Day 18** — zero O(1)-for-O(n) slips |
-| Arrays & Hashing | 3/5 | #128, #271 clean on interleave |
-| Two Pointers | 3/5 | #15 3Sum reset **cleared** (while-wrapper present) |
-| Sliding Window | 3/5 | #3 → 21d; #424 solid |
-| Binary Search | 3/5 | #33 clean via `nums[mid] > nums[right]` sorted-half check |
-| Stack | 3/5 | #20 **reset** — dropped the empty-stack guard (M-011) |
+| Big-O & complexity | 3/5 | space reflex holding; states time+space |
+| Arrays & Hashing | 3/5 | #128 / #271 solid |
+| Two Pointers | 3/5 | 3Sum consolidated |
+| Sliding Window | 3/5 | #3 / #424 clean |
+| Binary Search | 3/5 | #875 reset (left=0 boundary); converging solid |
+| Stack | 3/5 | #20 reset cleared; #155 (self. slip) |
+| Linked List | 2/5 | **new** — Reverse/Merge/Cycle solved + basics drilled; node-vs-value still settling |
 
-## ✅ Blockers — both cleared
-- **B-1 (M-004, variable names)** — cleared Day 16. Standing habit: variable audit.
-- **B-2 (M-003, range/len)** — cleared Day 18. Standing habit: `range(len(x))` pre-empt.
-*(Watchlist at recurrence 2: M-001 return, M-002 ()/[], M-005 space-scales, M-006 in-loop Big-O, M-011 dropped guard, M-012 bin-search direction, M-015 converging-return, M-016 for/while.)*
+## 🟡 Open Blocker — B-3 (M-001, forgetting `return` — light)
+Escalated Day 19 (3rd time: `return` Day 4/6, `return prev` #206). Pre-submit check: "does it actually `return` the answer?" Fold into the standing audit. B-1 (names) + B-2 (range/len) cleared — keep as habits.
 
-## Next Session Focus  → **Day 19**
-1. **Block 1 — review (~5 due, NEW protocol):** #121, #155, #875, #153, #20 — order resets→1d→oldest; full-solve the fragile, 30-sec verbal for any 21d items; time-box ~30–40 min, roll overflow forward.
-2. **Block 2 — new:** **Linked Lists** — Reverse Linked List (#206, ListNode + prev/curr/next), Merge Two Sorted Lists (#21, dummy node), Linked List Cycle (#141, fast/slow pointers).
-3. **Habits (standing):** variable audit; `range(len(x))`; **space reflex** (new structure that scales = O(n)); watch M-011 (keep edge guards) + M-016 (for vs while).
+## Next Session Focus  → **Day 20**
+1. **Block 1 — review (~7 due, new protocol):** #875 (reset), + Jul-11 dues (full-solve fragile, 30-sec verbal for 21d). Order resets→1d→oldest; time-box.
+2. **Block 2 — new:** **Linked List Mediums** — Reorder List (#143: find middle + reverse + merge), Remove Nth Node From End (#19: two-pointer gap of n).
+3. **Habits (standing):** variable audit; `range(len(x))`; space reflex; **B-3 — "does it return?"**; node-vs-value on LL (`.val` vs `.next`).
 
 ---
 *Weekly snapshots can be appended below as the sprint progresses.*

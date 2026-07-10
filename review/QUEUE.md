@@ -20,11 +20,11 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 | Valid Palindrome (#125) | two-pointers | 7d | 2026-07-12 | 2 | F·F·F·F·P·P |
 | Binary Search (#704) | binary-search | 7d | 2026-07-12 | 2 | P·P |
 | Search a 2D Matrix (#74) | binary-search | 7d | 2026-07-13 | 2 | P·P |
-| Koko Eating Bananas (#875) | binary-search | 3d | 2026-07-10 | 1 | P·F·P |
-| Find Min in Rotated Sorted Array (#153) | binary-search | 3d | 2026-07-10 | 1 | F·P·F·P |
+| Koko Eating Bananas (#875) | binary-search | 1d | 2026-07-11 | 0 | P·F·P·F |
+| Find Min in Rotated Sorted Array (#153) | binary-search | 7d | 2026-07-17 | 2 | F·P·F·P·P |
 | Search in Rotated Array (#33) | binary-search | 7d | 2026-07-16 | 2 | P·P |
-| Valid Parentheses (#20) | stack | 1d | 2026-07-10 | 0 | P·F |
-| Min Stack (#155) | stack | 3d | 2026-07-09 | 1 | P |
+| Valid Parentheses (#20) | stack | 3d | 2026-07-13 | 1 | P·F·P |
+| Min Stack (#155) | stack | 7d | 2026-07-17 | 2 | P·P |
 | Evaluate RPN (#150) | stack | 3d | 2026-07-11 | 1 | P |
 | Daily Temperatures (#739) | stack | 3d | 2026-07-11 | 1 | P |
 | 3Sum (#15) | two-pointers | 3d | 2026-07-12 | 1 | F·P |
@@ -32,7 +32,10 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 | Longest Consecutive Sequence (#128) | arrays-hashing | 3d | 2026-07-12 | 1 | P |
 | Encode/Decode Strings (#271) | arrays-hashing | 3d | 2026-07-12 | 1 | P |
 | Longest Substring No Repeat (#3) | sliding-window | 21d | 2026-07-30 | 3 | P·P·P |
-| Best Time to Buy/Sell (#121) | sliding-window | 7d | 2026-07-07 | 2 | P·P |
+| Best Time to Buy/Sell (#121) | sliding-window | 21d | 2026-07-31 | 3 | P·P·P |
+| Reverse Linked List (#206) | linked-list | 1d | 2026-07-12 | 0 | (new) |
+| Merge Two Sorted Lists (#21) | linked-list | 1d | 2026-07-12 | 0 | (new) |
+| Linked List Cycle (#141) | linked-list | 1d | 2026-07-13 | 0 | (new) |
 | Two Sum II (#167) | two-pointers | 7d | 2026-07-11 | 2 | P·P |
 | Container With Most Water (#11) | two-pointers | 7d | 2026-07-11 | 2 | P·P |
 | Top K Frequent (#347) | arrays-hashing | 21d | 2026-07-21 | 3 | P·P·P |

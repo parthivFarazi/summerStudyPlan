@@ -4,9 +4,12 @@
 
 ## Active blockers
 
-**None active** 🎉 — both B-1 and B-2 cleared. Keep the standing habits: the **variable audit** (B-1) and the **`range(len(x))` pre-empt** (B-2).
+### B-3 · M-001 — forgetting `return`  🟡 *(escalated Day 19 — light)*
+He always *computes* the answer correctly, then doesn't hand it back: forgot the `return` value (Day 4, Day 6), and `return prev` on #206 (Day 19).
+**Drill — pre-submit "does it return?":** the very last check before submitting is *"does this function `return` the answer, not just compute it?"* Fold it into the standing audit.
+**Clears when:** two consecutive sessions with zero forgotten `return`s.
 
-*(Watchlist at recurrence 2, one repeat from escalating: `return` (M-001), `()` vs `[]` (M-002), hidden in-loop Big-O (M-006), binary-search direction (M-012), converging-return (M-015), space-scales=O(n) (M-005), dropped guard (M-011), for/while (M-016).)*
+*(B-1 (variable names, cleared Day 16) and B-2 (range/len, cleared Day 18) — keep as standing habits. Watchlist at recurrence 2: `()` vs `[]` (M-002), hidden in-loop Big-O (M-006), space-scales=O(n) (M-005), dropped guard (M-011), binary-search direction (M-012), converging-return (M-015), for/while (M-016).)*
 
 ## Resolved / dormant
 
