@@ -7,7 +7,12 @@
 ### B-3 · M-001 — forgetting `return`  🟡 *(escalated Day 19 — light)*
 He always *computes* the answer correctly, then doesn't hand it back: forgot the `return` value (Day 4, Day 6), and `return prev` on #206 (Day 19).
 **Drill — pre-submit "does it return?":** the very last check before submitting is *"does this function `return` the answer, not just compute it?"* Fold it into the standing audit.
-**Clears when:** two consecutive sessions with zero forgotten `return`s.
+**Clears when:** two consecutive sessions with zero forgotten `return`s. *(Day 20: clean ✅ — 1 of 2.)*
+
+### B-4 · M-011 — dropping edge-case guards  🟡 *(escalated Day 20 — light)*
+Keeps omitting a required guard: anagram length check (Day 7 **and again on #242 Day 20**), empty-stack before pop (#20 Day 18), empty-stack guard in the #739 `while` (Day 20). The algorithm's right; the edge case isn't handled.
+**Drill — pre-submit edge scan:** before submitting, ask *"empty? single element? none-found? lengths equal?"* — whatever the problem's edge cases are, is each guarded? (This is the clearest slice of the first-draft-precision gap.)
+**Clears when:** two consecutive sessions with zero dropped guards.
 
 *(B-1 (variable names, cleared Day 16) and B-2 (range/len, cleared Day 18) — keep as standing habits. Watchlist at recurrence 2: `()` vs `[]` (M-002), hidden in-loop Big-O (M-006), space-scales=O(n) (M-005), dropped guard (M-011), binary-search direction (M-012), converging-return (M-015), for/while (M-016).)*
 

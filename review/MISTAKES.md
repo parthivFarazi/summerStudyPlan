@@ -19,7 +19,7 @@
 | M-008 | 2026-06-26 | strategy | Jumped to code; used `i`/`j`; skipped naming the approach | Coding before verbalizing the pattern | 1 | Day 6 | active |
 | M-009 | 2026-06-28 | strategy | Imported `k log k` from Group Anagrams into Longest Substring (no sort) | Carrying complexity assumptions across problems without re-deriving | 1 | Day 8 | active |
 | M-010 | 2026-06-28 | strategy | Missed "alphanumeric only" in the spec = real work to do | Under-reading the problem statement / examples | 1 | Day 8 | active |
-| M-011 | 2026-06-26 | impl | Dropped a required guard: anagram length check (Day 7); empty-stack guard before `pop()` on #20 (Day 18) | Incomplete validation — keep the edge-case guard | 2 | Day 7, Day 18 | active |
+| M-011 | 2026-06-26 | impl | Dropped a required guard — anagram length check (Day 7 & AGAIN #242 Day 20); empty-stack guard #20 (Day 18) & #739 while-loop (Day 20) | Incomplete validation — keep the edge-case guard | 4 | Day 7, Day 18, Day 20 | **→ BLOCKER (B-4)** |
 | M-012 | 2026-06-29 | strategy | Inverted binary-search branches — moved toward the wrong half; on #33 inverted all four pointer updates (`left=mid-1`/`right=mid+1`) | The pointer you move is the OPPOSITE wall from the direction you go (go left → `right=mid-1`; go right → `left=mid+1`) | 2 | Day 9, Day 13 | active |
 | M-013 | 2026-06-30 | strategy | Returned on exact match (`hours == h`) in a find-minimum binary search → returned a non-minimal value | In boundary search an exact hit is still just a *candidate* — record it and keep shrinking | 1 | Day 10 | active |
 | M-014 | 2026-07-01 | impl | Converging binary search with `while left <= right` + `right = mid` → infinite loop | `<=` never terminates when two pointers converge to one spot; use strict `<` | 1 | Day 11 | active |
@@ -39,7 +39,6 @@
 | M-012 | strategy | Binary-search direction — pointer = opposite wall | 2 |
 | M-015 | strategy | Converging search — return convergence point, not a tracked answer | 2 |
 | M-005 | strategy | Space complexity — a new structure that scales = O(n), not O(1) | 2 |
-| M-011 | impl | Dropping a required guard (e.g. empty-stack before `pop()`) | 2 |
 | M-016 | impl | for/while mix-up | 2 |
 
-*Pre-empt these at the start of each session. (M-004 → B-1 cleared Day 16; M-003 → B-2 cleared Day 18. **M-001 → B-3 Day 19** — active; see `BLOCKERS.md`.)*
+*Pre-empt these at the start of each session. (M-004 → B-1 cleared Day 16; M-003 → B-2 cleared Day 18. **Active blockers: B-3 (M-001, return) Day 19, B-4 (M-011, dropped guards) Day 20** — see `BLOCKERS.md`.)*

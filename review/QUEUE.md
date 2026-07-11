@@ -20,13 +20,13 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 | Valid Palindrome (#125) | two-pointers | 7d | 2026-07-12 | 2 | F·F·F·F·P·P |
 | Binary Search (#704) | binary-search | 7d | 2026-07-12 | 2 | P·P |
 | Search a 2D Matrix (#74) | binary-search | 7d | 2026-07-13 | 2 | P·P |
-| Koko Eating Bananas (#875) | binary-search | 1d | 2026-07-11 | 0 | P·F·P·F |
+| Koko Eating Bananas (#875) | binary-search | 3d | 2026-07-14 | 1 | P·F·P·F·P |
 | Find Min in Rotated Sorted Array (#153) | binary-search | 7d | 2026-07-17 | 2 | F·P·F·P·P |
 | Search in Rotated Array (#33) | binary-search | 7d | 2026-07-16 | 2 | P·P |
 | Valid Parentheses (#20) | stack | 3d | 2026-07-13 | 1 | P·F·P |
 | Min Stack (#155) | stack | 7d | 2026-07-17 | 2 | P·P |
-| Evaluate RPN (#150) | stack | 3d | 2026-07-11 | 1 | P |
-| Daily Temperatures (#739) | stack | 3d | 2026-07-11 | 1 | P |
+| Evaluate RPN (#150) | stack | 7d | 2026-07-18 | 2 | P·P |
+| Daily Temperatures (#739) | stack | 1d | 2026-07-12 | 0 | P·F |
 | 3Sum (#15) | two-pointers | 3d | 2026-07-12 | 1 | F·P |
 | Longest Repeating Char Replace (#424) | sliding-window | 3d | 2026-07-13 | 1 | P |
 | Longest Consecutive Sequence (#128) | arrays-hashing | 3d | 2026-07-12 | 1 | P |
@@ -36,14 +36,16 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 | Reverse Linked List (#206) | linked-list | 1d | 2026-07-12 | 0 | (new) |
 | Merge Two Sorted Lists (#21) | linked-list | 1d | 2026-07-12 | 0 | (new) |
 | Linked List Cycle (#141) | linked-list | 1d | 2026-07-13 | 0 | (new) |
-| Two Sum II (#167) | two-pointers | 7d | 2026-07-11 | 2 | P·P |
-| Container With Most Water (#11) | two-pointers | 7d | 2026-07-11 | 2 | P·P |
+| Reorder List (#143) | linked-list | 1d | 2026-07-13 | 0 | (new) |
+| Remove Nth Node From End (#19) | linked-list | 1d | 2026-07-14 | 0 | (new) |
+| Two Sum II (#167) | two-pointers | 21d | 2026-08-01 | 3 | P·P·P |
+| Container With Most Water (#11) | two-pointers | 21d | 2026-08-01 | 3 | P·P·P |
 | Top K Frequent (#347) | arrays-hashing | 21d | 2026-07-21 | 3 | P·P·P |
 | Product of Array Except Self (#238) | arrays-hashing | 21d | 2026-07-23 | 3 | P·P·P |
 | Two Sum (#1) | arrays-hashing | 21d | 2026-07-14 | 3 | P·P·P |
 | Contains Duplicate (#217) | arrays-hashing | 21d | 2026-07-14 | 3 | P·P·P |
-| Valid Anagram (#242) | arrays-hashing | 21d | 2026-07-11 | 3 | P·P·P |
-| Group Anagrams (#49) | arrays-hashing | 21d | 2026-07-11 | 3 | P·P·P |
+| Valid Anagram (#242) | arrays-hashing | 1d | 2026-07-13 | 0 | P·P·P·F |
+| Group Anagrams (#49) | arrays-hashing | 60d | 2026-09-09 | 4 | P·P·P·P |
 
 ## Graduated (≥60d, never deleted)
 | Problem | Pattern | Graduated | Results |

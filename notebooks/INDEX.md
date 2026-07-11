@@ -25,5 +25,6 @@ A verbatim copy of each day's practice notebook: your raw answers (bugs and all)
 | [Day 17](Day17-Practice-Notebook.md) | Jul 8 | RPN/#15/#424 reviews + Longest Consecutive #128 + Encode/Decode #271 |
 | [Day 18](Day18-Practice-Notebook.md) | Jul 9 | Interleave — #15, #128, #20, #3, #271, #33 |
 | [Day 19](Day19-Practice-Notebook.md) | Jul 10 | Linked Lists — Reverse #206, Merge #21, Cycle #141 (+ basics drill) |
+| [Day 20](Day20-Practice-Notebook.md) | Jul 11 | LL mediums — Reorder #143, Remove Nth #19 (+ 7 reviews, verbal tier) |
 
 *New day → save `DayN-Practice-Notebook.md` here and add a row.*

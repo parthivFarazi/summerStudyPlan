@@ -1,6 +1,6 @@
 # Linked List
 
-**Status:** learned (Day 19) · **Mastery: 2/5** · Block B
+**Status:** learned (Day 19–20) · **Mastery: 3/5** · Block B
 
 ## In one line
 Pointer surgery: a chain of nodes (`val` + `next`); manipulate by carefully rewiring `.next`. Dummy nodes, fast/slow pointers, in-place reversal.
@@ -58,6 +58,16 @@ while fast and fast.next:
 return False
 ```
 - Cleaner than the manual guard: `while fast and fast.next` both prevents `fast.next.next` crashing AND avoids the `None == None` false positive.
+
+## Template — find middle (fast/slow) + Reorder (#143), Remove Nth (#19)
+**Find middle** — same fast/slow as Floyd's, new job (no cycle needed): when `fast` falls off the end, `slow` is at the middle.
+```python
+slow = fast = head
+while fast and fast.next:
+    slow = slow.next; fast = fast.next.next   # slow ends at the middle
+```
+**Reorder List (#143)** = compose in place: find middle → `second = slow.next; slow.next = None` (**CUT — halves don't auto-detach**) → reverse `second` → merge the two halves alternately. O(1) space.
+**Remove Nth from end (#19)** = two-pointer **gap of n** + dummy: advance `fast` n steps, then move both till `fast` hits the end; `slow` (from a dummy) lands just before the target → `slow.next = slow.next.next`. One pass.
 
 ## Complexity
 Traverse/reverse/merge/cycle: **O(n)** (or O(n+m)) time, **O(1)** space (rewire in place; dummy is O(1)).

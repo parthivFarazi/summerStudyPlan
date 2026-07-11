@@ -12,7 +12,7 @@ One file per pattern: template, when-to-use triggers, complexity, and *your* got
 | Sliding Window | 3/5 | [sliding-window](sliding-window.md) |
 | Binary Search | 3/5 | [binary-search](binary-search.md) |
 | Stack | 3/5 | [stack](stack.md) |
-| Linked List | 2/5 | [linked-list](linked-list.md) |
+| Linked List | 3/5 | [linked-list](linked-list.md) |
 
 ## Upcoming
 
