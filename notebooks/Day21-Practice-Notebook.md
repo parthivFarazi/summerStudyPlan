@@ -133,6 +133,74 @@ def invert(self, node):
 
 ---
 
+## Post-session concept: **when does `self.` go in front?** *(you asked — this one is load-bearing)*
+
+> *"Why are we not doing `self.node.left = self.node.right`? How do I know when to actually include `self.`?"*
+
+### `self` is not a magic prefix — it's a variable
+
+When Python runs `sol.invertTree(root)`, it quietly passes the object in as the first argument. So inside the method, **`self` is just a name pointing at your `Solution` object** — no different from `node` being a name pointing at a TreeNode.
+
+Which means **two different objects are in play**:
+
+| Name | Points at | What lives on it |
+|---|---|---|
+| `self` | the **Solution** object | its methods — `invertTree`, `maxDepth`, any helper |
+| `node` | a **TreeNode** object | `.val`, `.left`, `.right` |
+
+**The dot means "go inside *this* object."** So the only question is ever: **whose thing is it?**
+
+- `invert` is a method **on the Solution** → reach it with **`self.invert(...)`**. Bare `invert(...)` makes Python hunt for a standalone global function by that name → `NameError`.
+- `left` is an attribute **on the TreeNode** → reach it with **`node.left`**.
+- **`self.node.left` is nonsense**: it says *"go inside Solution, find an attribute called `node`"* — but `node` is a **parameter**, a local name that exists only for this call. It was never stored on the object. → `AttributeError`.
+
+```python
+class Solution:
+    def invert(self, node):          # self = the Solution.  node = a TreeNode.
+        if node is None:
+            return None
+        node.left, node.right = node.right, node.left   # TreeNode's stuff → node.
+        self.invert(node.left)                          # Solution's stuff → self.
+        self.invert(node.right)
+        return node
+```
+
+### Why Min Stack (#155) was different
+
+```python
+class MinStack:
+    def __init__(self):
+        self.minStack = []          # ← ATTACHED to the object here
+
+    def push(self, val):
+        self.minStack.append(val)   # so every method reaches it through self
+```
+
+`__init__` **stores** the list on the object, so all methods can find it later. A parameter like `node` is never stored — it arrives, gets used, and vanishes when the call returns.
+
+### ✅ The test (memorize this)
+
+> **For any name `x`: did I attach it with `self.x = ...` in `__init__`, or is it a method defined in this class?**
+> **Yes → `self.x`.  ·  No (it's a parameter or a local variable) → bare `x`.**
+
+**Your check — you got it right, including the two you correctly left alone:**
+
+| | `self.`? | Why |
+|---|---|---|
+| `self.maxDepth(root.left)` | **yes** | a method on the class ✅ |
+| `root.left` | no | `root` is a **parameter** — a different object |
+| `leftDepth` | no | a **local variable**, made with a plain `=` |
+
+### The sentence to keep
+> **`self.` is a lookup mechanism, not an importance marker.** It literally means *"look for this name inside the object I was called on."*
+>
+> **local = one per call.  ·  `self.` = one per object.**
+
+### Where this bites next — **#543 Diameter (tomorrow)**
+You'll need a value that **survives across recursive calls** (the running max diameter). A local can't do that — every call gets its own private copy. So you'll do exactly what Min Stack did: `self.diameter = 0`, and every call in the recursion reads and writes **the same one**. That's the whole reason `self.` exists.
+
+---
+
 ## Mistakes logged today
 
 | Ref | What | Lesson |

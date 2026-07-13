@@ -76,6 +76,8 @@ First full run of the new protocol (verbal tier + logged times). Block 1 full re
 
 **Blockers:** **B-3 (forgetting `return`) CLEARED** ✅ — 8-for-8 today, two clean sessions running. **B-4 (edge-guards) still active** — #226's leaf crash resets its count to 0 of 2.
 
+**Post-session (he asked, unprompted):** *"Why are we not doing `self.node.left`? How do I know when to include `self.`?"* — taught that **`self` is just a variable naming the object the method was called on**, so the only question is *whose thing is it*: `invert` is the Solution's → `self.invert()`; `left` is the TreeNode's → `node.left`; `self.node` is nonsense because a *parameter* lives on no object [INSIGHT]. Gave him the test (*attached in `__init__` or a method of this class? → `self.`; parameter or local → bare*); he applied it correctly to #104 **and correctly left `root` and `leftDepth` bare without being told** — so it's the rule, not pattern-matching. Wrote it up as **`patterns/python-classes.md`** — it's load-bearing for #543 tomorrow (**local = one per call · `self.` = one per object**; the running max must be `self.diameter`), and for every design problem after.
+
 **Schedule:** the recursion hour displaced **LRU Cache (#146)** → **rescheduled to Day 24 (Jul 16)**, the only day with Block-2 slack. Aug 20 target unaffected. New pattern file: `patterns/trees.md`. **Patterns learned: 8.**
 
 <!-- Append Day 22+ below. Format: ## Day N — YYYY-MM-DD — topic / problems / [tags] -->

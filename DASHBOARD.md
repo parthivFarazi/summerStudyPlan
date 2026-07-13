@@ -46,7 +46,8 @@
 ## Next Session Focus  → **Day 22**
 1. **Block 1 — review (~8 due, protocol):** resets first (**#15**, **#271**), then #242, the new trees #226/#104 (1d), #125, #875. **Verbal tier:** #1, #217. Time-box 30–40 min.
 2. **Block 2 — new:** **Trees** — Diameter of Binary Tree (#543), Same Tree (#100), Lowest Common Ancestor in a BST (#235). All three run off the Day-21 recursion template; #543 introduces *helper returns height, answer tracked outside*.
-3. **Habits (standing):** **B-4 "edges guarded / is it None?"** · **node vs. value, index vs. value** · dedup is a `while` · `self.` inside classes · space reflex includes the call stack · does it return?
+3. **Carry forward from Day 21 (he asked for it, it's load-bearing):** **`self.` — [patterns/python-classes.md](patterns/python-classes.md).** The test: *attached in `__init__`, or a method of this class? → `self.`; parameter or local → bare.* **#543 is the payoff** — the running max diameter must survive across recursive calls, so it has to be `self.diameter`, not a local. **local = one per call · `self.` = one per object.**
+4. **Habits (standing):** **B-4 "edges guarded / is it None?"** · **node vs. value, index vs. value** · dedup is a `while` · `self.` inside classes · space reflex includes the call stack · does it return?
 
 ---
 *Weekly snapshots can be appended below as the sprint progresses.*

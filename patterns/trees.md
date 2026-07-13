@@ -100,7 +100,8 @@ while q:
 
 ## Your gotchas
 - **`.val` vs `.left`/`.right`** (M-021) — #226 attempt 1 swapped the *values*, which (a) only mirrors one level and (b) crashes on any leaf via `node.left.val` when `node.left` is `None`. **Swap the pointers.**
-- **Missing `self.`** on recursive calls inside a class method (M-020) — `self.invert(...)`, not `invert(...)`.
+- **Missing `self.`** on recursive calls inside a class method (M-020) — `self.invert(...)`, not `invert(...)`. **The test: did I attach it with `self.x = ...` in `__init__`, or is it a method of this class? Yes → `self.`; parameter or local → bare.** `self.node.left` is nonsense — `node` is a *parameter*, it lives on no object. Full write-up: **[python-classes.md](python-classes.md)**.
+- **Need a value that survives across recursive calls?** (a running max, a counter, a result list) — a local **can't**; each call gets its own copy. Attach it to the object: `self.diameter = 0`. **local = one per call · `self.` = one per object.** This is exactly how #543 works.
 - **The `None` guard IS the base case** (B-4). Every tree function starts with `if root is None`. Skipping it doesn't just break an edge case — it breaks the recursion.
 - **"return 0" isn't a failure signal.** An empty tree genuinely *has* depth 0. The base case returns the true answer for the smallest input, not an error code.
 - **Don't trace the recursion in your head.** Assume the recursive call returns the correct answer for its subtree, and just write how to combine. Trace only to debug.

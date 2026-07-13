@@ -15,6 +15,13 @@ One file per pattern: template, when-to-use triggers, complexity, and *your* got
 | Linked List | 3/5 | [linked-list](linked-list.md) |
 | Trees & BFS/DFS | 2/5 | [trees](trees.md) — *recursion learned Day 21; #226, #104* |
 
+## Language concepts *(not patterns — the machinery the patterns run on)*
+
+| Concept | File |
+|---|---|
+| **Classes & `self.`** | [python-classes](python-classes.md) — *when `self.` goes in front, and why. Day 21. Load-bearing for recursion (a value that survives across calls), and for every design problem.* |
+| Recursion | [trees](trees.md#prerequisite-recursion-learned-day-21) — base case + call stack + the O(h) space cost |
+
 ## Upcoming
 
 | Pattern | Starts | File |
