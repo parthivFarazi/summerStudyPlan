@@ -3,22 +3,22 @@
 A beginner working from near-zero toward **FAANG-ready by interview season**, one tracked day at a time. This repo *is* my real prep — the plan, the daily notebooks, the mistakes, and the spaced-repetition system that ties it together. Not polished-for-show: the actual journey, decay and dumb bugs included.
 
 <!-- README-LIVE:START -->
-![Day](https://img.shields.io/badge/Day-20-2563eb)
+![Day](https://img.shields.io/badge/Day-21-2563eb)
 ![Phase](https://img.shields.io/badge/Phase-Summer_Sprint-7c3aed)
-![Focus](https://img.shields.io/badge/Focus-Linked_List_mediums_done_Day_21_LRU_Cache_first_Trees-0891b2)
+![Focus](https://img.shields.io/badge/Focus-Recursion_learned_from_scratch-0891b2)
 ![Pace](https://img.shields.io/badge/Pace-on_plan-16a34a)
 ![Goal](https://img.shields.io/badge/Goal-FAANG_ready_by_Sept-ea580c)
 ![Language](https://img.shields.io/badge/Language-Python-3776ab)
 
 ## 📍 Where I'm at right now
 
-- **Day 20** · **Summer Sprint → Block B**
-- **Current focus:** Linked List mediums done. Day 21 = LRU Cache + first Trees.
-- **Up next (Day 21):** LRU Cache (#146, design
-- **Tracker totals:** 20 sessions · 7 patterns learned · 20 mistakes tracked
-- **Open blockers:** 2 (B-3 return, B-4 edge-guards — both light)
-- **Review queue:** Day 21 (Jul 12) ≈ 8 due (fragile 1d/3d cluster) — verbal tier + fuzz keeping it in range
-- **Last dashboard update:** 2026-07-11
+- **Day 21** · **Summer Sprint → Block B**
+- **Current focus:** Recursion learned from scratch
+- **Up next (Day 22):** Trees
+- **Tracker totals:** 21 sessions · 8 patterns learned · 22 mistakes tracked
+- **Open blockers:** 1 (B-4 edge-guards — B-3 cleared ✅)
+- **Review queue:** Day 22 (Jul 14) ≈ 8 due (~6 effective — #1/#217 are verbal tier); two resets up front (#15, #271)
+- **Last dashboard update:** 2026-07-13
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 
 *This block is generated from `DASHBOARD.md`. Run `python3 scripts/sync_readme.py` after dashboard edits; the pre-commit hook also runs it automatically.*

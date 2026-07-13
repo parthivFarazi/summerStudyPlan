@@ -13,12 +13,12 @@ One file per pattern: template, when-to-use triggers, complexity, and *your* got
 | Binary Search | 3/5 | [binary-search](binary-search.md) |
 | Stack | 3/5 | [stack](stack.md) |
 | Linked List | 3/5 | [linked-list](linked-list.md) |
+| Trees & BFS/DFS | 2/5 | [trees](trees.md) — *recursion learned Day 21; #226, #104* |
 
 ## Upcoming
 
 | Pattern | Starts | File |
 |---|---|---|
-| Trees & BFS/DFS | Day ~21 | [trees](trees.md) |
 | Tries (Prefix Trees) | Day ~25 | [tries](tries.md) |
 | Heap / Priority Queue | Day ~26 | [heap](heap.md) |
 | Backtracking | Day ~28 | [backtracking](backtracking.md) |

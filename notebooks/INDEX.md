@@ -26,5 +26,6 @@ A verbatim copy of each day's practice notebook: your raw answers (bugs and all)
 | [Day 18](Day18-Practice-Notebook.md) | Jul 9 | Interleave — #15, #128, #20, #3, #271, #33 |
 | [Day 19](Day19-Practice-Notebook.md) | Jul 10 | Linked Lists — Reverse #206, Merge #21, Cycle #141 (+ basics drill) |
 | [Day 20](Day20-Practice-Notebook.md) | Jul 11 | LL mediums — Reorder #143, Remove Nth #19 (+ 7 reviews, verbal tier) |
+| [Day 21](Day21-Practice-Notebook.md) | Jul 13 | **RECURSION from scratch** + first Trees — Invert #226, Max Depth #104 (6 reviews; #146 → Day 24) |
 
 *New day → save `DayN-Practice-Notebook.md` here and add a row.*

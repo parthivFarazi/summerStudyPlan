@@ -65,4 +65,17 @@ New review protocol's first run (budget/verbal/fuzz). Block 1 (5): #20 ✅ reset
 ## Day 20 — 2026-07-11 — Linked List mediums: Reorder (#143) + Remove Nth (#19) + 7 reviews
 First full run of the new protocol (verbal tier + logged times). Block 1 full re-solves: #875 ✅ reset cleared (`left=1`, 5:54); #150 ✅ (8:03); **#739 ❌ reset** — dropped the empty-guard + forgot `stack.append(i)` (**M-011**); #167 ✅ → 21d verbal (6:30); #11 ✅ → 21d verbal (5:43). Verbal: **#49 ✅** → 60d; **#242 ❌** — recalled WRONG pattern (two-pointer instead of freq-count) → full solve → dropped the length guard (**M-011, literal Day-7 repeat**) → reset. Block 2: **#143 Reorder ✅** — find-middle (fast/slow) + cut + reverse 2nd half + merge; strong first attempt, only a `revCurr`/`reCurr` typo [INSIGHT]; **#19 Remove Nth ✅** — dummy + two-pointer gap of n, clean first try. All O(n)/O(1). **M-011 (dropped guards) ×2 today → escalated to blocker B-4.** B-3 (return) clean today. `patterns/linked-list.md` +find-middle/reorder.
 
-<!-- Append Day 21+ below. Format: ## Day N — YYYY-MM-DD — topic / problems / [tags] -->
+## Day 21 — 2026-07-13 — RECURSION from scratch + first Trees (#226, #104)
+**Block 1 (6 due):** #739 ✅ 6:55 (reset cleared — the `while stack and ...` guard was back), #206 ✅ 2:03, #21 ✅ 5:57 (typo, self-caught). **#15 ❌ reset** 12:21 — dedup used `if` instead of `while`, so only ONE duplicate got skipped, not a run [STRUGGLE]. #128 ✅ 8:03 (said O(n) not O(n²), with the reason). **#271 ❌ reset** 11:45 — compared the **index** to `"#"` instead of `s[j]`, forgot `i = j + 1`, read length/content in the wrong order [STRUGGLE]. Rolled: #125, #704.
+
+**The day's real work — recursion.** He asked for it directly: *"I think it is best you drill me on recursion first cause it looks really confusing."* Never used it before. Taught the two-part shape (base case + recursive case), then the **call stack** with an interactive stepper. Drills: traced `fact(4)` by hand ✅ → wrote `power(base, exp)` cold ✅ → `sumOfValues(node)`, where he wrote `return 2 + sumOfValues(left) + sumOfValues(right)`, thinking the constant was the **child count** [STRUGGLE]. **Reframed: the constant is what THIS node contributes** — `node.val` for a sum, `1` for a count/depth. That single sentence is what made #104 land ten minutes later [INSIGHT].
+
+**Block 2 (new):** **#104 Max Depth** ✅ off the template — and he said "O(1) space", then **corrected himself unprompted**: *"if it is stacked up like that it is taking up space therefore, O(n)"* [INSIGHT] — the call stack is real memory, O(h)/worst O(n). **#226 Invert** — attempt 1 swapped `.val` (only flips one level, AND `node.left.val` crashes on every leaf); attempt 2 swapped the **pointers** correctly. Missing `self.` on the recursive calls (M-020, 2nd time).
+
+**Pattern of the day (beyond recursion): container vs. contents** [INSIGHT] — the #271 index-vs-char bug and the #226 node-vs-`.val` bug are the *same mistake* an hour apart. Logged as **M-021**.
+
+**Blockers:** **B-3 (forgetting `return`) CLEARED** ✅ — 8-for-8 today, two clean sessions running. **B-4 (edge-guards) still active** — #226's leaf crash resets its count to 0 of 2.
+
+**Schedule:** the recursion hour displaced **LRU Cache (#146)** → **rescheduled to Day 24 (Jul 16)**, the only day with Block-2 slack. Aug 20 target unaffected. New pattern file: `patterns/trees.md`. **Patterns learned: 8.**
+
+<!-- Append Day 22+ below. Format: ## Day N — YYYY-MM-DD — topic / problems / [tags] -->

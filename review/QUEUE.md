@@ -17,35 +17,43 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 
 | Problem | Pattern | Rung | Next due | Streak | Results |
 |---|---|---|---|---|---|
-| Valid Palindrome (#125) | two-pointers | 7d | 2026-07-12 | 2 | F·F·F·F·P·P |
-| Binary Search (#704) | binary-search | 7d | 2026-07-12 | 2 | P·P |
-| Search a 2D Matrix (#74) | binary-search | 7d | 2026-07-13 | 2 | P·P |
-| Koko Eating Bananas (#875) | binary-search | 3d | 2026-07-14 | 1 | P·F·P·F·P |
-| Find Min in Rotated Sorted Array (#153) | binary-search | 7d | 2026-07-17 | 2 | F·P·F·P·P |
-| Search in Rotated Array (#33) | binary-search | 7d | 2026-07-16 | 2 | P·P |
-| Valid Parentheses (#20) | stack | 3d | 2026-07-13 | 1 | P·F·P |
-| Min Stack (#155) | stack | 7d | 2026-07-17 | 2 | P·P |
-| Evaluate RPN (#150) | stack | 7d | 2026-07-18 | 2 | P·P |
-| Daily Temperatures (#739) | stack | 1d | 2026-07-12 | 0 | P·F |
-| 3Sum (#15) | two-pointers | 3d | 2026-07-12 | 1 | F·P |
-| Longest Repeating Char Replace (#424) | sliding-window | 3d | 2026-07-13 | 1 | P |
-| Longest Consecutive Sequence (#128) | arrays-hashing | 3d | 2026-07-12 | 1 | P |
-| Encode/Decode Strings (#271) | arrays-hashing | 3d | 2026-07-12 | 1 | P |
-| Longest Substring No Repeat (#3) | sliding-window | 21d | 2026-07-30 | 3 | P·P·P |
-| Best Time to Buy/Sell (#121) | sliding-window | 21d | 2026-07-31 | 3 | P·P·P |
-| Reverse Linked List (#206) | linked-list | 1d | 2026-07-12 | 0 | (new) |
-| Merge Two Sorted Lists (#21) | linked-list | 1d | 2026-07-12 | 0 | (new) |
-| Linked List Cycle (#141) | linked-list | 1d | 2026-07-13 | 0 | (new) |
-| Reorder List (#143) | linked-list | 1d | 2026-07-13 | 0 | (new) |
-| Remove Nth Node From End (#19) | linked-list | 1d | 2026-07-14 | 0 | (new) |
-| Two Sum II (#167) | two-pointers | 21d | 2026-08-01 | 3 | P·P·P |
-| Container With Most Water (#11) | two-pointers | 21d | 2026-08-01 | 3 | P·P·P |
-| Top K Frequent (#347) | arrays-hashing | 21d | 2026-07-21 | 3 | P·P·P |
-| Product of Array Except Self (#238) | arrays-hashing | 21d | 2026-07-23 | 3 | P·P·P |
+| **3Sum (#15)** | two-pointers | **1d (reset)** | 2026-07-14 | 0 | F·P·**F** |
+| **Encode/Decode Strings (#271)** | arrays-hashing | **1d (reset)** | 2026-07-14 | 0 | P·**F** |
+| Valid Anagram (#242) | arrays-hashing | 1d | 2026-07-14 | 0 | P·P·P·F |
+| Valid Palindrome (#125) | two-pointers | 7d | 2026-07-14 | 2 | F·F·F·F·P·P |
 | Two Sum (#1) | arrays-hashing | 21d | 2026-07-14 | 3 | P·P·P |
 | Contains Duplicate (#217) | arrays-hashing | 21d | 2026-07-14 | 3 | P·P·P |
-| Valid Anagram (#242) | arrays-hashing | 1d | 2026-07-13 | 0 | P·P·P·F |
+| **Invert Binary Tree (#226)** | trees | 1d | 2026-07-14 | 0 | (new) |
+| **Maximum Depth of Binary Tree (#104)** | trees | 1d | 2026-07-14 | 0 | (new) |
+| Binary Search (#704) | binary-search | 7d | 2026-07-15 | 2 | P·P |
+| Search a 2D Matrix (#74) | binary-search | 7d | 2026-07-15 | 2 | P·P |
+| Valid Parentheses (#20) | stack | 3d | 2026-07-15 | 1 | P·F·P |
+| Longest Repeating Char Replace (#424) | sliding-window | 3d | 2026-07-15 | 1 | P |
+| Linked List Cycle (#141) | linked-list | 1d | 2026-07-15 | 0 | (new) |
+| Reorder List (#143) | linked-list | 1d | 2026-07-15 | 0 | (new) |
+| Daily Temperatures (#739) | stack | **3d** | 2026-07-16 | 1 | P·F·**P** |
+| Reverse Linked List (#206) | linked-list | **3d** | 2026-07-16 | 1 | **P** |
+| Merge Two Sorted Lists (#21) | linked-list | **3d** | 2026-07-16 | 1 | **P** |
+| Remove Nth Node From End (#19) | linked-list | 1d | 2026-07-16 | 0 | (new) |
+| Search in Rotated Array (#33) | binary-search | 7d | 2026-07-16 | 2 | P·P |
+| Koko Eating Bananas (#875) | binary-search | 3d | 2026-07-16 | 1 | P·F·P·F·P |
+| Find Min in Rotated Sorted Array (#153) | binary-search | 7d | 2026-07-17 | 2 | F·P·F·P·P |
+| Min Stack (#155) | stack | 7d | 2026-07-17 | 2 | P·P |
+| Evaluate RPN (#150) | stack | 7d | 2026-07-18 | 2 | P·P |
+| Longest Consecutive Sequence (#128) | arrays-hashing | **7d** | 2026-07-20 | 2 | P·**P** |
+| Top K Frequent (#347) | arrays-hashing | 21d | 2026-07-21 | 3 | P·P·P |
+| Product of Array Except Self (#238) | arrays-hashing | 21d | 2026-07-23 | 3 | P·P·P |
+| Longest Substring No Repeat (#3) | sliding-window | 21d | 2026-07-30 | 3 | P·P·P |
+| Best Time to Buy/Sell (#121) | sliding-window | 21d | 2026-07-31 | 3 | P·P·P |
+| Two Sum II (#167) | two-pointers | 21d | 2026-08-01 | 3 | P·P·P |
+| Container With Most Water (#11) | two-pointers | 21d | 2026-08-01 | 3 | P·P·P |
 | Group Anagrams (#49) | arrays-hashing | 60d | 2026-09-09 | 4 | P·P·P·P |
+
+### Load after Day 21 fuzz *(cap ~8/day)*
+`Jul 14` **8** (2 resets + #242 + #125 + #1 + #217 + the two new trees — but #1/#217 are **21d = verbal tier**, so **~6 effective**) · `Jul 15` **6** · `Jul 16` **6** · `Jul 17` 2 · `Jul 18` 1 · `Jul 20` 1. **No day over the cap.**
+**Day 22 order:** #15 → #271 → #242 (resets/fragile — full re-solve from a blank screen) → #226 / #104 (1d, brand new) → #125. **Verbal tier (30 sec each):** #1, #217.
+
+> **Day 21 note — not a queue item:** **LRU Cache (#146)** was moved off Day 21 (the hour went to teaching recursion) and is scheduled for **Day 24 (Jul 16)**. It enters this queue at 1d once solved.
 
 ## Graduated (≥60d, never deleted)
 | Problem | Pattern | Graduated | Results |

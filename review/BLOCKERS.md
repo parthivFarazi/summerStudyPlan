@@ -4,19 +4,18 @@
 
 ## Active blockers
 
-### B-3 · M-001 — forgetting `return`  🟡 *(escalated Day 19 — light)*
-He always *computes* the answer correctly, then doesn't hand it back: forgot the `return` value (Day 4, Day 6), and `return prev` on #206 (Day 19).
-**Drill — pre-submit "does it return?":** the very last check before submitting is *"does this function `return` the answer, not just compute it?"* Fold it into the standing audit.
-**Clears when:** two consecutive sessions with zero forgotten `return`s. *(Day 20: clean ✅ — 1 of 2.)*
+### B-4 · M-011 — dropping edge-case guards  🟡 *(escalated Day 20 — the last active blocker)*
+Keeps omitting a required guard: anagram length check (Day 7 **and again on #242 Day 20**), empty-stack before pop (#20 Day 18), empty-stack guard in the #739 `while` (Day 20), **`node.left.val` with no None-check on #226 (Day 21) — would crash on every leaf**.
+The algorithm's right; the edge case isn't handled. **This is now the clearest single slice of the first-draft-precision gap** — with B-1/B-2/B-3 cleared, it's the one left.
+**Drill — pre-submit edge scan:** before submitting, ask *"empty? single element? none-found? lengths equal? **is this thing None?**"* — whatever the problem's edge cases are, is each guarded?
+**Clears when:** two consecutive sessions with zero dropped guards. *(Day 21: **not clean** ❌ — #226. Count resets: 0 of 2.)*
 
-### B-4 · M-011 — dropping edge-case guards  🟡 *(escalated Day 20 — light)*
-Keeps omitting a required guard: anagram length check (Day 7 **and again on #242 Day 20**), empty-stack before pop (#20 Day 18), empty-stack guard in the #739 `while` (Day 20). The algorithm's right; the edge case isn't handled.
-**Drill — pre-submit edge scan:** before submitting, ask *"empty? single element? none-found? lengths equal?"* — whatever the problem's edge cases are, is each guarded? (This is the clearest slice of the first-draft-precision gap.)
-**Clears when:** two consecutive sessions with zero dropped guards.
-
-*(B-1 (variable names, cleared Day 16) and B-2 (range/len, cleared Day 18) — keep as standing habits. Watchlist at recurrence 2: `()` vs `[]` (M-002), hidden in-loop Big-O (M-006), space-scales=O(n) (M-005), dropped guard (M-011), binary-search direction (M-012), converging-return (M-015), for/while (M-016).)*
+*(B-1 (names, Day 16), B-2 (range/len, Day 18), B-3 (return, Day 21) — all cleared; keep as standing habits. Watchlist at recurrence 2: `()` vs `[]` (M-002), hidden in-loop Big-O (M-006), space-scales=O(n) (M-005), binary-search direction (M-012), converging-return (M-015), for/while (M-016), **missing `self.` (M-020)**, **container-vs-contents: index vs value / node vs `.val` (M-021)**.)*
 
 ## Resolved / dormant
+
+### B-3 · M-001 — forgetting `return`  ✅ *(CLEARED Day 21)*
+Escalated Day 19 (3rd occurrence: Day 4, Day 6, `return prev` on #206). **Cleared after two consecutive clean sessions (Day 20 + Day 21)** — Day 21 was 8-for-8 (six reviews + #104 + #226), every function handed its answer back. **Keep the pre-submit "does it return?" check** as a standing habit; re-escalate on any recurrence.
 
 ### B-1 · M-004 — wrong-variable / naming imprecision  ✅ *(CLEARED Day 16)*
 Escalated Day 11 (kept #125 red for 5 sessions). **Cleared after two consecutive clean-on-names sessions (Day 15 + Day 16)**, capped by a fully clean #125 (Day 14) and clean 3Sum/#424 (Day 16). History: `nums.add`/`seen.add` (Day 1), `s`/`clean` (Day 9), `.isalum` (Day 10), `strs`/`s` + `nums`/`numbers` (Day 11), `appened`/`append` (Day 12), `self.stack`/`self.minStack` (Day 14). **Keep the variable audit as a standing habit** — if a wrong-name slip recurs, re-escalate.
