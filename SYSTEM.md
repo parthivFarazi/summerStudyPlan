@@ -10,7 +10,9 @@ Two layers. The **event layer** (`logs/LOG.md`) is an append-only diary of what 
 
 | Path | Role |
 |---|---|
-| `SYSTEM.md` | This file. Architecture + protocols. Read first. |
+| `CLAUDE.md` | **Auto-loaded entry point for any new chat.** Read order + the hard rules. |
+| `COACHING.md` | **The standing contract** — every instruction Parthiv has given about how to coach him. Never expires; never needs repeating. New instruction → append it there. |
+| `SYSTEM.md` | This file. Architecture + protocols. |
 | `DASHBOARD.md` | 2-minute status: pace-health, mastery, due count, next-session focus. Regenerated each update. |
 | `GOALS.md` | The goal, the Aug 20 pivot, pace floors, readiness gates, review schedule. |
 | `plan/Day-by-Day-Roadmap.md` | The curriculum: what to learn each day (Summer Sprint → Fall Maintenance). |
@@ -24,7 +26,7 @@ Two layers. The **event layer** (`logs/LOG.md`) is an append-only diary of what 
 
 ## Conventions (kept deliberately light)
 
-- **Sessions** are numbered continuously: `Day N`. (You're on Day 8 done; next is Day 9.)
+- **Sessions** are numbered continuously: `Day N`. **The current day is always in `DASHBOARD.md` — never hardcoded here or anywhere else.**
 - **Mistakes** get IDs `M-001, M-002, …` so recurrences can be counted.
 - **Patterns** are referenced by filename (`patterns/sliding-window.md`), no IDs.
 - **Mastery** is 1–5 per pattern (1 = just met it; 5 = can solve a novel one cold while narrating). Lives in the pattern file + DASHBOARD.
@@ -34,7 +36,8 @@ Two layers. The **event layer** (`logs/LOG.md`) is an append-only diary of what 
 
 When Parthiv opens a new chat with this folder selected, do this in order:
 
-1. **Read `DASHBOARD.md`** (pace-health first — are we on the sprint?).
+0. **Read `COACHING.md`** — the standing contract (how to coach him). **He should never have to repeat an instruction.** If he gives a new one, append it there the same session.
+1. **Read `DASHBOARD.md`** (pace-health first — are we on the sprint? any ⚠️ standing schedule notes?).
 2. **Pull due items from `review/QUEUE.md`** (`Next due ≤ today`), ordered **resets → 1d → 3d → oldest**. Work a **review budget of ~6–8 items, time-boxed ~30–40 min** (overflow rolls forward — don't try to clear everything):
    - **Full re-solve from a blank screen** for *fragile* items (resets, 1d, anything learned in the last ~week).
    - **30-second verbal recall** for *mastered* items (**21d rung, streak ≥ 3**): state the *pattern + approach + time/space* out loud; only convert to a full solve if he blanks.
