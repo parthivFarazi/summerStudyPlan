@@ -4,13 +4,58 @@
 
 ## Active blockers
 
-### B-4 · M-011 — dropping edge-case guards  🟡 *(escalated Day 20 — the last active blocker)*
-Keeps omitting a required guard: anagram length check (Day 7 **and again on #242 Day 20**), empty-stack before pop (#20 Day 18), empty-stack guard in the #739 `while` (Day 20), **`node.left.val` with no None-check on #226 (Day 21) — would crash on every leaf**.
-The algorithm's right; the edge case isn't handled. **This is now the clearest single slice of the first-draft-precision gap** — with B-1/B-2/B-3 cleared, it's the one left.
-**Drill — pre-submit edge scan:** before submitting, ask *"empty? single element? none-found? lengths equal? **is this thing None?**"* — whatever the problem's edge cases are, is each guarded?
-**Clears when:** two consecutive sessions with zero dropped guards. *(Day 21: **not clean** ❌ — #226. Count resets: 0 of 2.)*
+> **⚠️ Day 22–23 — the honest read.** Three blockers open, and **they are one disease: first-draft precision on problems he has ALREADY solved correctly in his head.** Treat as a single drill: **questions said OUT LOUD before any submit.**
+>
+> 1. **Box or contents?** (B-5) — **Day 23: CLEAN ✅ 1 of 2**
+> 2. **Is it guarded?** (B-4) — **Day 23: CLEAN ✅ 1 of 2**
+> 3. **Which side can still contain the answer?** (B-6) — **Day 23: FAILED AGAIN ❌ — now has a mechanical fix: write comparisons TARGET-first**
+> 4. **Am I looping where I should loop?** (M-018 — recurrence 2, one rep from escalating)
+> 5. **What decides the next step IN THIS problem?** (M-009 — recurrence 2, one rep from escalating; don't paste a template's body)
+>
+> **Day 23 progress:** B-4 and B-5 each got their **first clean rep** — one more clean session and both drop. **B-6 is the stubborn one.**
 
-*(B-1 (names, Day 16), B-2 (range/len, Day 18), B-3 (return, Day 21) — all cleared; keep as standing habits. Watchlist at recurrence 2: `()` vs `[]` (M-002), hidden in-loop Big-O (M-006), space-scales=O(n) (M-005), binary-search direction (M-012), converging-return (M-015), for/while (M-016), **missing `self.` (M-020)**, **container-vs-contents: index vs value / node vs `.val` (M-021)**.)*
+### B-5 · M-021 — container vs. contents  🔴 *(escalated Day 22 — recurrence 4)*
+Reaching for the **handle** instead of the **thing it points at**.
+- `while j != "#"` — compared the **index** to a **char**; needs `s[j]` (#271, Day 21 — **and the IDENTICAL bug again on #271, Day 22**)
+- swapped `.val` instead of the `.left`/`.right` **subtree pointers** (#226, Day 21)
+- used `left`/`right`, which hold **heights**, to count **nodes** in the res-drill (Day 22)
+- *(caught pre-code, Day 22:* `p.left.val` *on #100 — the `None.val` crash again)*
+
+**The same bug reset the same problem (#271) twice in a row.** That is what makes it a blocker and not a slip.
+**Drill — say it out loud on every comparison and every variable use:** ***"Is this the box, or what's in the box?"*** `j` vs `s[j]` · `i` vs `nums[i]` · `node` vs `node.val` · `.left` (a NODE) vs `.val` (a NUMBER).
+**And the Day-22 corollary:** ***being in scope does not mean being relevant.*** `left`/`right` sat right there looking useful; they were the wrong quantity. **Before you use a variable, say what it is actually holding.**
+**Clears when:** two consecutive sessions with zero container/contents slips. *(**Day 23: CLEAN ✅ — #271 re-solved with `s[j]`. 1 of 2.**)*
+
+### B-6 · M-012 — inverted search direction  🔴 *(escalated Day 22 — recurrence 4, the stubborn one)*
+Moving toward the half that **cannot possibly contain the target**.
+- #704 — inverted the discard direction (Day 9)
+- #33 — inverted **all four** pointer updates (Day 13)
+- #235 BST — both-smaller, walked RIGHT (Day 22)
+- **#235 AGAIN, same inversion, next day (Day 23)** — his own *comment* said "both left → go left"; the *code* did the opposite.
+
+**🔧 THE MECHANICAL FIX (installed Day 23) — write the comparison TARGET-first.**
+The inversion happens because he writes `node.val > p.val` (node-first) and then has to **mentally flip it** — *"node bigger than p ⇒ p smaller ⇒ p left"* — and **the flip is where he inverts.** Remove the flip:
+```python
+if p.val > node.val and q.val > node.val:    # "p, q BIGGER"  → go RIGHT  (word matches branch)
+    node = node.right
+elif p.val < node.val and q.val < node.val:  # "p, q SMALLER" → go LEFT
+    node = node.left
+else:
+    return node
+```
+> **Rule: put the TARGET on the left of the comparison. `target > node → right`. `target < node → left`.**
+> (Array BS: `target > nums[mid]` → answer is right → `left = mid + 1`.)
+
+**Drill — say it, then spell it target-first:** ***"Which side can still contain the answer?"***
+**Clears when:** two consecutive sessions with zero direction inversions. *(**Day 23: FAILED ❌. 0 of 2.**)*
+
+### B-4 · M-011 — dropping edge-case guards  🟡 *(escalated Day 20 — recurrence 6)*
+Keeps omitting a required guard: anagram length check (Day 7, **again on #242 Day 20, and AGAIN on #242 Day 22** — `"aab"`/`"ab"` returns `True`), empty-stack before pop (#20 Day 18), empty-stack guard in the #739 `while` (Day 20), **`node.left.val` with no None-check on #226 (Day 21) — crashes on every leaf**.
+**Day 22 is the galling one: *"lengths equal?" is literally on his own checklist below.*** He knew the algorithm cold, wrote it in 3:11, and shipped without running the scan. The scan exists; **it isn't being run.**
+**Drill — pre-submit edge scan, SAID OUT LOUD (not mentally):** *"empty? single element? none-found? **lengths equal?** **is this thing None?**"*
+**Clears when:** two consecutive sessions with zero dropped guards. *(**Day 23: CLEAN ✅ — #242 guard present, #141 guarded the single-node `None==None`. 1 of 2.**)*
+
+*(B-1 (names, Day 16), B-2 (range/len, Day 18), B-3 (return, Day 21) — all cleared; keep as standing habits. Watchlist at recurrence 2 — **each one rep from escalating**: **`if` where a `while` belongs (M-018 — Day 17 #15, Day 22 #235)**, **importing a template's BODY (M-009 — Day 8, Day 23 #143)**, `()` vs `[]` (M-002), hidden in-loop Big-O (M-006), space-scales=O(n) (M-005), for/while (M-016), missing `self.` (M-020).)*
 
 ## Resolved / dormant
 

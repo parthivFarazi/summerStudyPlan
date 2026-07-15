@@ -27,5 +27,7 @@ A verbatim copy of each day's practice notebook: your raw answers (bugs and all)
 | [Day 19](Day19-Practice-Notebook.md) | Jul 10 | Linked Lists — Reverse #206, Merge #21, Cycle #141 (+ basics drill) |
 | [Day 20](Day20-Practice-Notebook.md) | Jul 11 | LL mediums — Reorder #143, Remove Nth #19 (+ 7 reviews, verbal tier) |
 | [Day 21](Day21-Practice-Notebook.md) | Jul 13 | **RECURSION from scratch** + first Trees — Invert #226, Max Depth #104 (6 reviews; #146 → Day 24) |
+| [Day 22](Day22-Practice-Notebook.md) | Jul 14 | **The box outside the recursion** — Diameter #543, Same Tree #100 · **BST taught cold** — LCA #235 · `sorted()` vs `.sort()` (8 reviews; 2 resets) |
+| [Day 23](Day23-Practice-Notebook.md) | Jul 15 | **BFS from scratch** — Level Order #102, Right Side View #199 · Balanced Tree #110 (box pattern transferred) · DFS-height vs BFS-width space (7 reviews; #271/#242 blockers cleared 1/2; #235/#143 reset) |
 
 *New day → save `DayN-Practice-Notebook.md` here and add a row.*

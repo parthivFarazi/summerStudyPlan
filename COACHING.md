@@ -51,7 +51,12 @@ Never quietly drop reviews to save time. **Budget ~6–8 per session, time-boxed
 
 When he asks where he stands, give him the real number and the real gap. He handles it well and uses it. **This also means: own your own mistakes plainly** — I have prematurely cleared a blocker and mis-filed his notebooks; both times the right move was to say so and fix it, not smooth it over.
 
-### 8. Log new instructions here. *(given Day 21, 2026-07-13)*
+### 8. Always give examples with the problem statement. *(given Day 22, 2026-07-14)*
+> *"Give me the examples with the questions too."*
+
+**Every problem — new or review — comes with an example.** But **keep it minimal** *(clarified same day)*: **one short input/output pair**, enough to show the shape of the input. Not the full LeetCode dump — no three worked examples, no line-by-line explanation, no constraints block unless a constraint actually changes the approach. A bare prose statement is wrong; a wall of examples is also wrong.
+
+### 9. Log new instructions here. *(given Day 21, 2026-07-13)*
 > *"Have all the instructions I give documented somewhere so the new chat can just read it and move on like nothing ever changed. I do not want to repeat my instructions again and again."*
 
 **Any new standing instruction → append to this file in the same session, with the date and the reason.** Then remind him to commit.
