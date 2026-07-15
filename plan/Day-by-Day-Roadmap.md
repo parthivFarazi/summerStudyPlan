@@ -43,7 +43,7 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 | 7 | Jun 26 | Warm-up retrieval | **Sliding Window** — Best Time to Buy/Sell (#121, E) | running-min + best-profit (2 vars) | O(n) |
 | 8 | Jun 28 | Valid Palindrome (decay caught) | **Sliding Window** — Longest Substring No Repeat (#3, M) | set + shrink-from-left | O(n) amortized |
 
-> **Currently:** **Day 23 ✅ done (Jul 15)** — BFS taught from scratch (#102, #199) + Balanced Tree (#110). **Day 24 (Jul 16) is next: LRU Cache (#146)** + interleave. ⚠️ **#98 Validate BST deferred Day 23 → Day 25** (did #199/#110 instead; #98 clusters with #230, both BST). Live state always in `DASHBOARD.md`.
+> **Currently:** **Day 24 ✅ done (Jul 16)** — 🎉 **LRU Cache (#146) — the LAST unplaced core problem — done + verified.** All core roadmap problems now covered before Aug 20; what remains is depth (Tries/Heap/Backtracking/Intervals/Graphs/DP). **Day 25 (Jul 17) is next: Validate BST (#98, deferred) + Kth Smallest (#230) + first Trie (#208).** Live state always in `DASHBOARD.md`.
 
 ---
 
@@ -85,7 +85,7 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 | 21 ✅ | Jul 13 | 6 due (protocol) | **Recursion — taught from scratch** (call stack, base case, `fact`/`power`/`sumOfValues` drills)<br>**Trees** — Invert Binary Tree (#226, E)<br>**Trees** — Maximum Depth of Tree (#104, E)<br><sub>⤷ **LRU Cache (#146) MOVED → Day 24**</sub> | base case + recursive case; the call stack<br>TreeNode; recurse + swap POINTERS<br>recursive depth; max() | —<br>O(n), O(h)<br>O(n), O(h) stack |
 | 22 | Jul 14 | Two Sum; Contains Duplicate (+5) | **Trees** — Diameter of Binary Tree (#543, E)<br>**Trees** — Same Tree (#100, E)<br>**Trees** — Lowest Common Ancestor (BST) (#235, M) | helper returns height<br>parallel recursion<br>BST-property navigation | O(n)<br>O(n)<br>O(h) |
 | 23 ✅ | Jul 15 | 7 due (protocol) | **Trees** — Level Order Traversal (#102, M) ✅<br>**Trees** — Right Side View (#199, M) ✅<br>**Trees** — Balanced Binary Tree (#110, E) ✅<br><sub>⤷ **Validate BST (#98) DEFERRED → Day 25**</sub> | BFS w/ collections.deque; freeze level size<br>rightmost per level<br>box pattern (height + bool) | O(n)/O(n)<br>O(n)/O(n)<br>O(n)/O(h) |
-| 24 | Jul 16 | **Interleave** — mixed unlabeled set | ⚠️ **Linked List — LRU Cache (#146, M)** — *rescheduled from Day 21* (the Day-21 hour went to teaching recursion, which is load-bearing for Trees/Backtracking/Graphs/DP). Day 24 is the only day with Block-2 slack, so #146 lands here. **Do not skip it — it's the last unplaced core problem.** | dict + doubly-linked list (or `OrderedDict`); dummy head/tail | O(1) get/put |
+| 24 ✅ | Jul 16 | interleave, 6/6 | ✅ **Linked List — LRU Cache (#146, M)** — *the last unplaced core problem, DONE + verified vs OrderedDict* | dict + doubly-linked list; dummy head/tail; node stores its key | O(1) get/put, O(capacity) space |
 | 25 | Jul 17 | protocol | **Trees** — Validate BST (#98, M) *(deferred from Day 23)*<br>**Trees** — Kth Smallest in BST (#230, M)<br>**Tries** — Implement Trie (#208, M) | recurse w/ (low,high) bounds — the SUBTREE-wide invariant<br>in-order traversal<br>nested dict / TrieNode | O(n)<br>O(h+k)<br>O(L) per op |
 | 26 | Jul 18 | Valid Palindrome; Two Sum II (+5) | **Tries** — Design Add & Search Words (#211, M)<br>**Heap** — Kth Largest in a Stream (#703, E)<br>**Heap** — Last Stone Weight (#1046, E) | DFS with '.' wildcard<br>heapq; min-heap size k<br>max-heap via negation | O(L) avg<br>O(log k) per add<br>O(n log n) |
 

@@ -1,6 +1,6 @@
 # Linked List
 
-**Status:** learned (Day 19–20) · **Mastery: 3/5** · Block B
+**Status:** learned (Day 19–20) · **Mastery: 4/5** *(Day 24: LRU Cache built + verified)* · Block B
 
 ## In one line
 Pointer surgery: a chain of nodes (`val` + `next`); manipulate by carefully rewiring `.next`. Dummy nodes, fast/slow pointers, in-place reversal.
@@ -69,11 +69,44 @@ while fast and fast.next:
 **Reorder List (#143)** = compose in place: find middle → `second = slow.next; slow.next = None` (**CUT — halves don't auto-detach**) → reverse `second` → merge the two halves alternately. O(1) space.
 **Remove Nth from end (#19)** = two-pointer **gap of n** + dummy: advance `fast` n steps, then move both till `fast` hits the end; `slow` (from a dummy) lands just before the target → `slow.next = slow.next.next`. One pass.
 
+## 🔑 Doubly-linked list + hashmap — the design combo *(Day 24, #146 LRU Cache)*
+
+**The doubly-linked node** adds a **backward** pointer:
+```python
+class Node:
+    def __init__(self, key, val):
+        self.key = key      # store the KEY too — needed to delete from the dict at eviction
+        self.val = val
+        self.prev = None    # ← the backward pointer
+        self.next = None
+```
+**Why `prev`:** to remove a node you're *holding*, you splice its neighbours together — you need to reach **both**. `node.next` gives one; **`node.prev` gives the other.** Singly-linked → you'd walk from head to find the predecessor → O(n). With `prev`, removal is **O(1)**:
+```python
+def remove(node):
+    node.prev.next = node.next
+    node.next.prev = node.prev
+```
+**Dummy head & tail sentinels** — two permanent fake nodes at the ends. Real nodes always live *between* them, so **every real node is guaranteed a `prev` and a `next`** → `node.prev.next` can never hit `None` → **the `if node.prev is None` edge cases vanish.** Convention: next-to-head = MRU, next-to-tail = LRU.
+```python
+def insert_front(node):          # stitch node in right after head (MRU)
+    temp = self.head.next
+    self.head.next = node
+    node.prev = self.head
+    node.next = temp
+    temp.prev = node
+```
+
+**Why two structures (the whole point of LRU):** a **dict alone** has O(1) lookup but O(n) eviction (must *find* the LRU); an **ordered list alone** has O(1) eviction but O(n) lookup. **Each is O(1) at what the other is O(n) at → use both.** The **dict maps `key → Node`**; lookup is O(1), and once you hold the node, remove/insert_front are O(1). Full working class + verification in `notebooks/Day24-Practice-Notebook.md`.
+
+**Design-problem instinct (M-024):** when one abstraction is backed by **two** structures, **every mutation must touch both** — overwrite repoints `dict[key]`; eviction does `remove(node)` *and* `del dict[node.key]`. Forgetting the second is the design-level version of container-vs-contents.
+
 ## Complexity
 Traverse/reverse/merge/cycle: **O(n)** (or O(n+m)) time, **O(1)** space (rewire in place; dummy is O(1)).
+**LRU (#146):** `get`/`put` **O(1)**, space **O(capacity)** (bounded by cache size — not the number of ops; two different "n"s, be explicit).
 
 ## Your gotchas (from the log)
 - **node vs value** — `.val` when rewiring `.next` (Day 19, multiple times).
-- **Missing `self.`** on instance attributes inside class methods (#155, Day 19).
+- **`self.` confusion** — both directions inside a class (**M-020 → blocker B-7**): dropped `self.` on `self.minStack` (#155, Day 19) and on `self.remove(node)` calls (#146, Day 24); *added* a spurious `self.` to a **parameter** (`self.node`, #146, Day 24). **The test:** attached via `self.x=` in `__init__` OR a method of this class → `self.`; parameter/local → bare. See [python-classes.md](python-classes.md).
+- **Reorder merge is ALTERNATION, not value comparison** (M-009) — #143 forbids touching values; don't paste #21's `if a.val <= b.val` body. #21 compares values, #143 strictly alternates. Same skeleton, opposite body.
 - **Floyd's `None == None` false positive** — guard with `while fast and fast.next` (or `and fast != None`). (Day 19)
 - Reverse/insert: **stash `nxt` BEFORE overwriting** `curr.next`, or you strand the rest.

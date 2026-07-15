@@ -3,22 +3,22 @@
 A beginner working from near-zero toward **FAANG-ready by interview season**, one tracked day at a time. This repo *is* my real prep — the plan, the daily notebooks, the mistakes, and the spaced-repetition system that ties it together. Not polished-for-show: the actual journey, decay and dumb bugs included.
 
 <!-- README-LIVE:START -->
-![Day](https://img.shields.io/badge/Day-23-2563eb)
+![Day](https://img.shields.io/badge/Day-24-2563eb)
 ![Phase](https://img.shields.io/badge/Phase-Summer_Sprint-7c3aed)
-![Focus](https://img.shields.io/badge/Focus-Trees_BFS_learned_Box_pattern_transferred_to_No_110_Day_24_LRU_Cache_interleave-0891b2)
-![Pace](https://img.shields.io/badge/Pace-ahead_of_plan-16a34a)
+![Focus](https://img.shields.io/badge/Focus-LRU_Cache_done_the_last_unplaced_core_problem_All_core_roadmap_problems_now_covered_Day_25_Validate_BST_Kth_Smallest_first_Trie-0891b2)
+![Pace](https://img.shields.io/badge/Pace-on_plan-16a34a)
 ![Goal](https://img.shields.io/badge/Goal-FAANG_ready_by_Sept-ea580c)
 ![Language](https://img.shields.io/badge/Language-Python-3776ab)
 
 ## 📍 Where I'm at right now
 
-- **Day 23** · **Summer Sprint → Block B**
-- **Current focus:** Trees + BFS learned. Box pattern transferred to #110. Day 24 = LRU Cache + interleave.
-- **Up next (Day 24):** LRU Cache (#146)
-- **Tracker totals:** 23 sessions · 9 patterns learned · 23 mistakes tracked
-- **Open blockers:** 3 (B-4, B-5, B-6)
-- **Review queue:** Day 24 (Jul 16) = 6 due (interleave + LRU day). Resets first: #235, #143.
-- **Last dashboard update:** 2026-07-15
+- **Day 24** · **Summer Sprint → Block B**
+- **Current focus:** 🎉 LRU Cache done — the last unplaced core problem. All core roadmap problems now covered. Day 25 = Validate BST + Kth Smallest + first Trie.
+- **Up next (Day 25):** Validate BST (#98) (deferred
+- **Tracker totals:** 24 sessions · 9 patterns learned · 24 mistakes tracked
+- **Open blockers:** 2 (B-6, B-7) + B-3 watch
+- **Review queue:** Day 25 (Jul 17) = 5 due, all full re-solves. #146 (brand new) first.
+- **Last dashboard update:** 2026-07-16
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 
 *This block is generated from `DASHBOARD.md`. Run `python3 scripts/sync_readme.py` after dashboard edits; the pre-commit hook also runs it automatically.*

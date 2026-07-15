@@ -4,29 +4,27 @@
 
 ## Active blockers
 
-> **⚠️ Day 22–23 — the honest read.** Three blockers open, and **they are one disease: first-draft precision on problems he has ALREADY solved correctly in his head.** Treat as a single drill: **questions said OUT LOUD before any submit.**
+> **⚠️ Days 22–24 — the honest read.** All the blockers are **one disease: first-draft precision on problems he has ALREADY solved correctly in his head.** The drill = **questions said OUT LOUD before any submit.** And it WORKS: **Day 24 cleared B-4 AND B-5.** Two facets clear; the disease persists in new facets (B-7 emerged same day).
 >
-> 1. **Box or contents?** (B-5) — **Day 23: CLEAN ✅ 1 of 2**
-> 2. **Is it guarded?** (B-4) — **Day 23: CLEAN ✅ 1 of 2**
-> 3. **Which side can still contain the answer?** (B-6) — **Day 23: FAILED AGAIN ❌ — now has a mechanical fix: write comparisons TARGET-first**
-> 4. **Am I looping where I should loop?** (M-018 — recurrence 2, one rep from escalating)
-> 5. **What decides the next step IN THIS problem?** (M-009 — recurrence 2, one rep from escalating; don't paste a template's body)
->
-> **Day 23 progress:** B-4 and B-5 each got their **first clean rep** — one more clean session and both drop. **B-6 is the stubborn one.**
+> **The reflexes, before every submit:**
+> 1. **The `self.` test** (B-7 — **NEW Day 24**): attached via `self.x=` or a method of this class → `self.`; parameter/local → bare
+> 2. **Does it return?** (B-3 — **watch reopened Day 24**)
+> 3. **Which side can still contain the answer?** — write it **target-first** (B-6 — **Day 24 CLEAN ✅ 1 of 2**)
+> 4. **Both structures in sync?** (M-024 — new, design problems)
+> 5. **Box or contents?** (B-5 — **CLEARED Day 24 ✅**) · **Is it guarded?** (B-4 — **CLEARED Day 24 ✅**)
+> 6. **Am I looping where I should loop?** (M-018) · **What decides the next step HERE?** (M-009)
 
-### B-5 · M-021 — container vs. contents  🔴 *(escalated Day 22 — recurrence 4)*
-Reaching for the **handle** instead of the **thing it points at**.
-- `while j != "#"` — compared the **index** to a **char**; needs `s[j]` (#271, Day 21 — **and the IDENTICAL bug again on #271, Day 22**)
-- swapped `.val` instead of the `.left`/`.right` **subtree pointers** (#226, Day 21)
-- used `left`/`right`, which hold **heights**, to count **nodes** in the res-drill (Day 22)
-- *(caught pre-code, Day 22:* `p.left.val` *on #100 — the `None.val` crash again)*
+### B-7 · M-020 — the `self.` rule  🔴 *(escalated Day 24 — recurrence 3)*
+`self.` confusion inside a class, **both directions**:
+- dropped it on an attribute (`minStack` vs `self.minStack`, #155, Day 19)
+- dropped it on recursive **calls** (`invert(...)` vs `self.invert(...)`, #226, Day 21)
+- **#146 (Day 24): `self.node` on a PARAMETER (spurious `self.`) AND `remove(node)`/`insert_front(node)` calls missing `self.`** — both errors in one class
 
-**The same bug reset the same problem (#271) twice in a row.** That is what makes it a blocker and not a slip.
-**Drill — say it out loud on every comparison and every variable use:** ***"Is this the box, or what's in the box?"*** `j` vs `s[j]` · `i` vs `nums[i]` · `node` vs `node.val` · `.left` (a NODE) vs `.val` (a NUMBER).
-**And the Day-22 corollary:** ***being in scope does not mean being relevant.*** `left`/`right` sat right there looking useful; they were the wrong quantity. **Before you use a variable, say what it is actually holding.**
-**Clears when:** two consecutive sessions with zero container/contents slips. *(**Day 23: CLEAN ✅ — #271 re-solved with `s[j]`. 1 of 2.**)*
+**He KNOWS this rule** — he asked for it on Day 21 and it's written up in [`patterns/python-classes.md`](../patterns/python-classes.md). The problem is identical to B-4: **the rule exists, it just isn't run on the first draft.**
+**Drill — run THE TEST on every `X.y` and every bare call inside a class:** *"Is it attached with `self.x =` in `__init__`, or is it a method of this class? → `self.`. Is it a parameter or a local? → bare."* `self.node` is nonsense because `node` is a parameter — it lives on no object.
+**Clears when:** two consecutive sessions with zero `self.` slips. *(0 of 2.)*
 
-### B-6 · M-012 — inverted search direction  🔴 *(escalated Day 22 — recurrence 4, the stubborn one)*
+### B-6 · M-012 — inverted search direction  🟡 *(escalated Day 22 — recurrence 4)*
 Moving toward the half that **cannot possibly contain the target**.
 - #704 — inverted the discard direction (Day 9)
 - #33 — inverted **all four** pointer updates (Day 13)
@@ -47,19 +45,23 @@ else:
 > (Array BS: `target > nums[mid]` → answer is right → `left = mid + 1`.)
 
 **Drill — say it, then spell it target-first:** ***"Which side can still contain the answer?"***
-**Clears when:** two consecutive sessions with zero direction inversions. *(**Day 23: FAILED ❌. 0 of 2.**)*
+**Clears when:** two consecutive sessions with zero direction inversions. *(Day 23: FAILED ❌ · **Day 24: CLEAN ✅ — #235 target-first. 1 of 2.**)*
 
-### B-4 · M-011 — dropping edge-case guards  🟡 *(escalated Day 20 — recurrence 6)*
-Keeps omitting a required guard: anagram length check (Day 7, **again on #242 Day 20, and AGAIN on #242 Day 22** — `"aab"`/`"ab"` returns `True`), empty-stack before pop (#20 Day 18), empty-stack guard in the #739 `while` (Day 20), **`node.left.val` with no None-check on #226 (Day 21) — crashes on every leaf**.
-**Day 22 is the galling one: *"lengths equal?" is literally on his own checklist below.*** He knew the algorithm cold, wrote it in 3:11, and shipped without running the scan. The scan exists; **it isn't being run.**
-**Drill — pre-submit edge scan, SAID OUT LOUD (not mentally):** *"empty? single element? none-found? **lengths equal?** **is this thing None?**"*
-**Clears when:** two consecutive sessions with zero dropped guards. *(**Day 23: CLEAN ✅ — #242 guard present, #141 guarded the single-node `None==None`. 1 of 2.**)*
+### B-3 · M-001 — forgetting `return`  🟡 *(watch REOPENED Day 24)*
+Cleared Day 21, but recurred on Day 24: **`get` fell off the end of #146 with no `return node.val`** → returned `None` on a cache hit. One slip, in the hardest problem of the sprint, among four precision bugs — but the standing rule is **re-escalate on any recurrence.**
+**Drill — the pre-submit "does it return?" check is MANDATORY again** on every function that's supposed to hand back a value. **Full re-escalation to drill-now if it recurs once more.**
 
-*(B-1 (names, Day 16), B-2 (range/len, Day 18), B-3 (return, Day 21) — all cleared; keep as standing habits. Watchlist at recurrence 2 — **each one rep from escalating**: **`if` where a `while` belongs (M-018 — Day 17 #15, Day 22 #235)**, **importing a template's BODY (M-009 — Day 8, Day 23 #143)**, `()` vs `[]` (M-002), hidden in-loop Big-O (M-006), space-scales=O(n) (M-005), for/while (M-016), missing `self.` (M-020).)*
+*(B-1 names (Day 16), B-2 range/len (Day 18) — cleared, standing habits. **B-4 dropped guards and B-5 container-vs-contents CLEARED Day 24 — see below.** Watchlist at recurrence 2 — each one rep from escalating: **`if` where a `while` belongs (M-018 — Day 17, Day 22)**, **importing a template's BODY (M-009 — Day 8, Day 23)**, **dual-structure sync (M-024 — Day 24)**, `()` vs `[]` (M-002), hidden in-loop Big-O (M-006), space-scales=O(n) (M-005), for/while (M-016).)*
 
 ## Resolved / dormant
 
-### B-3 · M-001 — forgetting `return`  ✅ *(CLEARED Day 21)*
+### B-5 · M-021 — container vs. contents  ✅ *(CLEARED Day 24)*
+Escalated Day 22 (recurrence 4 — the same index-vs-char bug reset #271 twice). History: `while j != "#"` needing `s[j]` (#271, Days 21–22), `.val` vs `.left`/`.right` (#226), `left`/`right` heights used to count nodes (Day 22). **Cleared after two clean sessions (Day 23 #271 re-solved with `s[j]`; Day 24 clean).** **Keep the "box or contents? / is this variable actually holding what I think?" check** as a standing habit; re-escalate on recurrence.
+
+### B-4 · M-011 — dropping edge-case guards  ✅ *(CLEARED Day 24)*
+Escalated Day 20 (recurrence 6). History: anagram length check (Days 7, 20, 22), empty-stack guards (#20 Day 18, #739 Day 20), `node.left.val` no None-check (#226 Day 21). **Cleared after two clean sessions (Day 23: #242 guard + #141 `None==None` guard; Day 24: #739 empty-stack guard in both branches).** **Keep the pre-submit edge scan** — *"empty? single? none-found? lengths equal? is this None?"* — as a standing habit; re-escalate on recurrence.
+
+### B-3 · M-001 — forgetting `return`  ✅ *(CLEARED Day 21 — but see watch, reopened Day 24 above)*
 Escalated Day 19 (3rd occurrence: Day 4, Day 6, `return prev` on #206). **Cleared after two consecutive clean sessions (Day 20 + Day 21)** — Day 21 was 8-for-8 (six reviews + #104 + #226), every function handed its answer back. **Keep the pre-submit "does it return?" check** as a standing habit; re-escalate on any recurrence.
 
 ### B-1 · M-004 — wrong-variable / naming imprecision  ✅ *(CLEARED Day 16)*
