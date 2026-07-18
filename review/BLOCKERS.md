@@ -7,12 +7,12 @@
 > **⚠️ Days 22–24 — the honest read.** All the blockers are **one disease: first-draft precision on problems he has ALREADY solved correctly in his head.** The drill = **questions said OUT LOUD before any submit.** And it WORKS: **Day 24 cleared B-4 AND B-5.** Two facets clear; the disease persists in new facets (B-7 emerged same day).
 >
 > **The reflexes, before every submit:**
-> 1. **The `self.` test** (B-7 — **NEW Day 24**): attached via `self.x=` or a method of this class → `self.`; parameter/local → bare
-> 2. **Does it return?** (B-3 — **watch reopened Day 24**)
-> 3. **Which side can still contain the answer?** — write it **target-first** (B-6 — **Day 24 CLEAN ✅ 1 of 2**)
-> 4. **Both structures in sync?** (M-024 — new, design problems)
-> 5. **Box or contents?** (B-5 — **CLEARED Day 24 ✅**) · **Is it guarded?** (B-4 — **CLEARED Day 24 ✅**)
-> 6. **Am I looping where I should loop?** (M-018) · **What decides the next step HERE?** (M-009)
+> 1. **The `self.` test** (B-7): `self.x=` or a method of this class → `self.`; parameter/local → bare — **Day 25 CLEAN ✅ 1 of 2**
+> 2. **Count the pointers · mutate the FIELD not a local** (M-025 — **NEW Day 25**; #146 `addFront` 2-of-4, #226 swapped locals)
+> 3. **Does it return?** (B-3 — watch, Day 25 clean)
+> 4. **Which side can still contain the answer?** — target-first (B-6 — 1 of 2, awaiting #235)
+> 5. **Box or contents? / mutating the object's field or a local?** (B-5 — **watch reopened Day 25**: #226)
+> 6. **Both structures in sync?** (M-024 — Day 25 clean) · looping where I should? (M-018) · what decides the next step HERE? (M-009)
 
 ### B-7 · M-020 — the `self.` rule  🔴 *(escalated Day 24 — recurrence 3)*
 `self.` confusion inside a class, **both directions**:
@@ -22,7 +22,11 @@
 
 **He KNOWS this rule** — he asked for it on Day 21 and it's written up in [`patterns/python-classes.md`](../patterns/python-classes.md). The problem is identical to B-4: **the rule exists, it just isn't run on the first draft.**
 **Drill — run THE TEST on every `X.y` and every bare call inside a class:** *"Is it attached with `self.x =` in `__init__`, or is it a method of this class? → `self.`. Is it a parameter or a local? → bare."* `self.node` is nonsense because `node` is a parameter — it lives on no object.
-**Clears when:** two consecutive sessions with zero `self.` slips. *(0 of 2.)*
+**Clears when:** two consecutive sessions with zero `self.` slips. *(**Day 25: CLEAN ✅ — #146 rebuild + #104 both perfect on `self.`. 1 of 2.**)*
+
+### 👁 M-025 · pointer surgery — count the pointers, mutate the field  *(NEW Day 25, watch — 1 rep from a blocker)*
+Two related first-draft slips, same day: **#146 `addFront` wrote only 2 of the 4 required pointers** (dropped both backward links); **#226 swapped LOCAL `left`/`right` instead of `node.left`/`node.right`** (mutating a local doesn't touch the tree). Both are "the assignment doesn't do what I think."
+**Drill:** *(1)* **count the pointers** — inserting a node between two others = **4** writes (2 fwd, 2 back); remove = **2**; if the helper has fewer lines, it's incomplete. *(2)* **mutate the object's FIELD** (`node.left = ...`), never a local copy. *(Kin to B-5 container-vs-contents.)*
 
 ### B-6 · M-012 — inverted search direction  🟡 *(escalated Day 22 — recurrence 4)*
 Moving toward the half that **cannot possibly contain the target**.
@@ -55,8 +59,8 @@ Cleared Day 21, but recurred on Day 24: **`get` fell off the end of #146 with no
 
 ## Resolved / dormant
 
-### B-5 · M-021 — container vs. contents  ✅ *(CLEARED Day 24)*
-Escalated Day 22 (recurrence 4 — the same index-vs-char bug reset #271 twice). History: `while j != "#"` needing `s[j]` (#271, Days 21–22), `.val` vs `.left`/`.right` (#226), `left`/`right` heights used to count nodes (Day 22). **Cleared after two clean sessions (Day 23 #271 re-solved with `s[j]`; Day 24 clean).** **Keep the "box or contents? / is this variable actually holding what I think?" check** as a standing habit; re-escalate on recurrence.
+### B-5 · M-021 — container vs. contents  🟡 *(CLEARED Day 24 — watch REOPENED Day 25)*
+Escalated Day 22 (recurrence 4 — the same index-vs-char bug reset #271 twice). Cleared after two clean sessions (Day 23–24). **Reopened Day 25:** #226 swapped LOCAL `left`/`right` instead of the node's `.left`/`.right` fields — same family (handle vs. thing, local vs. object-field). **Now tracked jointly with M-025 (pointer surgery) above.** Keep the *"am I changing the object's field, or just a local?"* check; full re-escalation if it recurs again.
 
 ### B-4 · M-011 — dropping edge-case guards  ✅ *(CLEARED Day 24)*
 Escalated Day 20 (recurrence 6). History: anagram length check (Days 7, 20, 22), empty-stack guards (#20 Day 18, #739 Day 20), `node.left.val` no None-check (#226 Day 21). **Cleared after two clean sessions (Day 23: #242 guard + #141 `None==None` guard; Day 24: #739 empty-stack guard in both branches).** **Keep the pre-submit edge scan** — *"empty? single? none-found? lengths equal? is this None?"* — as a standing habit; re-escalate on recurrence.

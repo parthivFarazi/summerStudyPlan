@@ -1,6 +1,6 @@
 # Binary Search Tree (BST)
 
-**Status:** learning (started Day 22, 2026-07-14) · **Mastery: 2/5** · Block B
+**Status:** learning (started Day 22, 2026-07-14) · **Mastery: 3/5** *(Day 25: #98, #230)* · Block B
 **Prereqs:** [trees](trees.md) (recursion, DFS) · [binary-search](binary-search.md) (the halving idea)
 
 ## In one line
@@ -88,6 +88,41 @@ Step **right** and it holds only values **> node** → **you lose `p`.**
 - **Search / insert / LCA: O(h) time.** Balanced → **O(log n)**. Degenerate chain → **O(n)**.
 - **Iterative descent: O(1) space** — no call stack. *(Recursive version: O(h).)*
 - ⚠️ **A BST is NOT automatically O(log n).** Insert `1,2,3,4,5` in order and you get a linked list. `h = n`. **Always say "O(h), which is O(log n) balanced and O(n) worst case."** (Self-balancing trees — AVL, red-black — are what actually guarantee `log n`; not needed for these problems.)
+
+## 🔑 #98 Validate BST — pass the (low, high) bounds DOWN *(Day 25)*
+The invariant is **subtree-wide, not parent-child** — so checking only `left < node < right` is the #1 WRONG answer. Instead, carry a legal **range** down the recursion:
+```python
+def isValidBST(self, root):
+    def valid(node, low, high):
+        if node is None:
+            return True
+        if not (low < node.val < high):
+            return False
+        return (valid(node.left,  low,       node.val) and   # left tightens the HIGH
+                valid(node.right, node.val,  high))           # right raises the LOW
+    return valid(root, float('-inf'), float('inf'))
+# O(n) time, O(h) space
+```
+The bound **propagates**: `4` under `8` under `5` still carries the lower bound `5` and gets caught (`4 < 5`).
+> **The new tool: passing state DOWN through parameters.** #104/#543 pass answers UP (via `return`); #98 passes context DOWN (via arguments). Both DFS. Reappears in backtracking.
+
+## 🔑 #230 Kth Smallest — in-order traversal is SORTED *(Day 25)*
+**In-order = `left → node → right`.** On a BST it emits values smallest→largest, so "k-th smallest" = "k-th node visited in-order".
+```python
+# simple: collect all, return res[k-1]  → O(n) time, O(n) space (the list dominates)
+# optimal: count at each VISIT, stop when count == k → O(h+k) time, O(h) space
+self.count = 0; self.answer = None
+def inorder(node):
+    if node is None or self.answer is not None:   # flag-check = early exit
+        return
+    inorder(node.left)
+    self.count += 1
+    if self.count == k:
+        self.answer = node.val; return
+    inorder(node.right)
+```
+> **Why the node visits itself BETWEEN its two recursive calls:** the parent frame is PAUSED at `inorder(node.left)` and cannot visit itself until its entire left subtree drains. That ordering is what makes in-order sorted.
+> **Stopping a recursion isn't one `return`** — it's a **flag every frame checks** (`self.answer is not None`) so they all bail as the stack unwinds. (Same mechanic as backtracking pruning.)
 
 ## Your gotchas
 - **Direction inversion (M-012 → blocker B-6).** `node.val > p.val` means **`p` is SMALLER**, so `p` lives **LEFT**. Day 22: walked **right**. **Say the sentence before writing the branch: *"Which side can still contain the answer? Go there."***

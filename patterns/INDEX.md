@@ -13,8 +13,9 @@ One file per pattern: template, when-to-use triggers, complexity, and *your* got
 | Binary Search | 3/5 | [binary-search](binary-search.md) |
 | Stack | 3/5 | [stack](stack.md) |
 | Linked List | 3/5 | [linked-list](linked-list.md) |
-| Trees & BFS/DFS | 3/5 | [trees](trees.md) — *recursion Day 21 (#226, #104); **the box outside the recursion** Day 22 (#543, #100)* |
-| **Binary Search Tree** | **2/5** | [binary-search-tree](binary-search-tree.md) — ***new, Day 22.** The invariant → **compare and pick ONE side**. #235* |
+| Trees & BFS/DFS | 3/5 | [trees](trees.md) — *recursion Day 21; box pattern Day 22; **BFS** Day 23 (#102, #199)* |
+| **Binary Search Tree** | **3/5** | [binary-search-tree](binary-search-tree.md) — *invariant → pick ONE side (#235); **bounds passed down** (#98); **in-order = sorted** (#230)* |
+| **Tries (Prefix Trees)** | **2/5** | [tries](tries.md) — ***new, Day 25.** Nested dicts of nodes; char = the KEY; `is_end` flag. #208* |
 
 ## Language concepts *(not patterns — the machinery the patterns run on)*
 
@@ -28,7 +29,6 @@ One file per pattern: template, when-to-use triggers, complexity, and *your* got
 
 | Pattern | Starts | File |
 |---|---|---|
-| Tries (Prefix Trees) | Day ~25 | [tries](tries.md) |
 | Heap / Priority Queue | Day ~26 | [heap](heap.md) |
 | Backtracking | Day ~28 | [backtracking](backtracking.md) |
 | Intervals | Day ~29 | [intervals](intervals.md) |
