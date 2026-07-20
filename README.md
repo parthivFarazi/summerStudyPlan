@@ -3,22 +3,22 @@
 A beginner working from near-zero toward **FAANG-ready by interview season**, one tracked day at a time. This repo *is* my real prep — the plan, the daily notebooks, the mistakes, and the spaced-repetition system that ties it together. Not polished-for-show: the actual journey, decay and dumb bugs included.
 
 <!-- README-LIVE:START -->
-![Day](https://img.shields.io/badge/Day-25-2563eb)
+![Day](https://img.shields.io/badge/Day-26-2563eb)
 ![Phase](https://img.shields.io/badge/Phase-Summer_Sprint-7c3aed)
-![Focus](https://img.shields.io/badge/Focus-Core_done-0891b2)
+![Focus](https://img.shields.io/badge/Focus-Depth_phase_First_Heaps_done_Trie_wildcard_Day_27_more_Heap-0891b2)
 ![Pace](https://img.shields.io/badge/Pace-ahead_of_plan-16a34a)
 ![Goal](https://img.shields.io/badge/Goal-FAANG_ready_by_Sept-ea580c)
 ![Language](https://img.shields.io/badge/Language-Python-3776ab)
 
 ## 📍 Where I'm at right now
 
-- **Day 25** · **Summer Sprint → Block B**
-- **Current focus:** Core done
-- **Up next (Day 26):** Design Add & Search Words (#211)
-- **Tracker totals:** 25 sessions · 10 patterns learned · 25 mistakes tracked
-- **Open blockers:** 2 (B-6, B-7) + watches (M-025, B-5, B-3)
-- **Review queue:** Day 26 (Jul 18) = 6 due, all full re-solves — 3 are resets (#146, #102, #226).
-- **Last dashboard update:** 2026-07-17
+- **Day 26** · **Summer Sprint → Block B**
+- **Current focus:** Depth phase. First Heaps done + Trie wildcard. Day 27 = more Heap.
+- **Up next (Day 27 (Jul 20)):** Heap
+- **Tracker totals:** 26 sessions · 11 patterns learned · 26 mistakes tracked
+- **Open blockers:** 1 (B-6) + watches (B-4, B-3, M-026)
+- **Review queue:** Day 27 (Jul 20) = 6 due. Resets #102, #208 first; #235 is the B-6 canary.
+- **Last dashboard update:** 2026-07-18
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 
 *This block is generated from `DASHBOARD.md`. Run `python3 scripts/sync_readme.py` after dashboard edits; the pre-commit hook also runs it automatically.*

@@ -4,76 +4,71 @@
 > "Current Status" is regenerated each update. Readable in under 2 minutes.
 
 ## Current Status
-- **Last updated:** 2026-07-17 (Day 25 logged)
-- **Phase:** Summer Sprint · Block B — *Core done; now depth. **First Trie built clean (#208)**; Validate BST (#98) + Kth Smallest (#230) landed. Day 26 = Trie wildcard (#211) + first Heap (#703, #1046).*
-- **Sessions logged:** 25 · **Patterns learned:** 10 · **Mistakes tracked:** 25 · **Open blockers:** 2 (B-6, B-7) + watches (M-025, B-5, B-3)
-- **Review queue:** Day 26 (Jul 18) = **6 due**, all full re-solves — 3 are resets (#146, #102, #226).
+- **Last updated:** 2026-07-18 (Day 26 logged)
+- **Phase:** Summer Sprint · Block B — *Depth phase. **First Heaps done (#703, #1046)** + Trie wildcard (#211). Day 27 = more Heap (#973, #215). (Jul 19 = rest.)*
+- **Sessions logged:** 26 · **Patterns learned:** 11 · **Mistakes tracked:** 26 · **Open blockers:** 1 (B-6) + watches (B-4, B-3, M-026)
+- **Review queue:** Day 27 (Jul 20) = **6 due**. Resets #102, #208 first; #235 is the B-6 canary.
 
 ## 🟡 The honest read
 
-**Block 2 keeps getting stronger; Block 1 (reviews) is where the precision tax shows up.**
+**The pattern of the whole sprint is now crystal clear: he understands the algorithms; he loses to first-draft completeness — and each facet of that clears the moment it gets a named out-loud check.**
 
-Day 25 Block 2 was **3 new, all correct** — including a **brand-new data structure (Trie) built clean cold**, plus Validate BST (bounds passed *down*) and Kth Smallest (in-order = sorted, with the call-stack "why"). He's absorbing new machinery fast and asking the exactly-right questions ("don't I need a `self.val`?" — which *is* the insight).
+Look at the blocker history: **B-1 (names), B-2 (range/len), B-3 (return), B-4 (guards), B-5 (container/contents), B-7 (`self.`) have ALL cleared at least once.** Each was "the knowledge is there, the first draft leaves something out." Each cleared in ~2 sessions once we named a specific pre-submit check. **B-6 (search direction) is the last drill-now blocker** — one clean rep to go (#235 on Jul 20).
 
-**Block 1 was rough — 3 of 5 reset — but every failure was surface, not comprehension:**
-- **#102:** two API names (`from collections import deque`, `.popleft()`).
-- **#146:** rebuilt end-to-end; **all three drilled behaviors held** (`self.` ✅, return ✅, dict-sync ✅). Bugs were an incomplete `addFront` + two syntax slips.
-- **#226:** the one real slip — swapped local `left`/`right` instead of `node.left`/`node.right`.
+**But as fast as facets clear, new ones surface** — Day 26 it was **dropping a required line**: None-guards (#102, B-4 recurred), the `isEnd` end-marker (#208, #211, → M-026), and `return`s (#211). Plus `heapq` argument friction. Same disease, new clothes.
 
-**The precision drill is measurably working** (`self.`, return, dict-sync all clean → B-7 got its first clean rep, M-024 went dormant). **The live signal is a new facet: pointer-surgery** — #146's incomplete `addFront` and #226's local-vs-field are the same shape (**M-025**), and #226 also reopened the B-5 watch.
+**So the standing work is one habit, and it's worth stating as the through-line of his prep:** before submitting, **walk the operation top to bottom** — guard present? terminal line/mark written? every branch returns? all args passed? mutating the field not a local? That single scan is what separates his current 4-of-6 review days from clean ones. The algorithms are not the gap.
 
-## The reflexes (say them OUT LOUD before submitting)
-1. **Count the pointers · mutate the FIELD not a local** *(M-025 — new; #146, #226)*
-2. **The `self.` test** *(B-7 — clean Day 25 ✅ 1/2)*
-3. **Does it return?** *(B-3 — watch, clean)*
-4. **Which side can contain the answer?** — target-first *(B-6 — awaiting #235 Jul 19)*
-5. Both structures in sync? *(M-024 ✅)* · complexity time AND space *(the list-in-recursion is O(n) — M-005)*
+**The bright spots are real:** M-025 (pointer surgery) and B-7 (`self.`) both **cleared** Day 26. He rebuilt LRU cold in 16 min (was 35). He wrote the optimized #230 unprompted. And the **wildcard-DFS (#211) is the deepest recursion he's handled** — the call-stack animations were the unlock, and he asked (now standing rule #9) to always go slow on recursion.
+
+## The one scan (say it OUT LOUD before every submit)
+**Guard present? · Terminal line/mark written (isEnd, final set)? · Does every branch return? · All args passed (`heappush(h, x)`)? · Mutating the field not a local? · Which side can contain the answer (target-first)?**
 
 ## ⚠️ Standing schedule note
-Core roadmap is complete. Remaining is depth: **Heap (Day 26), Backtracking, Intervals, Graphs, DP.** No unplaced core problems.
+Core complete; depth phase (Heap → Backtracking → Intervals → Graphs → DP). **Jul 19 is a rest day** (end of Sprint Week 3). No unplaced core problems.
 
 ## Pace Health
 *(🟡 = off the sprint target · 🔴 = at risk. Refreshed each session.)*
 
 | Indicator | Value | Status |
 |---|---|---|
-| Days to Aug 20 pivot | 34 | 🟢 runway exists |
-| **Sprint throughput** (new/day) | Day 25 = **3** (#98, #230, #208) | 🟢 ahead of plan |
+| Days to Aug 20 pivot | 33 | 🟢 runway exists |
+| **Sprint throughput** (new/day) | Day 26 = **3** (#211, #703, #1046) | 🟢 ahead of plan |
 | Sessions last 7 days (target ≥ 6) | 6 | 🟢 |
 | Days since last session | 0 | 🟢 |
-| Queue due (next 2 days) | 6 + 7 | 🟡 fragile cluster (3 resets Jul 18) |
-| **Open blockers** | **2** (B-6, B-7) + watches B-3, B-5 | 🟡 B-7 1/2, B-6 pending #235 |
-| Review pass rate (Day 25) | **2 / 5** | 🔴 3 resets — but all surface (API names, pointer slips) |
+| Queue due (next 2 sessions) | 6 (Jul 20) + 7 (Jul 21) | 🟡 fragile cluster; resets up front |
+| **Open blockers** | **1** (B-6) + 3 watches | 🟡 B-6 one rep from clearing |
+| Review pass rate (Day 26) | **4 / 6** | 🟡 both fails = dropped-line precision |
 
 ## Pattern Mastery  *(1–5; 5 = solve a novel one cold while narrating)*
 
 | Pattern | Mastery | Note |
 |---|---|---|
-| Big-O & complexity | 4/5 | re-derives per problem; #230 list O(n) self-corrected |
+| Big-O & complexity | 4/5 | re-derives per problem |
 | Arrays & Hashing | 3/5 | stable |
 | Two Pointers | 3/5 | stable |
 | Sliding Window | 3/5 | solid |
 | Binary Search | 3/5 | stable |
 | Stack | 3/5 | stable |
-| Linked List | 4/5 | LRU verified; **#146 reset on `addFront` pointer count (execution)** |
-| Trees & BFS/DFS | 3/5 | **#226 reset — swapped locals not fields** (execution, not concept) |
-| **Binary Search Tree** | **3/5** | **#98 bounds-down + #230 in-order** both clean |
-| **Tries** | **2/5** | **new — #208 built clean cold, verified** |
+| Linked List | 4/5 | LRU rebuilt cold in 16 min, verified |
+| Trees & BFS/DFS | 3/5 | **#102 reset — dropped None-guards** (execution) |
+| Binary Search Tree | 3/5 | #98, #230 both clean |
+| **Tries** | **2/5** | **#211 wildcard-DFS** — hard recursion, done w/ guidance |
+| **Heap** | **2/5** | **new — #703 (min-heap-of-k), #1046 (max via negation)** |
 
-## 🟡 Open Blockers & watches
+## 🟡 Open blocker & watches
 
-- **B-7 (M-020, the `self.` rule)** — 🟡 **1 of 2.** #146 rebuild + #104 both clean on `self.`. One more clean → drops.
-- **B-6 (M-012, search direction)** — 🟡 **1 of 2.** No direction problem Day 25; the pending test is **#235 on Jul 19**.
-- **M-025 (pointer surgery)** — 👁 **NEW watch, 1 rep from a blocker.** *Count the pointers; mutate the field not a local.* (#146 `addFront`, #226 locals.)
-- **B-5 (M-021, container-vs-contents)** — 👁 **watch reopened Day 25** (#226 local-vs-field). Tracked with M-025.
-- **B-3 (return)** — 👁 watch, clean Day 25.
+- **B-6 (M-012, search direction)** — 🟡 **the last drill-now blocker, 1 of 2.** #235's target-first re-solve on **Jul 20** is the pending 2nd clean test. If it inverts again, stop and drill direction cold.
+- **B-4 (M-011, edge guards)** — 👁 **watch reopened Day 26** (#102 dropped both None-guards). Full re-escalation if it recurs.
+- **M-026 (dropped the terminal line, isEnd)** — 👁 **NEW watch** (#208, #211). One rep from a blocker.
+- **B-3 (M-001, returns)** — 👁 watch (#211 missing returns).
 
-*(Cleared & now standing habits: B-1 names, B-2 range/len, **B-4 guards**, **B-5 container-vs-contents [watch]**. M-024 dual-sync → dormant, clean Day 25.)*
+*(Cleared → standing habits: B-1 names, B-2 range/len, B-3 return [watch], B-4 guards [watch], B-5 container/contents, **B-7 `self.` (Day 26)**, **M-025 pointer surgery (Day 26)**.)*
 
-## Next Session Focus  → **Day 26**
-1. **Block 1 — review (6 due, full re-solves; 3 resets):** **#146 → #102 → #226** (resets — **count the pointers · `from collections import deque` / `.popleft()` · mutate `node.left/right` not locals**), then **#98 → #230 → #208** (1d).
-2. **Block 2 — new:** **Design Add & Search Words (#211)** — Trie + `.` wildcard (DFS into all children at a `.`). **Heap** — Kth Largest in a Stream (#703), Last Stone Weight (#1046). **Pre-teach `heapq` in isolation:** min-heap by default, max-heap via negation, push/pop are O(log n).
-3. **Habits (out loud before submit):** count the pointers / mutate the field not a local · the `self.` test · does it return? · complexity time AND space.
+## Next Session Focus  → **Day 27 (Jul 20)** *(Jul 19 rest)*
+1. **Block 1 — review (6 due):** resets **#102 → #208** first (**#102: root-None + child-None guards; #208: `node.isEnd = True`**), then new **#211 → #703 → #1046** (1d), then **#235** (B-6 canary — **target-first**).
+2. **Block 2 — new:** **Heap** — K Closest Points to Origin (#973, heap with tuple keys), Kth Largest in Array (#215, heap or quickselect).
+3. **Habits (out loud before submit):** **walk the op to the end — guard? terminal line? does it return? all args?** · target-first (B-6) · complexity time AND space.
 
 ---
 *Weekly snapshots can be appended below as the sprint progresses.*

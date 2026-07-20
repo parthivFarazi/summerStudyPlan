@@ -31,5 +31,6 @@ A verbatim copy of each day's practice notebook: your raw answers (bugs and all)
 | [Day 23](Day23-Practice-Notebook.md) | Jul 15 | **BFS from scratch** — Level Order #102, Right Side View #199 · Balanced Tree #110 (box pattern transferred) · DFS-height vs BFS-width space (7 reviews; #271/#242 blockers cleared 1/2; #235/#143 reset) |
 | [Day 24](Day24-Practice-Notebook.md) | Jul 16 | **🎉 LRU Cache #146 — last core problem** (doubly-linked list + hashmap, verified vs OrderedDict) · interleave 6/6, both resets fixed · B-4 & B-5 cleared, B-7 (`self.`) escalated |
 | [Day 25](Day25-Practice-Notebook.md) | Jul 17 | **First Trie #208** (nested dicts, clean cold) · Validate BST #98 (bounds down) · Kth Smallest #230 (in-order = sorted) · 5 reviews, 3 resets (surface: API names + pointer slips) |
+| [Day 26](Day26-Practice-Notebook.md) | Jul 18 | **Trie wildcard #211** (`.` = DFS backtrack, w/ call-stack animations) · **first Heaps** #703 (min-heap-of-k), #1046 (max via negation) · 6 reviews 4/6 · B-7 & M-025 cleared, B-4 reopened |
 
 *New day → save `DayN-Practice-Notebook.md` here and add a row.*

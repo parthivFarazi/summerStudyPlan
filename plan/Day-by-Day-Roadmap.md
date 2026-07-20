@@ -43,7 +43,7 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 | 7 | Jun 26 | Warm-up retrieval | **Sliding Window** — Best Time to Buy/Sell (#121, E) | running-min + best-profit (2 vars) | O(n) |
 | 8 | Jun 28 | Valid Palindrome (decay caught) | **Sliding Window** — Longest Substring No Repeat (#3, M) | set + shrink-from-left | O(n) amortized |
 
-> **Currently:** **Day 25 ✅ done (Jul 17)** — Validate BST (#98) + Kth Smallest (#230) + **first Trie (#208, clean cold).** **Day 26 (Jul 18) is next: Trie wildcard (#211) + first Heap (#703, #1046).** Depth phase underway (Tries done-ish, Heap next). Live state always in `DASHBOARD.md`.
+> **Currently:** **Day 26 ✅ done (Jul 18)** — Trie wildcard (#211) + **first Heaps (#703, #1046).** End of Sprint Week 3. **Jul 19 = rest. Day 27 (Jul 20) is next: Heap — K Closest (#973), Kth Largest in Array (#215).** Depth phase: Tries + Heap underway; Backtracking next. Live state in `DASHBOARD.md`.
 
 ---
 
@@ -87,7 +87,7 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 | 23 ✅ | Jul 15 | 7 due (protocol) | **Trees** — Level Order Traversal (#102, M) ✅<br>**Trees** — Right Side View (#199, M) ✅<br>**Trees** — Balanced Binary Tree (#110, E) ✅<br><sub>⤷ **Validate BST (#98) DEFERRED → Day 25**</sub> | BFS w/ collections.deque; freeze level size<br>rightmost per level<br>box pattern (height + bool) | O(n)/O(n)<br>O(n)/O(n)<br>O(n)/O(h) |
 | 24 ✅ | Jul 16 | interleave, 6/6 | ✅ **Linked List — LRU Cache (#146, M)** — *the last unplaced core problem, DONE + verified vs OrderedDict* | dict + doubly-linked list; dummy head/tail; node stores its key | O(1) get/put, O(capacity) space |
 | 25 ✅ | Jul 17 | 5 due (2/5) | **BST** — Validate BST (#98, M) ✅ *(deferred from Day 23)*<br>**BST** — Kth Smallest in BST (#230, M) ✅<br>**Tries** — Implement Trie (#208, M) ✅ *(first Trie, clean cold)* | (low,high) bounds passed DOWN — subtree-wide invariant<br>in-order = sorted; flag-to-stop recursion<br>nested dict / TrieNode; char = the key | O(n)/O(h)<br>O(n) or O(h+k)<br>O(L) per op |
-| 26 | Jul 18 | Valid Palindrome; Two Sum II (+5) | **Tries** — Design Add & Search Words (#211, M)<br>**Heap** — Kth Largest in a Stream (#703, E)<br>**Heap** — Last Stone Weight (#1046, E) | DFS with '.' wildcard<br>heapq; min-heap size k<br>max-heap via negation | O(L) avg<br>O(log k) per add<br>O(n log n) |
+| 26 ✅ | Jul 18 | 6 due (4/6) | **Tries** — Add & Search Words (#211, M) ✅<br>**Heap** — Kth Largest in a Stream (#703, E) ✅<br>**Heap** — Last Stone Weight (#1046, E) ✅ | DFS with '.' wildcard (backtrack)<br>heapq; min-heap size k<br>max-heap via negation | O(L)/O(N)<br>O(log k) per add<br>O(n log n) |
 
 ### Sprint Week 4 · Jul 20–Jul 25  (Day 27–32)
 *Focus: Heap, Backtracking, Intervals*

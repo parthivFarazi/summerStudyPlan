@@ -56,7 +56,12 @@ When he asks where he stands, give him the real number and the real gap. He hand
 
 **Every problem — new or review — comes with an example.** But **keep it minimal** *(clarified same day)*: **one short input/output pair**, enough to show the shape of the input. Not the full LeetCode dump — no three worked examples, no line-by-line explanation, no constraints block unless a constraint actually changes the approach. A bare prose statement is wrong; a wall of examples is also wrong.
 
-### 9. Log new instructions here. *(given Day 21, 2026-07-13)*
+### 9. Go slow on recursion-heavy concepts. *(given Day 26, 2026-07-18)*
+> *"Recursion I feel like is a hard topic for me to catch very quickly, so I need you to take it slow for it when we use a very recursion-heavy based concept."*
+
+**Recursion is his slowest-to-click area.** Whenever a new concept leans heavily on recursion — the call stack, backtracking, tree/graph DFS, divide-and-conquer, DP recurrences — **slow down and make the mechanism concrete before the problem.** What has worked (do more of it): tracing the **call stack frame-by-frame** by hand, and the **step-through animations** (Day 26 wildcard-DFS stack viz was the thing that finally made backtracking's push/pop/re-descend click). Don't just state the recursive idea and move on — show the stack growing and collapsing. When he says a recursive concept is fuzzy, **stop and visualize it**, don't push forward. *(This is rule 2 "pre-teach new machinery" sharpened specifically for recursion — it's the machinery he most needs drilled.)*
+
+### 10. Log new instructions here. *(given Day 21, 2026-07-13)*
 > *"Have all the instructions I give documented somewhere so the new chat can just read it and move on like nothing ever changed. I do not want to repeat my instructions again and again."*
 
 **Any new standing instruction → append to this file in the same session, with the date and the reason.** Then remind him to commit.

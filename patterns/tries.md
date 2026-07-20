@@ -69,5 +69,28 @@ def startsWith(self, prefix):
 ## Mental model (his own, Day 25)
 *"A Trie is nodes attached to dictionaries — like LRU, but each node has its OWN `children` dict, and a node only ever reaches its own children."* Exactly right — there's no back/sideways pointer, which is **why every operation must start at `self.root`.**
 
-## Next
-- **#211 Add & Search Words** — `search` with a `.` wildcard: at a `.`, you can't pick one edge, so **recurse into ALL children** (DFS). This is where Trie meets tree-DFS.
+## 🔑 #211 Add & Search Words — the `.` wildcard = DFS *(Day 26)*
+`addWord` is identical to `insert`. `search` gains a `.` that matches any one char. A normal letter follows **one** edge; a `.` **can't pick** — so try **all** children and succeed if **any** subtree matches. That branching is why a plain one-pointer walk no longer works — you need recursion (DFS), which **backtracks** when a child fails.
+```python
+def search(self, word):
+    def dfs(index, node):
+        if index == len(word):
+            return node.isEnd
+        if word[index] != ".":
+            if word[index] not in node.children:
+                return False
+            return dfs(index+1, node.children[word[index]])   # one edge
+        else:
+            for child in node.children.values():              # try ALL children
+                if dfs(index+1, child):
+                    return True                               # any match wins
+            return False
+    return dfs(0, self.root)
+```
+- **Time:** O(L) with no wildcard (one path); worst case with many `.`s it fans out — up to **O(N)** total nodes visited. **Space:** O(L) recursion depth.
+- **On the call stack (the thing that clicks slowly):** a `.` pushes a whole sub-search for the first child, waits for it to **fully return**, and if it's False, the frames **pop back** to the `.`'s frame and the `for`-loop tries the next child — stack goes deep, collapses, goes deep again. A normal letter never backs up; only the `.` does.
+
+## Your gotchas
+- **`addWord`/`insert` must end with `node.isEnd = True`** — dropped it on #208 and #211 (M-026). The op isn't done when the loop ends.
+- **Every branch of `dfs` must `return`** — #211 dropped the return on the normal branch and didn't return `answer` from the wildcard loop (M-001). Walk each branch to its end.
+- **Base case is `index == len(word)`**, not `len(word) - 1` — off-by-one stops one char early.
