@@ -1,7 +1,7 @@
 # Heap / Priority Queue
 
-**Status:** learning (started Day 26, 2026-07-18) · **Mastery: 2/5** · Block B
-**First problems:** #703 Kth Largest in a Stream, #1046 Last Stone Weight — both built + verified.
+**Status:** learning (started Day 26, 2026-07-18) · **Mastery: 3/5** · Block B
+**Problems:** #703 Kth Largest in a Stream, #1046 Last Stone Weight (Day 26) · **#973 K Closest Points, #215 Kth Largest in Array (Day 27)** — all built + verified.
 
 ## In one line
 A container that keeps the **minimum instantly accessible** while staying cheap to insert into and remove from. **NOT recursion** — iterative, backed by a library.
@@ -49,6 +49,40 @@ def add(self, val):
 ```
 **Why a MIN-heap (not max):** you need the **cutoff** between "top k" and "everyone else" — that's the *smallest* of your k, i.e. `h[0]`. It's both the answer and the thing you evict. *(He built a verbose case-split version; push-and-trim above is the clean idiom.)*
 
+## 🔑 Tuple keys — sort the heap by a computed value *(Day 27)*
+`heapq` orders tuples by the **first element, then the second as a tiebreaker**, etc. Push `(key, payload)` and the heap sorts by `key` for free.
+```python
+heapq.heappush(h, (dist, i))     # ordered by dist; ties break on i
+```
+Put a **unique tiebreaker** (like an index `i`) second so the heap never has to compare the payloads — e.g. two `[x,y]` points with equal distance.
+
+## 🔑 "Max-heap of size k" for k-CLOSEST / k-smallest *(#973)*
+To keep the **k smallest** (closest), you need a **max-heap of size k** (via negation): the heap holds your k best, and `h[0]` = the *largest* of them = the boundary. A point beats the boundary ⇒ evict the boundary, add the point.
+```python
+maxHeap = []
+for i, (x, y) in enumerate(points):
+    d = x*x + y*y
+    heapq.heappush(maxHeap, (-d, i))     # push then trim — simplest
+    if len(maxHeap) > k:
+        heapq.heappop(maxHeap)           # pops the most-negative = farthest
+return [points[i] for (nd, i) in maxHeap]
+# O(n log k) time, O(k) space
+```
+⚠️ **Min-heap-of-all keeps the FARTHEST k** if you pop down to size k — the opposite. For k-smallest with a size-k heap you need a **max**-heap (negation). *(Or: heapify all, pop k times, keep the popped — O(n + k log n).)*
+
+## "Min-heap of size k" for k-LARGEST *(#215 — same engine as #703)*
+```python
+minHeap = []
+for num in nums:
+    if len(minHeap) < k:
+        heapq.heappush(minHeap, num)
+    elif num > minHeap[0]:
+        heapq.heappop(minHeap)
+        heapq.heappush(minHeap, num)
+return minHeap[0]                          # smallest of the k largest = kth largest
+# O(n log k) time, O(k) space  ·  (quickselect = O(n) avg alternative — Day 28+)
+```
+
 ## #1046 Last Stone Weight — max-heap
 ```python
 h = [-s for s in stones]
@@ -71,4 +105,7 @@ return -h[0] if h else 0
 - **`heappush` needs the heap first** — wrote `heapq.heappush(x)` / `heapq.heappush(-num)` (missing `h`) **three times**. `heappush(h, x)`, always.
 - **`heappop` takes ONLY the heap** — wrote `heapq.heappop(h, num)` with a stray second arg. `heappop(h)`.
 - **A plain list is not a heap** — call `heapq.heapify(lst)` first, or build it with pushes. `self.h = nums` alone leaves `h[0]` as arbitrary `nums[0]`.
-- **Sign flips (max-heap)** — negate on push AND negate back on every read; easy to drop one.
+- **Sign flips (max-heap)** — negate on push AND negate back on every read; easy to drop one. **Negation is a *touch-every-boundary* transform (M-027):** push `-x`, pop `-…`, and the final `return -h[0]` — miss any one and it's silently wrong (#1046 needed all three).
+- **`^` is XOR, not power** *(Day 27, #973)* — `x^2` = `x XOR 2`, NOT `x²`. It doesn't crash, it computes garbage. Use `x*x` or `x**2`.
+- **`h[0]` on a tuple heap is a TUPLE** — compare/unpack the field you want (`nd, i = h[0]`), don't compare a scalar to the whole tuple.
+- **Size-k heap: pick min vs max by which end you evict** — k-largest → min-heap (evict the smallest); k-smallest/closest → max-heap (evict the largest). Getting it backwards keeps the wrong k.

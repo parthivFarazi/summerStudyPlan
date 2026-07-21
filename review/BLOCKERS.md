@@ -6,13 +6,16 @@
 
 > **⚠️ Days 22–24 — the honest read.** All the blockers are **one disease: first-draft precision on problems he has ALREADY solved correctly in his head.** The drill = **questions said OUT LOUD before any submit.** And it WORKS: **Day 24 cleared B-4 AND B-5.** Two facets clear; the disease persists in new facets (B-7 emerged same day).
 >
-> **⚠️ THE ONE SCAN (Days 22–26).** Every recurring impl slip is **one disease: first-draft completeness.** As each facet gets a named out-loud check it CLEARS — then a new facet surfaces (B-1→B-7 all cleared at least once). **Before every submit, walk the operation top to bottom and ask:**
-> 1. **Guard present?** — empty? None? lengths? (B-4 — reopened Day 26: #102 dropped None-guards)
-> 2. **Terminal line / mark written?** — `isEnd = True`, the final set (M-026 — NEW Day 26: #208, #211)
-> 3. **Does every branch return?** (B-3 — watch; #211 missing returns Day 26)
-> 4. **All args passed?** — `heappush(h, x)` not `heappush(x)` (new-API friction Day 26)
-> 5. **Mutating the field, not a local? Pointer count right?** (M-025 — CLEARED Day 26 ✅) · **`self.` test** (B-7 — CLEARED Day 26 ✅)
-> 6. **Which side can still contain the answer?** — target-first (B-6 — active, 1 of 2, awaiting #235)
+> **✅ Day 27 — B-6 CLEARED. For the first time, no drill-now blocker is active.** Every blocker ever escalated (B-1…B-7) has now cleared at least once. But the disease persists in new facets — **Day 27 it moved to the EDIT level (M-027): a multi-site change (negate/rename/paired-op) applied to some sites but not all.**
+>
+> **⚠️ THE ONE SCAN (Days 22–27).** Every recurring impl slip is **one disease: first-draft completeness.** As each facet gets a named out-loud check it CLEARS — then a new facet surfaces. **Before every submit, walk the operation top to bottom and ask:**
+> 1. **Guard present?** — empty? None? lengths? (B-4 — reopened Day 26)
+> 2. **Terminal line / mark written?** — `isEnd = True`, the final set (M-026 — Day 26)
+> 3. **Does every branch return?** (B-3 — watch)
+> 4. **All args passed?** — `heappush(h, x)` not `heappush(x)`
+> 5. **Mutating the field, not a local? Pointer count right?** (M-025 ✅) · **`self.` / whose thing is every attribute?** (B-7 — REOPENED Day 27: `self.root`, `node.isEnd` on #211)
+> 6. **Which side can still contain the answer?** — target-first (B-6 — CLEARED Day 27 ✅)
+> 7. **Multi-site change complete?** — a negate/rename/paired-op has MANY sites; enumerate and confirm each (M-027 — NEW Day 27, ×3: #1046 negation, #215 rename, #973 evict)
 
 ### 👁 B-4 · M-011 — dropping edge-case guards  *(CLEARED Day 24 — watch REOPENED Day 26)*
 Cleared Day 24, but recurred Day 26: **#102 dropped BOTH None-guards it had on Day 23** — the root-`None` check and the `if node.left / if node.right` before enqueuing → a `None` gets enqueued → `node.val` crashes.
@@ -22,7 +25,8 @@ Cleared Day 24, but recurred Day 26: **#102 dropped BOTH None-guards it had on D
 Forgot **`node.isEnd = True`** at the end of a Trie `insert`/`addWord` — **twice the same session** (#208 review, #211) → every `search` returns False. An operation isn't finished when the loop ends; the **completing line** (the mark, the return, the final set) is part of it.
 **Drill:** after the loop, ask *"did I mark/return the result?"* Kin to B-4 (guard) and B-3 (return) — all "first draft leaves a required line out."
 
-### B-6 · M-012 — inverted search direction  🟡 *(escalated Day 22 — recurrence 4, the ONLY drill-now blocker left)*
+### B-6 · M-012 — inverted search direction  ✅ *(CLEARED Day 27 — was the last drill-now blocker)*
+> **Cleared Day 27:** #235 written target-first with zero inversion, 2:27 — the 2nd consecutive clean rep after Day 24. It beat him 4× (#704, #33, #235 ×2) and reset #235 two days running; the mechanical fix (comparison TARGET-first, nothing to mentally flip) held cold, and even **transferred** to #973's negated max-heap comparison. **Keep the "which side can still contain the answer? — target-first" check as a standing habit; re-escalate on recurrence.** History below.
 Moving toward the half that **cannot possibly contain the target**.
 - #704 — inverted the discard direction (Day 9)
 - #33 — inverted **all four** pointer updates (Day 13)
@@ -43,7 +47,17 @@ else:
 > (Array BS: `target > nums[mid]` → answer is right → `left = mid + 1`.)
 
 **Drill — say it, then spell it target-first:** ***"Which side can still contain the answer?"***
-**Clears when:** two consecutive sessions with zero direction inversions. *(Day 23: FAILED ❌ · **Day 24: CLEAN ✅ — #235 target-first. 1 of 2.**)*
+**Cleared:** two consecutive sessions with zero direction inversions. *(Day 23: FAILED ❌ · Day 24: CLEAN ✅ · **Day 27: CLEAN ✅ — 2 of 2 → CLEARED.**)*
+
+### 👁 M-027 · multi-site change applied to some sites but not all  *(NEW Day 27 — fired ×3, 1 rep from a blocker)*
+A transform/rename/paired-op has ONE meaning but MANY sites; the first draft lands it on some, not all. **Day 27:**
+- **Negation** (#1046) — hit 0 then 2 of 3 boundaries; forgot `push -x` entirely, then forgot `return -h[0]`.
+- **Rename** (#215) — `maxHeap → minHeap` left one straggler `heappush(maxHeap, …)` → NameError.
+- **Paired op** (#973) — wrote the `heappush` (add), dropped the `heappop` (evict) → heap grew past k.
+**Drill:** when you apply a change, **name every site it must touch and check each** (in / out / final read; every occurrence of a renamed var; both halves of a paired op). Generalizes M-024 (dual-structure sync); kin to M-009 (plan/code disconnect). **Escalates to drill-now if it fires again.**
+
+### 👁 B-7 · M-020 — the `self.` / attribute-ownership rule  *(CLEARED Day 26 — WATCH REOPENED Day 27)*
+Recurred on #211: `dfs(0, root)` should be `self.root`, and `return isEnd` should be `node.isEnd` — an attribute written without naming its owner. **Drill (generalized):** *whose thing is every attribute?* — attached via `self.x=` or a method of this class → `self.`; a field of an object → `object.field`; parameter/local → bare. Full re-escalation to drill-now if it recurs again.
 
 ### B-3 · M-001 — forgetting `return`  🟡 *(watch REOPENED Day 24)*
 Cleared Day 21, but recurred on Day 24: **`get` fell off the end of #146 with no `return node.val`** → returned `None` on a cache hit. One slip, in the hardest problem of the sprint, among four precision bugs — but the standing rule is **re-escalate on any recurrence.**
