@@ -3,22 +3,22 @@
 A beginner working from near-zero toward **FAANG-ready by interview season**, one tracked day at a time. This repo *is* my real prep — the plan, the daily notebooks, the mistakes, and the spaced-repetition system that ties it together. Not polished-for-show: the actual journey, decay and dumb bugs included.
 
 <!-- README-LIVE:START -->
-![Day](https://img.shields.io/badge/Day-27-2563eb)
+![Day](https://img.shields.io/badge/Day-28-2563eb)
 ![Phase](https://img.shields.io/badge/Phase-Summer_Sprint-7c3aed)
-![Focus](https://img.shields.io/badge/Focus-Depth_phase_B_6_CLEARED_no_drill_now_blocker_for_the_first_time_Heap_depth_done_Day_28_Backtracking-0891b2)
-![Pace](https://img.shields.io/badge/Pace-on_plan-16a34a)
+![Focus](https://img.shields.io/badge/Focus-Depth_phase_Backtracking_started_new_pattern_No_12_Heap_depth_done_Day_27-0891b2)
+![Pace](https://img.shields.io/badge/Pace-ahead_2_sessions_day-16a34a)
 ![Goal](https://img.shields.io/badge/Goal-FAANG_ready_by_Sept-ea580c)
 ![Language](https://img.shields.io/badge/Language-Python-3776ab)
 
 ## 📍 Where I'm at right now
 
-- **Day 27** · **Summer Sprint → Block B**
-- **Current focus:** Depth phase. B-6 CLEARED — no drill-now blocker for the first time. Heap depth done. Day 28 = Backtracking.
-- **Up next (Day 28 (Jul 22)):** Backtracking
-- **Tracker totals:** 27 sessions · 11 patterns learned · 28 mistakes tracked
-- **Open blockers:** 0 + watches (M-027, B-7, B-4, B-3, M-026, M-028)
-- **Review queue:** Day 28 (Jul 22) = 8 due. Resets #211, #1046, #110 first; then new #973, #215; then #271, #199, #143.
-- **Last dashboard update:** 2026-07-21
+- **Day 28** · **Summer Sprint → Block B**
+- **Current focus:** Depth phase. Backtracking started — new pattern #12. Heap depth done Day 27
+- **Up next (Day 29 (Jul 23)):** Backtracking cont.
+- **Tracker totals:** 28 sessions · 12 patterns learned · 28 mistakes tracked
+- **Open blockers:** 1 (B-7 drill-now) + watches (M-027, B-4, M-005, M-026, M-028)
+- **Review queue:** Day 29 (Jul 23) = 8 due, all fragile. The 5 Day-27 items (now spaced) + 3 Day-28 resets (#143, #199, #146).
+- **Last dashboard update:** 2026-07-22
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 
 *This block is generated from `DASHBOARD.md`. Run `python3 scripts/sync_readme.py` after dashboard edits; the pre-commit hook also runs it automatically.*
