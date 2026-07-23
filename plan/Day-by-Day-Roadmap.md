@@ -43,7 +43,7 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 | 7 | Jun 26 | Warm-up retrieval | **Sliding Window** — Best Time to Buy/Sell (#121, E) | running-min + best-profit (2 vars) | O(n) |
 | 8 | Jun 28 | Valid Palindrome (decay caught) | **Sliding Window** — Longest Substring No Repeat (#3, M) | set + shrink-from-left | O(n) amortized |
 
-> **Currently:** **Day 26 ✅ done (Jul 18)** — Trie wildcard (#211) + **first Heaps (#703, #1046).** End of Sprint Week 3. **Jul 19 = rest. Day 27 (Jul 20) is next: Heap — K Closest (#973), Kth Largest in Array (#215).** Depth phase: Tries + Heap underway; Backtracking next. Live state in `DASHBOARD.md`.
+> **Currently:** **Day 29 ✅ done (Jul 23)** — Backtracking deepening: **#90 Subsets II + #46 Permutations (derived cold).** Heap depth (#973/#215) and first Backtracking (#78/#39) done Days 27–28. **B-6 cleared; B-7 has 1 clean session.** **Next: Day 30 (Jul 24) — interleave review + #79 Word Search.** Calendar runs ~1 day behind the original columns (Jul 20 was skipped) — day numbers are the backbone; dates flex. Live state in `DASHBOARD.md`.
 
 ---
 
@@ -89,15 +89,17 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 | 25 ✅ | Jul 17 | 5 due (2/5) | **BST** — Validate BST (#98, M) ✅ *(deferred from Day 23)*<br>**BST** — Kth Smallest in BST (#230, M) ✅<br>**Tries** — Implement Trie (#208, M) ✅ *(first Trie, clean cold)* | (low,high) bounds passed DOWN — subtree-wide invariant<br>in-order = sorted; flag-to-stop recursion<br>nested dict / TrieNode; char = the key | O(n)/O(h)<br>O(n) or O(h+k)<br>O(L) per op |
 | 26 ✅ | Jul 18 | 6 due (4/6) | **Tries** — Add & Search Words (#211, M) ✅<br>**Heap** — Kth Largest in a Stream (#703, E) ✅<br>**Heap** — Last Stone Weight (#1046, E) ✅ | DFS with '.' wildcard (backtrack)<br>heapq; min-heap size k<br>max-heap via negation | O(L)/O(N)<br>O(log k) per add<br>O(n log n) |
 
-### Sprint Week 4 · Jul 20–Jul 25  (Day 27–32)
+### Sprint Week 4 · Jul 21–Jul 25  (Day 27–32)
 *Focus: Heap, Backtracking, Intervals*
+
+> **⚠️ Schedule change (Days 27–30).** **Jul 20 was skipped** (rest was Jul 19), so the calendar runs ~1 day behind the original date column — day numbers stay the backbone. Also: on **Day 29**, Subsets II (#90, a Day-52 item) was pulled forward by accident, so **Word Search (#79) slipped from Day 29 → Day 30.** Aug 20 target unaffected; a Sunday can reabsorb the 1-day drift.
 
 | Day | Date | Block 1 — Review | Block 2 — New | New Python / skill | Big-O |
 |----|----|----|----|----|----|
-| 27 | Jul 20 | Container With Most Water; Reorder List (+1) | **Heap** — K Closest Points to Origin (#973, M)<br>**Heap** — Kth Largest in Array (#215, M) | heap with tuple keys<br>heapq.nlargest; quickselect | O(n log k)<br>O(n log k); QS O(n) avg |
-| 28 | Jul 21 | Best Time to Buy/Sell; LRU Cache (+4) | **Backtracking** — Subsets (#78, M)<br>**Backtracking** — Combination Sum (#39, M) | backtrack template; path[:] copy<br>recursion w/ start index | O(n·2ⁿ)<br>O(2^t) |
-| 29 | Jul 22 | Longest Substring No Repeat; Diameter of Binary Tree (+5) | **Backtracking** — Permutations (#46, M)<br>**Backtracking** — Word Search (#79, M) | used-set / swap<br>grid DFS + visited backtrack | O(n·n!)<br>O(m·n·4^L) |
-| 30 | Jul 23 | **Interleave** — mixed unlabeled set | — | name the *pattern* first | state complexity unprompted |
+| 27 ✅ | Jul 21 | 7 due (4/7) | **Heap** — K Closest Points to Origin (#973, M) ✅<br>**Heap** — Kth Largest in Array (#215, M) ✅ | heap with tuple keys<br>min-heap size k<br><sub>**B-6 CLEARED** (#235 target-first)</sub> | O(n log k)<br>O(n log k) |
+| 28 ✅ | Jul 22 | 6 due (3/6) | **Backtracking** — Subsets (#78, M) ✅ *(derived by hand-trace)*<br>**Backtracking** — Combination Sum (#39, M) ✅ | choose→recurse→un-choose; path.copy()<br>reuse = stay on i; total as param | O(n·2ⁿ)<br>O(N^(T/M+1)) |
+| 29 ✅ | Jul 23 | 8 due (5/8) | **Backtracking** — Subsets II (#90, M) ✅ *(pulled early from Day 52)*<br>**Backtracking** — Permutations (#46, M) ✅ *(derived cold)*<br><sub>⤷ **Word Search (#79) DEFERRED → Day 30**</sub> | sort + skip-all-copies (dedup)<br>for-loop + used-set (no index) | O(n·2ⁿ)<br>O(n·n!) |
+| 30 | Jul 24 | **Interleave** — mixed unlabeled set | **Backtracking** — Word Search (#79, M) *(carried from Day 29)* | grid DFS + visited backtrack (un-mark on the way out) | O(m·n·4^L) |
 | 31 | Jul 24 | Koko Eating Bananas; Subsets (+1) | **Intervals** — Insert Interval (#57, M)<br>**Intervals** — Merge Intervals (#56, M) | list building; comparisons<br>sort(key=lambda x:x[0]) | O(n)<br>O(n log n) |
 | 32 | Jul 25 | Find Min in Rotated Array; Kth Smallest in BST (+3) | **Intervals** — Non-overlapping Intervals (#435, M)<br>**Intervals** — Meeting Rooms (#252, E) | greedy by end time<br>sort + overlap check | O(n log n)<br>O(n log n) |
 
@@ -143,7 +145,7 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 | Day | Date | Block 1 — Review | Block 2 — New | New Python / skill | Big-O |
 |----|----|----|----|----|----|
 | 51 | Aug 17 | Jump Game; Gas Station | **Graphs** — Pacific Atlantic Water Flow (#417, M) ⟂depth<br>**Graphs** — Graph Valid Tree (#261, M) ⟂depth | reverse DFS from borders<br>union-find / edge count | variant fluency<br>variant fluency |
-| 52 | Aug 18 | Insert Interval; Merge Intervals (+5) | **Backtracking** — Subsets II (#90, M) ⟂depth<br>**Backtracking** — Palindrome Partitioning (#131, M) ⟂depth | sort + skip dup branch<br>substring + isPalindrome | variant fluency<br>variant fluency |
+| 52 | Aug 18 | Insert Interval; Merge Intervals (+5) | ~~Subsets II (#90)~~ **done early Day 29 → re-solve as review** ⟂depth<br>**Backtracking** — Palindrome Partitioning (#131, M) ⟂depth | (#90 sort + skip dup — learned)<br>substring + isPalindrome | variant fluency<br>variant fluency |
 | 53 | Aug 19 | Non-overlapping Intervals; Meeting Rooms (+4) | **Backtracking** — Letter Combos of Phone (#17, M) ⟂depth<br>**Trees** — Balanced Binary Tree (#110, M) ⟂depth | digit→letters map<br>(height, balanced) tuple | variant fluency<br>variant fluency |
 
 > **Aug 20 checkpoint:** you've acquired every core pattern and started the depth track. If you're behind here, that's fine — finish the *core* first; depth and Hards are built for fall.
