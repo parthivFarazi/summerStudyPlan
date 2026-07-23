@@ -17,16 +17,18 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 
 | Problem | Pattern | Rung | Next due | Streak | Results |
 |---|---|---|---|---|---|
-| **Add & Search Words (#211)** | tries | **1d (reset)** | 2026-07-23 | 0 | (new)·**F** |
-| **Last Stone Weight (#1046)** | heap | **1d (reset)** | 2026-07-23 | 0 | (new)·**F** |
-| **Balanced Binary Tree (#110)** | trees | **1d (reset)** | 2026-07-23 | 0 | (new)·**F** |
-| **K Closest Points (#973)** | heap | **1d** | 2026-07-23 | 0 | (new) |
-| **Kth Largest in Array (#215)** | heap | **1d** | 2026-07-23 | 0 | (new) |
-| **Reorder List (#143)** | linked-list | **1d (reset)** | 2026-07-23 | 0 | (new)·F·P·**F** |
-| **Right Side View (#199)** | trees | **1d (reset)** | 2026-07-23 | 0 | (new)·P·**F** |
-| **LRU Cache (#146)** | design / linked-list | **1d (reset)** | 2026-07-23 | 0 | (new)·F·P·**F** |
+| **Add & Search Words (#211)** | tries | **1d (reset)** | 2026-07-24 | 0 | (new)·F·**F** |
+| **Last Stone Weight (#1046)** | heap | **1d (reset)** | 2026-07-24 | 0 | (new)·F·**F** |
+| **Right Side View (#199)** | trees | **1d (reset)** | 2026-07-24 | 0 | (new)·P·F·**F** |
+| **Subsets II (#90)** | backtracking | **1d** | 2026-07-24 | 0 | (new) |
+| **Permutations (#46)** | backtracking | **1d** | 2026-07-24 | 0 | (new) |
 | **Subsets (#78)** | backtracking | **1d** | 2026-07-24 | 0 | (new) |
-| **Combination Sum (#39)** | backtracking | **1d** | 2026-07-24 | 0 | (new) |
+| **Combination Sum (#39)** | backtracking | **1d** | 2026-07-25 | 0 | (new) |
+| Balanced Binary Tree (#110) | trees | 3d | 2026-07-25 | 1 | (new)·F·**P** |
+| K Closest Points (#973) | heap | 3d | 2026-07-25 | 1 | (new)·**P** |
+| Kth Largest in Array (#215) | heap | 3d | 2026-07-25 | 1 | (new)·**P** |
+| Reorder List (#143) | linked-list | 3d | 2026-07-25 | 1 | (new)·F·P·F·**P** |
+| LRU Cache (#146) | design / linked-list | 3d | 2026-07-27 | 1 | (new)·F·P·F·**P** |
 | Level Order Traversal (#102) | trees | 3d | 2026-07-24 | 1 | (new)·F·F·P |
 | Implement Trie (#208) | tries | 3d | 2026-07-24 | 1 | (new)·F·P |
 | Kth Largest in Stream (#703) | heap | 3d | 2026-07-24 | 1 | (new)·P |
@@ -66,18 +68,19 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 | Two Sum (#1) | arrays-hashing | 60d | 2026-09-12 | 4 | P·P·P·P |
 | Contains Duplicate (#217) | arrays-hashing | 60d | 2026-09-12 | 4 | P·P·P·P |
 
-### Load after Day 28 fuzz *(cap ~8/day · 🗣 = verbal 30-sec tier · ⚠️ Jul 26 = REST, nothing scheduled)*
-`Jul 23` **8** · `Jul 24` **8** · `Jul 25` **8** · `Jul 26` **REST** · `Jul 27` **8** · `Jul 28` **8** (6 full + 2 verbal). **No day over cap.** *(Heavy backlog — the double session + the skipped Jul 20 stacked the fragile/3d layers. Rides the cap ~a week, then eases as items climb to 7d/21d.)*
+### Load after Day 29 fuzz *(cap ~8/day · 🗣 = verbal · ⚠️ Jul 26 = REST · ⚠️ backlog EXCEEDS cap Jul 24–25 — apply overflow rule live)*
+Nominal: `Jul 24` heavy (resets #211/#1046/#199 + new #90/#46/#78 + 3d cluster #102/#208/#703/#230/#19/#242) · `Jul 25` heavy (3d passes #110/#973/#215/#143/#39 + #100/#15/#20/#141/#875/#424/#543) · `Jul 26` REST · `Jul 27`–`Jul 28` 7d/verbal drain. **The fragile/3d layers are genuinely over ~8/day for Jul 24–25** (three straight big sessions stacked them). **Live overflow rule:** each day, full-solve the fragile (resets/1d) first, **verbal-tier the 21d items**, and **roll the stable 3d/7d overflow forward 1–2 days** so no day actually exceeds ~8. It eases after the Jul 26 rest as items climb to 7d/21d.
 
-**Day 27 (Jul 21):** #102/#208/#703 PASS→3d, #235 PASS→7d (**B-6 CLEARED**); #211/#1046/#110 FAIL→reset; #973/#215 new→1d. (5 stable 3d rolled forward.)
-**Day 28 (Jul 22 — 2nd session):** worked genuinely-due reviews only (skipped the 5 items done hours earlier, no spacing value). #271 PASS→7d, #226 PASS→7d, #98 PASS→7d; **#143/#199/#146 FAIL→reset** (all one-site final-pass slips). New backtracking #78/#39→1d. The **deferred 5** (#211/#1046/#110/#973/#215) now sit due Jul 23 — properly spaced.
+**Day 27 (Jul 21):** #102/#208/#703→3d, #235→7d (**B-6 CLEARED**); #211/#1046/#110 reset; #973/#215 new.
+**Day 28 (Jul 22):** #271/#226/#98→7d; #143/#199/#146 reset; #78/#39 new.
+**Day 29 (Jul 23):** **5/8** — #110/#973/#215/#143/#146 **PASS→3d**; #211/#1046/#199 **reset** (fresh facets: #211 constructor/keys/return, #1046 return-negation *again*, #199 enqueue direction); new **#90/#46 backtracking→1d**. **Named checks HELD** (self./curr3/guard/space/box all correct first-draft). **B-7 held today → 1 clean session (clear after 1 more).**
 
-**Day 29 order (Jul 23 — 8 due, all fragile):**
-resets/deferred first: **#211 → #1046 → #110 → #973 → #215** (the Day-27 batch, now spaced) → **#143 → #199 → #146** (Day-28 resets). Then Block 2 new: **Backtracking cont.** (#90 Subsets II / #40 Combination Sum II, or #46 Permutations).
+**Day 30 order (Jul 24 — interleave + new):**
+Fragile first: **#211 → #1046 → #199** (resets) → new **#90 → #46 → #78** (backtracking 1d). **Block 2 new: #79 Word Search** (deferred from Day 29 — grid DFS + backtracking). Overflow the 3d cluster forward.
 
-> **⚠️ B-7 (self./ownership) is RE-ESCALATED to drill-now** — fired Day 27 (#211) AND Day 28 (#146), two days running. Micro-drill at the start of the next 2–3 sessions.
-> **⚠️ Every Day-28 reset was a single site missed on the final pass** (`curr`/`curr3`, dropped root guard, missing `self.`). The fix is a deliberate final read-through: guard present? every name real & owned? multi-site change complete (M-027)?
-> **#199 also mis-stated BFS space as O(1)** — it's **O(n)** (queue holds a full level). #146: `self.remove` not `remove`.
+> **⚠️ B-7 (self./ownership) — drill-now, 1 clean session done** (held on #211 & #146 today). One more clean → clears. Keep the ownership check in the final read-through.
+> **⚠️ M-027 — the through-line.** #1046's `return -maxHeap[0]` is now missed on Day 27 AND Day 29 (identical). Bank the rule: **negate in → un-negate at the return.** #199: flip the enqueue → flip the "keep."
+> **The good news (Day 29):** every *previously-named* reset-cause was correct on the first draft. The resets are new facets, not old ones — the final read-through is closing the gaps one at a time.
 
 ## Graduated (≥60d, never deleted)
 | Problem | Pattern | Graduated | Results |

@@ -3,22 +3,22 @@
 A beginner working from near-zero toward **FAANG-ready by interview season**, one tracked day at a time. This repo *is* my real prep — the plan, the daily notebooks, the mistakes, and the spaced-repetition system that ties it together. Not polished-for-show: the actual journey, decay and dumb bugs included.
 
 <!-- README-LIVE:START -->
-![Day](https://img.shields.io/badge/Day-28-2563eb)
+![Day](https://img.shields.io/badge/Day-29-2563eb)
 ![Phase](https://img.shields.io/badge/Phase-Summer_Sprint-7c3aed)
-![Focus](https://img.shields.io/badge/Focus-Depth_phase_Backtracking_started_new_pattern_No_12_Heap_depth_done_Day_27-0891b2)
-![Pace](https://img.shields.io/badge/Pace-ahead_2_sessions_day-16a34a)
+![Focus](https://img.shields.io/badge/Focus-Depth_phase_Backtracking_deepening_B_7_has_1_clean_session_Day_30_interleave_No_79_Word_Search-0891b2)
+![Pace](https://img.shields.io/badge/Pace-on_plan-16a34a)
 ![Goal](https://img.shields.io/badge/Goal-FAANG_ready_by_Sept-ea580c)
 ![Language](https://img.shields.io/badge/Language-Python-3776ab)
 
 ## 📍 Where I'm at right now
 
-- **Day 28** · **Summer Sprint → Block B**
-- **Current focus:** Depth phase. Backtracking started — new pattern #12. Heap depth done Day 27
-- **Up next (Day 29 (Jul 23)):** Backtracking cont.
-- **Tracker totals:** 28 sessions · 12 patterns learned · 28 mistakes tracked
-- **Open blockers:** 1 (B-7 drill-now) + watches (M-027, B-4, M-005, M-026, M-028)
-- **Review queue:** Day 29 (Jul 23) = 8 due, all fragile. The 5 Day-27 items (now spaced) + 3 Day-28 resets (#143, #199, #146).
-- **Last dashboard update:** 2026-07-22
+- **Day 29** · **Summer Sprint → Block B**
+- **Current focus:** Depth phase. Backtracking deepening. B-7 has 1 clean session. Day 30 = interleave + #79 Word Search.
+- **Up next (Day 30 (Jul 24)):** #79 Word Search (grid DFS + visited-backtracking
+- **Tracker totals:** 29 sessions · 12 patterns learned · 28 mistakes tracked
+- **Open blockers:** 1 (B-7 drill-now, 1 clean) + watches (M-027, B-4, M-005, M-026, M-028)
+- **Review queue:** Day 30 (Jul 24) — resets #211, #1046, #199 first, then new #90, #46, #78. Backlog exceeds cap Jul 24–25 — apply overflow rule live (see QUEUE).
+- **Last dashboard update:** 2026-07-23
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 
 *This block is generated from `DASHBOARD.md`. Run `python3 scripts/sync_readme.py` after dashboard edits; the pre-commit hook also runs it automatically.*
