@@ -44,7 +44,9 @@ End every session with a `DayN-Practice-Notebook.md`, written to **both**:
 ### 6. Reviews come first, and the backlog is a scheduling problem. *(Day 16–18)*
 > *"I don't want to be falling behind."*
 
-Never quietly drop reviews to save time. **Budget ~6–8 per session, time-boxed 30–40 min**, ordered **resets → 1d → 3d → oldest**; use the **verbal tier** for 21d items and **fuzz** due dates so no day exceeds ~8. Overflow rolls forward. **Keep reset-on-fail** — softening lapses is counterproductive. (Full protocol in `SYSTEM.md`.)
+Never quietly drop reviews to save time. **Budget ~6–8 per session, time-boxed 30–40 min**, ordered **resets → 1d → 3d → oldest**; use the **verbal tier** for mastered items and **fuzz** due dates so no day exceeds ~8. Overflow rolls forward. **Keep reset-on-fail** — softening lapses is counterproductive. (Full protocol in `SYSTEM.md`.)
+
+> **Amended 2026-07-25 — the verbal tier now starts at the 7d rung, not 21d.** He asked whether the load could be spread rather than just endured, and he was right that it could. **An item at 7d or higher with streak ≥ 2 and no fail in its last two results becomes a 30-second verbal recall** (pattern + approach + complexity); blank ⇒ convert to a full solve ⇒ reset. This converted 15 stable items from ~6-min re-solves into ~30-sec recalls and is what makes a 30–40 min review block honest again. **Fragile items — resets, 1d, anything under a week old — are still always full solves from a blank screen.** The trade is real and accepted: verbal recall is weaker retrieval than a full re-solve, which is why it only applies after two consecutive clean passes.
 
 ### 7. Be honest. Don't sugar-coat. *(given Day 16)*
 > *"Be completely honest, do not sugar coat anything."*
@@ -61,7 +63,36 @@ When he asks where he stands, give him the real number and the real gap. He hand
 
 **Recursion is his slowest-to-click area.** Whenever a new concept leans heavily on recursion — the call stack, backtracking, tree/graph DFS, divide-and-conquer, DP recurrences — **slow down and make the mechanism concrete before the problem.** What has worked (do more of it): tracing the **call stack frame-by-frame** by hand, and the **step-through animations** (Day 26 wildcard-DFS stack viz was the thing that finally made backtracking's push/pop/re-descend click). Don't just state the recursive idea and move on — show the stack growing and collapsing. When he says a recursive concept is fuzzy, **stop and visualize it**, don't push forward. *(This is rule 2 "pre-teach new machinery" sharpened specifically for recursion — it's the machinery he most needs drilled.)*
 
-### 10. Log new instructions here. *(given Day 21, 2026-07-13)*
+### 10. Enforce the schedule strictly. No slacking, no deferral. *(given 2026-07-25, setting up Day 31)*
+> *"I want you to be very strict with the rules given. I do not want any kind of slacking, no matter what happens; whatever needs to be done for the day has to be done so we are not behind. The point is to get as much done before August 20th."*
+
+**This is an escalation of rule 6, and it binds you (the coach) more than it binds him.** What it means in practice:
+
+- **The day's plan gets finished.** Don't quietly trim Block 2 because Block 1 ran long, and don't end a session with "we'll pick that up tomorrow." If something must move, **say so out loud, say what it costs, and reschedule it explicitly** in `QUEUE.md` / the roadmap. Silent deferral is the failure mode he's banning.
+- **The pace floor is ≥ 2 new problems/day** (`GOALS.md`) — **but it applies to normal days, not to interleave or mock days, which are designed to carry 0–1 new by construction.** *(Corrected 2026-07-25: I initially flagged Day 30 as a sub-floor miss. It was an interleave day that also carried #79 — that is **above** the interleave baseline, not below the floor. Check the day's **type** before calling anything a miss.)* A genuine sub-floor day on a normal session **is** a miss and gets named in the log.
+- **Rest days are now earned, not automatic.** He has authorized **working Sundays** to close schedule debt (2026-07-25). Day 31 moved onto **Sunday Jul 26**. Take rest only where the calendar has slack.
+- **Rolling reviews forward is a scheduling tool, not an escape hatch.** If the queue is over cap, **re-fuzz the whole backlog onto real dates** so every item has a day it actually gets done. A roll-forward with no landing date is slacking with extra steps.
+- **Do the arithmetic every time the schedule moves.** Sessions remaining vs. days remaining, out loud. If the roadmap no longer fits, **surface the deficit and force a decision** — don't absorb it.
+
+### 11. The session shape he's agreed to. *(given 2026-07-25)*
+> *"I am willing to do 6 to 8 review problems in Block 1 then maximum 2 new problems in Block 2."*
+
+**This is the contract for a normal session, and it happens to match exactly what the ladder produces (~7/day — see `SYSTEM.md` → *What the review load actually is*).**
+
+- **Block 1: 6–8 reviews.** Don't pad past 8 to "get ahead" and don't quietly run 3 because the day feels long. If a day's due count exceeds 8, that's a **re-dating** job, not a "work harder" job.
+- **Block 2: 2 new, and 2 is the ceiling.** He said *maximum*. Don't stack a third onto a good day — the calendar is built on 2/day and the extra rep costs the next day's freshness. *(The one exception is a documented recovery day after a slip, and only with him agreeing to it in advance.)*
+- **Watch the 55% line.** Below a ~55% pass rate, resets pile into 1d and Block 1 overruns 8 on its own. **The response is to slow new material, never to trim reviews.**
+
+**And make Block 1 *less exhausting*, not just shorter** *(he raised this same day: "as the topics get harder, I will get more exhausted… what can be done to make Block 1 less exhausting?")*. Four things, now standing — mechanics in `SYSTEM.md`:
+
+- **Cheapen by rung, never by fragility.** 1d/reset stay full solves. **3d items are ✍️ one-draft** — write it once under a 4-min cap, **no running it, no debugging**, then self-audit. That's faster than solve-and-debug *and* it trains first-draft precision, which is his actual weak side. 7d+ are 🗣 verbal.
+- **Hard 30-minute box on Block 1.** Stop at 30 min; write a real date on whatever's left. Don't let a heavy day become a two-hour review slog.
+- **Weight-balance the reviews against the day's new material.** Graph and DP days get *light* reviews. Never schedule by due-date alone.
+- **On heavy days, run Block 2 first.** Construction degrades with fatigue faster than recall does — give the new material his fresh brain.
+
+**Say the honest size of it:** the tier change saves only ~6–8 minutes of clock. The real gain is **intensity** — about 2 items per session now involve write-run-debug instead of 5 — plus the ordering and balancing, which do more for how a hard day *feels* than the clock does.
+
+### 12. Log new instructions here. *(given Day 21, 2026-07-13)*
 > *"Have all the instructions I give documented somewhere so the new chat can just read it and move on like nothing ever changed. I do not want to repeat my instructions again and again."*
 
 **Any new standing instruction → append to this file in the same session, with the date and the reason.** Then remind him to commit.

@@ -39,9 +39,10 @@ When Parthiv opens a new chat with this folder selected, do this in order:
 0. **Read `COACHING.md`** — the standing contract (how to coach him). **He should never have to repeat an instruction.** If he gives a new one, append it there the same session.
 1. **Read `DASHBOARD.md`** (pace-health first — are we on the sprint? any ⚠️ standing schedule notes?).
 2. **Pull due items from `review/QUEUE.md`** (`Next due ≤ today`), ordered **resets → 1d → 3d → oldest**. Work a **review budget of ~6–8 items, time-boxed ~30–40 min** (overflow rolls forward — don't try to clear everything):
-   - **Full re-solve from a blank screen** for *fragile* items (resets, 1d, anything learned in the last ~week).
-   - **30-second verbal recall** for *mastered* items (**21d rung, streak ≥ 3**): state the *pattern + approach + time/space* out loud; only convert to a full solve if he blanks.
-   - Claude pulls, orders, and labels each item (full vs verbal); Parthiv just works the list.
+   - **The rung sets the tier** (full table under *Spaced-repetition ladder*): **1d/reset → full solve** (~6 min) · **3d → ✍️ one-draft**, 4-min cap, no running or debugging (~4 min) · **7d+ → 🗣 verbal recall** (~30 sec).
+   - **Hard 30-min box.** Whatever isn't reached gets a concrete date written into `QUEUE.md` before the session ends.
+   - **Balance the weight against Block 2**: heavy new material (Graphs, DP) ⇒ light reviews, and **run Block 2 first** on those days. **Batch same-pattern reviews** together (except on interleave days).
+   - Claude pulls, orders, weight-balances, and labels each item; Parthiv just works the list.
 3. **Glance at `review/BLOCKERS.md`** — any "drill-now" mistakes to watch this session.
 4. **Pick new material** from `plan/Day-by-Day-Roadmap.md` at the current Day (or the largest mastery gap if behind). Pre-teach any new Python concept in isolation first (Parthiv is a beginner — one new thing at a time).
 
@@ -62,9 +63,62 @@ After studying, record it — this is ~5 minutes and keeps the system alive:
 
 **Load management (added Day 18 — the queue hit its ~10/day steady-state ceiling):**
 - **Fuzz / load-balance due dates:** when setting a new due date, jitter it **±1–2 days toward the lightest upcoming day** so items learned together stop clustering. Keep any single day **≤ ~6–8 due**.
-- **Verbal tier:** once an item passes at the **21d** rung, it becomes a **30-second verbal recall** (pattern + approach + complexity), not a full re-solve — full-solve only if he blanks (then reset). This is the big time-saver.
+- **Three review tiers — the rung sets the tier.** *(Established 2026-07-25, after he raised that 6–8 full re-solves would be exhausting on hard-topic days. An item is at 3d precisely because it just passed at 1d, so "3d rung" and "clean last result" are the same condition — no extra bookkeeping.)*
+
+| Rung | Tier | Cost | What he does |
+|---|---|---|---|
+| **1d · reset** | **Full solve** | ~6 min | Blank screen, write it, run it, debug it. Never cheapened — this is where fragility lives. |
+| **3d** | **✍️ One-draft** | ~4 min | Write the full solution **once**, hard 4-min cap. **No running it, no debugging.** Then audit your own draft against the scan. **Pass = the first draft was correct.** |
+| **7d · 21d · 60d** | **🗣 Verbal** | ~30 sec | Say pattern + approach + time/space out loud. Blank ⇒ convert to a full solve ⇒ reset. |
+
+  **Why one-draft rather than a structure sketch:** his failure mode is **first-draft precision**, not comprehension — dropped returns, missing guards, `.val` where a node pointer belongs. A skeleton/pseudocode tier would be cheaper still but would skip exactly the line-level execution his reviews exist to catch. One-draft is *faster than* a solve-and-debug **and** trains the weakness head-on: no debugger to rescue you, so the first draft has to be right.
+
+  **Full solve vs. one-draft — the difference is the safety net and the pass bar** *(he asked, 2026-07-25; answer it from here, don't re-derive)*:
+
+| | Full solve | ✍️ One-draft |
+|---|---|---|
+| Run the code? | Yes | **No** |
+| Fix what you find? | Yes | **No — stop typing at the cap** |
+| Time | ~6 min | **4 min, hard cap** |
+| **Pass =** | reached a working solution unaided | **the draft was right, OR his own audit caught what was wrong** |
+| **Fail =** | needed a hint, blanked, or a bug he couldn't self-fix | **still wrong after his audit — Claude had to point it out** |
+
+  **The cheaper tier is graded harder, on purpose.** Forget a `return`: on a full solve he runs it, sees `None`, fixes it, **passes**. On a one-draft the same code passes *only if his own read-through catches it*. An item at 3d already proved comprehension when it passed at 1d — what's still unproven is whether he can produce it **correctly on the first try**, which is exactly where his reviews fail. Running the code hides that; the interpreter does his checking for him. **Less work and less fatigue, but a narrower standard, not a softer one.**
+
+  **The audit is the graded skill.** He says the scan out loud over his own draft before any verdict. Catching his own slip there is a **pass** — that's the habit working.
+
+- **Hard 30-minute box on Block 1.** *(2026-07-25.)* Block 1 stops at 30 minutes regardless of what's left, ordered **resets → 1d → 3d → verbal**. Anything unreached gets a **concrete date written into `QUEUE.md`** before the session closes. The ceiling is structural, not a willpower test.
+
+- **Balance review difficulty against the day's new material.** Heavy new-material days (Graphs, DP) get **light reviews** — arrays, two-pointers, stack, binary search. Light or interleave days absorb the **heavy** ones — backtracking, graphs, DP, design. Assign by due-date *and* by weight, never by due-date alone.
+
+- **On heavy days, Block 2 runs first.** New material is construction and degrades fast when tired; review is recall and holds up better. So on Graph/DP days: **new material while fresh, reviews after.** Normal days keep reviews first.
+
+- **Batch same-pattern reviews within a day** so context stays loaded — four trees problems in a row is markedly cheaper than four unrelated ones. **Exception: interleave days, where mixing is the entire point.**
 
 Full rules live in `review/QUEUE.md`.
+
+### What the review load actually is *(computed 2026-07-25 — don't re-derive it)*
+
+Parthiv asked how many reviews Block 1 carries on an average day going forward. The ladder determines this; it isn't a dial.
+
+| Period | Items/session | Full | ✍️ One-draft | 🗣 Verbal | Time |
+|---|---|---|---|---|---|
+| **Days 31–40** (backlog draining) | **6.4** | ~2 | ~2.3 | ~2.2 | **~24 min** |
+| **Days 41–53** (steady state) | **~7** | ~3.5 | ~1.4 | ~2.2 | **~28 min** |
+
+**Why ~7:** at 2 new/day, each rung (1d / 3d / 7d / 21d / 60d) receives ~2 items per day, plus failures re-entering at 1d. That's ~5.5 scheduled + ~1.5 resets.
+
+**Stretching the rung intervals does NOT reduce this.** In steady state the arrival rate at each rung equals the rate of items passing into it, independent of interval length. Longer intervals delay load; they don't shrink it. Don't propose it as a fix — it was considered and rejected 2026-07-25.
+
+**Only three things reduce Block 1:** fewer new problems/day (no calendar slack before Aug 20), fewer rungs (the 60d rung already falls outside the sprint window — nothing to cut), or **cheapening each review** (the tier table above). The third is the only live lever, and it's now pulled.
+
+**The load is insensitive to his pass rate.** At 60% / 70% / 80% the totals are 6.4 / 7.1 / 7.9 per day, but **full solves stay ~3.5 in all three cases.** Passing more doesn't reduce the writing; it promotes items into cheaper tiers. Passing less feeds resets back into 1d.
+
+**The warning line:** if his pass rate drops below **~55%**, resets accumulate at 1d and the full-solve count climbs — the 30-min box starts truncating real work. **That's the signal to slow new material, not to trim reviews.** Flag it on the DASHBOARD if it appears.
+
+**Honest sizing of the fix:** the tier change buys ~6–8 minutes of clock, which is modest. **The larger effect is intensity, not duration** — only ~2 items per session now involve write-run-debug, down from ~5. The difficulty-balancing and the new-material-first ordering do more for how a hard day *feels* than the clock saving does.
+
+*(Fall, post-Aug 20: new drops to ~2–3/week, so the load falls to ~3–4/day and is mostly verbal, since by then most items sit at the 21d and 60d rungs.)*
 
 ## Git (your "GitHub-like" layer)
 

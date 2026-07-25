@@ -43,13 +43,55 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 | 7 | Jun 26 | Warm-up retrieval | **Sliding Window** — Best Time to Buy/Sell (#121, E) | running-min + best-profit (2 vars) | O(n) |
 | 8 | Jun 28 | Valid Palindrome (decay caught) | **Sliding Window** — Longest Substring No Repeat (#3, M) | set + shrink-from-left | O(n) amortized |
 
-> **Currently:** **Day 30 ✅ done (Jul 25)** — Interleave (3/6: #211/#1046/#199 passed — every older named cause held, incl. #1046's un-negate finally landing; #78/#90/#46 reset — all backtracking) + **#79 Word Search (grid DFS, built cold).** **B-6 and B-7 both CLEARED — no drill-now blocker; all B-1…B-7 clear.** Backtracking now has 4 shapes (incl. grid DFS = bridge to graphs) but is young/fragile. **Next: Day 31 (Jul 27, after Jul 26 rest) — drain the backtracking 1d cluster (#90/#46/#78/#79/#39) + new material (Intervals).** Calendar runs ~1 day behind the original columns — day numbers are the backbone; dates flex. Live state in `DASHBOARD.md`.
+> **Currently:** **Day 30 ✅ done (Jul 25)** — Interleave (3/6: #211/#1046/#199 passed — every older named cause held, incl. #1046's un-negate finally landing; #78/#90/#46 reset — all backtracking) + **#79 Word Search (grid DFS, built cold).** **B-6 and B-7 both CLEARED — no drill-now blocker; all B-1…B-7 clear.** Backtracking now has 4 shapes (incl. grid DFS = bridge to graphs) but is young/fragile.
+>
+> **Next: Day 31 — Sunday Jul 26 (rest day converted to a working day), ~90 min.** Block 1 re-solves **the three backtracking items that actually failed** (#90/#46/#78); Block 2 opens **Intervals (#57 Insert, #56 Merge)**. #79/#39 move to Jul 27. Run-sheet: `plan/Day-31-Runsheet.md`.
+>
+> **⚠️ The calendar was rebuilt on 2026-07-25 — see "Recovered calendar" below.** Days 31–53 now map to real dates that fit before Aug 20, with **two Sundays worked (Aug 9, Aug 16)**. Day numbers remain the backbone. Live state in `DASHBOARD.md`.
 
 ---
 
 # PART 1 — Summer Sprint  ·  Day 9 → Aug 19
 
 *6 days/week (rest Sundays). Dates are real; Day numbers are the backbone if you shift a day.*
+
+## 🔴 Recovered calendar — Days 31–53 · rebuilt 2026-07-25
+
+**The problem.** Before this rebuild, Day 31 sat on Jul 27 and Day 53 on Aug 19. That needed **23 sessions** into **21 available working days** (Jul 27 → Aug 19, minus Sundays Aug 2/9/16). **A 2-session deficit** — the roadmap did not fit, and the original date columns in Weeks 4–8 below are stale.
+
+**The fix** *(decided with Parthiv 2026-07-25 — see `COACHING.md` rule 10)*: **work Sundays.** Day 31 moves onto **Sunday Jul 26**, and **two of the three remaining Sundays (Aug 9, Aug 16) become working days.** Aug 2 stays a rest day. That yields **24 sessions for 23 days of content, with Aug 19 free as a buffer.**
+
+| Date | Day | Notes |
+|---|---|---|
+| **Sun Jul 26** | **31** | 🔴 **Sunday worked** — backtracking drain + Intervals #57/#56 |
+| Mon Jul 27 | 32 | Intervals #435/#252 |
+| Tue Jul 28 | 33 | Graphs #200/#133 |
+| Wed Jul 29 | 34 | Graphs #994/#207 |
+| Thu Jul 30 | 35 | Graphs #210/#323 |
+| Fri Jul 31 | 36 | Interleave (mixed unlabeled) |
+| Sat Aug 1 | 37 | 1-D DP #70/#746/#198 |
+| **Sun Aug 2** | — | 🟢 **REST** |
+| Mon Aug 3 | 38 | 1-D DP #5/#91 |
+| Tue Aug 4 | 39 | 1-D DP #322/#152 |
+| Wed Aug 5 | 40 | 1-D DP #139/#300 |
+| Thu Aug 6 | 41 | 2-D DP #62/#1143 |
+| Fri Aug 7 | 42 | Mock + interleave |
+| Sat Aug 8 | 43 | 2-D DP #72 · Greedy #53 |
+| **Sun Aug 9** | **44** | 🔴 **Sunday worked** — Greedy #55/#134 |
+| Mon Aug 10 | 45 | Greedy #763 · Bit #136/#191 |
+| Tue Aug 11 | 46 | Bit #338 · DP #213 |
+| Wed Aug 12 | 47 | DP #647/#416 |
+| Thu Aug 13 | 48 | Mock + interleave |
+| Fri Aug 14 | 49 | 2-D DP #309/#518 |
+| Sat Aug 15 | 50 | DP #494 · Graphs #695 |
+| **Sun Aug 16** | **51** | 🔴 **Sunday worked** — Graphs #417/#261 |
+| Mon Aug 17 | 52 | Backtracking #131 (+#90 as review) |
+| Tue Aug 18 | 53 | Backtracking #17 · Trees #110 |
+| **Wed Aug 19** | — | 🟡 **BUFFER** — absorbs one slip, or a final full mock |
+
+**The buffer is one day wide.** One missed session eats it; two puts Day 53 past the deadline. **If a session slips, the recovery is a triple-new day, not a shrug.**
+
+> The `Day`/`Date` columns inside the Week 4–8 tables below are the **original** plan and are now stale. **This table is the authority for dates**; the week tables remain the authority for *content*.
 
 ### Sprint Week 1 · Jun 29–Jul 4  (Day 9–14)
 *Focus: Binary Search, Stack*
@@ -89,10 +131,10 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 | 25 ✅ | Jul 17 | 5 due (2/5) | **BST** — Validate BST (#98, M) ✅ *(deferred from Day 23)*<br>**BST** — Kth Smallest in BST (#230, M) ✅<br>**Tries** — Implement Trie (#208, M) ✅ *(first Trie, clean cold)* | (low,high) bounds passed DOWN — subtree-wide invariant<br>in-order = sorted; flag-to-stop recursion<br>nested dict / TrieNode; char = the key | O(n)/O(h)<br>O(n) or O(h+k)<br>O(L) per op |
 | 26 ✅ | Jul 18 | 6 due (4/6) | **Tries** — Add & Search Words (#211, M) ✅<br>**Heap** — Kth Largest in a Stream (#703, E) ✅<br>**Heap** — Last Stone Weight (#1046, E) ✅ | DFS with '.' wildcard (backtrack)<br>heapq; min-heap size k<br>max-heap via negation | O(L)/O(N)<br>O(log k) per add<br>O(n log n) |
 
-### Sprint Week 4 · Jul 21–Jul 25  (Day 27–32)
+### Sprint Week 4 · Jul 21–Jul 27  (Day 27–32)
 *Focus: Heap, Backtracking, Intervals*
 
-> **⚠️ Schedule change (Days 27–31).** **Jul 20 was skipped** (rest was Jul 19), so the calendar runs ~1–2 days behind the original date column — day numbers stay the backbone. Day 29 pulled Subsets II (#90, a Day-52 item) forward, slipping Word Search (#79) to Day 30; **Day 30 ran Jul 25**, and **Jul 26 = rest (Sunday)**, so **Day 31 = Jul 27.** Aug 20 target unaffected (26 days out). The Day 31/32 rows below still show the old Jul 24/25 columns — read them as "next two sessions," not literal dates.
+> **⚠️ Schedule change (Days 27–31) — superseded by the Recovered calendar above.** **Jul 20 was skipped** (rest was Jul 19), so the calendar drifted ~1–2 days behind the original date column. Day 29 pulled Subsets II (#90, a Day-52 item) forward, slipping Word Search (#79) to Day 30; **Day 30 ran Jul 25**. **As of the 2026-07-25 rebuild, Day 31 = Sun Jul 26 (Sunday worked) and Day 32 = Mon Jul 27.** Ignore the stale Jul 24/25 entries in the Day 31/32 rows below — use the Recovered calendar for dates.
 
 | Day | Date | Block 1 — Review | Block 2 — New | New Python / skill | Big-O |
 |----|----|----|----|----|----|
@@ -100,10 +142,10 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 | 28 ✅ | Jul 22 | 6 due (3/6) | **Backtracking** — Subsets (#78, M) ✅ *(derived by hand-trace)*<br>**Backtracking** — Combination Sum (#39, M) ✅ | choose→recurse→un-choose; path.copy()<br>reuse = stay on i; total as param | O(n·2ⁿ)<br>O(N^(T/M+1)) |
 | 29 ✅ | Jul 23 | 8 due (5/8) | **Backtracking** — Subsets II (#90, M) ✅ *(pulled early from Day 52)*<br>**Backtracking** — Permutations (#46, M) ✅ *(derived cold)*<br><sub>⤷ **Word Search (#79) DEFERRED → Day 30**</sub> | sort + skip-all-copies (dedup)<br>for-loop + used-set (no index) | O(n·2ⁿ)<br>O(n·n!) |
 | 30 ✅ | Jul 25 | **Interleave** (3/6) — #211/#1046/#199 ✅ (older causes held) · #78/#90/#46 reset (backtracking) | **Backtracking** — Word Search (#79, M) ✅ *(built cold, 2 nudges)* | grid DFS + in-place mark/un-mark; bounds = base case | O(r·c·4^L) / O(L) |
-| 31 | Jul 24 | Koko Eating Bananas; Subsets (+1) | **Intervals** — Insert Interval (#57, M)<br>**Intervals** — Merge Intervals (#56, M) | list building; comparisons<br>sort(key=lambda x:x[0]) | O(n)<br>O(n log n) |
-| 32 | Jul 25 | Find Min in Rotated Array; Kth Smallest in BST (+3) | **Intervals** — Non-overlapping Intervals (#435, M)<br>**Intervals** — Meeting Rooms (#252, E) | greedy by end time<br>sort + overlap check | O(n log n)<br>O(n log n) |
+| 31 | **Sun Jul 26** 🔴 | **The 3 backtracking items that failed** (full re-solve, blank screen): #90 → #46 → #78 <sub>· ~35 min · **~90-min session total**</sub> | **Intervals** — Insert Interval (#57, M)<br>**Intervals** — Merge Intervals (#56, M) | list building; comparisons<br>`sort(key=lambda x: x[0])` ← **pre-teach in isolation**<br>tuple unpacking in a `for` ← **pre-teach** | O(n)<br>O(n log n) |
+| 32 | **Mon Jul 27** | #79, #39 (backtracking 1d) · #57, #56 (1d) · #704 🗣, #33 🗣 | **Intervals** — Non-overlapping Intervals (#435, M)<br>**Intervals** — Meeting Rooms (#252, E) | greedy by end time<br>sort + overlap check | O(n log n)<br>O(n log n) |
 
-### Sprint Week 5 · Jul 27–Aug 1  (Day 33–38)
+### Sprint Week 5 · Jul 28–Aug 3  (Day 33–38)  *(dates per Recovered calendar)*
 *Focus: Graphs, 1-D DP*
 
 | Day | Date | Block 1 — Review | Block 2 — New | New Python / skill | Big-O |
@@ -115,7 +157,7 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 | 37 | Jul 31 | 3Sum; Longest Repeating Char Replace (+2) | **1-D DP** — Climbing Stairs (#70, E)<br>**1-D DP** — Min Cost Climbing Stairs (#746, E)<br>**1-D DP** — House Robber (#198, M) | bottom-up; two rolling vars<br>dp array<br>rob/skip recurrence; 2 vars | O(n) — overlapping subproblems<br>O(n)<br>O(n) |
 | 38 | Aug 1 | Longest Consecutive Sequence; Encode and Decode Strings (+4) | **1-D DP** — Longest Palindromic Substring (#5, M)<br>**1-D DP** — Decode Ways (#91, M) | expand-around-center<br>dp w/ 1- & 2-digit checks | O(n²)<br>O(n) |
 
-### Sprint Week 6 · Aug 3–Aug 8  (Day 39–44)
+### Sprint Week 6 · Aug 4–Aug 9  (Day 39–44)  *(Aug 9 = Sunday worked)*
 *Focus: 1-D DP, 2-D DP, Greedy*
 
 | Day | Date | Block 1 — Review | Block 2 — New | New Python / skill | Big-O |
@@ -127,7 +169,7 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 | 43 | Aug 7 | Diameter of Binary Tree; Same Tree (+3) | **2-D DP** — Edit Distance (#72, M)<br>**Greedy** — Maximum Subarray (#53, M) | 2D table; 3 transitions<br>Kadane's; reset running sum | O(m·n)<br>O(n) |
 | 44 | Aug 8 | Level Order Traversal; Validate BST (+5) | **Greedy** — Jump Game (#55, M)<br>**Greedy** — Gas Station (#134, M) | greedy farthest reach<br>total + running tank | O(n)<br>O(n) |
 
-### Sprint Week 7 · Aug 10–Aug 15  (Day 45–50)
+### Sprint Week 7 · Aug 10–Aug 15  (Day 45–50)  *(unchanged)*
 *Focus: Greedy, Bit Manip, 1-D DP, 2-D DP, Graphs*
 
 | Day | Date | Block 1 — Review | Block 2 — New | New Python / skill | Big-O |
@@ -139,7 +181,7 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 | 49 | Aug 14 | Subsets; Combination Sum (+2) | **2-D DP** — Buy/Sell Stock w/ Cooldown (#309, M) ⟂depth<br>**2-D DP** — Coin Change II (#518, M) ⟂depth | state-machine dp<br>counting-combinations dp | variant fluency<br>variant fluency |
 | 50 | Aug 15 | Permutations; Word Search (+4) | **2-D DP** — Target Sum (#494, M) ⟂depth<br>**Graphs** — Max Area of Island (#695, M) ⟂depth | dp w/ offset / dict memo<br>DFS returning a count | variant fluency<br>variant fluency |
 
-### Sprint Week 8 · Aug 17–Aug 19  (Day 51–53)
+### Sprint Week 8 · Aug 16–Aug 18  (Day 51–53)  *(Aug 16 = Sunday worked · Aug 19 = buffer)*
 *Focus: Graphs, Backtracking, Trees*
 
 | Day | Date | Block 1 — Review | Block 2 — New | New Python / skill | Big-O |

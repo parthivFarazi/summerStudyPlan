@@ -5,7 +5,7 @@ A beginner working from near-zero toward **FAANG-ready by interview season**, on
 <!-- README-LIVE:START -->
 ![Day](https://img.shields.io/badge/Day-30-2563eb)
 ![Phase](https://img.shields.io/badge/Phase-Summer_Sprint-7c3aed)
-![Focus](https://img.shields.io/badge/Focus-Depth_phase_Backtracking_now_4_shapes_incl_grid_DFS_B_7_CLEARED_no_drill_now_blocker_Day_31_drain_the_backtracking_1d_cluster_new_material-0891b2)
+![Focus](https://img.shields.io/badge/Focus-Depth_phase_Backtracking_done_Intervals_next-0891b2)
 ![Pace](https://img.shields.io/badge/Pace-on_plan-16a34a)
 ![Goal](https://img.shields.io/badge/Goal-FAANG_ready_by_Sept-ea580c)
 ![Language](https://img.shields.io/badge/Language-Python-3776ab)
@@ -13,11 +13,11 @@ A beginner working from near-zero toward **FAANG-ready by interview season**, on
 ## 📍 Where I'm at right now
 
 - **Day 30** · **Summer Sprint → Block B**
-- **Current focus:** Depth phase. Backtracking now 4 shapes incl. grid DFS. B-7 CLEARED — no drill-now blocker. Day 31 = drain the backtracking 1d cluster + new material.
-- **Up next (Day 31 (Jul 27)):** Intervals (Insert/Merge Intervals
+- **Current focus:** Depth phase — Backtracking done, Intervals next
+- **Up next (Day 31 (Sun Jul 26)):** Intervals
 - **Tracker totals:** 30 sessions · 12 patterns learned · 28 mistakes tracked
 - **Open blockers:** 0 (B-7 cleared Day 30) + watches (M-027, backtracking-fragility, B-4, M-005, M-026, M-028)
-- **Review queue:** Day 31 (Jul 27) — backtracking 1d cluster #90, #46, #78, #79, #39 first (all fresh/reset), then new material. Jul 26 = REST. Jul 28 heavy — overflow rule live (see QUEUE).
+- **Review queue:** Day 31 (Sun Jul 26, ~90 min) — just the three backtracking items that actually failed: #90, #78, #46, full re-solve. The 43-item backlog is landed on real dates across Jul 26 – Aug 5 and re-tiered by rung (1d/reset = full · 3d = ✍️ one-draft · 7d+ = 🗣 verbal). No day exceeds 8 items or ~29 min; average 6.4 in ~24 min. Run-sheet: `plan/Day-31-Runsheet.md`.
 - **Last dashboard update:** 2026-07-25
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 
