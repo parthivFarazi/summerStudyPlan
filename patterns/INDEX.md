@@ -17,7 +17,7 @@ One file per pattern: template, when-to-use triggers, complexity, and *your* got
 | **Binary Search Tree** | **3/5** | [binary-search-tree](binary-search-tree.md) — *invariant → pick ONE side (#235); **bounds passed down** (#98); **in-order = sorted** (#230)* |
 | **Tries (Prefix Trees)** | **2/5** | [tries](tries.md) — *nested dicts of nodes; char = the KEY; `is_end` flag. #208; **wildcard `.` → DFS** #211 (Day 26)* |
 | **Heap / Priority Queue** | **3/5** | [heap](heap.md) — *`heapq` min-heap; negate for max; **size-k heap** (min→k-largest, max→k-closest); **tuple keys**. #703, #1046, #973, #215* |
-| **Backtracking** | **2/5** | [backtracking](backtracking.md) — ***new, Day 28.** choose → recurse → **un-choose**; take/skip decision tree; subsets vs reuse. #78, #39* |
+| **Backtracking** | **3/5** | [backtracking](backtracking.md) — *choose → recurse → **un-choose**. 4 shapes: take/skip (#78,#39), dedup (#90), for-loop+used-set (#46 derived cold), **grid DFS in-place (#79, Day 30 — bridge to graphs)*** |
 
 ## Language concepts *(not patterns — the machinery the patterns run on)*
 

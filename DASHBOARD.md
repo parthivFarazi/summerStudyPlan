@@ -4,39 +4,39 @@
 > "Current Status" is regenerated each update. Readable in under 2 minutes.
 
 ## Current Status
-- **Last updated:** 2026-07-23 (Day 29 logged)
-- **Phase:** Summer Sprint · Block B — *Depth phase. **Backtracking deepening** (#90 dedup, #46 permutations — derived cold). B-7 has 1 clean session. Day 30 = interleave + #79 Word Search.*
-- **Sessions logged:** 29 · **Patterns learned:** 12 · **Mistakes tracked:** 28 · **Open blockers:** 1 (B-7 drill-now, 1 clean) + watches (M-027, B-4, M-005, M-026, M-028)
-- **Review queue:** Day 30 (Jul 24) — resets #211, #1046, #199 first, then new #90, #46, #78. **Backlog exceeds cap Jul 24–25** — apply overflow rule live (see QUEUE).
+- **Last updated:** 2026-07-25 (Day 30 logged)
+- **Phase:** Summer Sprint · Block B — *Depth phase. **Backtracking** now 4 shapes incl. grid DFS (#79 Word Search — bridge to graphs). B-7 CLEARED — no drill-now blocker. Day 31 = drain the backtracking 1d cluster + new material.*
+- **Sessions logged:** 30 · **Patterns learned:** 12 · **Mistakes tracked:** 28 · **Open blockers:** 0 (B-7 cleared Day 30) + watches (M-027, backtracking-fragility, B-4, M-005, M-026, M-028)
+- **Review queue:** Day 31 (Jul 27) — backtracking 1d cluster #90, #46, #78, #79, #39 first (all fresh/reset), then new material. Jul 26 = REST. **Jul 28 heavy** — overflow rule live (see QUEUE).
 
 ## 🟢 The honest read
 
-**The clearest signal yet that the drills are working: on Day 29 every *previously-named* reset-cause was correct on the first draft.** `self.` held (#211, #146), the `curr3` name held (#143), the root guard + O(n) space held (#199), the box channel held (#110). Five reviews passed. The three that reset did so on **fresh** facets — #211's constructor-`()`/keys-vs-values/dropped-return, #1046's return-negation, #199's enqueue-direction. **The costume closet is emptying: he's not missing the same thing twice** (with one stubborn exception below).
+**Day 30 is the cleanest structural signal of the sprint: the reset-causes have fully MIGRATED to the newest material.** In the interleave, the three that passed each reset on a *named* cause on a prior day — and every one of those causes held first-draft: **#1046's un-negate finally landed** (`return -maxHeap[0]` — closing the sprint's one twice-identical repeat, missed Day 27 AND Day 29), **#211's** three Day-29 facets all fixed (constructor parens, `.children` keys, the dropped return) with ownership clean, and **#199's** enqueue direction fixed. The three that reset — **#78, #90, #46 — are all backtracking**, the pattern that's less than a week old. **He no longer misses the same thing twice; the fragility only ever sits on the freshest pattern.** That's exactly the shape you want the ladder to produce.
 
-**The one repeat: `#1046` dropped `return -maxHeap[0]` — the exact same un-negate-on-the-way-out miss as Day 27.** That's the one to burn in: **negate going in → un-negate at the return.** Everything else is genuinely new facets, which is progress.
+**The one twice-identical repeat is closed.** #1046's un-negate-on-the-way-out — the single stubborn miss that reset it identically on two separate days — was correct on the first draft. Bank the rule that fixed it: **negate going in → un-negate at the return.**
 
-**B-7 held in his actual writing today** — the morning micro-drill surfaced that his *understanding* is sound (the nested-function-vs-method distinction), and it's an execution slip, not a knowledge gap. One clean session banked; one more clears it.
+**B-7 CLEARED (2nd clean session) → no drill-now blocker; all of B-1…B-7 are clear.** The start-of-session ownership micro-drill answered cleanly, and #211's ownership was correct first-draft on the exact problem that fired B-7. The `self.` rule is now a standing habit, not a live blocker.
 
-**The headline win is recursion — his weakest area — visibly moving.** He built **Subsets II** cold (dedup skip-all-copies) and **derived Permutations from scratch** — reframing the take/skip-index structure into a for-loop-over-all-with-a-used-set entirely through reasoning, after being asked to. Two call-stack/decision-tree animators now live in his artifacts for review. Backtracking, the thing that was "rough" two days ago, is becoming a place he can *think*.
+**Block 2 added the 4th backtracking shape — grid DFS (#79 Word Search), built cold.** Structure right first try (base cases, mark/un-mark pair, both complexities); two wire-it-up nudges (a dropped **left** direction and `dfs(0,0,0)` vs `dfs(r,c,0)`), both M-027 flavor. Good spec-first instinct — he stopped to make sure he understood the question before coding. **Grid DFS is the bridge into graphs** (an implicit graph, neighbors = adjacent cells).
 
-**Coaching note to self (feedback):** on #46 the coach led with the code skeleton; Parthiv pushed back ("are you forgetting what you have to do?"). Restarting concept-first and Socratic is what unlocked the derivation. **Teach the model first, never lead with the skeleton** (COACHING #1/#9).
+**The one honest caution:** backtracking is genuinely fragile — three straight reviews reset. It's young, not broken, and Day 31 front-loads the whole 1d cluster (#90/#46/#78/#79/#39) to drain it. Watch it climb before layering more new backtracking on top.
 
 ## The one scan (say it OUT LOUD before every submit)
 **Guard present? · Terminal line/mark written? · Every branch returns? · All args passed? · Whose thing is every attribute/method? · Multi-site change complete & every name real? · Un-negate on the way out? · Which side can contain the answer (target-first)?**
 
 ## ⚠️ Standing schedule note
-Core complete; depth phase (Heap ✓ → **Backtracking (deepening)** → Intervals → Graphs → DP). **Jul 26 = rest** (Sunday). **Review backlog exceeds ~8/day for Jul 24–25** (three big sessions stacked the fragile/3d layers) — apply the overflow rule live: fragile first, verbal the 21d, roll stable 3d/7d forward. Eases after Jul 26. **#79 Word Search carried to Day 30.**
+Core complete; depth phase (Heap ✓ → **Backtracking (4 shapes ✓, incl. grid DFS)** → Intervals → Graphs → DP). **Jul 26 = rest** (Sunday). Day 31 (Jul 27) front-loads the **backtracking 1d cluster** (#90/#46/#78/#79/#39 — the young/fragile pattern) then new material; **Jul 28 heavy** (the Day-30 passes drop back in) — overflow rule live: fragile first, verbal the 21d, roll stable 3d/7d forward.
 
 ## Pace Health
 | Indicator | Value | Status |
 |---|---|---|
-| Days to Aug 20 pivot | 28 | 🟢 runway exists |
-| **Sprint throughput** (new/day) | Day 29 = **2** (#90, #46) | 🟢 on plan |
-| Sessions last 7 days (target ≥ 6) | 6 | 🟢 |
+| Days to Aug 20 pivot | 26 | 🟢 runway exists |
+| **Sprint throughput** (new/day) | Day 30 = **1** (#79 Word Search) | 🟢 on plan |
+| Sessions last 7 days (target ≥ 6) | 7 | 🟢 |
 | Days since last session | 0 | 🟢 |
-| Queue due (next 2 sessions) | Jul 24 + Jul 25 both over cap | 🔴 backlog — overflow rule live |
-| **Open blockers** | **1** (B-7, 1 clean session) | 🟡 one more clean clears it |
-| Review pass rate (Day 29) | **5 / 8** | 🟢 all prior-named causes held; resets = fresh facets |
+| Queue due (next 2 sessions) | Jul 27 (backtracking cluster) + Jul 28 heavy | 🟡 overflow rule live |
+| **Open blockers** | **0** (B-7 cleared Day 30) | 🟢 all B-1…B-7 clear |
+| Review pass rate (Day 30) | **3 / 6** | 🟢 every older named cause held; all 3 resets = newest pattern (backtracking) |
 
 ## Pattern Mastery  *(1–5; 5 = solve a novel one cold while narrating)*
 
@@ -49,25 +49,25 @@ Core complete; depth phase (Heap ✓ → **Backtracking (deepening)** → Interv
 | Binary Search | 3/5 | stable |
 | Stack | 3/5 | stable |
 | Linked List | 4/5 | #143 clean, LRU rebuilt cold |
-| Trees & BFS/DFS | 3/5 | #110 box clean; #199 reset (enqueue direction) |
+| Trees & BFS/DFS | 3/5 | #110 box clean; **#199 fixed (enqueue direction) Day 30** |
 | Binary Search Tree | 4/5 | stable; B-6 cleared |
-| Tries | 2/5 | #211 reset — 3 fresh facets, ownership held |
-| Heap | 3/5 | #973/#215 clean; #1046 reset (return-negation) |
-| **Backtracking** | **3/5** | **#90 dedup cold, #46 permutations derived from scratch** |
+| Tries | 3/5 | **#211 clean Day 30 — all Day-29 facets fixed, ownership held** |
+| Heap | 3/5 | #973/#215 clean; **#1046 fixed Day 30 (un-negate finally landed)** |
+| **Backtracking** | **3/5** | **4 shapes: take/skip, dedup, for-loop+used-set, grid DFS (#79). Young — #78/#90/#46 reset Day 30** |
 
-## 🟡 Open blocker & watches
+## 🟢 No open blocker · watches only
 
-- **B-7 (M-020, `self.`/ownership) — 🟡 drill-now, 1 clean session (Day 29).** Held on #211 & #146. One more clean session clears it. Keep the ownership check in the final read-through.
-- **M-027 (one site missed on final pass)** — 👁 the through-line. **#1046 return-negation missed Day 27 AND Day 29 (identical)** — the one repeat; bank "un-negate on the way out."
-- **B-4 (guards), M-005 (BFS space)** — 👁 both *held* Day 29 (#199 had them right); watch.
-- **M-026 (terminal line), M-028 (box channel)** — 👁 watches; box held Day 29.
+- **B-7 (M-020, `self.`/ownership) — ✅ CLEARED Day 30** (2 clean sessions). All of B-1…B-7 clear. Ownership check is now a standing habit; re-escalate on recurrence.
+- **M-027 (one site missed on final pass)** — 👁 the through-line, **but the one *repeat* (#1046 un-negate) is CLOSED Day 30.** Residual: the two #79 nudges (dropped left direction; `dfs(0,0,0)` vs `dfs(r,c,0)`). Drill = the final read-through.
+- **Backtracking fragility** — 👁 NEW watch. #78/#90/#46 all reset Day 30 — youngest pattern (<1 week). Not a blocker; drain the 1d cluster Jul 27.
+- **B-4 (guards), M-005 (BFS space), M-026 (terminal line), M-028 (box)** — 👁 all held recently; watch.
 
-*(Cleared → standing habits: B-1 names, B-2 range/len, B-3 return, B-4 guards, B-5 container/contents, **B-6 target-first**, M-025 pointer surgery.)*
+*(Cleared → standing habits: B-1 names, B-2 range/len, B-3 return, B-4 guards, B-5 container/contents, **B-6 target-first**, **B-7 `self.`/ownership**, M-025 pointer surgery.)*
 
-## Next Session Focus  → **Day 30 (Jul 24)**
-1. **Block 1 — interleave/review (overflow — fragile first):** resets **#211 → #1046 → #199**, then new **#90 → #46 → #78** (1d). Verbal-tier the 21d items; roll the 3d cluster forward. **B-7 micro-drill up front** (one more clean clears it).
-2. **Block 2 — new:** **#79 Word Search** (grid DFS + visited-backtracking — the bridge to graphs; carried from Day 29). Go slow (rule 9); pre-teach the grid-DFS + un-mark on the decision tree.
-3. **Habits (out loud before submit):** the one scan — **un-negate on the way out (M-027) · whose thing is every attribute (B-7) · every name real** · complexity time AND space.
+## Next Session Focus  → **Day 31 (Jul 27)**
+1. **Block 1 — drain the backtracking 1d cluster (fragile first):** **#90 → #46 → #78 → #79 → #39** — the whole young/reset cluster from a blank screen. This is the priority; get the shape to set. Roll any 3d overflow to Jul 28.
+2. **Block 2 — new:** **Intervals** (Insert/Merge Intervals — #57/#56) *or* Backtracking cont. (#40 Comb Sum II / #131 Palindrome Partitioning) if the cluster still feels shaky. Pick based on how Block 1 lands.
+3. **Habits (out loud before submit):** the one scan — **every direction in a neighbor sweep · un-negate on the way out (M-027) · loop vars actually feed the call · every name real** · complexity time AND space. (B-7 cleared — ownership check now automatic.)
 
 ---
 *Weekly snapshots can be appended below as the sprint progresses.*

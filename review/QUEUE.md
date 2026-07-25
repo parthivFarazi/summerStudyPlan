@@ -17,13 +17,14 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 
 | Problem | Pattern | Rung | Next due | Streak | Results |
 |---|---|---|---|---|---|
-| **Add & Search Words (#211)** | tries | **1d (reset)** | 2026-07-24 | 0 | (new)·F·**F** |
-| **Last Stone Weight (#1046)** | heap | **1d (reset)** | 2026-07-24 | 0 | (new)·F·**F** |
-| **Right Side View (#199)** | trees | **1d (reset)** | 2026-07-24 | 0 | (new)·P·F·**F** |
-| **Subsets II (#90)** | backtracking | **1d** | 2026-07-24 | 0 | (new) |
-| **Permutations (#46)** | backtracking | **1d** | 2026-07-24 | 0 | (new) |
-| **Subsets (#78)** | backtracking | **1d** | 2026-07-24 | 0 | (new) |
-| **Combination Sum (#39)** | backtracking | **1d** | 2026-07-25 | 0 | (new) |
+| Add & Search Words (#211) | tries | **3d** | 2026-07-28 | 1 | (new)·F·F·**P** |
+| Last Stone Weight (#1046) | heap | **3d** | 2026-07-28 | 1 | (new)·F·F·**P** |
+| Right Side View (#199) | trees | **3d** | 2026-07-28 | 1 | (new)·P·F·F·**P** |
+| **Subsets II (#90)** | backtracking | **1d (reset)** | 2026-07-27 | 0 | (new)·**F** |
+| **Permutations (#46)** | backtracking | **1d (reset)** | 2026-07-27 | 0 | (new)·**F** |
+| **Subsets (#78)** | backtracking | **1d (reset)** | 2026-07-27 | 0 | (new)·**F** |
+| **Word Search (#79)** | backtracking (grid DFS) | **1d** | 2026-07-27 | 0 | (new) |
+| **Combination Sum (#39)** | backtracking | **1d** | 2026-07-27 | 0 | (new) |
 | Balanced Binary Tree (#110) | trees | 3d | 2026-07-25 | 1 | (new)·F·**P** |
 | K Closest Points (#973) | heap | 3d | 2026-07-25 | 1 | (new)·**P** |
 | Kth Largest in Array (#215) | heap | 3d | 2026-07-25 | 1 | (new)·**P** |
@@ -68,19 +69,21 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 | Two Sum (#1) | arrays-hashing | 60d | 2026-09-12 | 4 | P·P·P·P |
 | Contains Duplicate (#217) | arrays-hashing | 60d | 2026-09-12 | 4 | P·P·P·P |
 
-### Load after Day 29 fuzz *(cap ~8/day · 🗣 = verbal · ⚠️ Jul 26 = REST · ⚠️ backlog EXCEEDS cap Jul 24–25 — apply overflow rule live)*
-Nominal: `Jul 24` heavy (resets #211/#1046/#199 + new #90/#46/#78 + 3d cluster #102/#208/#703/#230/#19/#242) · `Jul 25` heavy (3d passes #110/#973/#215/#143/#39 + #100/#15/#20/#141/#875/#424/#543) · `Jul 26` REST · `Jul 27`–`Jul 28` 7d/verbal drain. **The fragile/3d layers are genuinely over ~8/day for Jul 24–25** (three straight big sessions stacked them). **Live overflow rule:** each day, full-solve the fragile (resets/1d) first, **verbal-tier the 21d items**, and **roll the stable 3d/7d overflow forward 1–2 days** so no day actually exceeds ~8. It eases after the Jul 26 rest as items climb to 7d/21d.
+### Load after Day 30 fuzz *(cap ~8/day · 🗣 = verbal · ⚠️ Jul 26 = REST)*
+Nominal: `Jul 27` (backtracking 1d cluster #90/#46/#78/#79/#39 — all reset/new, fragile → full-solve; drain first) · `Jul 28` heavy (3d passes #211/#1046/#199 back down + #110/#973/#215/#143/#146 + #100/#15/#20/#141/#875/#424/#543 + 7d/verbal layer) · then 7d/21d climb. **Jul 28 is over ~8** — apply the overflow rule: full-solve the fragile first, **verbal-tier the 21d items**, **roll the stable 3d/7d overflow forward 1–2 days.** The backtracking cluster is the priority — it's the youngest, most fragile pattern (3 resets Day 30).
 
 **Day 27 (Jul 21):** #102/#208/#703→3d, #235→7d (**B-6 CLEARED**); #211/#1046/#110 reset; #973/#215 new.
 **Day 28 (Jul 22):** #271/#226/#98→7d; #143/#199/#146 reset; #78/#39 new.
 **Day 29 (Jul 23):** **5/8** — #110/#973/#215/#143/#146 **PASS→3d**; #211/#1046/#199 **reset** (fresh facets: #211 constructor/keys/return, #1046 return-negation *again*, #199 enqueue direction); new **#90/#46 backtracking→1d**. **Named checks HELD** (self./curr3/guard/space/box all correct first-draft). **B-7 held today → 1 clean session (clear after 1 more).**
 
-**Day 30 order (Jul 24 — interleave + new):**
-Fragile first: **#211 → #1046 → #199** (resets) → new **#90 → #46 → #78** (backtracking 1d). **Block 2 new: #79 Word Search** (deferred from Day 29 — grid DFS + backtracking). Overflow the 3d cluster forward.
+**Day 30 (Jul 25 — interleave + new) — DONE.** 3/6 interleave: **#211/#1046/#199 PASS→3d** (every older named cause held — #1046 un-negate FINALLY, #211's 3 Day-29 facets, #199 enqueue direction); **#78/#90/#46 reset→1d** (all backtracking — the youngest pattern). **Block 2 new: #79 Word Search** ✅ (grid DFS, built cold w/ 2 M-027 nudges).
 
-> **⚠️ B-7 (self./ownership) — drill-now, 1 clean session done** (held on #211 & #146 today). One more clean → clears. Keep the ownership check in the final read-through.
-> **⚠️ M-027 — the through-line.** #1046's `return -maxHeap[0]` is now missed on Day 27 AND Day 29 (identical). Bank the rule: **negate in → un-negate at the return.** #199: flip the enqueue → flip the "keep."
-> **The good news (Day 29):** every *previously-named* reset-cause was correct on the first draft. The resets are new facets, not old ones — the final read-through is closing the gaps one at a time.
+**Day 31 order (Jul 27 — drain the backtracking cluster + new):**
+Fragile first: **#90 → #46 → #78 → #79 → #39** (backtracking 1d — the whole young cluster). Then new material (Intervals, or Backtracking cont. #40/#131). Roll any 3d overflow to Jul 28.
+
+> **✅ B-7 (self./ownership) CLEARED Day 30** (2nd clean session) — no drill-now blocker; all of B-1…B-7 clear. Keep the ownership check as a standing habit.
+> **👁 M-027 — the through-line, but the one *repeat* is CLOSED.** #1046's un-negate finally landed Day 30 after two identical misses. Keep the final read-through: the two #79 nudges (dropped left direction, `dfs(0,0,0)` vs `dfs(r,c,0)`) were this flavor.
+> **👁 Backtracking fragility (Day 30):** #78/#90/#46 all reset — the pattern is <1 week old. Not a blocker; drain the 1d cluster on Jul 27. Every *older* named cause held first-draft.
 
 ## Graduated (≥60d, never deleted)
 | Problem | Pattern | Graduated | Results |

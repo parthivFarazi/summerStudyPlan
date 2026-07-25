@@ -43,7 +43,7 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 | 7 | Jun 26 | Warm-up retrieval | **Sliding Window** — Best Time to Buy/Sell (#121, E) | running-min + best-profit (2 vars) | O(n) |
 | 8 | Jun 28 | Valid Palindrome (decay caught) | **Sliding Window** — Longest Substring No Repeat (#3, M) | set + shrink-from-left | O(n) amortized |
 
-> **Currently:** **Day 29 ✅ done (Jul 23)** — Backtracking deepening: **#90 Subsets II + #46 Permutations (derived cold).** Heap depth (#973/#215) and first Backtracking (#78/#39) done Days 27–28. **B-6 cleared; B-7 has 1 clean session.** **Next: Day 30 (Jul 24) — interleave review + #79 Word Search.** Calendar runs ~1 day behind the original columns (Jul 20 was skipped) — day numbers are the backbone; dates flex. Live state in `DASHBOARD.md`.
+> **Currently:** **Day 30 ✅ done (Jul 25)** — Interleave (3/6: #211/#1046/#199 passed — every older named cause held, incl. #1046's un-negate finally landing; #78/#90/#46 reset — all backtracking) + **#79 Word Search (grid DFS, built cold).** **B-6 and B-7 both CLEARED — no drill-now blocker; all B-1…B-7 clear.** Backtracking now has 4 shapes (incl. grid DFS = bridge to graphs) but is young/fragile. **Next: Day 31 (Jul 27, after Jul 26 rest) — drain the backtracking 1d cluster (#90/#46/#78/#79/#39) + new material (Intervals).** Calendar runs ~1 day behind the original columns — day numbers are the backbone; dates flex. Live state in `DASHBOARD.md`.
 
 ---
 
@@ -92,14 +92,14 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 ### Sprint Week 4 · Jul 21–Jul 25  (Day 27–32)
 *Focus: Heap, Backtracking, Intervals*
 
-> **⚠️ Schedule change (Days 27–30).** **Jul 20 was skipped** (rest was Jul 19), so the calendar runs ~1 day behind the original date column — day numbers stay the backbone. Also: on **Day 29**, Subsets II (#90, a Day-52 item) was pulled forward by accident, so **Word Search (#79) slipped from Day 29 → Day 30.** Aug 20 target unaffected; a Sunday can reabsorb the 1-day drift.
+> **⚠️ Schedule change (Days 27–31).** **Jul 20 was skipped** (rest was Jul 19), so the calendar runs ~1–2 days behind the original date column — day numbers stay the backbone. Day 29 pulled Subsets II (#90, a Day-52 item) forward, slipping Word Search (#79) to Day 30; **Day 30 ran Jul 25**, and **Jul 26 = rest (Sunday)**, so **Day 31 = Jul 27.** Aug 20 target unaffected (26 days out). The Day 31/32 rows below still show the old Jul 24/25 columns — read them as "next two sessions," not literal dates.
 
 | Day | Date | Block 1 — Review | Block 2 — New | New Python / skill | Big-O |
 |----|----|----|----|----|----|
 | 27 ✅ | Jul 21 | 7 due (4/7) | **Heap** — K Closest Points to Origin (#973, M) ✅<br>**Heap** — Kth Largest in Array (#215, M) ✅ | heap with tuple keys<br>min-heap size k<br><sub>**B-6 CLEARED** (#235 target-first)</sub> | O(n log k)<br>O(n log k) |
 | 28 ✅ | Jul 22 | 6 due (3/6) | **Backtracking** — Subsets (#78, M) ✅ *(derived by hand-trace)*<br>**Backtracking** — Combination Sum (#39, M) ✅ | choose→recurse→un-choose; path.copy()<br>reuse = stay on i; total as param | O(n·2ⁿ)<br>O(N^(T/M+1)) |
 | 29 ✅ | Jul 23 | 8 due (5/8) | **Backtracking** — Subsets II (#90, M) ✅ *(pulled early from Day 52)*<br>**Backtracking** — Permutations (#46, M) ✅ *(derived cold)*<br><sub>⤷ **Word Search (#79) DEFERRED → Day 30**</sub> | sort + skip-all-copies (dedup)<br>for-loop + used-set (no index) | O(n·2ⁿ)<br>O(n·n!) |
-| 30 | Jul 24 | **Interleave** — mixed unlabeled set | **Backtracking** — Word Search (#79, M) *(carried from Day 29)* | grid DFS + visited backtrack (un-mark on the way out) | O(m·n·4^L) |
+| 30 ✅ | Jul 25 | **Interleave** (3/6) — #211/#1046/#199 ✅ (older causes held) · #78/#90/#46 reset (backtracking) | **Backtracking** — Word Search (#79, M) ✅ *(built cold, 2 nudges)* | grid DFS + in-place mark/un-mark; bounds = base case | O(r·c·4^L) / O(L) |
 | 31 | Jul 24 | Koko Eating Bananas; Subsets (+1) | **Intervals** — Insert Interval (#57, M)<br>**Intervals** — Merge Intervals (#56, M) | list building; comparisons<br>sort(key=lambda x:x[0]) | O(n)<br>O(n log n) |
 | 32 | Jul 25 | Find Min in Rotated Array; Kth Smallest in BST (+3) | **Intervals** — Non-overlapping Intervals (#435, M)<br>**Intervals** — Meeting Rooms (#252, E) | greedy by end time<br>sort + overlap check | O(n log n)<br>O(n log n) |
 

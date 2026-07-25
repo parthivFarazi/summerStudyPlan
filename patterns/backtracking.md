@@ -1,13 +1,14 @@
 # Backtracking
 
 **Status:** learning (started Day 28, 2026-07-22) · **Mastery: 3/5** · Block B
-**Problems:** #78 Subsets, #39 Combination Sum (Day 28) · **#90 Subsets II, #46 Permutations (Day 29 — #46 derived cold from scratch)**.
+**Problems:** #78 Subsets, #39 Combination Sum (Day 28) · #90 Subsets II, #46 Permutations (Day 29 — #46 derived cold) · **#79 Word Search (Day 30 — grid DFS, built cold)**.
 **Interactive tools (artifacts):** `backtracking-stack-animator` (stack unwind), `subsets2-skip-copies-animator` + `subsets2-tree-animator` (the dedup skip + the decision tree drawing itself). Reopen whenever recursion feels fuzzy (rule 9).
 
-## The three shapes so far
+## The four shapes so far
 1. **Index take/skip** (#78 Subsets, #39 Comb Sum) — walk index `i`, TAKE (`i+1`, or stay on `i` for reuse) vs SKIP.
 2. **Dedup take/skip** (#90 Subsets II) — sort, and in the SKIP branch **walk past all copies** of the value before recursing.
 3. **For-loop + used-set** (#46 Permutations) — **no index**; at each slot loop over ALL nums, skip used ones, choose/recurse/un-choose. Use for orderings where every element is used and order matters.
+4. **Grid DFS + in-place mark** (#79 Word Search) — recurse over a 2-D grid's 4 neighbors; **mark the cell `"#"` before recursing, un-mark after** (the board itself is the "path"). The bridge to graphs — an implicit graph where neighbors are adjacent cells.
 
 ## In one line
 Build a solution **incrementally**; at each step try every choice, and **undo each choice before trying the next**. That undo — the *back* in backtracking — is the whole pattern.
@@ -89,6 +90,35 @@ def backtrack():
 # O(n·n!)/O(n).  (value-set works because nums is distinct; with dups track INDICES)
 ```
 The loop goes **sideways** (try each number for this slot); the recursion goes **down** (fill the next slot). That sideways loop is what the index-based take/skip can't do (it can only build in original order).
+
+## #79 Word Search — grid DFS + in-place backtracking *(Day 30)*
+Trace a `word` through **4-adjacent** cells of a grid, each cell used **once per path**. The "path" is the board itself: mark a cell `"#"` on the way in, restore it on the way out.
+```python
+def exist(self, board, word):
+    def dfs(row, col, i):
+        if i == len(word):                     # matched whole word → success
+            return True
+        if row < 0 or row >= len(board) or col < 0 or col >= len(board[0]):
+            return False                       # off-grid  (bounds check BEFORE indexing)
+        if board[row][col] != word[i]:
+            return False                       # cell ≠ needed letter
+        temp = board[row][col]
+        board[row][col] = "#"                  # MARK (choose)
+        found = (dfs(row+1, col, i+1) or dfs(row-1, col, i+1)
+                 or dfs(row, col+1, i+1) or dfs(row, col-1, i+1))   # all 4 dirs
+        board[row][col] = temp                 # UN-MARK (un-choose) ← the backtrack
+        return found
+    for r in range(len(board)):                # every cell is a candidate start
+        for c in range(len(board[0])):
+            if dfs(r, c, 0): return True
+    return False
+# Time O(r·c·4^L) — r·c starts × 4 branches per letter to depth L.  Space O(L) — call-stack depth (in-place mark = no visited set).  L = len(word)
+```
+- **The un-mark IS the backtrack.** Same choose/explore/un-choose; the shared mutable state is the board, the mark is `"#"`.
+- **Bounds check is a base case** — it runs before `board[row][col]`, so out-of-range never crashes (no separate guard needed).
+- **No binary search for the start** — a plain double loop; wrong starts bail on the first-letter mismatch (that's the `r·c` factor).
+- **Space O(L), not O(r·c)** — you only hold one root-to-leaf path on the stack at a time; marking in place avoids a `visited` set.
+- **Day-30 nudges (M-027 flavor):** the 4-neighbor line first read `down,up,right,right` (dropped **left**); and `dfs(0,0,0)` inside the `r`/`c` loop launched every search from the top-left instead of `dfs(r,c,0)`. Both = one site missed on the final pass. **Say every direction out loud; make the loop vars actually feed the call.**
 
 ## 🔑 Two ideas worth banking
 - **Carry mutable running state as a PARAMETER, not `self.x`.** `backtrack(i, total + c[i])` — the parent's `total` is untouched, so it auto-undoes on return. **No `-=` needed.** (Contrast `combo`, which you *do* undo by hand with `pop()`, because you want it to grow and shrink.) Passing state *down* via a parameter is the same tool as #98's bounds.
