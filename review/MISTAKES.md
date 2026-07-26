@@ -37,6 +37,10 @@
 | M-026 | 2026-07-18 | impl | **Dropped the terminal line of an operation** — forgot `node.isEnd = True` after building a word in a Trie `insert`/`addWord` (#208 review AND #211, same session) → every `search` returns False | An operation isn't done when the loop ends — the **final state-marking / completing line** (isEnd, the return, the mark) is part of it. Walk the op to its end. Kin to M-011 (dropped guard) and M-001 (dropped return) — all "first-draft leaves a required line out" | 1 | Day 26 (×2) | active |
 | M-027 | 2026-07-21 | impl | **One site missed on the final pass** — reconstruction correct, a change/name/paired-op lands on all-but-one site. **Day 27:** #1046 negation, #215 rename, #973 evict. **Day 28:** #143 `curr`, #199 guard, #146 `self.`. **Day 29:** #1046 return-negation (SAME as Day 27, the repeat), #199 enqueue, #211 ×3. **Day 30:** the one *repeat* CLOSED — **#1046 `return -maxHeap[0]` correct first-draft** after two identical misses; #79 Word Search 2 nudges (dropped **left** direction from the 4-neighbor line; `dfs(0,0,0)` vs `dfs(r,c,0)` in the start-cell loop). | Enumerate every site a change must land and confirm each. **The through-line of the sprint** — but the twice-identical repeat (#1046 un-negate) is now closed. Generalizes M-024; kin to M-004, M-020 | 3 (×11) | Day 27, 28, 29, **30** | **active — through-line (repeat closed Day 30); drill = the final read-through** |
 | M-028 | 2026-07-21 | strategy | **Box-pattern channel recall** — #110 stated "the return is always a boolean"; the return must carry the **height** (what the parent needs) while the **box** holds the boolean. Recovered on a nudge; code then flawless | In the box pattern the **return channel carries what the PARENT needs; the box collects what YOU need** (#543). Recursion-heavy — his slowest area (rule 9) | 1 | Day 27 | active (recall wobble, not comprehension) |
+| M-029 | 2026-07-26 | comms | **Vocabulary looseness — naming a construct wrongly while the code is right.** Called #90's dedup `while` loop "a guard before unchoose backtrack", then "a guard with a while loop", then "the if statement guard". Also garbled the #56 sweep narration (`[4,5]` twice, dropped `[2,3]`) | **Pin the construct's real name.** Code was correct every time — the *language* slipped. `GOALS.md`: interviewers probe "what does this line do — remove it, what breaks?"; "the if guard" invites doubt he knows what he wrote | 1 (×3) | Day 31 | **active — new watch** |
+| M-030 | 2026-07-26 | process | **Confirm-seeking instead of self-testing.** "Am I right about this?" ×4 — most sharply on the four-clause overlap condition, which one 15-second hand-test on `[1,3]`vs`[3,5]` would have settled | **Run one concrete case before asking.** In an interview the only verification available is his own. Same root as M-029: outsourcing verification — of his claims and of his own words | 1 (×4) | Day 31 | **active — new watch** |
+| M-031 | 2026-07-26 | impl | **#57 — a flag was SET but never GATED the branch.** `isMerged = True` recorded that `newInterval` had been placed, but the "after" branch didn't check it, so on `[[1,2],[12,16],[20,25]]` it re-appended `newInterval` once per remaining interval. **Self-found from the test case** | A flag only helps if it's *read* where it matters. Two sites for one fact — **M-027 family**. Alternative: return early instead of flagging | 1 | Day 31 | resolved same session (self-found) |
+| M-032 | 2026-07-26 | strategy | **#56 — stated `O(1)` space next to an `O(n log n)` sort.** Noticed the sort's time cost, missed its space cost | **A sort costs space too** — Python's Timsort is `O(n)` auxiliary worst case. Never pair `O(n log n)` time with `O(1)` space. Kin to M-005 (a structure that scales with input = O(n) space) | 1 | Day 31 | **active — new watch** |
 
 ## Recurrence Watchlist (count ≥ 2 — one rep from escalating)
 
@@ -47,6 +51,9 @@
 | **M-018** | strategy | **A scan / descent / skip is a LOOP, not a single check** (`if` where `while` belongs) | **2** |
 | **M-009** | strategy | **Importing a template's BODY across problems without re-deriving** ("what decides the next step HERE?") | **2** |
 | **M-026** | impl | **Dropped the terminal line of an operation** (isEnd marker / final mark) — #208, #211 | **1 (×2)** |
+| **M-029** | comms | **Naming a construct wrongly while the code is right** (`while` called an `if`) | **1 (×3)** *(new Day 31)* |
+| **M-030** | process | **Asking for confirmation instead of running one test case** | **1 (×4)** *(new Day 31)* |
+| **M-032** | strategy | **A sort costs SPACE too** (`O(n)` Timsort aux) — stated `O(1)` beside `O(n log n)` | **1** *(new Day 31)* |
 | M-002 | impl | `()` call vs `[]` index | 2 |
 | M-006 | strategy | Counting hidden in-loop cost in Big-O | 2 |
 | M-015 | strategy | Converging search — return convergence point, not a tracked answer | 2 |
@@ -56,8 +63,21 @@
 
 *Cleared blockers → standing habits: M-004 → B-1 (Day 16); M-003 → B-2 (Day 18); M-001 → B-3 (Day 21, watch); M-011 → B-4 (Day 24, reopened Day 26, fired Day 28); M-021 → B-5 (Day 24); **M-012 → B-6 (CLEARED Day 27)**; **M-020 → B-7 (re-escalated Day 28, CLEARED Day 30 after 2 clean)**.*
 
-**No drill-now blocker — B-7 CLEARED Day 30 (2 clean: Day 29 + Day 30); all of B-1…B-7 clear.** See `BLOCKERS.md`. **On watch (all one disease — one site missed on the final pass): M-027 (the through-line — but the one *repeat*, #1046 un-negate, is now CLOSED Day 30; the two #79 nudges were this flavor), backtracking fragility (newest pattern — #78/#90/#46 all reset Day 30), B-4 (guards, held), M-005 (BFS space, held), M-026, M-028 (box, held).**
+**No drill-now blocker — B-7 CLEARED Day 30; all of B-1…B-7 clear. Day 31 added no blocker: M-029/M-030 are high-frequency but were FIRST OBSERVED Day 31, and recurrence is counted across sessions, not within one.** Escalate if either appears again Day 32+. See `BLOCKERS.md`. **On watch (all one disease — one site missed on the final pass): M-027 (the through-line — but the one *repeat*, #1046 un-negate, is now CLOSED Day 30; the two #79 nudges were this flavor), ~~backtracking fragility~~ **CLEARED Day 31 — #78/#90/#46 all first-draft correct, 12 min total**, B-4 (guards, held), M-005 (BFS space, held), M-026, M-028 (box, held).**
 
 > **The shape of the problem (Days 22–26).** Every recurring impl mistake — guards (M-011), returns (M-001), isEnd (M-026), pointer surgery (M-025), container-vs-contents (M-021), `self.` (M-020) — is **one disease: first-draft completeness.** As each facet gets a named out-loud check it clears (B-1/B-2/B-3/B-4/B-5/B-7 all cleared) — then a new facet surfaces. **The single scan: before submitting, walk the operation top to bottom — guard present? terminal line/mark written? every branch returns? all args passed? mutating the field not a local?**
 
 > **The shape of the problem (Days 22–24).** M-011, M-021, M-018, M-012, M-020, M-001, M-024 are **all one failure mode wearing different clothes: first-draft precision.** Every one fired on a problem whose *algorithm he had already derived correctly*. The gap is not comprehension. **B-4 and B-5 cleared on Day 24 — the drill works when run.** The reflexes, said OUT LOUD before submitting: **the `self.` test · does it return? · box or contents? · both structures in sync? · target-first comparison · am I looping where I should loop?**
+
+---
+
+## Day 31 addendum — the shape of the problem has moved
+
+Through Day 30 every recurring mistake was **first-draft precision** in *code* (guards, returns, terminal marks, one-site-missed). Day 31's two new entries are not code at all:
+
+- **M-029** — he names constructs loosely (`while` → "if") while writing them correctly.
+- **M-030** — he asks whether he's right instead of testing whether he's right.
+
+**These are one disease: outsourcing verification.** M-027 is its code-shaped form (didn't walk every site); M-030 is its process-shaped form (didn't run the case); M-029 is its language-shaped form (didn't pin the word). The drill is the same in all three: **before handing it over, verify it yourself — every site, one test case, and the actual name of the thing.**
+
+Counter-evidence worth keeping, because Day 31 also showed the drill working: he **test-diagnosed his own overlap condition's two holes**, **found the #57 flag bug from a test case**, and **dropped `self.` on #46 unprompted in the same session as the correction.** When he does run the check himself, it works.

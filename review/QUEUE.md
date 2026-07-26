@@ -40,19 +40,21 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 
 **Result: no day exceeds 8 items or ~29 minutes, and the average is 6.4 items in ~24 min.**
 
-| Session | Date | Block 2 weight | Full solve | ✍️ One-draft (4 min) | 🗣 Verbal | Time |
+| Session | Date | Block 2 weight | Full solve | ✍️ One-draft (4 min) | 🗣 Verbal | Total |
 |---|---|---|---|---|---|---|
-| **Day 31** | **Sun Jul 26** | Intervals · medium | **#90 · #46 · #78** *(backtracking, batched)* | — | — | **~35 min** |
-| Day 32 | Mon Jul 27 | Intervals · **light** | #79 · #39 · #57 · #56 | #146 *(heavy — light day absorbs it)* | #704 · #33 | ~29 min |
-| Day 33 | Tue Jul 28 | **Graphs · HEAVY** ⇒ B2 first | #435 · #252 | #242 · #15 · #20 *(all light)* | #155 · #74 · #150 | ~25 min |
-| Day 34 | Wed Jul 29 | **Graphs · HEAVY** ⇒ B2 first | #200 · #133 | #102 · #100 · #543 *(trees batch)* | #235 · #271 · #226 | ~25 min |
-| Day 35 | Thu Jul 30 | **Graphs · HEAVY** ⇒ B2 first | #994 · #207 | #703 · #973 · #215 *(heap batch)* | #98 · #153 · #128 | ~25 min |
-| Day 36 | Fri Jul 31 | *interleave — no new* | #210 · #323 | #143 · #19 · #141 · #230 *(unbatched on purpose)* | #739 · #121 | ~29 min |
-| Day 37 | Sat Aug 1 | **DP · HEAVY** (3 new) ⇒ B2 first | — | #110 · #211 · #208 | #206 · #21 · #104 | ~14 min |
+| ~~Day 31~~ | ~~Sun Jul 26~~ | ✅ **DONE** — Intervals #57/#56 | ~~#90 · #46 · #78~~ ✅ 3/3 | — | — | 3 |
+| Day 32 | Mon Jul 27 | Intervals · **light** ⇒ reviews first | #79 · #39 · **#57 · #56** | #146 ← **first one-draft** | #704 · #33 | 7 |
+| Day 33 | Tue Jul 28 | **Graphs · HEAVY** ⇒ B2 first | #435 · #252 | #242 · #15 · #20 | #155 · #74 · #150 | 8 |
+| Day 34 | Wed Jul 29 | **Graphs · HEAVY** ⇒ B2 first | #200 · #133 | **#90 · #46 · #78** · #102 · #100 · #543 | — | 8 |
+| Day 35 | Thu Jul 30 | **Graphs · HEAVY** ⇒ B2 first | #994 · #207 | #703 · #973 · #215 | #98 · #153 · #128 | 8 |
+| Day 36 | Fri Jul 31 | *interleave — no new* | #210 · #323 | #143 · #19 · #141 · #230 | #739 · #121 | 8 |
+| Day 37 | Sat Aug 1 | **DP · HEAVY** (3 new) ⇒ B2 first | — | #110 · #211 · #208 | #206 · #21 · #104 | 6 |
 | — | **Sun Aug 2** | 🟢 **REST** | — | — | — | — |
-| Day 38 | Mon Aug 3 | **DP · HEAVY** ⇒ B2 first | #70 · #746 · #198 | #875 · #424 | #347 · #238 | ~27 min |
-| Day 39 | Tue Aug 4 | **DP · HEAVY** ⇒ B2 first | #5 · #91 | #1046 · #199 | #3 · #167 | ~21 min |
-| Day 40 | Wed Aug 5 | **DP · HEAVY** ⇒ B2 first | #322 · #152 | — | #11 · #125 | ~13 min |
+| Day 38 | Mon Aug 3 | **DP · HEAVY** ⇒ B2 first | #70 · #746 · #198 | #875 · #424 | #347 · #238 | 7 |
+| Day 39 | Tue Aug 4 | **DP · HEAVY** ⇒ B2 first | #5 · #91 | — | #3 · #167 · #235 · #271 · #226 | 7 |
+| Day 40 | Wed Aug 5 | **DP · HEAVY** ⇒ B2 first | #322 · #152 | #1046 · #199 | #11 · #125 | 6 |
+
+**Day-31 re-fuzz:** #90/#46/#78 passed → 3d, landing **Jul 29** (exactly 3 days). Jul 29 was already at 8, so its three **verbal** items (#235/#271/#226 — 30 seconds each) moved to **Aug 4**. Fragile items keep their exact date; verbals absorb the shuffle. Note #90/#46/#78 are now at the **3d rung, so they're ✍️ one-drafts** — the tier follows the rung, even for a pattern that was fragile a day ago.
 
 *(Full-solve items are almost always the previous day's new problems arriving at 1d — those can never be cheapened.)*
 
@@ -66,11 +68,13 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 
 | Problem | Pattern | Rung | Tier | Next due | Streak | Results |
 |---|---|---|---|---|---|---|
-| **Subsets II (#90)** | backtracking | **1d (reset)** | full | **2026-07-26** | 0 | (new)·**F** |
-| **Permutations (#46)** | backtracking | **1d (reset)** | full | **2026-07-26** | 0 | (new)·**F** |
-| **Subsets (#78)** | backtracking | **1d (reset)** | full | **2026-07-26** | 0 | (new)·**F** |
+| Subsets II (#90) | backtracking | **3d** | ✍️ | **2026-07-29** | 1 | (new)·F·**P** |
+| Permutations (#46) | backtracking | **3d** | ✍️ | **2026-07-29** | 1 | (new)·F·**P** |
+| Subsets (#78) | backtracking | **3d** | ✍️ | **2026-07-29** | 1 | (new)·F·**P** |
 | **Word Search (#79)** | backtracking (grid DFS) | **1d** | full | **2026-07-27** | 0 | (new) |
 | **Combination Sum (#39)** | backtracking | **1d** | full | **2026-07-27** | 0 | (new) |
+| **Insert Interval (#57)** | intervals | **1d** | full | **2026-07-27** | 0 | (new) |
+| **Merge Intervals (#56)** | intervals | **1d** | full | **2026-07-27** | 0 | (new) |
 | LRU Cache (#146) | design / linked-list | 3d | ✍️ | **2026-07-27** | 1 | (new)·F·P·F·**P** |
 | Binary Search (#704) | binary-search | 7d | 🗣 | **2026-07-27** | 2 | P·P |
 | Search in Rotated Array (#33) | binary-search | 7d | 🗣 | **2026-07-27** | 2 | P·P |
@@ -83,9 +87,9 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 | Level Order Traversal (#102) | trees | 3d | ✍️ | **2026-07-29** | 1 | (new)·F·F·P |
 | Same Tree (#100) | trees | 3d | ✍️ | **2026-07-29** | 1 | P |
 | Diameter of Binary Tree (#543) | trees | 3d | ✍️ | **2026-07-29** | 1 | P |
-| Lowest Common Ancestor BST (#235) | binary-search-tree | 7d | 🗣 | **2026-07-29** | 2 | (new)·F·P·**P** |
-| Encode/Decode Strings (#271) | arrays-hashing | 7d | 🗣 | **2026-07-29** | 2 | P·F·F·P·**P** |
-| Invert Binary Tree (#226) | trees | 7d | 🗣 | **2026-07-29** | 2 | P·F·P·**P** |
+| Lowest Common Ancestor BST (#235) | binary-search-tree | 7d | 🗣 | **2026-08-04** | 2 | (new)·F·P·**P** |
+| Encode/Decode Strings (#271) | arrays-hashing | 7d | 🗣 | **2026-08-04** | 2 | P·F·F·P·**P** |
+| Invert Binary Tree (#226) | trees | 7d | 🗣 | **2026-08-04** | 2 | P·F·P·**P** |
 | Kth Largest in Stream (#703) | heap | 3d | ✍️ | **2026-07-30** | 1 | (new)·P |
 | K Closest Points (#973) | heap | 3d | ✍️ | **2026-07-30** | 1 | (new)·**P** |
 | Kth Largest in Array (#215) | heap | 3d | ✍️ | **2026-07-30** | 1 | (new)·**P** |
@@ -129,12 +133,18 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 **Day 29 (Jul 23):** **5/8** — #110/#973/#215/#143/#146 **PASS→3d**; #211/#1046/#199 **reset** (fresh facets: #211 constructor/keys/return, #1046 return-negation *again*, #199 enqueue direction); new **#90/#46 backtracking→1d**. **Named checks HELD.** **B-7 held → 1 clean session.**
 **Day 30 (Jul 25 — interleave day) — DONE.** 3/6 interleave: **#211/#1046/#199 PASS→3d** (every older named cause held — #1046 un-negate FINALLY, #211's 3 Day-29 facets, #199 enqueue direction); **#78/#90/#46 reset→1d** (all backtracking — the youngest pattern). **Plus #79 Word Search** ✅ (grid DFS, built cold, 2 M-027 nudges) — carried over from Day 29. ✅ **Throughput fine:** interleave days are built to carry 0–1 new, so 1 new + a full interleave block is *above* baseline. *(An earlier note in this file called it a sub-floor miss — that was wrong and is retracted.)*
 
-**Day 31 order (Sun Jul 26 — Sunday worked · ~90 min):**
-**#90 → #46 → #78**, full re-solve from a blank screen (~35 min — all three are resets, so no cheaper tier applies) → pre-teach `lambda` sort key + tuple unpacking (10 min) → new: **Intervals #57 → #56** (40 min). Reviews run first: Intervals is a new pattern but not a heavy one, and Block 1 is only 3 items. Run-sheet: `plan/Day-31-Runsheet.md`.
+**Day 31 (Sun Jul 26 — Sunday worked) — DONE. 3/3 reviews, 2 new.**
+**Block 1: #90 ✅ 4:30 · #46 ✅ 4:28 · #78 ✅ 2:57 — all three first-draft correct from a blank screen, all → 3d.** Three problems that failed Day 30, back in 12 minutes total. **The backtracking fragility watch is answered:** the pattern was young, not broken.
+**Block 2 pre-teach ran long** — had to rebuild `sort(key=)`/`lambda` from "a function is a value" upward, plus iterable unpacking. Both landed; all checks correct.
+**Block 3: NEW PATTERN — Intervals. #57 Insert Interval ✅ (one self-found bug), #56 Merge Intervals ✅ 26:24.** Derived `overlap = (b >= c) and (d >= a)` by counting the *failure* cases instead of the success cases. Learned the `answer[-1]`-is-the-growing-interval representation. **Space error worth banking: stated `O(1)` for #56 — a sort costs `O(n)` auxiliary, not just `O(n log n)` time.**
+**New watches (both behavioural, both first observed today):** **M-029** vocabulary looseness (called a `while` loop an "if" three times — code right, language wrong) · **M-030** confirm-seeking instead of self-testing (4×). Same root: outsourcing verification.
+
+**Day 32 order (Mon Jul 27):** #79 → #39 → #57 → #56 (1d, full) → **#146 ✍️ first one-draft** → #704 🗣 #33 🗣 → new: **#435 / #252**.
 
 > **✅ B-7 (self./ownership) CLEARED Day 30** (2nd clean session) — no drill-now blocker; all of B-1…B-7 clear.
 > **👁 M-027 — the through-line, but the one *repeat* is CLOSED.** #1046's un-negate finally landed Day 30 after two identical misses. Keep the final read-through.
-> **👁 Backtracking fragility (Day 30):** #78/#90/#46 all reset — the pattern is <1 week old. Not a blocker; the three failures drain Sun Jul 26, #79/#39 follow Mon Jul 27.
+> **✅ Backtracking fragility — ANSWERED Day 31.** All three (#78/#90/#46) came back first-draft correct in 12 min total, → 3d. The pattern was young, not broken. Keep watching #79/#39 on Jul 27.
+> **👁 M-029 (vocabulary looseness) · M-030 (confirm-seeking instead of self-testing)** — new Day 31, both behavioural. Not blockers (first session observed), but high intra-session frequency. See `MISTAKES.md`.
 
 ## Graduated (≥60d, never deleted)
 | Problem | Pattern | Graduated | Results |

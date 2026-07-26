@@ -32,7 +32,7 @@ One file per pattern: template, when-to-use triggers, complexity, and *your* got
 | Pattern | Starts | File |
 |---|---|---|
 | Backtracking | Day ~28 | [backtracking](backtracking.md) |
-| Intervals | Day ~29 | [intervals](intervals.md) |
+| **Intervals** | **Day 31 ✅ · 2/5** | [intervals](intervals.md) |
 | Graphs (BFS/DFS, topo, union-find) | Day ~49 | [graphs](graphs.md) |
 | Dynamic Programming — 1D | Day ~52 | [dynamic-programming-1d](dynamic-programming-1d.md) |
 | Dynamic Programming — 2D | Day ~57 | [dynamic-programming-2d](dynamic-programming-2d.md) |

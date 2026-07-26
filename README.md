@@ -3,22 +3,22 @@
 A beginner working from near-zero toward **FAANG-ready by interview season**, one tracked day at a time. This repo *is* my real prep — the plan, the daily notebooks, the mistakes, and the spaced-repetition system that ties it together. Not polished-for-show: the actual journey, decay and dumb bugs included.
 
 <!-- README-LIVE:START -->
-![Day](https://img.shields.io/badge/Day-30-2563eb)
+![Day](https://img.shields.io/badge/Day-31-2563eb)
 ![Phase](https://img.shields.io/badge/Phase-Summer_Sprint-7c3aed)
-![Focus](https://img.shields.io/badge/Focus-Depth_phase_Backtracking_done_Intervals_next-0891b2)
+![Focus](https://img.shields.io/badge/Focus-Depth_phase_Intervals_learned_Graphs_next-0891b2)
 ![Pace](https://img.shields.io/badge/Pace-on_plan-16a34a)
 ![Goal](https://img.shields.io/badge/Goal-FAANG_ready_by_Sept-ea580c)
 ![Language](https://img.shields.io/badge/Language-Python-3776ab)
 
 ## 📍 Where I'm at right now
 
-- **Day 30** · **Summer Sprint → Block B**
-- **Current focus:** Depth phase — Backtracking done, Intervals next
-- **Up next (Day 31 (Sun Jul 26)):** Intervals
-- **Tracker totals:** 30 sessions · 12 patterns learned · 28 mistakes tracked
-- **Open blockers:** 0 (B-7 cleared Day 30) + watches (M-027, backtracking-fragility, B-4, M-005, M-026, M-028)
-- **Review queue:** Day 31 (Sun Jul 26, ~90 min) — just the three backtracking items that actually failed: #90, #78, #46, full re-solve. The 43-item backlog is landed on real dates across Jul 26 – Aug 5 and re-tiered by rung (1d/reset = full · 3d = ✍️ one-draft · 7d+ = 🗣 verbal). No day exceeds 8 items or ~29 min; average 6.4 in ~24 min. Run-sheet: `plan/Day-31-Runsheet.md`.
-- **Last dashboard update:** 2026-07-25
+- **Day 31** · **Summer Sprint → Block B**
+- **Current focus:** Depth phase — Intervals learned, Graphs next
+- **Up next (Day 32 (Mon Jul 27)):** Intervals
+- **Tracker totals:** 31 sessions · 13 patterns learned · 32 mistakes tracked
+- **Open blockers:** 0 (all B-1…B-7 clear) + watches (M-027, M-029 vocabulary, M-030 confirm-seeking, M-032 sort-space, B-4, M-005, M-026, M-028)
+- **Review queue:** Day 32 (Mon Jul 27) — 7 items, ~29 min: #79 · #39 · #57 · #56 at 1d (full solve) · #146 as the first ✍️ one-draft · #704 🗣 · #33 🗣. Backlog stays landed on real dates through Aug 5, re-tiered by rung; no day exceeds 8 items or ~29 min.
+- **Last dashboard update:** 2026-07-26
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 
 *This block is generated from `DASHBOARD.md`. Run `python3 scripts/sync_readme.py` after dashboard edits; the pre-commit hook also runs it automatically.*
