@@ -40,21 +40,25 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 
 **Result: no day exceeds 8 items or ~29 minutes, and the average is 6.4 items in ~24 min.**
 
-| Session | Date | Block 2 weight | Full solve | ✍️ One-draft (4 min) | 🗣 Verbal | Total |
+| Session | Date | Block 2 weight | Full solve | ✍️ One-draft (4 min) | 🗣 Verbal | Time |
 |---|---|---|---|---|---|---|
-| ~~Day 31~~ | ~~Sun Jul 26~~ | ✅ **DONE** — Intervals #57/#56 | ~~#90 · #46 · #78~~ ✅ 3/3 | — | — | 3 |
-| Day 32 | Mon Jul 27 | Intervals · **light** ⇒ reviews first | #79 · #39 · **#57 · #56** | #146 ← **first one-draft** | #704 · #33 | 7 |
-| Day 33 | Tue Jul 28 | **Graphs · HEAVY** ⇒ B2 first | #435 · #252 | #242 · #15 · #20 | #155 · #74 · #150 | 8 |
-| Day 34 | Wed Jul 29 | **Graphs · HEAVY** ⇒ B2 first | #200 · #133 | **#90 · #46 · #78** · #102 · #100 · #543 | — | 8 |
-| Day 35 | Thu Jul 30 | **Graphs · HEAVY** ⇒ B2 first | #994 · #207 | #703 · #973 · #215 | #98 · #153 · #128 | 8 |
-| Day 36 | Fri Jul 31 | *interleave — no new* | #210 · #323 | #143 · #19 · #141 · #230 | #739 · #121 | 8 |
-| Day 37 | Sat Aug 1 | **DP · HEAVY** (3 new) ⇒ B2 first | — | #110 · #211 · #208 | #206 · #21 · #104 | 6 |
+| ~~Day 31~~ | ~~Sun Jul 26~~ | ✅ **DONE** — #57/#56 | ~~#90·#46·#78~~ ✅ 3/3 | — | — | — |
+| ~~Day 32~~ | ~~Mon Jul 27~~ | ✅ **DONE** — #435/#252 | ~~#79·#39·#57·#56~~ 1/4 | *(#146 moved)* | ~~#704·#33~~ ✅ | 37 min ⚠️ |
+| **Day 33** | **Tue Jul 28** | **Graphs · HEAVY** ⇒ B2 first | **#79 · #39 · #57** (resets) · **#435 · #252** | — | — | **30 min** |
+| Day 34 | Wed Jul 29 | **Graphs · HEAVY** ⇒ B2 first | #200 · #133 | #90 · #46 · #78 | #155 · #74 | 25 min |
+| Day 35 | Thu Jul 30 | **Graphs · HEAVY** ⇒ B2 first | #994 · #207 | #56 · #102 · #100 | #150 · #98 | 25 min |
+| Day 36 | Fri Jul 31 | *interleave — no new* | #210 · #323 | #543 · #146 · #242 | #153 · #128 | 25 min |
+| Day 37 | Sat Aug 1 | **DP · HEAVY** (3 new) ⇒ B2 first | — | #15 · #20 · #703 · #973 | #739 · #121 · #206 | 18 min |
 | — | **Sun Aug 2** | 🟢 **REST** | — | — | — | — |
-| Day 38 | Mon Aug 3 | **DP · HEAVY** ⇒ B2 first | #70 · #746 · #198 | #875 · #424 | #347 · #238 | 7 |
-| Day 39 | Tue Aug 4 | **DP · HEAVY** ⇒ B2 first | #5 · #91 | — | #3 · #167 · #235 · #271 · #226 | 7 |
-| Day 40 | Wed Aug 5 | **DP · HEAVY** ⇒ B2 first | #322 · #152 | #1046 · #199 | #11 · #125 | 6 |
+| Day 38 | Mon Aug 3 | **DP · HEAVY** ⇒ B2 first | #70 · #746 · #198 | #215 · #230 | #21 · #104 | 27 min |
+| Day 39 | Tue Aug 4 | **DP · HEAVY** ⇒ B2 first | #5 · #91 | #143 · #19 · #141 | #347 · #238 | 25 min |
+| Day 40 | Wed Aug 5 | **DP · HEAVY** ⇒ B2 first | #322 · #152 | #110 · #211 · #208 | #3 · #167 | 25 min |
+| Day 41 | Thu Aug 6 | **DP · HEAVY** ⇒ B2 first | #139 · #300 | #875 · #424 | #235 · #271 · #226 | 22 min |
+| Day 42 | Fri Aug 7 | 2-D DP | #62 · #1143 | #1046 · #199 | #11 · #125 | 21 min |
 
-**Day-31 re-fuzz:** #90/#46/#78 passed → 3d, landing **Jul 29** (exactly 3 days). Jul 29 was already at 8, so its three **verbal** items (#235/#271/#226 — 30 seconds each) moved to **Aug 4**. Fragile items keep their exact date; verbals absorb the shuffle. Note #90/#46/#78 are now at the **3d rung, so they're ✍️ one-drafts** — the tier follows the rung, even for a pattern that was fragile a day ago.
+**Day-32 re-fuzz — Jul 28 is deliberately 5 items and nothing else.** Three resets (#79/#39/#57) plus two fresh 1d (#435/#252) = **five full solves = the entire 30-minute box.** Every one-draft and verbal that was sitting on Jul 28 moved out rather than pretending the day could hold 11 items. **Fragile items keep their date; one-drafts and verbals absorb the shuffle.** Drain now runs to **Aug 7**.
+
+*(Cost of a full solve ≈ 6 min · one-draft ≈ 4 min · verbal ≈ 30 sec. That's how each day's total is computed — the box is on TIME, not item count.)*
 
 *(Full-solve items are almost always the previous day's new problems arriving at 1d — those can never be cheapened.)*
 
@@ -71,43 +75,45 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 | Subsets II (#90) | backtracking | **3d** | ✍️ | **2026-07-29** | 1 | (new)·F·**P** |
 | Permutations (#46) | backtracking | **3d** | ✍️ | **2026-07-29** | 1 | (new)·F·**P** |
 | Subsets (#78) | backtracking | **3d** | ✍️ | **2026-07-29** | 1 | (new)·F·**P** |
-| **Word Search (#79)** | backtracking (grid DFS) | **1d** | full | **2026-07-27** | 0 | (new) |
-| **Combination Sum (#39)** | backtracking | **1d** | full | **2026-07-27** | 0 | (new) |
-| **Insert Interval (#57)** | intervals | **1d** | full | **2026-07-27** | 0 | (new) |
-| **Merge Intervals (#56)** | intervals | **1d** | full | **2026-07-27** | 0 | (new) |
-| LRU Cache (#146) | design / linked-list | 3d | ✍️ | **2026-07-27** | 1 | (new)·F·P·F·**P** |
-| Binary Search (#704) | binary-search | 7d | 🗣 | **2026-07-27** | 2 | P·P |
-| Search in Rotated Array (#33) | binary-search | 7d | 🗣 | **2026-07-27** | 2 | P·P |
-| Valid Anagram (#242) | arrays-hashing | 3d | ✍️ | **2026-07-28** | 1 | P·P·P·F·F·P |
-| 3Sum (#15) | two-pointers | 3d | ✍️ | **2026-07-28** | 1 | F·P·F·P |
-| Valid Parentheses (#20) | stack | 3d | ✍️ | **2026-07-28** | 1 | P·F·P |
-| Min Stack (#155) | stack | 7d | 🗣 | **2026-07-28** | 2 | P·P |
-| Search a 2D Matrix (#74) | binary-search | 7d | 🗣 | **2026-07-28** | 2 | P·P |
-| Evaluate RPN (#150) | stack | 7d | 🗣 | **2026-07-28** | 2 | P·P |
-| Level Order Traversal (#102) | trees | 3d | ✍️ | **2026-07-29** | 1 | (new)·F·F·P |
-| Same Tree (#100) | trees | 3d | ✍️ | **2026-07-29** | 1 | P |
-| Diameter of Binary Tree (#543) | trees | 3d | ✍️ | **2026-07-29** | 1 | P |
+| **Word Search (#79)** | backtracking (grid DFS) | **1d (reset)** | full | **2026-07-28** | 0 | (new)·**F** |
+| **Combination Sum (#39)** | backtracking | **1d (reset)** | full | **2026-07-28** | 0 | (new)·**F** |
+| **Insert Interval (#57)** | intervals | **1d (reset)** | full | **2026-07-28** | 0 | (new)·**F** |
+| Merge Intervals (#56) | intervals | **3d** | ✍️ | **2026-07-30** | 1 | (new)·**P** |
+| **Non-overlapping Intervals (#435)** | intervals / greedy | **1d** | full | **2026-07-28** | 0 | (new) |
+| **Meeting Rooms (#252)** | intervals / greedy | **1d** | full | **2026-07-28** | 0 | (new) |
+| LRU Cache (#146) | design / linked-list | 3d | ✍️ | **2026-07-31** | 1 | (new)·F·P·F·**P** |
+| Binary Search (#704) | binary-search | **21d** | 🗣 | **2026-08-17** | 3 | P·P·**P** |
+| Search in Rotated Array (#33) | binary-search | **21d** | 🗣 | **2026-08-17** | 3 | P·P·**P** |
+| Valid Anagram (#242) | arrays-hashing | 3d | ✍️ | **2026-07-31** | 1 | P·P·P·F·F·P |
+| 3Sum (#15) | two-pointers | 3d | ✍️ | **2026-08-01** | 1 | F·P·F·P |
+| Valid Parentheses (#20) | stack | 3d | ✍️ | **2026-08-01** | 1 | P·F·P |
+| Min Stack (#155) | stack | 7d | 🗣 | **2026-07-29** | 2 | P·P |
+| Search a 2D Matrix (#74) | binary-search | 7d | 🗣 | **2026-07-29** | 2 | P·P |
+| Evaluate RPN (#150) | stack | 7d | 🗣 | **2026-07-30** | 2 | P·P |
+| Level Order Traversal (#102) | trees | 3d | ✍️ | **2026-07-30** | 1 | (new)·F·F·P |
+| Same Tree (#100) | trees | 3d | ✍️ | **2026-07-30** | 1 | P |
+| Diameter of Binary Tree (#543) | trees | 3d | ✍️ | **2026-07-31** | 1 | P |
 | Lowest Common Ancestor BST (#235) | binary-search-tree | 7d | 🗣 | **2026-08-04** | 2 | (new)·F·P·**P** |
 | Encode/Decode Strings (#271) | arrays-hashing | 7d | 🗣 | **2026-08-04** | 2 | P·F·F·P·**P** |
 | Invert Binary Tree (#226) | trees | 7d | 🗣 | **2026-08-04** | 2 | P·F·P·**P** |
-| Kth Largest in Stream (#703) | heap | 3d | ✍️ | **2026-07-30** | 1 | (new)·P |
-| K Closest Points (#973) | heap | 3d | ✍️ | **2026-07-30** | 1 | (new)·**P** |
-| Kth Largest in Array (#215) | heap | 3d | ✍️ | **2026-07-30** | 1 | (new)·**P** |
+| Kth Largest in Stream (#703) | heap | 3d | ✍️ | **2026-08-01** | 1 | (new)·P |
+| K Closest Points (#973) | heap | 3d | ✍️ | **2026-08-01** | 1 | (new)·**P** |
+| Kth Largest in Array (#215) | heap | 3d | ✍️ | **2026-08-03** | 1 | (new)·**P** |
 | Validate BST (#98) | binary-search-tree | 7d | 🗣 | **2026-07-30** | 2 | (new)·P·**P** |
 | Find Min in Rotated Sorted Array (#153) | binary-search | 7d | 🗣 | **2026-07-30** | 2 | F·P·F·P·P |
 | Longest Consecutive Sequence (#128) | arrays-hashing | 7d | 🗣 | **2026-07-30** | 2 | P·P |
-| Reorder List (#143) | linked-list | 3d | ✍️ | **2026-07-31** | 1 | (new)·F·P·F·**P** |
-| Remove Nth Node From End (#19) | linked-list | 3d | ✍️ | **2026-07-31** | 1 | (new)·P |
-| Linked List Cycle (#141) | linked-list | 3d | ✍️ | **2026-07-31** | 1 | P |
-| Kth Smallest in BST (#230) | binary-search-tree | 3d | ✍️ | **2026-07-31** | 1 | (new)·P |
-| Daily Temperatures (#739) | stack | 7d | 🗣 | **2026-07-31** | 2 | P·F·P·P |
-| Best Time to Buy/Sell (#121) | sliding-window | 21d | 🗣 | 2026-07-31 | 3 | P·P·P |
-| Balanced Binary Tree (#110) | trees | 3d | ✍️ | **2026-08-01** | 1 | (new)·F·**P** |
-| Add & Search Words (#211) | tries | 3d | ✍️ | **2026-08-01** | 1 | (new)·F·F·**P** |
-| Implement Trie (#208) | tries | 3d | ✍️ | **2026-08-01** | 1 | (new)·F·P |
+| Reorder List (#143) | linked-list | 3d | ✍️ | **2026-08-04** | 1 | (new)·F·P·F·**P** |
+| Remove Nth Node From End (#19) | linked-list | 3d | ✍️ | **2026-08-04** | 1 | (new)·P |
+| Linked List Cycle (#141) | linked-list | 3d | ✍️ | **2026-08-04** | 1 | P |
+| Kth Smallest in BST (#230) | binary-search-tree | 3d | ✍️ | **2026-08-03** | 1 | (new)·P |
+| Daily Temperatures (#739) | stack | 7d | 🗣 | **2026-08-01** | 2 | P·F·P·P |
+| Best Time to Buy/Sell (#121) | sliding-window | 21d | 🗣 | **2026-08-01** | 3 | P·P·P |
+| Balanced Binary Tree (#110) | trees | 3d | ✍️ | **2026-08-05** | 1 | (new)·F·**P** |
+| Add & Search Words (#211) | tries | 3d | ✍️ | **2026-08-05** | 1 | (new)·F·F·**P** |
+| Implement Trie (#208) | tries | 3d | ✍️ | **2026-08-05** | 1 | (new)·F·P |
 | Reverse Linked List (#206) | linked-list | 7d | 🗣 | **2026-08-01** | 2 | P·P |
-| Merge Two Sorted Lists (#21) | linked-list | 7d | 🗣 | **2026-08-01** | 2 | P·P |
-| Maximum Depth of Binary Tree (#104) | trees | 7d | 🗣 | **2026-08-01** | 2 | P·P |
+| Merge Two Sorted Lists (#21) | linked-list | 7d | 🗣 | **2026-08-03** | 2 | P·P |
+| Maximum Depth of Binary Tree (#104) | trees | 7d | 🗣 | **2026-08-03** | 2 | P·P |
 | Koko Eating Bananas (#875) | binary-search | 3d | ✍️ | **2026-08-03** | 1 | P·F·P·F·P |
 | Longest Repeating Char Replace (#424) | sliding-window | 3d | ✍️ | **2026-08-03** | 1 | P |
 | Top K Frequent (#347) | arrays-hashing | 21d | 🗣 | **2026-08-03** | 3 | P·P·P |
@@ -133,17 +139,28 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 **Day 29 (Jul 23):** **5/8** — #110/#973/#215/#143/#146 **PASS→3d**; #211/#1046/#199 **reset** (fresh facets: #211 constructor/keys/return, #1046 return-negation *again*, #199 enqueue direction); new **#90/#46 backtracking→1d**. **Named checks HELD.** **B-7 held → 1 clean session.**
 **Day 30 (Jul 25 — interleave day) — DONE.** 3/6 interleave: **#211/#1046/#199 PASS→3d** (every older named cause held — #1046 un-negate FINALLY, #211's 3 Day-29 facets, #199 enqueue direction); **#78/#90/#46 reset→1d** (all backtracking — the youngest pattern). **Plus #79 Word Search** ✅ (grid DFS, built cold, 2 M-027 nudges) — carried over from Day 29. ✅ **Throughput fine:** interleave days are built to carry 0–1 new, so 1 new + a full interleave block is *above* baseline. *(An earlier note in this file called it a sub-floor miss — that was wrong and is retracted.)*
 
+**Day 32 (Mon Jul 27) — DONE. 3/6 reviews, 2 new (#435, #252).**
+**#56 ✅ 7:20** (down from 26:24 — both Day-31 corrections applied unprompted: `answer[-1] = [...]` single-site, and `[a, ...]` because the sort guarantees the left edge never moves). **#704 ✅ · #33 ✅ → both 21d.**
+**#79 ❌ 10:06** — peeked at notes for the mark/un-mark idiom, **and volunteered it**; both Day-30 nudges (all 4 directions, `dfs(r,c,0)`) held. **#39 ❌ 9:33** — prune written backwards (`target > total` instead of `total > target`), killing the recursion at the root. **#57 ❌ 9:57** — **the post-loop terminal append was missing (M-026)** on the exact problem whose comment said *"make sure to have the isInserted boolean."*
+⚠️ **Block 1 box blown** (36:56 solve time) → #146 dated to Jul 31, not rolled.
+**Block 2 — NEW: #435 (greedy interval scheduling) + #252.** Derived the greedy criterion (*remove the one that ends later*), reached "I only need to count, not remove" himself off the `pop` hazard, and **flipped to a forward sweep unprompted** after the reference bug. **[FEEDBACK] The reference bug was partly MY error** — I validated his backward sweep on two cases with a plausible-but-insufficient argument. Two passing tests is not a proof, for the coach either.
+**The finding:** all four full solves were **first retrievals**. Three failed. **The one that passed (#56) was the one he struggled with hardest yesterday** — desirable difficulty, visible in his own data.
+
 **Day 31 (Sun Jul 26 — Sunday worked) — DONE. 3/3 reviews, 2 new.**
 **Block 1: #90 ✅ 4:30 · #46 ✅ 4:28 · #78 ✅ 2:57 — all three first-draft correct from a blank screen, all → 3d.** Three problems that failed Day 30, back in 12 minutes total. **The backtracking fragility watch is answered:** the pattern was young, not broken.
 **Block 2 pre-teach ran long** — had to rebuild `sort(key=)`/`lambda` from "a function is a value" upward, plus iterable unpacking. Both landed; all checks correct.
 **Block 3: NEW PATTERN — Intervals. #57 Insert Interval ✅ (one self-found bug), #56 Merge Intervals ✅ 26:24.** Derived `overlap = (b >= c) and (d >= a)` by counting the *failure* cases instead of the success cases. Learned the `answer[-1]`-is-the-growing-interval representation. **Space error worth banking: stated `O(1)` for #56 — a sort costs `O(n)` auxiliary, not just `O(n log n)` time.**
 **New watches (both behavioural, both first observed today):** **M-029** vocabulary looseness (called a `while` loop an "if" three times — code right, language wrong) · **M-030** confirm-seeking instead of self-testing (4×). Same root: outsourcing verification.
 
-**Day 32 order (Mon Jul 27):** #79 → #39 → #57 → #56 (1d, full) → **#146 ✍️ first one-draft** → #704 🗣 #33 🗣 → new: **#435 / #252**.
+**Day 33 order (Tue Jul 28 — Graphs, HEAVY ⇒ Block 2 FIRST):**
+Block 2 first while fresh: **#200 Number of Islands, #133 Clone Graph** (new pattern — budget the pre-teach). Then Block 1, 30-min box, five full solves and nothing else: **#79 → #39 → #57** (resets) → **#435 → #252** (1d).
+**Stopwatch on new problems too, from today** — #435/#252 went untimed for the third session running, and the readiness gate is measured in minutes on unseen problems.
 
 > **✅ B-7 (self./ownership) CLEARED Day 30** (2nd clean session) — no drill-now blocker; all of B-1…B-7 clear.
 > **👁 M-027 — the through-line, but the one *repeat* is CLOSED.** #1046's un-negate finally landed Day 30 after two identical misses. Keep the final read-through.
-> **✅ Backtracking fragility — ANSWERED Day 31.** All three (#78/#90/#46) came back first-draft correct in 12 min total, → 3d. The pattern was young, not broken. Keep watching #79/#39 on Jul 27.
+> **⚠️ Backtracking fragility — REOPENED Day 32.** #79 and #39 both failed on their first-ever review (notes peek; reversed prune). Day 31's 3/3 was on problems with 3–4 prior passes. **The honest split: backtracking is solid on rehearsed problems, fragile on first retrieval.**
+> **👁 M-026 (dropped terminal line) — FIRED Day 32** on #57, and it is item two on his own scan. **The scan didn't fail; it didn't run.**
+> **✅ Backtracking fragility — ANSWERED Day 31 (superseded above).** All three (#78/#90/#46) came back first-draft correct in 12 min total, → 3d. The pattern was young, not broken. Keep watching #79/#39 on Jul 27.
 > **👁 M-029 (vocabulary looseness) · M-030 (confirm-seeking instead of self-testing)** — new Day 31, both behavioural. Not blockers (first session observed), but high intra-session frequency. See `MISTAKES.md`.
 
 ## Graduated (≥60d, never deleted)

@@ -41,6 +41,9 @@
 | M-030 | 2026-07-26 | process | **Confirm-seeking instead of self-testing.** "Am I right about this?" ×4 — most sharply on the four-clause overlap condition, which one 15-second hand-test on `[1,3]`vs`[3,5]` would have settled | **Run one concrete case before asking.** In an interview the only verification available is his own. Same root as M-029: outsourcing verification — of his claims and of his own words | 1 (×4) | Day 31 | **active — new watch** |
 | M-031 | 2026-07-26 | impl | **#57 — a flag was SET but never GATED the branch.** `isMerged = True` recorded that `newInterval` had been placed, but the "after" branch didn't check it, so on `[[1,2],[12,16],[20,25]]` it re-appended `newInterval` once per remaining interval. **Self-found from the test case** | A flag only helps if it's *read* where it matters. Two sites for one fact — **M-027 family**. Alternative: return early instead of flagging | 1 | Day 31 | resolved same session (self-found) |
 | M-032 | 2026-07-26 | strategy | **#56 — stated `O(1)` space next to an `O(n log n)` sort.** Noticed the sort's time cost, missed its space cost | **A sort costs space too** — Python's Timsort is `O(n)` auxiliary worst case. Never pair `O(n log n)` time with `O(1)` space. Kin to M-005 (a structure that scales with input = O(n) space) | 1 | Day 31 | **active — new watch** |
+| M-033 | 2026-07-27 | impl | **A prune/guard written backwards.** #39: `target > total` instead of `total > target` — says "stop when I haven't got there yet" instead of "stop when I've overshot." True at the root call, so the whole recursion died instantly and `res` returned empty | **Say what the prune KILLS, in English, before writing it**: *"kills the branch when the running total has gone past target"* → `total > target`. Then read the code and confirm it says the same. Same family as B-6 (right operands, wrong order) | 1 | Day 32 | **active — new watch** |
+| M-034 | 2026-07-27 | process | **The scan was said but not run.** #57's missing terminal append is item TWO on his own scan ("Terminal line/mark written?"), and his own comment named the flag he then failed to use | **Running the scan means walking it against the code in front of you, line by line — not reciting it from memory.** Three Day-32 failures were all items already on the list. Kin to M-030 (outsourcing verification) | 1 | Day 32 | **active — the current bottleneck** |
+| M-035 | 2026-07-27 | coaching | **[MINE] Validated his backward-sweep approach for #435 after two passing examples plus a plausible argument.** It fails on `[[1,3],[2,4],[3,5]]`. He built on my wrong confirmation | **The coach is not exempt from the verification rule.** Two passing tests and a nice-sounding reason is not a proof. Find the counter-example before endorsing an approach | 1 | Day 32 | resolved same session (owned + corrected) |
 
 ## Recurrence Watchlist (count ≥ 2 — one rep from escalating)
 
@@ -51,8 +54,10 @@
 | **M-018** | strategy | **A scan / descent / skip is a LOOP, not a single check** (`if` where `while` belongs) | **2** |
 | **M-009** | strategy | **Importing a template's BODY across problems without re-deriving** ("what decides the next step HERE?") | **2** |
 | **M-026** | impl | **Dropped the terminal line of an operation** (isEnd marker / final mark) — #208, #211 | **1 (×2)** |
-| **M-029** | comms | **Naming a construct wrongly while the code is right** (`while` called an `if`) | **1 (×3)** *(new Day 31)* |
-| **M-030** | process | **Asking for confirmation instead of running one test case** | **1 (×4)** *(new Day 31)* |
+| **M-029** | comms | **Naming things wrongly while the code is right** — Day 31 `while`→`if`; Day 32 **method names 4 sessions running** (`exist`→`wordSearch`, `merge`→`mergeInterval`, `insert`→`insertInterval`) + *"the mid value… that is the index"* (B-5) | **2 (×7)** *(Day 31, 32 — one rep from escalating)* |
+| **M-030** | process | **Asking for confirmation instead of running one test case** | **1 (×4)** *(Day 31; **improving Day 32** — tested his own sweep when asked, self-reported a notes peek)* |
+| **M-034** | process | **Scan SAID but not RUN** — the failures were all items already on the list | **1** *(new Day 32 — current bottleneck)* |
+| **M-033** | impl | **Prune/guard written backwards** (right operands, wrong order) | **1** *(new Day 32)* |
 | **M-032** | strategy | **A sort costs SPACE too** (`O(n)` Timsort aux) — stated `O(1)` beside `O(n log n)` | **1** *(new Day 31)* |
 | M-002 | impl | `()` call vs `[]` index | 2 |
 | M-006 | strategy | Counting hidden in-loop cost in Big-O | 2 |
@@ -81,3 +86,15 @@ Through Day 30 every recurring mistake was **first-draft precision** in *code* (
 **These are one disease: outsourcing verification.** M-027 is its code-shaped form (didn't walk every site); M-030 is its process-shaped form (didn't run the case); M-029 is its language-shaped form (didn't pin the word). The drill is the same in all three: **before handing it over, verify it yourself — every site, one test case, and the actual name of the thing.**
 
 Counter-evidence worth keeping, because Day 31 also showed the drill working: he **test-diagnosed his own overlap condition's two holes**, **found the #57 flag bug from a test case**, and **dropped `self.` on #46 unprompted in the same session as the correction.** When he does run the check himself, it works.
+
+---
+
+## Day 32 addendum — the bottleneck moved again
+
+Day 31 named the disease as **outsourcing verification**. Day 32 narrows it to one act: **M-034, the scan is said but not run.**
+
+All three Day-32 failures were things already written on his own eight-item scan — a missing terminal line (item 2), a reversed comparison (the "which side" item), a half-recalled mechanism. **The checklist is complete. The execution of the checklist is the gap.** Reciting it at the start of a session is not the same as walking it against the code in front of him before he hands it over.
+
+**Structural finding worth keeping** *(and worth repeating to him on a bad day)*: all four Day-32 full solves were **first retrievals**. Three failed — and the one that passed, #56, is the one that cost 26 minutes and three explanations the day before. **The material that felt worst is the material that stuck.** Smooth acquisition retains worse than effortful acquisition; his own log now demonstrates it.
+
+**And M-035 is mine**, kept in this file on purpose: I endorsed an approach after two passing examples. Same disease, different person.

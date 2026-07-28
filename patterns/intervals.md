@@ -1,6 +1,6 @@
 # Intervals
 
-**Status:** learned Day 31 (2026-07-26) · **Mastery: 2/5** · Block B
+**Status:** learned Day 31 · extended Day 32 (#435, #252) · **Mastery: 3/5** · Block B
 *(2/5 = derived and implemented both shapes correctly, but needed heavy guidance on the primitive and the sweep. Bump on the 1d/3d reps.)*
 
 ## In one line
@@ -98,5 +98,67 @@ One pass. Every existing interval falls in exactly one of three buckets relative
 - Guard the empty-`answer` case before touching `answer[-1]`.
 - `answer[-1] = temp` replaces `answer.pop()` + `answer.append(temp)` — one site instead of two (M-027).
 
+---
+
+## Shape 3 — greedy: keep the most, remove the fewest (#435, #252) · *Day 32*
+
+**These stop being "sweep and merge" and become GREEDY.** Named form: **interval scheduling / activity selection.**
+
+> Sort so the best candidate comes first, then sweep once taking anything that doesn't conflict with what you've already taken. **Never look back, never reconsider.**
+
+Two moving parts, always: **a sort key that makes "best" mean "first"**, and **one variable holding the last thing you committed to.**
+
+```python
+intervals.sort(key=lambda x: x[1])      # sort by END
+count = 0
+ref = []
+
+for interval in intervals:
+    if len(ref) == 0:
+        ref = interval
+    else:
+        c, d = interval
+        a, b = ref
+        if b > c:            # conflicts with what we KEPT
+            count += 1       # drop current; ref UNCHANGED
+        else:
+            ref = interval   # keep it; it becomes the reference
+return count
+```
+
+**Sort by END, not start — and know why.** Keep the interval that frees the timeline soonest. Sorting by start breaks it: the earliest-starting interval might run to 100 and block everything behind it.
+
+**The criterion is "ends later", not "overlaps more."** Sweeping left to right you can't see the future, so "overlaps with the rest" is unusable. **"Ends later" is a purely LOCAL check that predicts the global property.** That's the heart of every greedy: *when a global property is expensive to check, find a local one that predicts it.*
+
+**⚠️ The bug that got written first, twice now:** comparing against the interval **physically adjacent** in the array instead of the last one you **KEPT**. Fails on `[[1,3],[2,4],[3,5]]` — gives 2, should be 1, because `[2,4]` is used as a comparison partner and then deleted. **Identical to #56's `answer[-1]` bug.** Rule: **the reference is what survived, never what's next to you.**
+
+**#435 asks HOW MANY, not WHICH.** Nothing gets removed — you just count. That kills the `pop()`-in-a-loop idea (`O(n²)`, plus mutating while iterating skips elements) before it starts.
+
+**#252 Meeting Rooms** is the same sweep, returning `False` on the first conflict instead of counting. Sorting by end works here too: if no adjacent-by-end pair overlaps, no non-adjacent pair can either.
+
+### Greedy vs sliding window *(asked Day 32)*
+
+| | Sliding window | Greedy |
+|---|---|---|
+| State is about | a **range** (`left`, `right`) | a **commitment** (last thing taken) |
+| Do things leave? | **Yes** — `left` advances and state is removed | **No** — every decision is final |
+| Examples | #3, #424 | #11, #121, #435, #252 |
+
+**The tell: does anything ever get removed from consideration after being added?** Yes → window. Every decision final → greedy.
+
+---
+
+## Complexity summary
+
+| Problem | Time | Space | Why |
+|---|---|---|---|
+| #57 Insert Interval | `O(n)` | `O(n)` out / `O(1)` aux | input pre-sorted — no sort |
+| #56 Merge Intervals | `O(n log n)` | `O(n)` | must sort; Timsort is `O(n)` aux |
+| #435 Non-overlapping | `O(n log n)` | `O(n)` | sort by end; output is one integer |
+| #252 Meeting Rooms | `O(n log n)` | `O(n)` | sort; output is one boolean |
+
+## Method names — get them right
+`insert` · `merge` · `eraseOverlapIntervals` · `canAttendMeetings`. *(Renamed all of these on Day 32 — the thing already has a name.)*
+
 ## Still to come
-#435 Non-overlapping Intervals (greedy by **end**) · #252/#253 Meeting Rooms (sort + overlap check / heap of ends) — Day 32.
+#253 Meeting Rooms II (heap of end times — minimum rooms) · #1851 Minimum Interval to Include Each Query.
