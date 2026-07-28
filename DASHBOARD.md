@@ -4,101 +4,104 @@
 > "Current Status" is regenerated each update. Readable in under 2 minutes.
 
 ## Current Status
-- **Last updated:** 2026-07-27 (Day 32 logged) · **Greedy previewed · the scan is the bottleneck**
-- **Phase:** Summer Sprint · Block B — *Depth phase — Intervals done, Graphs next; Sundays worked. **Intervals 3/5** (4 problems, incl. greedy interval scheduling). **Backtracking: solid on rehearsed problems, fragile on FIRST retrieval** — #79/#39 both failed their first-ever review. No drill-now blocker; the live issue is M-034, the scan being said but not run. **Aug 9 + Aug 16 are working days**, closing the deficit against Aug 20.*
-- **Sessions logged:** 32 · **Patterns learned:** 13 · **Mistakes tracked:** 35 · **Open blockers:** 0 (all B-1…B-7 clear) + watches (**M-034 scan-not-run — the bottleneck**, **M-026 terminal line (fired)**, **M-029 naming ×7**, M-033 reversed prune, M-027, M-030, M-032, B-4, M-005, M-028)
-- **Review queue:** **Day 33 (Tue Jul 28) — 5 items, 30 min, all full solves:** #79 · #39 · #57 (resets) · #435 · #252 (1d). **Deliberately nothing else** — five full solves *is* the box. Every one-draft and verbal moved off. Backlog re-spread on real dates through **Aug 7**.
+- **Last updated:** 2026-07-28 (Day 33 logged) · **Graphs learned · Block 1 5/5 · one new blocker**
+- **Phase:** Summer Sprint · Block B — *Depth phase — **Graphs learned (2/5)**, Intervals held at 3/5, Backtracking answered on second retrieval. **Block 1 went 5/5 in 26:55, all full solves** — every Day-32 named cause held first-draft, so M-034 (the scan) is answered for one session. **The two live problems are the clock on new material (44 and 45 min) and B-8, naming precision.** Aug 9 + Aug 16 are working days, closing the deficit against Aug 20.*
+- **Sessions logged:** 33 · **Patterns learned:** 14 · **Mistakes tracked:** 36 · **Open blockers:** 1 (**B-8 naming precision — ESCALATED Day 33**) + watches (M-036, M-027, M-026, M-033, M-034, M-030, M-032, B-4, M-005, M-028)
+- **Review queue:** **Day 34 (Wed Jul 29) — 7 items, ~25 min:** full **#200 · #133** (yesterday's new) · ✍️ **#90 · #46 · #78** · 🗣 **#155 · #74**. Backlog re-fuzzed after Day 33 and still lands on real dates through **Aug 7**; every day Jul 29 – Aug 7 sits at 6–8 items and 25–29 min.
 
-## 🔴 The schedule, honestly *(rebuilt 2026-07-25)*
+## 🔴 The schedule, honestly *(rebuilt 2026-07-25 · re-checked Day 33)*
 
-**The roadmap did not fit.** Day 31 on Jul 27 → Day 53 on Aug 19 needed **23 sessions into 21 working days** (minus Sundays Aug 2/9/16). **A 2-session deficit.** *(Day 30's single new problem is **not** part of the problem — it was an interleave day, which is built to carry 0–1 new. An earlier version of this file called it a miss; that was wrong.)*
+**The fix, agreed 2026-07-25:** work Sundays. **Day 31 moved onto Sun Jul 26** (recovered 1), and **Aug 9 + Aug 16 became working days** (recovered 2). Aug 2 stays rest.
 
-**The fix, agreed 2026-07-25:** work Sundays. **Day 31 moves onto Sun Jul 26** (recovers 1), and **Aug 9 + Aug 16 become working days** (recovers 2). Aug 2 stays rest. Result: **24 sessions for 23 days of content, with Aug 19 as a one-day buffer.**
+**Arithmetic re-run on Day 33** *(rule 10 — do it every time the schedule moves)*: **Day 34 → Day 53 is 20 sessions**; Jul 29 → Aug 19 is **22 days minus Sunday Aug 2 = 21 available**. **20 into 21 — the buffer is still exactly one day (Aug 19).** One slip eats it. **If a session slips, the recovery is a triple-new day — not a shrug.**
 
-**The buffer is one day wide.** One slip eats it. Two puts Day 53 past the deadline. **If a session slips, the recovery is a triple-new day — not a shrug.**
+**The queue's hidden pile is still cleared.** All items sit on concrete dates across **Jul 29 – Aug 7**, re-fuzzed after Day 33's five passes: the five advanced items took their true 3d date (Jul 31 / Aug 1) and the **stable** items absorbed the shuffle (#543 → Aug 6, #146 → Aug 4, #242 → Aug 7, #153 → Aug 1, #206 → Aug 3, #128 → Aug 5), batched onto days already holding their pattern. *(Standing rule: a roll-forward must land on a concrete date — `COACHING.md` rule 10.)*
 
-**The queue was also carrying a hidden pile:** 43 items due-or-overdue on/before Jul 28, 18 already past due and rolled forward with no landing date. All 43 now sit on real dates across **Jul 26 – Aug 5**. *(New standing rule: a roll-forward must land on a concrete date — `COACHING.md` rule 10.)*
+## 🟢 The honest read — Day 33
 
-**And the first re-spread was still too heavy — he called it, twice, correctly.** Six levers now applied: **three review tiers set by rung** (1d/reset = full solve · **3d = ✍️ one-draft, 4-min cap, no debugging** · 7d+ = 🗣 verbal), **drain stretched to Aug 5**, **backtracking cluster split** (#79/#39 → Jul 27), **overdue sweep moved off Day 31**, **reviews weight-balanced against Block 2** (Graph/DP days get light reviews and run Block 2 first), and **same-pattern reviews batched**. **Day 31 is 3 re-solves + 2 new in ~90 min; no later day exceeds 8 items or ~29 min.** Nothing was dropped.
+**Block 1 went 5 for 5 in 26:55, on the most expensive possible load — five full solves — and finished inside the box with three minutes spare.** First time the 30-minute box has held on an all-full-solve day.
 
-**The honest size of that fix:** the tier change buys ~6–8 minutes of clock — modest. **What actually changed is intensity:** ~2 items per session now involve write-run-debug, down from ~5. The one-draft tier was chosen over a cheaper structure-sketch on purpose — his failures are execution slips, and a sketch tier would stop catching them.
+> **The finding: yesterday three of four full solves failed. Today five of five passed, and every one was a fix to the exact thing that broke.** #79's mark/un-mark idiom written cold (he peeked at notes for it yesterday) · #39's prune the right way round (M-033) · #57's post-loop terminal append present (M-026, on the problem whose own comment had named the flag) · #435 comparing against the interval it **kept**, not the one physically next to it.
 
-## 🔴 The honest read — Day 32
+**🟢 M-034 is answered — for one session.** Day 32's diagnosis was that the checklist was complete and the *execution* of it was the gap. Day 33 is the counter-evidence: **when he walks the scan against the code, the code is right.** That is now demonstrated rather than asserted. Keep it on watch — one session is not a habit.
 
-**Reviews 3 of 6 — and the split is the finding.** All four full solves were **first retrievals**, problems never reviewed before. **Three failed. The one that passed was #56 — the one he struggled with hardest on Day 31**: 26:24, three separate explanations to get `answer[-1]` to land. Today it came back clean in **7:20** with both corrections applied unprompted. **#57 went smoothly on Day 31, and today its terminal line was gone.**
+**Graphs landed, and the framing did the work.** Taught as **implicit vs explicit** — the traversal is identical, the only variable is where neighbours come from (computed from `(r±1, c)` vs stored in `node.neighbors`). He already owned grid DFS from #79, so graphs added a *neighbour source*, not a new algorithm.
 
-> **Desirable difficulty, visible in his own data.** The material that felt worst is the material that stuck. Smooth acquisition retains worse than effortful acquisition. **Say this to him on a session that feels bad.**
+**#200 was the best reasoning of the session.** He derived the approach unprompted — *"the word-search DFS, but mark permanently instead of temporarily"* — and then explained the complexity himself: *"the reason `4^L` is not considered is because you can only work with a node once."* **Generalised for him: backtracking explores PATHS (exponential); graph traversal visits NODES (linear). The un-mark is the entire difference.**
 
-**Every failure was completeness, not comprehension:** a missing terminal append (#57), a prune written backwards (#39), a half-recalled idiom (#79). Not one was "I didn't understand the problem."
+**He insisted on a real explanation of `O(V + E)` instead of nodding along** — three times, correctly. Built `viz/graph-edges-and-traversal.html`, and he then produced the key fact himself: ***"if there are E edges, it will always be 2E entries."***
 
-**🔴 M-034 is the bottleneck now, and it's a behaviour.** #57's missing terminal append is **item two on his own eight-item scan.** His own comment even named the flag he then failed to use. **The scan didn't fail — it didn't run.** Reciting it at the start of a session and walking it against the code in front of you before handing it over are different acts, and that difference is three failures.
+**He also pushed back on the wrong question order and was right.** *"I can't really give you a time and space complexity until I actually have an idea about the way I want to go about the solution first."* Now `COACHING.md` rule 3: **reviews = complexity first; new material = approach → complexity → code. Invariant: complexity before any code.**
 
-**Backtracking reopens, with a sharper reading.** Day 31's 3/3 was on problems with 3–4 prior passes. Day 32's #79 and #39 were **first-ever reviews** and both failed. **Solid on rehearsed material, fragile on first retrieval.** Mastery back to 3/5 — that's the honest number, not a regression.
+## 🔴 The two problems, stated plainly
 
-**Block 2 was strong.** Derived the greedy criterion himself (*remove the one that ends later*), and — the better half — **rejected his own second reason** (*"it overlaps with the rest"*) as a consequence rather than a criterion. Reached *"I don't need to remove anything, I just count"* off the `pop` hazard unaided. **Flipped to a forward sweep unprompted** once he saw the reference bug. Two Day-31 lessons applied without prompting: read the spec not the example, and count the sort's space.
+**1. Ninety minutes for two new problems** — 44:14 and 45:28. Both correct, both brand-new material, patterns derived unaided. But **readiness is measured in minutes on unseen problems, and a FAANG medium is ~20–25.** From Day 34 this is a tracked metric, not a note. *(The stopwatch itself finally ran, after three sessions of missing it — that part is fixed.)*
 
-**🔴 One of the day's failures is mine (M-035).** I told him the backward sweep was sound after checking two examples and giving a plausible-but-insufficient argument. It fails on `[[1,3],[2,4],[3,5]]`. **That is exactly the non-verification I'd spent two days correcting in him** — logged in `MISTAKES.md` on purpose, because the coach isn't exempt from the rule.
+**2. ⛔ B-8 opened — naming precision.** `for neighbor in node.neighbor:` on #133, with `self.neighbors` written **three lines above** in the class definition. **The algorithm was correct at submission two; the typo cost the third submission.** Six consecutive sessions of slightly-wrong names — and Day 33 is the one where it stopped being narration and started breaking code. Escalated per the standing ≥3 rule.
 
-**Improving:** tested his own approach when asked instead of seeking confirmation (M-030), self-reported the #79 notes peek when nobody would have caught it, and told me to stop dumping the session plan — now rule 12.
-
-**Still slipping:** method names four sessions running (`exist`, `merge`, `insert`, `eraseOverlapIntervals` all renamed), *"the mid value… that is the index"* (B-5), and **no stopwatch on new problems for a third session** — the readiness gate is measured in minutes on unseen problems.
+> **⛔ Standing rule installed Day 33: a full solve handed over WITHOUT being executed is a FAIL on the spot.** No partial credit for "the algorithm was right." Running it costs 20 seconds; not running it costs the interview.
 
 ## The one scan (say it OUT LOUD before every submit)
 **Guard present? · Terminal line/mark written? · Every branch returns? · All args passed? · Whose thing is every attribute/method? · Multi-site change complete & every name real? · Un-negate on the way out? · Which side can contain the answer (target-first)?**
 
 ## ⚠️ Standing schedule note
-Core complete; depth phase (Heap ✓ → **Backtracking (3/5 — fragile on first retrieval)** → **Intervals ✓ (3/5, incl. greedy)** → **Graphs — FIRST CONTACT Jul 28** → DP Aug 1). **✅ Sun Jul 26 worked as Day 31.** Rest is **Aug 2**; **Aug 9 and Aug 16 are worked**; **Aug 19 is the buffer**. Full mapping in `plan/Day-by-Day-Roadmap.md` → *Recovered calendar*. Reviews run the **backlog drain** (QUEUE) through **Aug 7** under a **hard 30-min box measured in TIME, not item count** (full ≈ 6 min · one-draft ≈ 4 · verbal ≈ 0.5). Graph and DP days get light reviews and **run Block 2 first**.
+Core complete; depth phase (Heap ✓ → **Backtracking (3/5)** → **Intervals ✓ (3/5, incl. greedy)** → **Graphs (2/5 — learned Day 33)** → DP Aug 1). **Sun Jul 26 worked as Day 31.** Rest is **Aug 2**; **Aug 9 and Aug 16 are worked**; **Aug 19 is the buffer**. Full mapping in `plan/Day-by-Day-Roadmap.md` → *Recovered calendar*. Reviews run the **backlog drain** (QUEUE) through **Aug 7** under a **hard 30-min box measured in TIME, not item count** (full ≈ 6 min · one-draft ≈ 4 · verbal ≈ 0.5). Graph and DP days get light reviews and **run Block 2 first**.
 
 ## Pace Health
 | Indicator | Value | Status |
 |---|---|---|
-| Days to Aug 20 pivot | 24 | 🟢 runway exists |
-| **Sprint throughput** (new/day) | Day 32 = **2** (#435, #252) | 🟢 on plan — hits the floor |
-| **Schedule fit** (Days 33–53) | 21 sessions into **22** available days | 🟡 fits — **1-day buffer only** (Aug 19) |
+| Days to Aug 20 pivot | 23 | 🟢 runway exists |
+| **Sprint throughput** (new/day) | Day 33 = **2** (#200, #133) | 🟢 on plan — hits the floor |
+| **Schedule fit** (Days 34–53) | 20 sessions into **21** available days | 🟡 fits — **1-day buffer only** (Aug 19) |
 | Sessions last 7 days (target ≥ 6) | 7 | 🟢 |
 | Days since last session | 0 | 🟢 |
-| Queue due (next 2 sessions) | Jul 28 = **5** (30 min) · Jul 29 = 7 (25 min) | 🟢 boxed on TIME, not count |
-| Review backlog carried | **all dated** through Aug 7 · re-spread Day 32 | 🟢 drain on track |
-| **Open blockers** | **0** (B-7 cleared Day 30) | 🟢 all B-1…B-7 clear |
-| Review pass rate (Day 32) | **3 / 6** (50%) | 🟡 **all 4 full solves were FIRST retrievals; 3 failed** — every failure a completeness slip, none a comprehension gap |
+| Queue due (next 2 sessions) | Jul 29 = 7 (25 min) · Jul 30 = 7 (25 min) | 🟢 boxed on TIME, not count |
+| Review backlog carried | **all dated** through Aug 7 · re-fuzzed Day 33 | 🟢 drain on track |
+| **Open blockers** | **1 — B-8 naming precision** | 🔴 **drill now** (escalated Day 33) |
+| Review pass rate (Day 33) | **5 / 5** (100%) | 🟢 **all five were FULL solves, 26:55, inside the box** — every Day-32 named cause held first-draft |
+| **Time on new problems** | **44:14 · 45:28** | 🔴 **the number to watch** — target ~20–25 min for a medium |
 | **Expected Block 1 load** | **~7/session** (≈3.5 full + 1.4 ✍️ + 2.2 🗣) | 🟢 **hard 30-min box** · matches the agreed 6–8 |
 
 ## Pattern Mastery  *(1–5; 5 = solve a novel one cold while narrating)*
 
 | Pattern | Mastery | Note |
 |---|---|---|
-| Big-O & complexity | 4/5 | O(n·2ⁿ), O(n·n!), O(T/M) all derived |
+| Big-O & complexity | 4/5 | O(n·2ⁿ), O(n·n!), O(T/M) derived; **`O(V+E)` Day 33 — needed animating, then he produced the `2E` fact himself** |
 | Arrays & Hashing | 3/5 | stable |
 | Two Pointers | 3/5 | stable |
 | Sliding Window | 3/5 | solid |
 | Binary Search | 3/5 | stable |
 | Stack | 3/5 | stable |
 | Linked List | 4/5 | #143 clean, LRU rebuilt cold |
-| Trees & BFS/DFS | 3/5 | #110 box clean; **#199 fixed (enqueue direction) Day 30** |
+| Trees & BFS/DFS | 3/5 | #110 box clean; #199 fixed (enqueue direction) Day 30 |
 | Binary Search Tree | 4/5 | stable; B-6 cleared |
-| Tries | 3/5 | **#211 clean Day 30 — all Day-29 facets fixed, ownership held** |
-| Heap | 3/5 | #973/#215 clean; **#1046 fixed Day 30 (un-negate finally landed)** |
-| **Backtracking** | **3/5** ↓ | **Rehearsed: solid (#90/#46/#78 clean Day 31). First retrieval: fragile — #79 (notes peek) and #39 (reversed prune) both failed Day 32** |
-| **Intervals** | **3/5** | **4 problems. #56 clean Day 32 (26:24 → 7:20). Day 32 added greedy interval scheduling (#435, #252) — sort by END, keep the last commitment** |
-| **Greedy** *(previewed)* | **1/5** | **Met early via #435/#252. Named block arrives Aug 6–10 (#53/#55/#134/#763)** |
+| Tries | 3/5 | #211 clean Day 30 — all Day-29 facets fixed, ownership held |
+| Heap | 3/5 | #973/#215 clean; #1046 fixed Day 30 (un-negate landed) |
+| **Backtracking** | **3/5** | **Second retrieval landed: #79 (6:22) and #39 (7:24) both clean Day 33 after failing their first-ever review. Reading stands — solid on rehearsed, fragile on first retrieval; the fix is the second rep** |
+| **Intervals** | **3/5** | **All four clean Day 33 (#57 6:06 · #435 4:50 · #252 2:13). Held at 3/5 on purpose — those are the four he was TAUGHT; 4/5 needs a novel one cold (#253 is the test)** |
+| **Graphs (BFS/DFS)** | **2/5** *(new)* | **Day 33 — #200, #133 both correct but 44 and 45 min. Implicit vs explicit; permanent mark ⇒ `O(m·n)` not `4^L`; dict = visited AND mapping; `O(V+E)` with 2E entries undirected** |
+| **Greedy** *(previewed)* | **1/5** | Met early via #435/#252. Named block arrives Aug 6–10 (#53/#55/#134/#763) |
 
-## 🟢 No open blocker · watches only
+## 🔴 One open blocker
 
-- **B-7 (M-020, `self.`/ownership) — ✅ CLEARED Day 30** (2 clean sessions). All of B-1…B-7 clear. Ownership check is now a standing habit; re-escalate on recurrence.
-- **M-027 (one site missed on final pass)** — 👁 the through-line, **but the one *repeat* (#1046 un-negate) is CLOSED Day 30.** Residual: the two #79 nudges (dropped left direction; `dfs(0,0,0)` vs `dfs(r,c,0)`). Drill = the final read-through.
-- **Backtracking fragility** — ✅ **CLEARED Day 31.** #90/#46/#78 all first-draft correct, 4:30 / 4:28 / 2:57. The Day-30 resets were pattern age, not decay. #79/#39 confirm it Mon Jul 27.
-- **M-029 (vocabulary looseness) · M-030 (confirm-seeking instead of self-testing)** — 👁 **NEW Day 31, and the more important finding than any knowledge gap.** He called a `while` loop an "if" three times (code right, language wrong) and asked "am I right?" four times where one hand-test would have answered it. **Same root as M-027: outsourcing verification.** Not blockers — first session observed — escalate if they recur Day 32+.
-- **M-032 (a sort costs SPACE too)** — 👁 NEW. Stated `O(1)` space beside an `O(n log n)` sort on #56. Timsort is `O(n)` auxiliary.
-- **B-4 (guards), M-005 (BFS space), M-026 (terminal line), M-028 (box)** — 👁 all held recently; watch.
+- **⛔ B-8 · M-029 — naming precision. ESCALATED Day 33 (drill now).** Six sessions: constructs misnamed (Day 31), **four method names renamed** (Day 32), **`node.neighbor` for `node.neighbors` on #133 (Day 33) — the one that broke working code.** Drill: read the method name off the problem statement · read attribute names off the class definition, don't recall them · name each construct correctly out loud. Cleared after two clean sessions.
+- **M-036 (a copy built from the original's fields)** — 👁 NEW Day 33. `Node(node.val, node.neighbors)` handed the clone the originals. **Container-vs-contents (M-021) at object scale.**
+- **M-034 (scan said but not run)** — 👁 **HELD Day 33** (5/5, every named cause first-draft). One session is not a habit — keep watching.
+- **M-026 (terminal line) · M-033 (reversed prune)** — 👁 both **HELD Day 33** on the exact problems that fired them (#57, #39).
+- **M-027 (one site missed on the final pass)** — 👁 the through-line; the one *repeat* closed Day 30.
+- **M-030 (confirm-seeking) · M-032 (a sort costs space)** — 👁 both improving; **M-032 was stated unprompted on #252.**
+- **B-4 (guards), M-005 (BFS space), M-028 (box)** — 👁 all held recently; watch.
 
 *(Cleared → standing habits: B-1 names, B-2 range/len, B-3 return, B-4 guards, B-5 container/contents, **B-6 target-first**, **B-7 `self.`/ownership**, M-025 pointer surgery.)*
 
-## Next Session Focus  → **Day 33 (Tue Jul 28)** · Graphs, HEAVY ⇒ **Block 2 runs FIRST**
+## Next Session Focus  → **Day 34 (Wed Jul 29)** · Graphs, HEAVY ⇒ **Block 2 runs FIRST**
 
-1. **Block 2 — new:** **Graphs — #200 Number of Islands, #133 Clone Graph** — and it runs **FIRST today, while you're fresh.** First contact with a new pattern. **Budget the pre-teach generously** — Day 31 lost 15 minutes discovering a `lambda` hole mid-problem, and the buffer is one day wide. Grid DFS (#79) is the bridge in: an implicit graph where neighbours are adjacent cells.
-2. **Block 1 — 5 items, 30 min, all full solves, nothing else:** **#79 · #39 · #57** (resets) → **#435 · #252** (1d). Five full solves *is* the box; every one-draft and verbal was moved off Jul 28 rather than pretend the day holds 11 items.
-3. **🔴 The one habit that matters more than any problem today — M-034.** Before handing over any draft, **walk the scan against the code line by line.** Not from memory, not as a ritual at the start. All three of yesterday's failures were items already on that list.
-4. **Habits:** complexity **time AND space with the convention** before the code · **say what a prune kills in English first** (M-033) · **use the real method name** (M-029, four sessions running) · **stopwatch on new problems too** (third session missed).
+1. **Block 2 — new:** **Graphs cont. — #994 Rotting Oranges, #207 Course Schedule** — and it runs **FIRST, while fresh.** #994 is the first problem where **BFS is required rather than optional** (level = elapsed time, which DFS cannot give you); #207 is cycle detection in a **directed** graph — the first time the 1-entry-per-edge asymmetry actually matters.
+2. **Warm-up, cold and no notes: `O(V + E)`** — what V is, what E is, why it's `+` and not `·`, and **how many adjacency entries a 6-edge undirected graph holds vs a 6-edge directed one.** Banked from Day 33 deliberately rather than drilled at the end of a long session.
+3. **Block 1 — 7 items, ~25 min:** full **#200 · #133** → ✍️ one-draft **#90 · #46 · #78** → 🗣 verbal **#155 · #74**.
+4. **⛔ B-8 drill, at the top of the session and before every submit:** read the method name off the problem statement · read attribute names off the class definition · name the construct you just wrote, correctly, out loud.
+5. **⛔ Live from today: a full solve handed over without being executed is a FAIL.** Write it, run it, debug it — no partial credit for "the algorithm was right."
+6. **Watch the clock on the new problems.** 44 and 45 minutes yesterday. Target ~20–25 for a medium; say the number out loud when the timer stops.
 
 ---
 *Weekly snapshots can be appended below as the sprint progresses.*

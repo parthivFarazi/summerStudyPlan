@@ -1,7 +1,7 @@
 # Intervals
 
-**Status:** learned Day 31 · extended Day 32 (#435, #252) · **Mastery: 3/5** · Block B
-*(2/5 = derived and implemented both shapes correctly, but needed heavy guidance on the primitive and the sweep. Bump on the 1d/3d reps.)*
+**Status:** learned Day 31 · extended Day 32 (#435, #252) · **all four clean Day 33** · **Mastery: 3/5** · Block B
+*(3/5 and staying there on purpose. Day 33 returned #57 in 6:06, #435 in 4:50 and #252 in 2:13, all first-draft from a blank screen — but those are the four problems he was TAUGHT. Rehearsed performance is not mastery; 4/5 needs a novel interval problem cold. #253 is the test.)*
 
 ## In one line
 Get the list sorted by **start**, then sweep left to right comparing each interval against **the one that's been growing** — merge into it, or put down a new one.
@@ -135,6 +135,14 @@ return count
 **#435 asks HOW MANY, not WHICH.** Nothing gets removed — you just count. That kills the `pop()`-in-a-loop idea (`O(n²)`, plus mutating while iterating skips elements) before it starts.
 
 **#252 Meeting Rooms** is the same sweep, returning `False` on the first conflict instead of counting. Sorting by end works here too: if no adjacent-by-end pair overlaps, no non-adjacent pair can either.
+
+> **⚠️ Day 33 — know what you got away with on #252.** In **#435** the sort-by-END is load-bearing: sort by start and the answer is wrong. In **#252 it is not** — sorting by start works equally well *(verified against brute force on 300,000 random cases under LeetCode's `start < end` constraint)*.
+>
+> **Why the difference: #435 SKIPS intervals, #252 never does.** In #435 you drop a conflicting interval and keep sweeping, so `ref` diverges from "the previous element in the array" — and that gap is the bug that has bitten twice. **#252 returns `False` on the first conflict**, so nothing is ever skipped, so `ref` *is* always the previous element and the trap cannot fire.
+>
+> **Do not file this as "sort by end for interval problems."** File it as: **the sort key exists to make the greedy choice come first — and if you never skip, there is no greedy choice to protect.**
+>
+> *(Degenerate zero-length meetings would break the sort-by-end version on ties; LeetCode guarantees `start < end`, so it does not arise. Worth knowing the guarantee is doing work for you.)*
 
 ### Greedy vs sliding window *(asked Day 32)*
 

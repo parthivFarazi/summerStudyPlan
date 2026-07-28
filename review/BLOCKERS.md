@@ -4,9 +4,26 @@
 
 ## Active blockers
 
+### ⛔ B-8 · M-029 — naming precision  *(ESCALATED Day 33 — the only drill-now blocker)*
+**Six consecutive sessions of names being slightly wrong, and on Day 33 it stopped being cosmetic.**
+
+- **Day 31** — called #90's dedup `while` loop "a guard", then "a guard with a while loop", then "the if statement guard". Code correct every time.
+- **Day 32** — **four method names renamed**: `exist` → `wordSearch`, `merge` → `mergeInterval`, `insert` → `insertInterval`, `eraseOverlapIntervals`. Plus *"the mid value… that is the index"* (B-5 flavour).
+- **Day 33** — **`for neighbor in node.neighbor:`** on #133, with `self.neighbors` written **three lines above** in the class definition. **The algorithm was correct at submission two; this typo cost the third submission.**
+
+**Why it's a blocker and not a nitpick.** `GOALS.md` records that interviewers probe *"what does this line do — remove it, what breaks?"* A candidate who calls a `while` loop an "if guard", invents a method name the problem already gave him, and mistypes an attribute he defined himself reads as **not knowing his own solution** — regardless of whether the algorithm is right. And as of Day 33 it also breaks the code.
+
+**🔧 THE DRILL — three parts, every session until two consecutive clean ones:**
+1. **The problem gives you the method name. Use it.** Before writing the signature, read the name off the problem statement. Never invent, never paraphrase.
+2. **Read attribute names off the definition, don't recall them.** If a class is in the file, look at it. `neighbors` is not a thing to remember when it's on screen.
+3. **Name the construct you just wrote, out loud, correctly.** "This is a **while** loop that skips duplicate copies" — not "a guard". If the word doesn't come, that's the tell: go and read it.
+
+**Cleared when:** two consecutive sessions with zero renamed methods, zero mistyped attributes, and zero misnamed constructs in narration.
+
+
 > **⚠️ Days 22–24 — the honest read.** All the blockers are **one disease: first-draft precision on problems he has ALREADY solved correctly in his head.** The drill = **questions said OUT LOUD before any submit.** And it WORKS: **Day 24 cleared B-4 AND B-5.** Two facets clear; the disease persists in new facets (B-7 emerged same day).
 >
-> **✅ Day 30: B-7 CLEARED (2nd clean session) — no drill-now blocker; all of B-1…B-7 clear.** The disease's remaining residue is **M-027: one site missed on the final pass** (a transform/rename/paired-op/name/guard/`self.` that lands on all-but-one site) — now on *watch*, not drill-now, and its one twice-identical *repeat* (#1046 un-negate) closed Day 30. Day 30's resets all landed on the **newest pattern (backtracking)**, not on any named old facet — the fragility has migrated to fresh material, which is exactly the goal.
+> **⛔ Day 33: B-8 OPENED (naming precision) — drill now. B-1…B-7 all remain clear.** *(Day 30: B-7 cleared on its 2nd clean session.)* The disease's remaining residue is **M-027: one site missed on the final pass** (a transform/rename/paired-op/name/guard/`self.` that lands on all-but-one site) — now on *watch*, not drill-now, and its one twice-identical *repeat* (#1046 un-negate) closed Day 30. Day 30's resets all landed on the **newest pattern (backtracking)**, not on any named old facet — the fragility has migrated to fresh material, which is exactly the goal.
 >
 > **⚠️ THE ONE SCAN (Days 22–28).** Every recurring impl slip is **one disease: first-draft completeness.** **Before every submit, walk the operation top to bottom AND do a final read-through of every site:**
 > 1. **Guard present?** — empty? None? lengths? (B-4 — reopened Day 26, fired Day 28 #199 dropped root guard)

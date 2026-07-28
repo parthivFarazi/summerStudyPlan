@@ -33,6 +33,13 @@ Rule 1 applies to **problem-solving**, never to **unfamiliar machinery**. If a p
 ### 3. Train complexity on every single problem. *(standing since Day 1)*
 Make him **state time AND space first**, before you say anything. Then correct. Never let a solution pass without the complexity coming out of his mouth. (Space is the weak side — new structures that scale, and the **recursion call stack**.)
 
+> **Refinement — the ORDER depends on whether it's a review or new material.** *(given Day 33, 2026-07-28: "I can't really give you a time and space complexity until I actually have an idea about the way I want to go about the solution first.")* He's right, and I had reverted to the wrong order.
+>
+> - **Review:** complexity **first**, before anything. He already owns the approach, so this is pure recall and it's the point of the drill.
+> - **New material:** **approach → complexity → code.** Ask for the plan in 2–3 sentences, *then* the complexity, *then* let him write. Demanding a bound for an algorithm he hasn't chosen yet is theatre.
+>
+> **The invariant either way: complexity comes out of his mouth BEFORE any code is written.** That never moves.
+
 ### 4. He runs git. You never do. *(hard rule — Day 12)*
 **Never run any git command in the sandbox — not even `git status`.** The mount cannot delete `.git/*.lock`, so any git invocation leaves a lock file that breaks his repo and he has to `rm` it by hand. You use Write/Edit only, then **hand him the terminal command to paste.** He asked for this explicitly and it has bitten once.
 
@@ -108,6 +115,13 @@ When he asks where he stands, give him the real number and the real gap. He hand
 > *"Have all the instructions I give documented somewhere so the new chat can just read it and move on like nothing ever changed. I do not want to repeat my instructions again and again."*
 
 **Any new standing instruction → append to this file in the same session, with the date and the reason.** Then remind him to commit.
+
+### 14. A full solve that wasn't EXECUTED is a fail. *(installed Day 33, 2026-07-28)*
+**Full-solve tier means write it, run it, debug it.** Handing over code that has never been run is not a pass, however right the algorithm is — **no partial credit for "the logic was correct."**
+
+**Why, from his own data:** #133 Clone Graph was algorithmically correct at submission two and still cost a third submission, on a mistyped attribute he had defined three lines above. Running it costs twenty seconds. Not running it costs the interview.
+
+**This is the enforcement arm of B-8 and of M-034** (the scan said but not run). The scan and the execution are the same discipline: *verify it yourself before you hand it over.*
 
 ---
 

@@ -32,5 +32,12 @@ A verbatim copy of each day's practice notebook: your raw answers (bugs and all)
 | [Day 24](Day24-Practice-Notebook.md) | Jul 16 | **🎉 LRU Cache #146 — last core problem** (doubly-linked list + hashmap, verified vs OrderedDict) · interleave 6/6, both resets fixed · B-4 & B-5 cleared, B-7 (`self.`) escalated |
 | [Day 25](Day25-Practice-Notebook.md) | Jul 17 | **First Trie #208** (nested dicts, clean cold) · Validate BST #98 (bounds down) · Kth Smallest #230 (in-order = sorted) · 5 reviews, 3 resets (surface: API names + pointer slips) |
 | [Day 26](Day26-Practice-Notebook.md) | Jul 18 | **Trie wildcard #211** (`.` = DFS backtrack, w/ call-stack animations) · **first Heaps** #703 (min-heap-of-k), #1046 (max via negation) · 6 reviews 4/6 · B-7 & M-025 cleared, B-4 reopened |
+| [Day 27](Day27-Practice-Notebook.md) | Jul 21 | Heap depth — K Closest #973, Kth Largest #215 (7 reviews; **B-6 cleared**) |
+| [Day 28](Day28-Practice-Notebook.md) | Jul 22 | **Backtracking from scratch** — Subsets #78, Combination Sum #39 (6 reviews; B-7 re-escalated) |
+| [Day 29](Day29-Practice-Notebook.md) | Jul 23 | Backtracking cont. — Subsets II #90, Permutations #46 (derived cold) · 8 reviews |
+| [Day 30](Day30-Practice-Notebook.md) | Jul 25 | Interleave 3/6 · **Word Search #79 — grid DFS**, the bridge into graphs (**B-7 cleared**) |
+| [Day 31](Day31-Practice-Notebook.md) | Jul 26 | **NEW PATTERN: Intervals** — Insert #57, Merge #56 · backtracking drain 3/3 · `lambda`/`sort(key=)` rebuilt from scratch |
+| [Day 32](Day32-Practice-Notebook.md) | Jul 27 | **Greedy interval scheduling** — Non-overlapping #435, Meeting Rooms #252 · reviews 3/6 (all four full solves were first retrievals) |
+| [Day 33](Day33-Practice-Notebook.md) | Jul 28 | **NEW PATTERN: Graphs** — Number of Islands #200, Clone Graph #133 · `O(V + E)` animated · **Block 1 5/5 in 26:55** |
 
 *New day → save `DayN-Practice-Notebook.md` here and add a row.*
