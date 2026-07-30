@@ -39,5 +39,6 @@ A verbatim copy of each day's practice notebook: your raw answers (bugs and all)
 | [Day 31](Day31-Practice-Notebook.md) | Jul 26 | **NEW PATTERN: Intervals** — Insert #57, Merge #56 · backtracking drain 3/3 · `lambda`/`sort(key=)` rebuilt from scratch |
 | [Day 32](Day32-Practice-Notebook.md) | Jul 27 | **Greedy interval scheduling** — Non-overlapping #435, Meeting Rooms #252 · reviews 3/6 (all four full solves were first retrievals) |
 | [Day 33](Day33-Practice-Notebook.md) | Jul 28 | **NEW PATTERN: Graphs** — Number of Islands #200, Clone Graph #133 · `O(V + E)` animated · **Block 1 5/5 in 26:55** |
+| [Day 34](Day34-Practice-Notebook.md) | Jul 29 | **Graphs cont.** — Rotting Oranges #994 (multi-source BFS), Course Schedule #207 (cycle detection, two marks) · Block 1 3/6 · **B-9 opened** |
 
 *New day → save `DayN-Practice-Notebook.md` here and add a row.*

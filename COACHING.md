@@ -123,6 +123,42 @@ When he asks where he stands, give him the real number and the real gap. He hand
 
 **This is the enforcement arm of B-8 and of M-034** (the scan said but not run). The scan and the execution are the same discipline: *verify it yourself before you hand it over.*
 
+### 15. Make him produce the fix. Never hand it over. *(installed Day 34, 2026-07-29)*
+**Evidence, from his own log:** `#133` is the one problem he never wrote correctly himself — on Day 33 I gave him the fix and he applied it; **on Day 34 both bugs came back identical.** Everything he *fought* for on Day 34 (the DFS-can't-measure-time counter-example, the off-by-one, the two marks) survived intact.
+
+> **A correction he is HANDED decays far faster than one he DERIVES.** Same finding as Day 32's `#56`-versus-`#57` split, arriving from the opposite direction.
+
+**So when he gets something wrong: give the counter-example, not the correction.** Show the failing input, make him find why. It is slower in the moment and it is the only version that lasts. This is rule 1 with teeth.
+
+### 16. Supply the exact signature on every review prompt. *(installed Day 34, 2026-07-29)*
+He writes in a bare Python IDLE from scratch and **never sees LeetCode's stub.** I was giving signatures on new problems and not on reviews, then counting his invented method names as B-8 instances. **Three of Day 33's catches were mine, not his.**
+
+**Every review prompt now includes the exact signature**, e.g. `def numIslands(self, grid: List[List[str]]) -> int:`. B-8 is rescoped to names that were **visible in front of him** and still came out wrong, plus constructs misnamed in narration.
+
+### 17. Session-length decision — 2 new/day stays. *(his call, Day 34, 2026-07-29)*
+Asked directly whether to shorten first-contact days, he chose **keep 2 new problems per day and accept 2–2.5 hour sessions** over dropping to 1 new (which would have cost ~3 problems and eaten the Aug 19 buffer).
+
+**Two things follow, and they are not optional:**
+- **Block 2 runs FIRST on every first-contact day.** Construction degrades with fatigue faster than recall does — the long grind lands on the new material.
+- **Block 1 is never dropped.** It is the cheaper block and the one producing his best numbers.
+
+### 18. One-draft cap: 4 minutes — 6 if it needs a nested recursive helper. *(Day 34)*
+He measured it rather than complaining: *"at 4:00 I was typing `combo.append(nums[i])`."* **The cap exists to stop slow deliberation, not to time his keyboard.** The cap is on WRITING; the self-audit afterwards is untimed and is part of the tier.
+
+### 19. 🎯 Unaided timed mediums on the interleave days. *(his proposal, Day 34 — better than mine)*
+**Aug 1 · Aug 8 · Aug 14.** Interleave days carry 0–1 new by design, so this costs **zero throughput** — his idea, and the reason it's better than my "one per week" version.
+
+**Protocol, and it only works if it's kept exactly:**
+- Unseen problem, from a pattern he has **already learned**. No first-contact material.
+- **35-minute hard cap.** Timer stops, he stops.
+- **The coach says NOTHING.** Not a nudge, not "you're close." Silence until the timer stops.
+- **He narrates as he goes** — types his thinking, not just code. That half has never been tested.
+- Afterwards: self-score **communication · problem-solving · technical correctness · testing**.
+
+**Why this matters more than any single problem:** `GOALS.md` requires *4 of 5 unseen mediums in ≤35 min unaided*, and after 34 sessions there are **zero unaided data points**. Every new problem has had a pre-teach. **This is the only readiness gate that is genuinely off-track, and the reason is that it has never been measured.**
+
+**Tell him the expected result in advance:** the first one probably goes over 35 minutes, and that is information, not failure. **One data point is noise; three is a trend, and only the trend gets a conclusion drawn from it.**
+
 ---
 
 ## His profile as a learner *(observed, not instructed — but act on it)*

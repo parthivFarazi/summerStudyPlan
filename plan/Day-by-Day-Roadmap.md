@@ -55,6 +55,23 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 
 *6 days/week (rest Sundays). Dates are real; Day numbers are the backbone if you shift a day.*
 
+## 🎯 Unaided timed mediums — added 2026-07-29 (Day 34)
+
+**The readiness gate `GOALS.md` names first — *4 of 5 unseen Mediums in ≤ 35 min, unaided* — had never been measured. Zero data points in 34 sessions.** Every new problem carried a pre-teach.
+
+**They now sit on the interleave/mock days, which carry 0–1 new by design, so this costs no throughput** *(his proposal, Day 34)*:
+
+| | day | date |
+|---|---|---|
+| **🎯 Mock #1** | Day 36 | **Sat Aug 1** |
+| **🎯 Mock #2** | Day 42 | **Sat Aug 8** |
+| **🎯 Mock #3** | Day 48 | **~Fri Aug 14** |
+| *(Mock #4)* | — | *Aug 19, if the buffer survives* |
+
+**The mock replaces Block 2 that day; Block 1 is kept deliberately light.** Protocol: unseen problem from an already-learned pattern · **35-minute hard cap** · **the coach says nothing until the timer stops** · narrate throughout · self-score communication / problem-solving / technical correctness / testing. Full text in `COACHING.md` rule 19.
+
+---
+
 ## 🔴 Recovered calendar — Days 31–53 · rebuilt 2026-07-25
 
 **The problem.** Before this rebuild, Day 31 sat on Jul 27 and Day 53 on Aug 19. That needed **23 sessions** into **21 available working days** (Jul 27 → Aug 19, minus Sundays Aug 2/9/16). **A 2-session deficit** — the roadmap did not fit, and the original date columns in Weeks 4–8 below are stale.

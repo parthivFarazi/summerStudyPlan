@@ -140,3 +140,23 @@ def exist(self, board, word):
 - **Don't fold success and overshoot together.** `total == target` records; `total > target` throws away. `>=` with one action is wrong.
 - **`[]` is your stack, not `stack()`** (that isn't a thing in Python).
 - **Recursion is his slowest area (rule 9)** — trace the stack by hand / use the animator before coding; don't just state the recursive idea and move on.
+
+---
+
+## The 5th appearance: backtracking INSIDE a graph algorithm *(Day 34, #207)*
+
+`#207 Course Schedule` detects a cycle with **two** marks, and one of them is pure backtracking:
+
+```python
+path.add(node)          # choose
+    ...recurse...
+path.remove(node)       # un-choose  <- this is backtracking
+visited.add(node)       # permanent mark  <- this is #200
+```
+
+**`path` must be un-marked** (leaving a node means you are no longer inside it) — **`visited` must never be** (a proven-clean subtree stays proven).
+
+> **The unifying idea: backtracking IS the temporary mark. Graph traversal IS the permanent mark.**
+> Un-mark ⇒ you explore **paths** ⇒ exponential (`#79`: `O(m·n·4^L)`).
+> Never un-mark ⇒ you visit **nodes** ⇒ linear (`#200`: `O(m·n)`).
+> They are not rival patterns; they are the two settings of one dial. See `graphs.md` for the measured cost of getting it wrong (55 nodes → 4.19 million calls).

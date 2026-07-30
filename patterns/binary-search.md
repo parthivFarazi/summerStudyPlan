@@ -85,3 +85,28 @@ return -1
 - **Rule of thumb:** *has a target →* `<=`, `mid ± 1`. *Converging to a spot →* `<`, `right = mid`, `return nums[left]`.
 - **Converge-return (M-015):** the loop-exit index IS the answer — `return nums[left]`. Don't reintroduce a tracked `answer`; a default (`answer = 0`) leaks on `[2,1]` / single-element `[5]`. (Had it right Day 11, regressed Day 12.)
 - `math.ceil(a / b)` rounds up (`import math`).
+
+---
+
+## ⚠️ The two templates — do not mix their parts *(Day 34, #74 reset)*
+
+Every binary search you write is one of these two. **The exit condition belongs to the template, not to taste.** Day 34's `#74` failure was the exit condition of one template inside the body of the other.
+
+| | **Exact match** | **Converge to a boundary** |
+|---|---|---|
+| question | *"is `target` present?"* | *"smallest value that works"* |
+| loop | **`while left <= right`** | **`while left < right`** |
+| shrink | `left = mid + 1` / **`right = mid - 1`** | `left = mid + 1` / **`right = mid`** |
+| equality branch | **yes** — `return True` on a hit | **no** — a hit is only a candidate |
+| answer | returned inside the loop | **`return left`** after it |
+| examples | #704, #74 | #153, #875 |
+
+**Why `<=` is required for exact match.** With `right = mid - 1`, the range must be allowed to shrink to *empty*. When it narrows to a single cell, `left == right` — and `while left < right` is **already false**, so that cell is never examined. Measured on the stated `#74` version: **4 of 6 cases wrong**, including `[[1]]` with `target = 1` → `False`.
+
+**Why `<` is required for converging.** With `right = mid`, `left == right` means the answer is found; `<=` would loop forever because the range never shrinks past one.
+
+> **The one-line test: does my `right` assignment discard `mid`?**
+> Discards it (`mid - 1`) ⇒ **`<=`**. Keeps it (`mid`) ⇒ **`<`**.
+
+### #74 specifically
+Flatten the matrix — `mid // cols` is the row, `mid % cols` is the column, with `left = 0`, `right = m*n - 1`. **Complexity is `O(log(m·n))`**, equivalently `O(log m + log n)`. Saying "`O(log n)`" is a different claim, since `n` is the column count.

@@ -146,3 +146,127 @@ class Solution:
 
 ## Still to come
 **#994 Rotting Oranges** (multi-source BFS — the first one where BFS is *required*, not just an option: you need level = time) · **#207 Course Schedule** (cycle detection in a directed graph) · **#210 Course Schedule II** (topological order) · **#323 Connected Components** (union-find) · **#417 Pacific Atlantic**.
+
+---
+
+# Day 34 — the two graph problems that are not "traverse and mark"
+
+**Status update:** #994 Rotting Oranges + #207 Course Schedule added. **Mastery still 2/5** — both were built correctly but with heavy guidance and 72 / 44 minutes. The reps decide the number, not the acquisition.
+
+## Shape 3 — multi-source BFS (#994)
+
+**The trigger word is TIME.** `#200` asks *"are these connected?"* — a yes/no that doesn't care about the route. `#994` asks *"how many minutes?"* — and **a minute is a shortest distance.**
+
+> **⚠️ DFS cannot answer a distance question.** DFS depth is the length of the path it *happened* to take, not the shortest one — and a permanent mark freezes that wrong number in place. Measured on `[[2,1,1],[1,1,1]]` with a single source: **DFS reports 5, the true answer is 3.** Not a tie-breaking subtlety; just wrong. *(Day 34.)*
+
+```python
+from collections import deque
+
+def orangesRotting(grid):
+    rows, cols = len(grid), len(grid[0])
+    q, fresh, minute = deque(), 0, 0
+
+    for r in range(rows):                       # ONE pass, TWO jobs
+        for c in range(cols):
+            if grid[r][c] == 1:   fresh += 1
+            elif grid[r][c] == 2: q.append((r, c))
+
+    while q and fresh > 0:                      # the guard IS the off-by-one fix
+        for _ in range(len(q)):                 # snapshot = one level
+            r, c = q.popleft()
+            for dr, dc in ((1,0),(-1,0),(0,1),(0,-1)):
+                nr, nc = r+dr, c+dc
+                if 0 <= nr < rows and 0 <= nc < cols and grid[nr][nc] == 1:
+                    grid[nr][nc] = 2
+                    fresh -= 1
+                    q.append((nr, nc))
+        minute += 1
+
+    return minute if fresh == 0 else -1
+```
+
+**Seed the queue with EVERY source.** That is the whole trick, and it dissolves the problem that looks hardest: *"two rotten oranges, which one reaches this cell first?"* You never compare them. **All sources sit at level 0 together, so level 1 means "one minute from ANY source."** The nearest one wins automatically. **Multi-source BFS is single-source BFS with a fuller starting queue.**
+
+**⚠️ The off-by-one, and it is the most common wrong submission.** With a bare `while q`, the final level pops cells that rot nothing new — and `minute += 1` still fires. Verified: `[[2,1,1],[1,1,1]]` returns **4**, true answer **3**.
+
+Two correct fixes:
+
+| fix | works? | catch |
+|---|---|---|
+| `while q and fresh > 0` | ✅ always | none — and the empty grid returns `0` for free |
+| `return minute - 1` | ✅ **except one shape** | a grid with **no rotten AND no fresh** (all `0`s) returns `-1`, should be `0`. *(Checked: all 81 2×2 grids + 20,000 random — exactly one failing class.)* |
+
+**`range(len(q))` is evaluated ONCE**, when the `for` starts — appending to `q` inside the loop cannot extend it. `while i < len(q)` *does* re-evaluate. Know which constructs re-check their condition. *(Day 34 misconception.)*
+
+**Complexity:** `O(m·n)` time · **`O(m·n)` space** — the seeding pass alone can put every cell in the deque. *(Measured peak deque on a 10×10: corner source **10**, centre source **19**, all-rotten **100**. So `O(m+n)` is right for a single source and wrong as the bound.)* **BFS space = the widest level, and in multi-source BFS the seeding IS a level.**
+
+---
+
+## Shape 4 — cycle detection in a DIRECTED graph (#207)
+
+**Input isn't a graph yet.** It's a flat list of pairs — build the adjacency dict first, then traverse. Two parts, always.
+
+```python
+def canFinish(numCourses, prerequisites):
+    adj = {i: [] for i in range(numCourses)}
+    for course, prereq in prerequisites:
+        adj[prereq].append(course)          # arrow prereq -> course
+
+    path, visited = set(), set()
+
+    def dfs(node):
+        if node in path:    return False    # still INSIDE it -> cycle
+        if node in visited: return True     # proven clean -> skip
+        path.add(node)                      # choose
+        for child in adj[node]:
+            if not dfs(child):              # CATCH the answer
+                return False
+        path.remove(node)                   # un-choose
+        visited.add(node)                   # NOW it is certified
+        return True
+
+    for node in range(numCourses):          # the cycle may not be reachable from 0
+        if not dfs(node):
+            return False
+    return True
+```
+
+### 🔑 The idea worth the whole week: TWO marks, two jobs
+
+> **A cycle is not "I've seen this node before." A cycle is "I've seen this node before AND I'M STILL INSIDE IT."**
+
+| set | marked | un-marked? | job | drop it and… |
+|---|---|---|---|---|
+| **`path`** | on the way **in** | **yes**, on the way out | detects the cycle | **wrong answer** |
+| **`visited`** | when the node **finishes** | **never** | never redo a proven subtree | **right answer, exponential time** |
+
+**`path` is choose/un-choose — it is literally backtracking** (`#79`'s `board[r][c] = "#"` … `= temp`). **`visited` is the permanent mark — it is literally `#200`.** `#207` carries one of each.
+
+> **Graph traversal and backtracking are not two patterns. They are the permanent mark and the temporary mark.** `#79` un-marks ⇒ explores *paths* ⇒ exponential. `#200` marks permanently ⇒ visits *nodes* ⇒ linear. `#207` needs both properties at once.
+
+**Measured cost of dropping `visited`** — a chain of diamonds, answer identical, calls exploding:
+
+| diamonds | nodes | edges | calls **with** `visited` | **without** |
+|---|---|---|---|---|
+| 5 | 16 | 20 | 36 | 462 |
+| 10 | 31 | 40 | 71 | 16,299 |
+| 18 | **55** | **72** | **127** | **4,194,163** |
+
+Each diamond gives two routes to its merge node, so each one **doubles** the work below it: `2^k`.
+
+**Why loop over every node?** The graph can be disconnected — `(4, [[2,0],[1,2],[3,1],[2,3]])` hides its cycle away from node `0`.
+
+**Pick a return convention and say it out loud before writing the body** — `True` = clean, or `True` = cycle found. The bug is base cases in one convention and the caller in the other. Both `node in path` and `node in visited` feel like "stop", so both tempt `return False`; only the first one is. *(M-033 family.)*
+
+**Complexity:** `O(V + E)` time and space.
+
+### Why intervals / sliding window / binary search cannot touch this *(asked Day 34)*
+`[1, 0]` is **not** an interval. An interval is a *range on a line*; a prerequisite is an *ordered pair of two labels*. Decisive check: both the acyclic and the cyclic example contain "overlapping" pairs, so overlap can't tell them apart.
+
+> **The general tool: test a proposed method against a symmetry the answer must respect.** Course labels are arbitrary names — swap `0` and `5` everywhere and the answer *must* not change. Any method that reads the numbers as positions is dead before you write it. **That kills every ordering-based pattern on any graph problem.**
+
+## Vocabulary — get these right *(B-8)*
+**vertex** (one) / **vertices** (many) · an **entry** is stored in memory, a **walk** is traversing one · a **tree** has no node with two parents — a diamond is a **graph**; a graph with no cycles is a **DAG**.
+
+## Still to come
+#210 Course Schedule II (Kahn's — indegree + queue, gives the actual order) · #323 Connected Components (union-find) · #417 Pacific Atlantic · #695 Max Area of Island.

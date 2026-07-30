@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#207 — DFS cycle detection, step by step</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --card2:#1c2129; --line:#30363d;
+    --txt:#e6edf3; --dim:#8b949e;
+    --grey:#4d5561; --amber:#e3a008; --green:#2ea043; --blue:#58a6ff; --red:#f85149;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--txt);
+    font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding:22px 18px 60px;
+  }
+  .wrap{max-width:1080px;margin:0 auto}
+  h1{font-size:20px;margin:0 0 4px}
+  .sub{color:var(--dim);font-size:13.5px;margin:0 0 18px}
+  code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+
+  .tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+  .tab{
+    background:var(--card);border:1px solid var(--line);color:var(--dim);
+    padding:8px 14px;border-radius:8px;cursor:pointer;font-size:13.5px;
+  }
+  .tab.on{border-color:var(--blue);color:var(--blue);background:#132033}
+
+  .grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px}
+  @media(max-width:860px){.grid{grid-template-columns:1fr}}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .card h3{margin:0 0 10px;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);font-weight:600}
+
+  svg{display:block;width:100%;height:auto}
+  .nlabel{font:600 15px ui-monospace,Menlo,monospace;fill:#0d1117}
+  .nlabel.light{fill:#e6edf3}
+
+  .setrow{display:flex;flex-wrap:wrap;gap:6px;min-height:30px;align-items:center}
+  .chip{
+    font-family:ui-monospace,Menlo,monospace;font-size:13px;font-weight:600;
+    padding:3px 10px;border-radius:6px;
+  }
+  .chip.path{background:#3d2c04;color:var(--amber);border:1px solid #6b4c07}
+  .chip.vis{background:#11301c;color:#56d364;border:1px solid #1d5c30}
+  .empty{color:var(--grey);font-size:13px;font-style:italic}
+
+  .stack{display:flex;flex-direction:column;gap:5px;min-height:40px}
+  .frame{
+    font-family:ui-monospace,Menlo,monospace;font-size:13px;
+    background:var(--card2);border:1px solid var(--line);border-left:3px solid var(--grey);
+    padding:5px 10px;border-radius:5px;color:var(--dim)
+  }
+  .frame.top{border-left-color:var(--blue);color:var(--blue);background:#101c2e}
+
+  .narr{
+    margin-top:14px;background:var(--card);border:1px solid var(--line);
+    border-left:4px solid var(--blue);border-radius:10px;padding:12px 14px;min-height:62px
+  }
+  .narr .k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:3px}
+  .narr .m{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;line-height:1.5}
+  .narr.cycle{border-left-color:var(--red)} .narr.cycle .m{color:#ff9d95}
+  .narr.finish{border-left-color:var(--green)} .narr.finish .m{color:#56d364}
+  .narr.choose{border-left-color:var(--amber)} .narr.choose .m{color:#f0c355}
+  .narr.answer{border-left-color:#a371f7} .narr.answer .m{color:#d2b3ff;font-weight:600}
+
+  .ctl{display:flex;align-items:center;gap:10px;margin-top:14px;flex-wrap:wrap}
+  button{
+    background:var(--card2);border:1px solid var(--line);color:var(--txt);
+    padding:8px 15px;border-radius:8px;cursor:pointer;font-size:14px
+  }
+  button:hover:not(:disabled){border-color:var(--blue);color:var(--blue)}
+  button:disabled{opacity:.35;cursor:default}
+  .count{color:var(--dim);font-size:13px;font-family:ui-monospace,Menlo,monospace}
+
+  .codebox{
+    margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:14px;overflow-x:auto
+  }
+  pre{margin:0;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;line-height:1.75}
+  .ln{display:block;padding:0 8px;border-radius:4px;color:#c9d1d9}
+  .ln.hot{background:#1f2937;box-shadow:inset 3px 0 0 var(--blue)}
+  .cm{color:#6e7681}
+  .kw{color:#ff7b72}
+  .fn{color:#d2a8ff}
+
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-size:12.5px;color:var(--dim)}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px;vertical-align:middle}
+
+  .note{margin-top:22px;padding:14px 16px;background:#131a24;border:1px solid var(--line);border-radius:12px;font-size:14px}
+  .note b{color:#f0c355}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>#207 Course Schedule — the two marks, one step at a time</h1>
+  <p class="sub">Every step below is one line of the real algorithm. Watch <b style="color:var(--amber)">path</b> and <b style="color:#56d364">visited</b> do their two different jobs.</p>
+
+  <div class="tabs" id="tabs"></div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>The graph</h3>
+      <svg id="svg" viewBox="0 0 420 370"></svg>
+      <div class="legend">
+        <span><i style="background:var(--grey)"></i>untouched</span>
+        <span><i style="background:var(--amber)"></i>on <span class="mono">path</span> — still inside it</span>
+        <span><i style="background:var(--green)"></i><span class="mono">visited</span> — proven clean</span>
+        <span><i style="background:var(--blue)"></i>current call</span>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="card">
+        <h3>Call stack <span style="text-transform:none;letter-spacing:0">(top = running now)</span></h3>
+        <div class="stack" id="stack"></div>
+      </div>
+      <div class="card">
+        <h3>path <span style="text-transform:none;letter-spacing:0;color:var(--amber)">— un-marked on the way out</span></h3>
+        <div class="setrow" id="pathset"></div>
+      </div>
+      <div class="card">
+        <h3>visited <span style="text-transform:none;letter-spacing:0;color:#56d364">— never un-marked</span></h3>
+        <div class="setrow" id="visset"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="narr" id="narr">
+    <div class="k">What just happened</div>
+    <div class="m" id="narrm">Press <b>Next</b>.</div>
+  </div>
+
+  <div class="ctl">
+    <button id="prev">&larr; Prev</button>
+    <button id="play">▶ Play</button>
+    <button id="next">Next &rarr;</button>
+    <button id="reset">Reset</button>
+    <span class="count" id="count"></span>
+  </div>
+
+  <div class="codebox"><pre id="code"></pre></div>
+
+  <div class="note">
+    <b>The one sentence to take away:</b> a cycle is not <i>“I have seen this node before.”</i>
+    It is <i>“I have seen this node before <b>and I am still inside it</b>.”</i>
+    <span class="mono">path</span> answers that question — and it must be un-marked on the way out, or it would
+    accuse every shared node of being a cycle.
+    <span class="mono">visited</span> answers a different question — <i>“is this subtree already proven clean?”</i> —
+    and it must <b>never</b> be un-marked, or the work is redone once per route in.
+  </div>
+
+</div>
+
+<script>
+const EXAMPLES = [
+  {
+    name: "No cycle (the diamond)",
+    n: 5,
+    prereqs: [[1,0],[2,0],[3,1],[3,2],[4,3]],
+    pos: {0:[210,42], 1:[105,135], 2:[315,135], 3:[210,232], 4:[210,325]},
+    blurb: "Node 3 is reached twice — once via 1, once via 2. That is NOT a cycle, and visited is what says so."
+  },
+  {
+    name: "Cycle hidden away from node 0",
+    n: 4,
+    prereqs: [[2,0],[1,2],[3,1],[2,3]],
+    pos: {0:[62,50], 2:[205,120], 1:[335,215], 3:[195,305]},
+    blurb: "The loop is 2 → 1 → 3 → 2. Node 0 is not part of it — which is why the outer loop tries every node."
+  }
+];
+
+const CODE = [
+  {t:'<span class="kw">def</span> <span class="fn">dfs</span>(node):', id:null},
+  {t:'    <span class="kw">if</span> node <span class="kw">in</span> path:      <span class="cm"># still inside it</span>', id:'cycle-check'},
+  {t:'        <span class="kw">return</span> False       <span class="cm"># CYCLE</span>', id:'cycle'},
+  {t:'    <span class="kw">if</span> node <span class="kw">in</span> visited:   <span class="cm"># proven clean</span>', id:'vis-check'},
+  {t:'        <span class="kw">return</span> True', id:'skip'},
+  {t:'', id:null},
+  {t:'    path.add(node)            <span class="cm"># choose</span>', id:'choose'},
+  {t:'    <span class="kw">for</span> child <span class="kw">in</span> adj[node]:', id:'descend'},
+  {t:'        <span class="kw">if</span> <span class="kw">not</span> <span class="fn">dfs</span>(child):', id:'call'},
+  {t:'            <span class="kw">return</span> False   <span class="cm"># propagate it up</span>', id:'propagate'},
+  {t:'    path.remove(node)         <span class="cm"># un-choose</span>', id:'unchoose'},
+  {t:'    visited.add(node)         <span class="cm"># NOW it is clean</span>', id:'finish'},
+  {t:'    <span class="kw">return</span> True', id:'finish2'},
+  {t:'', id:null},
+  {t:'<span class="kw">for</span> node <span class="kw">in</span> range(numCourses):', id:'outer'},
+  {t:'    <span class="kw">if</span> <span class="kw">not</span> <span class="fn">dfs</span>(node): <span class="kw">return</span> False', id:'answer-false'},
+  {t:'<span class="kw">return</span> True', id:'answer-true'}
+];
+
+function buildSteps(ex){
+  const adj = {};
+  for(let i=0;i<ex.n;i++) adj[i]=[];
+  for(const [course,prereq] of ex.prereqs) adj[prereq].push(course);
+
+  const steps=[], path=new Set(), visited=new Set(), stack=[];
+  const snap=(msg,kind,cur,edge)=>steps.push({
+    msg, kind, cur:(cur===undefined?null:cur), edge:edge||null,
+    path:[...path], visited:[...visited], stack:[...stack]
+  });
+
+  function dfs(node){
+    stack.push(node);
+    snap(`dfs(${node}) is called. New frame on the stack.`,'call',node);
+    if(path.has(node)){
+      snap(`${node} is ALREADY on path — dfs(${node}) further down the stack has not returned yet. That is a CYCLE. return False`,'cycle',node);
+      stack.pop(); return false;
+    }
+    if(visited.has(node)){
+      snap(`${node} is in visited — its whole subtree was already proven clean. Skip it entirely. return True`,'skip',node);
+      stack.pop(); return true;
+    }
+    path.add(node);
+    snap(`CHOOSE: add ${node} to path. From now on, reaching ${node} again means a loop.`,'choose',node);
+    for(const c of adj[node]){
+      snap(`${node} has an arrow to ${c}. Descend into it.`,'descend',node,[node,c]);
+      if(!dfs(c)){
+        snap(`dfs(${c}) came back False. Do NOT swallow it — return False out of dfs(${node}) too.`,'propagate',node,[node,c]);
+        stack.pop(); return false;
+      }
+      snap(`dfs(${c}) came back True — nothing bad below ${c}. Carry on with ${node}'s other children.`,'call',node,[node,c]);
+    }
+    path.delete(node);
+    snap(`UN-CHOOSE: remove ${node} from path. We are leaving ${node}, so it is no longer "currently inside".`,'unchoose',node);
+    visited.add(node);
+    snap(`Every child of ${node} finished clean, so NOW mark ${node} visited. return True`,'finish',node);
+    stack.pop(); return true;
+  }
+
+  let ok=true;
+  for(let node=0;node<ex.n;node++){
+    snap(`Outer loop: try starting a fresh DFS at node ${node}.`,'outer',node);
+    if(!dfs(node)){
+      ok=false;
+      snap(`dfs(${node}) returned False  ⇒  canFinish = False. The courses cannot all be taken.`,'answer',node);
+      break;
+    }
+  }
+  if(ok) snap(`Outer loop finished, no DFS ever returned False  ⇒  canFinish = True.`,'answer',null);
+  return {steps, adj};
+}
+
+let exIdx=0, i=0, steps=[], adj={}, timer=null;
+
+const $=id=>document.getElementById(id);
+
+function drawTabs(){
+  $('tabs').innerHTML = EXAMPLES.map((e,k)=>
+    `<button class="tab ${k===exIdx?'on':''}" data-k="${k}">${e.name}</button>`).join('');
+  $('tabs').querySelectorAll('.tab').forEach(b=>b.onclick=()=>{exIdx=+b.dataset.k;load();});
+}
+
+function load(){
+  stop();
+  const r=buildSteps(EXAMPLES[exIdx]); steps=r.steps; adj=r.adj; i=0;
+  drawTabs(); render();
+}
+
+function nodeState(s,id){
+  if(s.path.includes(id)) return 'amber';
+  if(s.visited.includes(id)) return 'green';
+  return 'grey';
+}
+
+function render(){
+  const ex=EXAMPLES[exIdx], s=steps[i];
+  const C={grey:'#4d5561',amber:'#e3a008',green:'#2ea043'};
+
+  // ---- graph ----
+  let g='<defs>';
+  ['#484f58','#58a6ff','#f85149'].forEach((c,k)=>{
+    g+=`<marker id="ar${k}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="${c}"/></marker>`;
+  });
+  g+='</defs>';
+
+  const R=23;
+  for(const from in adj) for(const to of adj[from]){
+    const a=ex.pos[from], b=ex.pos[to];
+    const dx=b[0]-a[0], dy=b[1]-a[1], L=Math.hypot(dx,dy);
+    const x1=a[0]+dx/L*R, y1=a[1]+dy/L*R, x2=b[0]-dx/L*(R+7), y2=b[1]-dy/L*(R+7);
+    const hot = s.edge && +from===s.edge[0] && +to===s.edge[1];
+    const bad = hot && (s.kind==='cycle'||s.kind==='propagate');
+    const col = bad?'#f85149':(hot?'#58a6ff':'#484f58');
+    const mk  = bad?'ar2':(hot?'ar1':'ar0');
+    g+=`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${col}" stroke-width="${hot?2.6:1.6}" marker-end="url(#${mk})"/>`;
+  }
+  for(let n=0;n<ex.n;n++){
+    const p=ex.pos[n], st=nodeState(s,n), fill=C[st];
+    const cur = s.cur===n;
+    if(cur) g+=`<circle cx="${p[0]}" cy="${p[1]}" r="${R+6}" fill="none" stroke="#58a6ff" stroke-width="2.4"/>`;
+    g+=`<circle cx="${p[0]}" cy="${p[1]}" r="${R}" fill="${fill}" stroke="#0d1117" stroke-width="2"/>`;
+    g+=`<text class="nlabel ${st==='grey'?'light':''}" x="${p[0]}" y="${p[1]+5}" text-anchor="middle">${n}</text>`;
+  }
+  $('svg').innerHTML=g;
+
+  // ---- stack ----
+  $('stack').innerHTML = s.stack.length
+    ? s.stack.slice().reverse().map((n,k)=>`<div class="frame ${k===0?'top':''}">dfs(${n})</div>`).join('')
+    : '<div class="empty">empty</div>';
+
+  // ---- sets ----
+  $('pathset').innerHTML = s.path.length
+    ? s.path.map(n=>`<span class="chip path">${n}</span>`).join('')
+    : '<span class="empty">{ }</span>';
+  $('visset').innerHTML = s.visited.length
+    ? s.visited.map(n=>`<span class="chip vis">${n}</span>`).join('')
+    : '<span class="empty">{ }</span>';
+
+  // ---- narration ----
+  const nk = ['cycle','finish','choose','answer'].includes(s.kind)?s.kind:'';
+  $('narr').className='narr '+nk;
+  $('narrm').innerHTML=s.msg;
+
+  // ---- code ----
+  $('code').innerHTML = CODE.map(l=>{
+    let hot = l.id===s.kind;
+    if(s.kind==='finish' && l.id==='finish2') hot=true;
+    if(s.kind==='answer' && (l.id==='answer-false'||l.id==='answer-true')) hot=true;
+    return `<span class="ln${hot?' hot':''}">${l.t||'&nbsp;'}</span>`;
+  }).join('');
+
+  $('count').textContent=`step ${i+1} / ${steps.length}`;
+  $('prev').disabled = i===0;
+  $('next').disabled = i===steps.length-1;
+}
+
+function step(d){ i=Math.max(0,Math.min(steps.length-1,i+d)); render(); if(i===steps.length-1) stop(); }
+function stop(){ if(timer){clearInterval(timer); timer=null; $('play').textContent='▶ Play';} }
+
+$('prev').onclick=()=>{stop();step(-1)};
+$('next').onclick=()=>{stop();step(1)};
+$('reset').onclick=()=>{stop();i=0;render()};
+$('play').onclick=()=>{
+  if(timer){stop();return}
+  if(i===steps.length-1) i=0;
+  $('play').textContent='❚❚ Pause';
+  timer=setInterval(()=>step(1),1050);
+};
+
+load();
+</script>
+</body>
+</html>

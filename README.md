@@ -3,22 +3,22 @@
 A beginner working from near-zero toward **FAANG-ready by interview season**, one tracked day at a time. This repo *is* my real prep — the plan, the daily notebooks, the mistakes, and the spaced-repetition system that ties it together. Not polished-for-show: the actual journey, decay and dumb bugs included.
 
 <!-- README-LIVE:START -->
-![Day](https://img.shields.io/badge/Day-33-2563eb)
+![Day](https://img.shields.io/badge/Day-34-2563eb)
 ![Phase](https://img.shields.io/badge/Phase-Summer_Sprint-7c3aed)
-![Focus](https://img.shields.io/badge/Focus-Depth_phase_Graphs_learned_Intervals_held_at_3_5_Backtracking_answered_on_second_retrieval_Block_1_went_5_5_in_26_55_all_full_solves_every_Day_32_named_cause_held_first_draft_so_M_034_is_answered_for_one_session_The_two_live_problems_are_the_clock_on_new_material_and_B_8_naming_precision_Aug_9_Aug_16_are_working_days_closing_the_deficit_against_Aug_20-0891b2)
+![Focus](https://img.shields.io/badge/Focus-Graphs_2_5_DP_starts_Aug_1_Block_1_went_3_6_and_all_four_failures_were_the_same_disease_the_exact_identity_of_the_value_in_front_of_him_two_discarded_recursive_returns_a_list_compared_to_an_int_and_the_wrong_template_s_exit_condition_Not_one_was_a_comprehension_gap_No_994_multi_source_BFS_and_No_207_cycle_detection_both_built_correctly_but_at_72_and_44_minutes_Aug_9_Aug_16_are_working_days-0891b2)
 ![Pace](https://img.shields.io/badge/Pace-on_plan-16a34a)
 ![Goal](https://img.shields.io/badge/Goal-FAANG_ready_by_Sept-ea580c)
 ![Language](https://img.shields.io/badge/Language-Python-3776ab)
 
 ## 📍 Where I'm at right now
 
-- **Day 33** · **Summer Sprint → Block B**
-- **Current focus:** Depth phase — Graphs learned, Intervals held at 3/5, Backtracking answered on second retrieval. Block 1 went 5/5 in 26:55, all full solves — every Day-32 named cause held first-draft, so M-034 is answered for one session. The two live problems are the clock on new material and B-8, naming precision. Aug 9 + Aug 16 are working days, closing the deficit against Aug 20.
-- **Up next (Day 34 (Wed Jul 29)):** Graphs cont.
-- **Tracker totals:** 33 sessions · 14 patterns learned · 36 mistakes tracked
-- **Open blockers:** 1 (B-8 naming precision — ESCALATED Day 33) + watches (M-036, M-027, M-026, M-033, M-034, M-030, M-032, B-4, M-005, M-028)
-- **Review queue:** Day 34 (Wed Jul 29) — 7 items, ~25 min: full #200 · #133 (yesterday's new) · ✍️ #90 · #46 · #78 · 🗣 #155 · #74. Backlog re-fuzzed after Day 33 and still lands on real dates through Aug 7; every day Jul 29 – Aug 7 sits at 6–8 items and 25–29 min.
-- **Last dashboard update:** 2026-07-28
+- **Day 34** · **Summer Sprint → Block B**
+- **Current focus:** Graphs 2/5, DP starts Aug 1. Block 1 went 3/6 and all four failures were the same disease: the exact identity of the value in front of him — two discarded recursive returns, a list compared to an int, and the wrong template's exit condition. Not one was a comprehension gap. #994 multi-source BFS and #207 cycle detection both built correctly but at 72 and 44 minutes. Aug 9 + Aug 16 are working days.
+- **Up next (Day 35 (Fri Jul 31)):** #210 Course Schedule II and #323 Connected Components
+- **Tracker totals:** 34 sessions · 14 patterns learned · 38 mistakes tracked
+- **Open blockers:** 2 (B-9 recursive return channel — priority, B-8 naming precision — rescoped) + watches (M-036 ×2, M-034, M-037, M-038, M-027, M-026, M-033, M-030, M-032, B-4, M-005)
+- **Review queue:** Day 35 (Fri Jul 31) — 5 items, 30 min, all full solves: #133 · #46 · #74 (resets) · #994 · #207 (1d). Deliberately nothing else — five full solves is the box. Drain re-spread on real dates and now runs to Aug 9; every day Jul 31 – Aug 9 sits at 16–30 min.
+- **Last dashboard update:** 2026-07-30
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 
 *This block is generated from `DASHBOARD.md`. Run `python3 scripts/sync_readme.py` after dashboard edits; the pre-commit hook also runs it automatically.*
