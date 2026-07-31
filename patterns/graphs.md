@@ -270,3 +270,119 @@ Each diamond gives two routes to its merge node, so each one **doubles** the wor
 
 ## Still to come
 #210 Course Schedule II (Kahn's — indegree + queue, gives the actual order) · #323 Connected Components (union-find) · #417 Pacific Atlantic · #695 Max Area of Island.
+
+---
+
+# Day 35 — the order, and the second way to ask about connectivity
+
+**Mastery: 2/5 → 3/5.** Six problems. **#210 in 17:21 and #323 in 31:14, against 44 and 72 the day before** — same pattern family, second day. That's consolidation on a clock.
+
+## Shape 5 — topological order (#210) = **#207 plus two lines**
+
+```python
+def findOrder(numCourses, prerequisites):
+    graph = {i: [] for i in range(numCourses)}
+    for course, prereq in prerequisites:
+        graph[prereq].append(course)
+
+    path, visited, revAnswer = set(), set(), []
+
+    def dfs(node):
+        if node in path:    return False
+        if node in visited: return True
+        path.add(node)
+        for child in graph[node]:
+            if not dfs(child):
+                return False
+        path.remove(node)
+        visited.add(node)
+        revAnswer.append(node)          # <-- LINE 1: append when it FINISHES
+        return True
+
+    for node in range(numCourses):
+        if not dfs(node):
+            return []
+    return revAnswer[::-1]              # <-- LINE 2: reverse
+```
+
+**Append at the moment the node FINISHES — after every child has returned. That's a post-order DFS.**
+
+### Why the finish order is backwards — say it precisely
+
+> **Every node that finishes before `X` is reachable FROM `X`** — i.e. it depends on `X`, directly or transitively. So `X` must come **before** all of them. Finish-order therefore lists dependents first and prerequisites last; **reversing puts prerequisites first.**
+
+*(The stack version of the same fact: the **last** node to finish is the one at the **bottom** of the recursion — the course you started from, a prerequisite. After the reverse it lands **first**.)*
+
+### ⚠️ `return []` belongs inside the loop; `return answer` does not
+
+```python
+for node in range(numCourses):
+    if not dfs(node):
+        return []          # early EXIT - one cycle anywhere is enough
+answer = revAnswer[::-1]   # a CONCLUSION - only true after the loop ends
+return answer
+```
+
+**Putting `return answer` inside the loop makes it run exactly once.** *(Day 35 bug — 2,103 of 5,000 random inputs failed.)* It survives every single-component example, because `dfs(0)` alone does the whole job there; **it only breaks when the graph has a piece node `0` can't reach.** `numCourses = 2, prerequisites = []` catches it instantly — two isolated nodes.
+
+> **The rule: `return` inside a loop means "done after ONE iteration."** Ask what the loop's job is. Here it's *"every node has been started from"*, which is only true **after** it ends. **An early exit lives inside; a conclusion lives after.**
+
+**Complexity:** unchanged — `O(V + E)` time and space. One append per node and one reverse are both `O(V)`.
+
+*(The other standard topological sort is **Kahn's**: compute in-degrees, queue everything with in-degree 0, pop and decrement. BFS-shaped, no recursion, and it detects the cycle by counting how many nodes came out. Worth knowing it exists; the post-order DFS above is the one you own.)*
+
+---
+
+## Shape 6 — connected components (#323) = **#200 on an explicit graph**
+
+```python
+def countComponents(n, edges):
+    graph = {i: [] for i in range(n)}
+    for node1, node2 in edges:
+        graph[node1].append(node2)      # UNDIRECTED -> both
+        graph[node2].append(node1)      # directions. This IS your 2E.
+
+    seen = set()
+    counter = 0
+
+    def dfs(i):                          # returns NOTHING, deliberately
+        if i in seen: return
+        seen.add(i)
+        for neighbor in graph[i]:
+            dfs(neighbor)
+
+    for i in range(n):
+        if i not in seen:
+            dfs(i)
+            counter += 1
+    return counter
+```
+
+**It's `#200` with `seen` instead of `"#"`.** The counter sits beside the call in the outer loop, exactly as in Number of Islands: **one DFS that actually started = one component.**
+
+**You never compare two nodes to ask if they're connected.** DFS from an unvisited node reaches exactly that node's component; anything still unvisited afterwards is by definition in a different one. **The traversal partitions the graph for you.**
+
+**Undirected ⇒ two appends per edge**, into two *different* lists. No guard, no duplication — that is what "undirected" means, and it's literally where the `2E` from Day 33's warm-up comes from.
+
+**No `path` set.** `#207` needed one; this doesn't — undirected connectivity has no cycle question to answer. **Transferring a pattern without transferring the parts you don't need is the hard half of pattern recognition.**
+
+### `dfs` returning nothing is CORRECT here — the B-9 converse
+B-9 says *know what the callee hands back*. Here the answer is **nothing, deliberately**: `dfs` only mutates `seen`, and the counting happens outside it. **Mixed intent is the bug, not the absence of a return.**
+
+**Complexity:** `O(V + E)` time · **`O(V + E)` space.**
+
+> ### 🔑 Space: count what YOU allocate
+> `#133` was `O(V)` because the `neighbors` lists **arrived inside the input** — you only allocated one dict entry per node. `#323` is `O(V + E)` because **you build the adjacency structure yourself**: `V` keys plus `2E` entries.
+>
+> **And a dict's space is not its key count.** `{0: [a million ints]}` has one key and is not `O(1)`. **A container's space is its own overhead plus the total size of everything it holds.** Same rule as Timsort's `O(n)` scratch on `#56`. *(Asked and answered Day 35.)*
+
+## Complexity summary
+
+| Problem | Time | Space |
+|---|---|---|
+| #200 Number of Islands | `O(m·n)` | `O(m·n)` |
+| #133 Clone Graph | `O(V + E)` | `O(V)` — lists arrived with the input |
+| #994 Rotting Oranges | `O(m·n)` | `O(m·n)` — seeding is a level |
+| #207 Course Schedule | `O(V + E)` | `O(V + E)` |
+| #210 Course Schedule II | `O(V + E)` | `O(V + E)` |
+| #323 Connected Components | `O(V + E)` | `O(V + E)` — you build the adjacency |

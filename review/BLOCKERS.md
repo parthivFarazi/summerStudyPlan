@@ -4,6 +4,33 @@
 
 ## Active blockers
 
+### ⛔ B-5 · M-036 — container vs contents, REOPENED  *(Day 35 — three identical failures)*
+**`#133 Clone Graph` has now failed three sessions running, and every failure is the same question: *which `neighbors` list?***
+
+| | the line | what went wrong |
+|---|---|---|
+| Day 33 | `Node(node.val, node.neighbors)` | passed the **original's** list into the clone |
+| Day 34 | `Node(node.val, node.neighbors)` | identical |
+| Day 35 | `for neighbor in adict[node].neighbors` | walked the **clone's** empty list |
+
+**⚠️ On Day 35 his notes were open and he still mis-picked.** That rules out recall. Two objects share the attribute name `neighbors`, and `node.neighbors` versus `adict[node].neighbors` are nearly identical on the page.
+
+**🔧 THE DRILL — mechanical, not attentional:**
+
+```python
+clone = Node(node.val, [])
+adict[node] = clone
+for neighbor in node.neighbors:                 # the ORIGINAL's list
+    clone.neighbors.append(dfs(neighbor))       # the CLONE's list
+```
+
+1. **Give the second object its own name.** `node` and `clone` are two different words; the confusion becomes impossible rather than merely avoidable.
+2. **Whenever two variables carry the same attribute name, say each access out loud as *"the ___'s list"*** before writing it.
+3. **When two things are easy to confuse, change the names — don't try harder.** Same move as `answer[-1]` replacing `pop()` + `append()` on `#56`.
+
+**Cleared when:** `#133` passes twice consecutively, and no further container-vs-contents slip appears.
+
+
 ### ⛔ B-9 · M-001 — the recursive return channel  *(ESCALATED Day 34 — the priority blocker)*
 **Twice in one session, two hours apart, on two different problems:**
 
@@ -46,7 +73,7 @@ If the answer is *"nothing"*, that had better be deliberate — a `dfs` that onl
 
 > **⚠️ Days 22–24 — the honest read.** All the blockers are **one disease: first-draft precision on problems he has ALREADY solved correctly in his head.** The drill = **questions said OUT LOUD before any submit.** And it WORKS: **Day 24 cleared B-4 AND B-5.** Two facets clear; the disease persists in new facets (B-7 emerged same day).
 >
-> **⛔ Day 34: B-9 OPENED (the recursive return channel) — the priority blocker. B-8 rescoped. B-1…B-7 all remain clear.** *(Day 30: B-7 cleared on its 2nd clean session.)* The disease's remaining residue is **M-027: one site missed on the final pass** (a transform/rename/paired-op/name/guard/`self.` that lands on all-but-one site) — now on *watch*, not drill-now, and its one twice-identical *repeat* (#1046 un-negate) closed Day 30. Day 30's resets all landed on the **newest pattern (backtracking)**, not on any named old facet — the fragility has migrated to fresh material, which is exactly the goal.
+> **⛔ Day 35: B-5 REOPENED (container vs contents) — #133 failed three sessions running. B-9 HELD on #207 (1 clean). B-2 reopened as a watch (`range(grid)`). B-8 quiet.** *(Day 30: B-7 cleared on its 2nd clean session.)* The disease's remaining residue is **M-027: one site missed on the final pass** (a transform/rename/paired-op/name/guard/`self.` that lands on all-but-one site) — now on *watch*, not drill-now, and its one twice-identical *repeat* (#1046 un-negate) closed Day 30. Day 30's resets all landed on the **newest pattern (backtracking)**, not on any named old facet — the fragility has migrated to fresh material, which is exactly the goal.
 >
 > **⚠️ THE ONE SCAN (Days 22–28).** Every recurring impl slip is **one disease: first-draft completeness.** **Before every submit, walk the operation top to bottom AND do a final read-through of every site:**
 > 1. **Guard present?** — empty? None? lengths? (B-4 — reopened Day 26, fired Day 28 #199 dropped root guard)

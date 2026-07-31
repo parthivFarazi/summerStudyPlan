@@ -19,7 +19,7 @@ One file per pattern: template, when-to-use triggers, complexity, and *your* got
 | **Heap / Priority Queue** | **3/5** | [heap](heap.md) — *`heapq` min-heap; negate for max; **size-k heap** (min→k-largest, max→k-closest); **tuple keys**. #703, #1046, #973, #215* |
 | **Backtracking** | **3/5** | [backtracking](backtracking.md) — *choose → recurse → **un-choose**. 4 shapes: take/skip (#78,#39), dedup (#90), for-loop+used-set (#46 derived cold), **grid DFS in-place (#79, Day 30 — bridge to graphs)*** |
 | **Intervals** | **3/5** | [intervals](intervals.md) — *`overlap = (b >= c) and (d >= a)`; insert (#57) vs merge (#56) = what the input PROMISED; **greedy interval scheduling** (#435, #252) — sort so best-is-first, one variable for the last commitment*
-| **Graphs (BFS/DFS)** | **2/5** | [graphs](graphs.md) — *implicit (grid) vs explicit (objects) — same traversal, different neighbour source. #200 permanent mark ⇒ O(m·n) not 4^L · #133 dict = visited AND mapping · **#994 multi-source BFS** (seed ALL sources; DFS depth ≠ distance) · **#207 TWO marks** — `path` (un-marked, finds the cycle) + `visited` (permanent, keeps it linear). **O(V+E)**, 2E entries undirected*
+| **Graphs (BFS/DFS)** | **3/5** | [graphs](graphs.md) — *implicit (grid) vs explicit (objects). #200 permanent mark ⇒ O(m·n) · #133 dict = visited AND mapping · #994 multi-source BFS (DFS depth ≠ distance) · #207 TWO marks: path finds the cycle, visited keeps it linear · **#210 post-order + reverse = topological sort** · **#323 = #200 on an explicit graph**. O(V+E), 2E entries undirected*
 
 ## Language concepts *(not patterns — the machinery the patterns run on)*
 

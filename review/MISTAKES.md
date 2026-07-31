@@ -44,9 +44,11 @@
 | M-033 | 2026-07-27 | impl | **A prune/guard written backwards.** #39: `target > total` instead of `total > target` — says "stop when I haven't got there yet" instead of "stop when I've overshot." True at the root call, so the whole recursion died instantly and `res` returned empty | **Say what the prune KILLS, in English, before writing it**: *"kills the branch when the running total has gone past target"* → `total > target`. Then read the code and confirm it says the same. Same family as B-6 (right operands, wrong order) | 1 | Day 32 | **active — new watch** |
 | M-034 | 2026-07-27 | process | **The scan was said but not run.** #57's missing terminal append is item TWO on his own scan ("Terminal line/mark written?"), and his own comment named the flag he then failed to use | **Running the scan means walking it against the code in front of you, line by line — not reciting it from memory.** Three Day-32 failures were all items already on the list. Kin to M-030 (outsourcing verification) | 1 | Day 32 | **active — the current bottleneck** |
 | M-035 | 2026-07-27 | coaching | **[MINE] Validated his backward-sweep approach for #435 after two passing examples plus a plausible argument.** It fails on `[[1,3],[2,4],[3,5]]`. He built on my wrong confirmation | **The coach is not exempt from the verification rule.** Two passing tests and a nice-sounding reason is not a proof. Find the counter-example before endorsing an approach | 1 | Day 32 | resolved same session (owned + corrected) |
-| M-036 | 2026-07-28 | impl | **A "deep" copy built from the ORIGINAL's fields.** #133: `Node(node.val, node.neighbors)` hands the clone the originals. **Day 34: IDENTICAL REPEAT** — measured, the returned "clone" reaches 5 nodes instead of 4 (one clone wired to the whole original graph) | **A copy's fields must be built from copies.** Empty shell → register → `append(dfs(neighbor))`. **Container-vs-contents (M-021) at object scale.** ⚠️ **Mechanism worth keeping: #133 is the one problem he never wrote correctly himself — a correction he is HANDED decays far faster than one he DERIVES** | **2** | Day 33, **34** | **⛔ active — twice identical** |
+| M-036 | 2026-07-28 | impl | **#133 — the wrong object's `neighbors` list, three sessions running.** D33/D34: `Node(node.val, node.neighbors)` handed the clone the ORIGINALS (measured: 5 reachable nodes instead of 4). **D35: `for neighbor in adict[node].neighbors` walked the CLONE's empty list — the loop body never ran, returning one isolated node. ⚠️ He had his notes OPEN and still mis-picked** | **Two objects share the attribute name `neighbors` and he cannot reliably tell them apart.** Not recall — the notes were in front of him. **Fix is mechanical, not attentional: name the clone.** `clone = Node(node.val, [])` … `for neighbor in node.neighbors: clone.neighbors.append(dfs(neighbor))`. Kin to M-021/B-5 | **3** | Day 33, 34, **35** | **⛔ ESCALATED → B-5 REOPENED (Day 35)** |
 | M-037 | 2026-07-29 | impl | **Compared a container to a number.** #46: `if combo == len(nums)` — a list against an int, always `False`, so the base case never fired and `res` returned `[]` on every input. Should be `len(combo) == len(nums)` | **B-5, container vs contents.** Reaching for the box instead of the box's size. Kin to M-021 and to *"the mid value… that is the index"* | 1 | Day 34 | **active — B-5 fired** |
 | M-038 | 2026-07-29 | impl | **Mixed the two binary-search templates.** #74: `while left < right` (converging exit) with `right = mid - 1` (exact-match shrink) → the final single cell is never examined. **4 of 6 cases wrong**, incl. `[[1]]` target `1`. Also stated `O(log n)` where it is `O(log(m·n))` | **Does the `right` assignment discard `mid`?** `mid - 1` ⇒ `while left <= right`. `right = mid` ⇒ `while left < right`, return `left`. Full table now in `binary-search.md`. Kin to M-014/M-015 | 1 | Day 34 | **active — new** |
+| M-039 | 2026-07-31 | impl | **A function defined and never invoked.** #46: `backtrack` fully written, then `return res` — the recursion never started, so `[]` on every input. Add one `backtrack()` line and every permutation is correct | **A nested helper needs a launch line.** Kin to M-026 (dropped terminal line) — the operation isn't done when the definition ends. **Catches instantly on the first example** | 1 | Day 35 | **active — new** |
+| M-003 | *(reopened)* | impl | **`range(x)` where `range(len(x))` belongs.** Day 35: `for r in range(grid)` on #994 → `TypeError: 'list' object cannot be interpreted as an integer`. **He wrote `len(grid)` correctly four lines later in the same function** | The index-loop idiom. **Cleared as B-2 on Day 18 and clean for 17 sessions** — treat as a watch, not a re-escalation, unless it recurs | 4 | Day 1, 4, 16, **35** | **👁 B-2 reopened as a watch** |
 
 ## Recurrence Watchlist (count ≥ 2 — one rep from escalating)
 
@@ -62,7 +64,9 @@
 | **M-030** | process | **Asking for confirmation instead of running one test case** | **1 (×4)** *(Day 31; **improving Day 32** — tested his own sweep when asked, self-reported a notes peek)* |
 | **M-034** | process | **Checking what the ANSWER is instead of what the CODE does** — Day 34: simulated the correct rotting process instead of tracing his own DFS, then asserted an untraced output (*"it does give 3"*; it gives 4) | **2** *(HELD Day 33; **fired twice Day 34**)* |
 | **M-033** | impl | **Prune/guard written backwards** (right operands, wrong order) | **1** *(Day 32; **HELD Day 33** — #39's prune correct first-draft)* |
-| **M-036** | impl | **A copy built from the original's fields instead of from copies** | **2** ⛔ *(identical repeat, Day 33→34)* |
+| **M-036 → B-5** | impl | **The wrong object's `neighbors` list** — #133, three sessions running, notes open on the third | **3** ⛔ **→ B-5 REOPENED** |
+| **M-039** | impl | **A function defined and never invoked** (#46) | **1** *(new Day 35)* |
+| **M-003** | impl | **`range(x)` for `range(len(x))`** — #994 | **4** *(👁 B-2 reopened; clean Days 18–34)* |
 | **M-037** | impl | **Container compared to a number** (`combo == len(nums)`) — B-5 | **1** *(new Day 34)* |
 | **M-038** | impl | **The two binary-search templates mixed** (exit condition of one, shrink of the other) | **1** *(new Day 34)* |
 | **M-032** | strategy | **A sort costs SPACE too** (`O(n)` Timsort aux) — stated `O(1)` beside `O(n log n)` | **1** *(new Day 31)* |
@@ -154,3 +158,32 @@ He objected that he had no code to run, which is **half right, and that half is 
 ### 🟢 The counter-evidence, which is substantial
 
 He derived the multi-source seeding, the cycle criterion, and the `path`-is-backtracking connection **unaided**. He asked *"why do we even need `visited`?"* — the sharpest question of the week. He said *"I pretty much just copied this and can't visualise it"* when he could have stayed quiet, which is what got the stepper animation built. **And he measured his own one-draft overrun** (*"at 4:00 I was at `combo.append(nums[i])`"*) instead of complaining, which is exactly the calibrated reporting M-030 is about — and it changed the rule.
+
+
+---
+
+## Day 35 addendum — three correct algorithms that never executed
+
+```
+#133   for neighbor in adict[node].neighbors    walked the wrong object's list
+#46    (backtrack never invoked)                the function was never called
+#994   for r in range(grid)                     range() of a list -> TypeError
+```
+
+**Not one of these is an algorithm.** With `len()` added and nothing else changed, `#994` passed every 6-cell grid and 20,000 random ones. With one `backtrack()` line, `#46` produced every permutation correctly. `#133`'s structure was right including the `None` guard he'd missed the day before.
+
+> **All three crash or return empty on the FIRST example.** `range(grid)` is a `TypeError` — the program does not start. **The gap between his solve rate and his pass rate is one execution**, and that has now been the finding two sessions in a row.
+
+**The counter-evidence is in the same block.** `#207` passed first-draft on **exactly the line that reset it the day before**, because he ran the B-9 sentence before writing. `#74` passed on exactly the condition that reset it. **When the check gets run, it works.** The problem is not knowing what to check.
+
+### M-036 → B-5, and why the fix is mechanical
+
+Three sessions, three wrong answers to one question: *which `neighbors` list?* On Day 35 **his notes were open and he still mis-picked**, which rules out recall as the cause. Two objects share an attribute name and the expressions `node.neighbors` and `adict[node].neighbors` are nearly identical on the page.
+
+> **Prescription: `clone = Node(node.val, [])`, then `for neighbor in node.neighbors: clone.neighbors.append(dfs(neighbor))`.** `node` and `clone` are two different words; the confusion becomes impossible rather than merely avoidable. **When two things are easy to confuse, stop relying on care and change the names.** Same move as `answer[-1]` replacing `pop()` + `append()` on `#56`.
+
+### 🟢 What actually improved
+
+**Block 2 went 17:21 and 31:14 — 48 minutes for two new problems, against 116 the day before.** He derived post-order-then-reverse himself, transferred `#323` from `#200` himself, and made two judgment calls unprompted: **he did not bring `path` over** to an undirected problem, and **he wrote a `dfs` that returns nothing** — correctly, because the counting happens outside it. With B-9 live that second one matters: **the drill is *know what the callee hands back*, not *always catch a return*.**
+
+**And he self-reported a notes peek for the second time**, on a problem where nobody would have known. That is the M-030 muscle working.
