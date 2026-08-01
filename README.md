@@ -3,22 +3,22 @@
 A beginner working from near-zero toward **FAANG-ready by interview season**, one tracked day at a time. This repo *is* my real prep — the plan, the daily notebooks, the mistakes, and the spaced-repetition system that ties it together. Not polished-for-show: the actual journey, decay and dumb bugs included.
 
 <!-- README-LIVE:START -->
-![Day](https://img.shields.io/badge/Day-35-2563eb)
+![Day](https://img.shields.io/badge/Day-36-2563eb)
 ![Phase](https://img.shields.io/badge/Phase-Summer_Sprint-7c3aed)
-![Focus](https://img.shields.io/badge/Focus-Graphs_3_5_DP_starts_Aug_3_Block_2_halved_its_time_48_minutes_for_two_new_problems_against_116_the_day_before_Block_1_went_2_5_and_all_three_failures_were_correct_algorithms_that_never_executed_the_wrong_object_s_list_a_function_never_invoked_and_range_of_a_list_The_gap_between_his_solve_rate_and_his_pass_rate_is_one_execution_Aug_9_and_Aug_16_are_working_days-0891b2)
+![Focus](https://img.shields.io/badge/Focus-The_best_session_of_the_sprint_Mock_No_1_came_in_at_19_38_against_a_35_minute_cap_correct_with_the_pattern_named_in_the_first_sentence_Block_1_went_5_5_on_the_same_five_problems_that_went_2_5_yesterday_the_understanding_didn_t_change_overnight-0891b2)
 ![Pace](https://img.shields.io/badge/Pace-on_plan-16a34a)
 ![Goal](https://img.shields.io/badge/Goal-FAANG_ready_by_Sept-ea580c)
 ![Language](https://img.shields.io/badge/Language-Python-3776ab)
 
 ## 📍 Where I'm at right now
 
-- **Day 35** · **Summer Sprint → Block B**
-- **Current focus:** Graphs 3/5, DP starts Aug 3. Block 2 halved its time — 48 minutes for two new problems against 116 the day before. Block 1 went 2/5, and all three failures were correct algorithms that never executed: the wrong object's list, a function never invoked, and `range` of a list. The gap between his solve rate and his pass rate is one execution. Aug 9 and Aug 16 are working days.
-- **Up next (Day 36 (Sat Aug 1)):** 🎯 MOCK #1 replaces new material today. Unseen problem from a pattern already learned, 35-minute hard cap, the coach silent until the timer stops, narrate throughout, then self-score the four dimensions. Say in advance that going over 35 minutes is the expected result.
-- **Tracker totals:** 35 sessions · 14 patterns learned · 39 mistakes tracked
-- **Open blockers:** 3 (B-5 container/contents — reopened, B-9 recursive return channel — held once, B-8 naming — quiet) + watches (B-2 reopened, M-039, M-034, M-037, M-038, M-027, M-005)
-- **Review queue:** Day 36 (Sat Aug 1) — 🎯 MOCK #1 first, then 5 full solves, 30 min: #133 · #46 · #994 (resets) · #210 · #323 (1d). Nothing else — five full solves is the box. Drain re-spread on real dates through Aug 9; every day Aug 1 – Aug 9 sits at 20–30 min.
-- **Last dashboard update:** 2026-07-31
+- **Day 36** · **Summer Sprint → Block B**
+- **Current focus:** The best session of the sprint. Mock #1 came in at 19:38 against a 35-minute cap, correct, with the pattern named in the first sentence. Block 1 went 5/5 on the same five problems that went 2/5 yesterday — the understanding didn't change overnight
+- **Up next (Day 37 (Mon Aug 3)):** #70 Climbing Stairs, #746 Min Cost Climbing Stairs and #198 House Robber
+- **Tracker totals:** 36 sessions · 14 patterns learned · 40 mistakes tracked
+- **Open blockers:** 3 (B-10 price the loop body — new, B-5 container/contents — 1 clean, B-8 naming) · ✅ B-9 cleared
+- **Review queue:** Day 37 (Mon Aug 3) — 8 items, ~27 min: full #567 (write the `O(n)` version) · ✍️ #200 · #79 · #39 · #57 · 🗣 #739 · #121 · #153. Drain re-spread through Aug 11; every day Aug 3 – Aug 11 sits at 22–28 min.
+- **Last dashboard update:** 2026-08-01
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 
 *This block is generated from `DASHBOARD.md`. Run `python3 scripts/sync_readme.py` after dashboard edits; the pre-commit hook also runs it automatically.*

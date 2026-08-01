@@ -9,7 +9,7 @@ One file per pattern: template, when-to-use triggers, complexity, and *your* got
 | Big-O & complexity | **4/5** | [big-o](big-o.md) — *Day 22: O(h) unprompted; bounded-map O(1); `sorted()` vs `.sort()`* |
 | Arrays & Hashing | 3/5 | [arrays-hashing](arrays-hashing.md) |
 | Two Pointers | 3/5 | [two-pointers](two-pointers.md) |
-| Sliding Window | 3/5 | [sliding-window](sliding-window.md) |
+| **Sliding Window** | **3/5** | [sliding-window](sliding-window.md) — *#3, #424 (grow/shrink) · **#567 fixed-size + frequency compare (Mock #1)** — when a window slides, only TWO characters change: update, do not rebuild. A bounded 26-slot map is O(1)*
 | Binary Search | 3/5 | [binary-search](binary-search.md) |
 | Stack | 3/5 | [stack](stack.md) |
 | Linked List | 3/5 | [linked-list](linked-list.md) |

@@ -25,6 +25,16 @@ Fall semester starts **Aug 20** → time collapses. So all heavy new-pattern lea
 | **Mock #3** | **~Fri Aug 14** |
 | *(Mock #4)* | *Aug 19, if the buffer survives unused* |
 
+### 📊 Results so far
+
+| | date | problem | time | outcome | self-score vs coach |
+|---|---|---|---|---|---|
+| **Mock #1** | **Sat Aug 1** | **#567 Permutation in String** | **19:38** ✅ *(cap 35)* | **correct, but TLE** — `O(n² log n)` where `O(n)` exists | 4.5/2.5/1.5/3 vs **4/2.5/2/3** |
+
+**Read:** pattern named in the first sentence — **the 2–3-minute recognition gate is met.** Fifteen minutes under the cap on the first attempt, against an expectation of going over. **Self-assessment calibrated within half a point on every dimension, and least confident exactly where he was wrong.**
+
+**The two gaps the mock exposed, both invisible in coached reviews:** he priced the loop body wrong (→ **B-10**), and **he named the optimal approach then skipped it as "more complicated"** (→ M-040).
+
 **Protocol:** unseen problem from an already-learned pattern · **35-minute hard cap** · **the coach says nothing until the timer stops** · narrate throughout (that half has never been tested) · then self-score the four dimensions below.
 
 **Expected first result: over 35 minutes. That is information, not failure.** One data point is noise; **three is a trend**, and only the trend gets a conclusion drawn from it. The real risk was never a bad number in July — it was arriving at September never having taken the reading.

@@ -48,15 +48,17 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 | ~~Day 33~~ | ~~Tue Jul 28~~ | ✅ **DONE** — #200/#133 | ~~#79·#39·#57·#435·#252~~ ✅ **5/5** | — | — | **26:55** ✅ |
 | ~~Day 34~~ | ~~Thu Jul 30~~ | ✅ **DONE** — #994/#207 | ~~#200~~ ✅ · ~~#133~~ ❌ | ~~#90~~ ✅ · ~~#46~~ ❌ · *(#78 → Jul 31)* | ~~#155~~ ✅ · ~~#74~~ ❌ | **3/6** |
 | ~~Day 35~~ | ~~Fri Jul 31~~ | ✅ **DONE** — #210/#323 | ~~#74~~ ✅ · ~~#207~~ ✅ · ~~#133~~ ❌ · ~~#46~~ ❌ · ~~#994~~ ❌ | — | — | **2/5 · 26:12** |
-| **Day 36** | **Sat Aug 1** | 🎯 **MOCK #1** — unaided 35-min medium *(replaces Block 2, runs FIRST)* | **#133 · #46 · #994** (resets) · **#210 · #323** (1d) | — | — | **30 min** + 35 mock |
+| ~~Day 36~~ | ~~Sat Aug 1~~ | ✅ 🎯 **MOCK #1 — 19:38, correct, 15 min under cap** | ~~#133·#46·#994·#210·#323~~ ✅ **5/5** | — | — | **52:53** |
 | — | **Sun Aug 2** | 🟢 **REST** | — | — | — | — |
-| Day 37 | Mon Aug 3 | **DP · HEAVY** (3 new) ⇒ B2 first | — | #200 · #79 · #39 · #57 · **#78** | #739 · #121 · #153 | 27 min |
-| Day 38 | Tue Aug 4 | **DP · HEAVY** ⇒ B2 first | #70 · #746 · #198 | #215 · **#435** | #21 · #104 · #206 | 28 min |
-| Day 39 | Wed Aug 5 | **DP · HEAVY** ⇒ B2 first | #5 · #91 | #143 · #19 · #141 · **#230** | #347 · #238 · **#150** | 30 min |
-| Day 40 | Thu Aug 6 | **DP · HEAVY** ⇒ B2 first | #322 · #152 | #110 · #211 · #208 · **#146** | #3 · #167 · #90 · **#98** | 30 min |
-| Day 41 | Fri Aug 7 | **DP · HEAVY** ⇒ B2 first | #139 · #300 | #875 · #424 · #543 · **#703** | #235 · #271 · #226 · **#128** | 30 min |
-| Day 42 | Sat Aug 8 | 🎯 **MOCK #2** — unaided 35-min medium *(replaces Block 2)* | #62 · #1143 | #1046 · #199 | #11 · #125 | 21 min |
-| Day 43 | Sun Aug 9 | *(Sunday worked)* Greedy | — | #242 · #252 · #15 · #20 · **#973** | — | 20 min |
+| **Day 37** | **Mon Aug 3** | **1-D DP · FIRST CONTACT** (#70/#746/#198) ⇒ B2 first | **#567** *(write the O(n) version)* | #200 · #79 · #39 · #57 | #739 · #121 · #153 | **27 min** |
+| Day 38 | Tue Aug 4 | **DP · HEAVY** ⇒ B2 first | #70 · #746 · #198 | #215 · **#994** | #21 · #104 · #206 | 28 min |
+| Day 39 | Wed Aug 5 | **DP · HEAVY** ⇒ B2 first | #5 · #91 | #143 · #19 · **#133** | #347 · #238 · #150 | 28 min |
+| Day 40 | Thu Aug 6 | **DP · HEAVY** ⇒ B2 first | #322 · #152 | #110 · #211 · **#46** | #3 · #167 · #90 · #98 | 28 min |
+| Day 41 | Fri Aug 7 | **DP · HEAVY** ⇒ B2 first | #139 · #300 | #875 · #424 · **#210** | #235 · #271 · #226 · #128 | 28 min |
+| Day 42 | Sat Aug 8 | 🎯 **MOCK #2** — unaided 35-min medium *(replaces Block 2)* | #62 · #1143 | #1046 · #199 · **#323** | #11 · #125 | 27 min |
+| Day 43 | Sun Aug 9 | *(Sunday worked)* Greedy | — | #242 · #252 · #15 · #20 · **#78** | — | 22 min |
+| Day 44 | Mon Aug 10 | Greedy / Bit Manip | *(2 new at 1d)* | **#435 · #141 · #230 · #146** | — | 28 min |
+| Day 45 | Tue Aug 11 | Bit Manip | *(2 new at 1d)* | **#208 · #703 · #543 · #973** | — | 28 min |
 
 > ## 🔴 A SESSION SLIPPED — the buffer is gone *(logged 2026-07-30)*
 > **Day 33 ran Thu Jul 28. Jul 29 had no session. Day 34 ran Fri Jul 30.** Every date below has been shifted one day.
@@ -70,6 +72,8 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 > **Until one of those happens, a single further slip puts Day 53 past the deadline.**
 
 > **His call, 2026-07-30:** *"I will be able to catch up with the new schedule — I'm just a day behind right now, I'll catch up and still have the Aug 19 buffer."* **Accepted.** The recovery is one extra session's worth of new material somewhere in the next two weeks — a triple-new day or a worked Aug 2. **Track it as OWED until a specific day carries it, then mark that day here.** Not a crisis; just a debt that needs a date on it, same as any roll-forward *(rule 10)*.
+
+**Day-36 re-fuzz — the drain now ends Aug 11, and the reason is a good problem to have.** Day 36 went **5/5**, so five items advanced to 3d **at once**, landing in a week already at 27–30 min every day — plus `#567` from the mock. Rather than cram, the five were spread one per day across **Aug 4 → Aug 8** (`#994` → Aug 4, `#133` → Aug 5, `#46` → Aug 6, `#210` → Aug 7, `#323` → Aug 8), and the displaced one-drafts land on **two new tail days, Aug 10 and Aug 11**. Every day Aug 3 – Aug 11 now sits at **22–28 minutes**. **Nothing dropped, nothing rolled without a date.** *(Worth noting: a 5/5 day costs more future load than a 2/5 day — passes advance and stack, failures stay put. That is the ladder working, not a problem.)*
 
 **Day-35 re-fuzz — Aug 1 carries the mock AND five full solves, and that is deliberate.** Day 35 produced **three resets** (#133, #46, #994) on top of **two new 1d items** (#210, #323) — exactly five full solves, exactly the 30-minute box. **Aug 1 is an interleave day with no new-material teaching**, so the session is Mock (35 min) + Block 1 (30 min) ≈ **65 minutes — shorter than the last three days** despite looking heavier on paper. Everything else moved off Aug 1 onto real dates: #78 → Aug 3, #150 → Aug 5, #98 → Aug 6. Downstream shuffle to hold every day at 27–30 min: #435 → Aug 4, #230 → Aug 5, #146 → Aug 6, #703 → Aug 7, #128 → Aug 7, #973 → Aug 9. **Nothing dropped, nothing rolled without a date.**
 
@@ -94,21 +98,22 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 | Problem | Pattern | Rung | Tier | Next due | Streak | Results |
 |---|---|---|---|---|---|---|
 | Subsets II (#90) | backtracking | **7d** | 🗣 | **2026-08-06** | 2 | (new)·F·P·**P** |
-| **Permutations (#46)** | backtracking | **1d (reset ×2)** | full | **2026-08-01** | 0 | (new)·F·P·F·**F** |
-| Subsets (#78) | backtracking | **3d** | ✍️ *(6 min)* | **2026-08-03** | 1 | (new)·F·**P** |
+| Permutations (#46) | backtracking | **3d** | ✍️ *(6 min)* | **2026-08-06** | 1 | (new)·F·P·F·F·**P** |
+| Subsets (#78) | backtracking | **3d** | ✍️ *(6 min)* | **2026-08-09** | 1 | (new)·F·**P** |
 | Word Search (#79) | backtracking (grid DFS) | **3d** | ✍️ *(6 min)* | **2026-08-03** | 1 | (new)·F·**P** |
 | Combination Sum (#39) | backtracking | **3d** | ✍️ *(6 min)* | **2026-08-03** | 1 | (new)·F·**P** |
 | Insert Interval (#57) | intervals | **3d** | ✍️ | **2026-08-03** | 1 | (new)·F·**P** |
 | Merge Intervals (#56) | intervals | **3d** | ✍️ | **2026-08-04** | 1 | (new)·**P** |
-| Non-overlapping Intervals (#435) | intervals / greedy | **3d** | ✍️ | **2026-08-04** | 1 | (new)·**P** |
+| Non-overlapping Intervals (#435) | intervals / greedy | **3d** | ✍️ | **2026-08-10** | 1 | (new)·**P** |
 | Meeting Rooms (#252) | intervals / greedy | **3d** | ✍️ | **2026-08-09** | 1 | (new)·**P** |
 | Number of Islands (#200) | graphs (implicit/grid DFS) | **3d** | ✍️ | **2026-08-03** | 1 | (new)·**P** |
-| **Clone Graph (#133)** | graphs (explicit) | **1d (reset ×3)** ⛔ | full | **2026-08-01** | 0 | (new)·F·F·**F** |
-| **Rotting Oranges (#994)** | graphs (multi-source BFS) | **1d (reset)** | full | **2026-08-01** | 0 | (new)·**F** |
-| **Course Schedule II (#210)** | **graphs (topological sort)** | **1d** | full | **2026-08-01** | 0 | (new) |
-| **Connected Components (#323)** | **graphs (undirected)** | **1d** | full | **2026-08-01** | 0 | (new) |
+| Clone Graph (#133) | graphs (explicit) | **3d** | ✍️ *(6 min)* | **2026-08-05** | 1 | (new)·F·F·F·**P** |
+| Rotting Oranges (#994) | graphs (multi-source BFS) | **3d** | ✍️ | **2026-08-04** | 1 | (new)·F·**P** |
+| Course Schedule II (#210) | graphs (topological sort) | **3d** | ✍️ *(6 min)* | **2026-08-07** | 1 | (new)·**P** |
+| Connected Components (#323) | graphs (undirected) | **3d** | ✍️ *(6 min)* | **2026-08-08** | 1 | (new)·**P** |
+| **Permutation in String (#567)** | **sliding window (fixed size)** | **1d** | full | **2026-08-03** | 0 | (new) — 🎯 **Mock #1: correct but TLE; write the O(n) version** |
 | Course Schedule (#207) | graphs (cycle detect, directed) | **3d** | ✍️ *(6 min)* | **2026-08-03** | 1 | (new)·**P** |
-| LRU Cache (#146) | design / linked-list | 3d | ✍️ | **2026-08-06** | 1 | (new)·F·P·F·**P** |
+| LRU Cache (#146) | design / linked-list | 3d | ✍️ | **2026-08-10** | 1 | (new)·F·P·F·**P** |
 | Binary Search (#704) | binary-search | **21d** | 🗣 | **2026-08-17** | 3 | P·P·**P** |
 | Search in Rotated Array (#33) | binary-search | **21d** | 🗣 | **2026-08-17** | 3 | P·P·**P** |
 | Valid Anagram (#242) | arrays-hashing | 3d | ✍️ | **2026-08-09** | 1 | P·P·P·F·F·P |
@@ -119,25 +124,25 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 | Evaluate RPN (#150) | stack | 7d | 🗣 | **2026-08-05** | 2 | P·P |
 | Level Order Traversal (#102) | trees | 3d | ✍️ | **2026-08-05** | 1 | (new)·F·F·P |
 | Same Tree (#100) | trees | 3d | ✍️ | **2026-08-06** | 1 | P |
-| Diameter of Binary Tree (#543) | trees | 3d | ✍️ | **2026-08-07** | 1 | P |
+| Diameter of Binary Tree (#543) | trees | 3d | ✍️ | **2026-08-11** | 1 | P |
 | Lowest Common Ancestor BST (#235) | binary-search-tree | 7d | 🗣 | **2026-08-05** | 2 | (new)·F·P·**P** |
 | Encode/Decode Strings (#271) | arrays-hashing | 7d | 🗣 | **2026-08-05** | 2 | P·F·F·P·**P** |
 | Invert Binary Tree (#226) | trees | 7d | 🗣 | **2026-08-05** | 2 | P·F·P·**P** |
-| Kth Largest in Stream (#703) | heap | 3d | ✍️ | **2026-08-07** | 1 | (new)·P |
-| K Closest Points (#973) | heap | 3d | ✍️ | **2026-08-09** | 1 | (new)·**P** |
+| Kth Largest in Stream (#703) | heap | 3d | ✍️ | **2026-08-11** | 1 | (new)·P |
+| K Closest Points (#973) | heap | 3d | ✍️ | **2026-08-11** | 1 | (new)·**P** |
 | Kth Largest in Array (#215) | heap | 3d | ✍️ | **2026-08-04** | 1 | (new)·**P** |
 | Validate BST (#98) | binary-search-tree | 7d | 🗣 | **2026-08-06** | 2 | (new)·P·**P** |
 | Find Min in Rotated Sorted Array (#153) | binary-search | 7d | 🗣 | **2026-08-03** | 2 | F·P·F·P·P |
 | Longest Consecutive Sequence (#128) | arrays-hashing | 7d | 🗣 | **2026-08-07** | 2 | P·P |
 | Reorder List (#143) | linked-list | 3d | ✍️ | **2026-08-05** | 1 | (new)·F·P·F·**P** |
 | Remove Nth Node From End (#19) | linked-list | 3d | ✍️ | **2026-08-05** | 1 | (new)·P |
-| Linked List Cycle (#141) | linked-list | 3d | ✍️ | **2026-08-05** | 1 | P |
-| Kth Smallest in BST (#230) | binary-search-tree | 3d | ✍️ | **2026-08-05** | 1 | (new)·P |
+| Linked List Cycle (#141) | linked-list | 3d | ✍️ | **2026-08-10** | 1 | P |
+| Kth Smallest in BST (#230) | binary-search-tree | 3d | ✍️ | **2026-08-10** | 1 | (new)·P |
 | Daily Temperatures (#739) | stack | 7d | 🗣 | **2026-08-03** | 2 | P·F·P·P |
 | Best Time to Buy/Sell (#121) | sliding-window | 21d | 🗣 | **2026-08-03** | 3 | P·P·P |
 | Balanced Binary Tree (#110) | trees | 3d | ✍️ | **2026-08-06** | 1 | (new)·F·**P** |
 | Add & Search Words (#211) | tries | 3d | ✍️ | **2026-08-06** | 1 | (new)·F·F·**P** |
-| Implement Trie (#208) | tries | 3d | ✍️ | **2026-08-06** | 1 | (new)·F·P |
+| Implement Trie (#208) | tries | 3d | ✍️ | **2026-08-11** | 1 | (new)·F·P |
 | Reverse Linked List (#206) | linked-list | 7d | 🗣 | **2026-08-04** | 2 | P·P |
 | Merge Two Sorted Lists (#21) | linked-list | 7d | 🗣 | **2026-08-04** | 2 | P·P |
 | Maximum Depth of Binary Tree (#104) | trees | 7d | 🗣 | **2026-08-04** | 2 | P·P |
@@ -165,6 +170,12 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 **Day 28 (Jul 22):** #271/#226/#98→7d; #143/#199/#146 reset; #78/#39 new.
 **Day 29 (Jul 23):** **5/8** — #110/#973/#215/#143/#146 **PASS→3d**; #211/#1046/#199 **reset** (fresh facets: #211 constructor/keys/return, #1046 return-negation *again*, #199 enqueue direction); new **#90/#46 backtracking→1d**. **Named checks HELD.** **B-7 held → 1 clean session.**
 **Day 30 (Jul 25 — interleave day) — DONE.** 3/6 interleave: **#211/#1046/#199 PASS→3d** (every older named cause held — #1046 un-negate FINALLY, #211's 3 Day-29 facets, #199 enqueue direction); **#78/#90/#46 reset→1d** (all backtracking — the youngest pattern). **Plus #79 Word Search** ✅ (grid DFS, built cold, 2 M-027 nudges) — carried over from Day 29. ✅ **Throughput fine:** interleave days are built to carry 0–1 new, so 1 new + a full interleave block is *above* baseline. *(An earlier note in this file called it a sub-floor miss — that was wrong and is retracted.)*
+
+**Day 36 (Sat Aug 1) — DONE. 🟢 Block 1 5/5 in 52:53 + 🎯 MOCK #1.**
+**🎯 Mock #1 (#567 Permutation in String): 19:38 — fifteen minutes UNDER the 35-min cap, correct code, pattern named in the first sentence.** Self-scored 4.5/2.5/1.5/3 against my 4/2.5/2/3 — **calibrated: least confident exactly where he was wrong.** 🔴 But it would **TLE** (`O(n² log n)`, measured 5.67 s at the constraint ceiling) and **he identified the optimal approach and rejected it as "more complicated"** (M-040). `#567` enters at 1d to be rewritten properly.
+**Block 1: #133 ✅ 6:49 · #46 ✅ 6:48 · #994 ✅ 17:40 · #210 ✅ 11:40 · #323 ✅ 9:56 — all → 3d.** Three resets, two first retrievals, all passed.
+🔑 **Yesterday these same five went 2/5, with three correct algorithms that never executed. Today 5/5. The understanding didn't change — he ran the code before sending it.** #133's first draft contained the IDENTICAL Day-35 bug; he ran it, caught it, fixed it, told me.
+🟢 **The scheduling call was his** — he spotted that pushing 2 items onto a 3-new DP Monday would stack, took a real break, and finished in a defined 12 minutes. **✅ B-9 CLEARED. ⛔ B-10 opened (price the loop body, M-006 ×3).**
 
 **Day 35 (Fri Jul 31) — DONE. Block 1 2/5 in 26:12, 2 new (#210, #323).**
 **#74 ✅ 4:26 → 3d** (the loop condition that reset it yesterday, held first-draft). **#207 ✅ 5:38 → 3d** (**`if not dfs(child): return False` first-draft — B-9's exact failure from yesterday, caught cold**).
@@ -194,12 +205,17 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 **Block 3: NEW PATTERN — Intervals. #57 Insert Interval ✅ (one self-found bug), #56 Merge Intervals ✅ 26:24.** Derived `overlap = (b >= c) and (d >= a)` by counting the *failure* cases instead of the success cases. Learned the `answer[-1]`-is-the-growing-interval representation. **Space error worth banking: stated `O(1)` for #56 — a sort costs `O(n)` auxiliary, not just `O(n log n)` time.**
 **New watches (both behavioural, both first observed today):** **M-029** vocabulary looseness (called a `while` loop an "if" three times — code right, language wrong) · **M-030** confirm-seeking instead of self-testing (4×). Same root: outsourcing verification.
 
-**Day 36 order (Sat Aug 1) — 🎯 MOCK #1 FIRST, then Block 1.**
-**The mock replaces Block 2 and runs first, while he's fresh.** Unseen medium from an already-learned pattern · **35-minute hard cap** · **the coach says NOTHING until the timer stops** · he narrates as he goes · then self-scores communication / problem-solving / technical correctness / testing. **Tell him in advance: over 35 minutes is the expected result and is information, not failure.**
-Then Block 1, **30-min box, five FULL solves and nothing else**: **#133 · #46 · #994** (resets) → **#210 · #323** (1d).
-**⛔ B-5 drill on #133 — name the clone.** `clone = Node(node.val, [])` … `for neighbor in node.neighbors: clone.neighbors.append(dfs(neighbor))`.
-**⛔ B-9 sentence before every recursive function.** **⛔ Run every solve before sending** — three of Day 35's five failures die to a single execution.
+**Day 37 order (Mon Aug 3) — 1-D DP, FIRST CONTACT ⇒ Block 2 FIRST and generously budgeted.**
+Block 2: **#70 Climbing Stairs · #746 Min Cost Climbing Stairs · #198 House Robber** — an entirely new pattern AND three new problems, the heaviest teaching day of the sprint. Expect it to run long; that is the accepted trade (rule 17).
+Block 1, **~27 min, 8 items**: full **#567** *(the `O(n)` rolling-count version — the mock's TLE fix)* → ✍️ **#200 · #79 · #39 · #57** → 🗣 **#739 · #121 · #153**.
+**⛔ B-10 — price the loop body.** Before stating any complexity: *"one pass of this loop costs ___."* Sorting inside a loop is never free; anything not depending on the loop variable belongs outside it.
+**⛔ B-5 — on #133 use the name `clone`.** One more clean pass closes it.
+**⛔ M-040 — when a better approach occurs to you, SAY IT AND WRITE IT.** "More complicated" is not a reason to skip it.
+**⛔ Run everything before sending.** Measured: it is the difference between 2/5 and 5/5 on the same five problems.
 
+> **✅ B-9 (the recursive return channel) CLEARED Day 36** — two clean sessions; the return was caught correctly on all five solves.
+> **⛔ B-10 OPENED Day 36 — price the loop body.** M-006 ×3 (Group Anagrams D3, Longest Substring D8, Mock #1). The mock solution TLEs at 5.67 s; hoisting one loop-invariant line halves it.
+> **🟡 B-5 — 1 clean session Day 36** (#133 passed). Needs one more; he still wrote `graph[node].neighbors` rather than using the name `clone`.
 > **⛔ B-5 (container vs contents) REOPENED Day 35 as a drill-now blocker.** M-036 ×3 — #133 has failed three sessions running on *which `neighbors` list*, and on Day 35 he had his notes open and still mis-picked. **The fix is mechanical: name the clone.**
 > **👁 B-2 (`range(len(x))`) reopened Day 35** — `range(grid)` on #994, first slip since Day 18.
 > **✅ B-9 HELD Day 35** on #207 (1 clean session — clears after 1 more).

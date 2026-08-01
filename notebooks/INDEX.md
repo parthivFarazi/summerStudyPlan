@@ -41,5 +41,6 @@ A verbatim copy of each day's practice notebook: your raw answers (bugs and all)
 | [Day 33](Day33-Practice-Notebook.md) | Jul 28 | **NEW PATTERN: Graphs** — Number of Islands #200, Clone Graph #133 · `O(V + E)` animated · **Block 1 5/5 in 26:55** |
 | [Day 34](Day34-Practice-Notebook.md) | Jul 29 | **Graphs cont.** — Rotting Oranges #994 (multi-source BFS), Course Schedule #207 (cycle detection, two marks) · Block 1 3/6 · **B-9 opened** |
 | [Day 35](Day35-Practice-Notebook.md) | Jul 31 | **Graphs cont.** — Course Schedule II #210 (topological sort), Connected Components #323 · Block 1 2/5 · **B-5 reopened** |
+| [Day 36](Day36-Practice-Notebook.md) | Aug 1 | 🎯 **MOCK #1** — Permutation in String #567, 19:38 unaided (correct, TLE) · **Block 1 5/5** · B-9 cleared, B-10 opened |
 
 *New day → save `DayN-Practice-Notebook.md` here and add a row.*

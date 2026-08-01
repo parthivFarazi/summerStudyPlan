@@ -4,6 +4,33 @@
 
 ## Active blockers
 
+### ⛔ B-10 · M-006 — price the loop body  *(ESCALATED Day 36, from 🎯 Mock #1)*
+**Third occurrence, and the first one with a measured cost.**
+
+```python
+while right <= len(s2):
+    key1 = "".join(sorted(s1))            # loop-INVARIANT, recomputed every pass
+    key2 = "".join(sorted(s2[left:right]))
+    ...
+```
+
+Stated `O(n log n)`. Actually **`O((n − m)·m log m)`** — worst case `O(n² log n)`. Measured at the constraint ceiling (`len ≤ 10⁴`):
+
+| version | time |
+|---|---|
+| as submitted | **5.67 s** ⛔ TLE |
+| `key1` hoisted out of the loop | **2.80 s** ⛔ still TLE |
+| `O(n)` rolling frequency count | **0.001 s** ✅ |
+
+**History:** Group Anagrams called `O(n)` with a hidden `sorted()` (Day 3, Day 8). Same disease, identical cause, three difficulty tiers apart.
+
+**🔧 THE DRILL — two habits, both said out loud:**
+1. **Before stating any complexity:** *"one pass of this loop costs ___."* Multiply by the number of passes. **An `O(m log m)` operation inside an `O(n)` loop is `O(n·m log m)`.**
+2. **Before writing a line inside a loop, ask: does this depend on the loop variable?** If not, it belongs outside. Hoisting `key1` alone halved the runtime for free.
+
+**Cleared when:** two consecutive sessions in which every stated complexity correctly accounts for in-loop costs, and no loop-invariant computation appears inside a loop.
+
+
 ### ⛔ B-5 · M-036 — container vs contents, REOPENED  *(Day 35 — three identical failures)*
 **`#133 Clone Graph` has now failed three sessions running, and every failure is the same question: *which `neighbors` list?***
 
@@ -31,7 +58,10 @@ for neighbor in node.neighbors:                 # the ORIGINAL's list
 **Cleared when:** `#133` passes twice consecutively, and no further container-vs-contents slip appears.
 
 
-### ⛔ B-9 · M-001 — the recursive return channel  *(ESCALATED Day 34 — the priority blocker)*
+### ✅ B-9 · M-001 — the recursive return channel — **CLEARED Day 36**
+> **Two clean sessions.** Day 35: `#207` passed first-draft on exactly the line that reset it the day before. Day 36: the return was caught correctly on **all five** solves — `#210`'s `if not dfs(child): return False`, `#133`'s `clone.neighbors.append(dfs(neighbor))`, and `#323`'s deliberately-returns-nothing `dfs`. **The drill worked.** *"The callee hands me back ___, and I catch it at ___"* stays a standing habit; re-escalate on recurrence.
+
+### ~~⛔ B-9 · M-001 — the recursive return channel~~  *(escalated Day 34, CLEARED Day 36 — kept for the record)*
 **Twice in one session, two hours apart, on two different problems:**
 
 ```python
@@ -73,7 +103,7 @@ If the answer is *"nothing"*, that had better be deliberate — a `dfs` that onl
 
 > **⚠️ Days 22–24 — the honest read.** All the blockers are **one disease: first-draft precision on problems he has ALREADY solved correctly in his head.** The drill = **questions said OUT LOUD before any submit.** And it WORKS: **Day 24 cleared B-4 AND B-5.** Two facets clear; the disease persists in new facets (B-7 emerged same day).
 >
-> **⛔ Day 35: B-5 REOPENED (container vs contents) — #133 failed three sessions running. B-9 HELD on #207 (1 clean). B-2 reopened as a watch (`range(grid)`). B-8 quiet.** *(Day 30: B-7 cleared on its 2nd clean session.)* The disease's remaining residue is **M-027: one site missed on the final pass** (a transform/rename/paired-op/name/guard/`self.` that lands on all-but-one site) — now on *watch*, not drill-now, and its one twice-identical *repeat* (#1046 un-negate) closed Day 30. Day 30's resets all landed on the **newest pattern (backtracking)**, not on any named old facet — the fragility has migrated to fresh material, which is exactly the goal.
+> **⛔ Day 36: B-10 OPENED (price the loop body — M-006 ×3, first measured cost: a TLE in Mock #1). ✅ B-9 CLEARED (2 clean sessions). 🟡 B-5 at 1 clean session — #133 finally passed on the fourth attempt. B-8: a self-caught `.children` slip on #133's first draft.** *(Day 30: B-7 cleared on its 2nd clean session.)* The disease's remaining residue is **M-027: one site missed on the final pass** (a transform/rename/paired-op/name/guard/`self.` that lands on all-but-one site) — now on *watch*, not drill-now, and its one twice-identical *repeat* (#1046 un-negate) closed Day 30. Day 30's resets all landed on the **newest pattern (backtracking)**, not on any named old facet — the fragility has migrated to fresh material, which is exactly the goal.
 >
 > **⚠️ THE ONE SCAN (Days 22–28).** Every recurring impl slip is **one disease: first-draft completeness.** **Before every submit, walk the operation top to bottom AND do a final read-through of every site:**
 > 1. **Guard present?** — empty? None? lengths? (B-4 — reopened Day 26, fired Day 28 #199 dropped root guard)

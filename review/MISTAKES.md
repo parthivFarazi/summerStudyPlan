@@ -14,7 +14,7 @@
 | M-003 | 2026-06-19 | impl | `range(x)` / `len(range(x))` instead of `range(len(x))` when looping indexes | Scrambling the `range(len(x))` index-loop idiom | 3 | Day 1, Day 4, Day 16 | dormant (B-2 cleared Day 18) |
 | M-004 | 2026-06-19 | impl | Wrong variable/container — `nums.add`/`seen.add`, `s`/`clean`, `strs`/`s` (#125), `nums`/`numbers` (#167), `appened`/`append` (#238), `self.stack`/`self.minStack` (#155) | Variable-name imprecision — losing track of which name holds what | 5 | Day 1, Day 9, Day 11, Day 12, Day 14 | dormant (B-1 cleared Day 16) |
 | M-005 | 2026-06-24 | strategy | Called O(1)/O(h) for something O(n) — #125, #150, #15; #230 (Day 25). **Day 28: #199 called BFS space O(1) — the deque holds a whole level → O(n) (had it right on #102 the day before)** | A structure that scales with input = **O(n) space**. **BFS space = widest level = O(n)**; a bounded map (≤26) or the output does NOT count | 4 | Day 5, Day 17, Day 25, **Day 28** | active (self-corrects on nudge; watchlist) |
-| M-006 | 2026-06-20 | strategy | Called Group Anagrams O(n) — missed the hidden `sorted()` | Not counting the cost of operations *inside* the loop | 2 | Day 3, Day 8 | active |
+| M-006 | 2026-06-20 | strategy | **Not counting the cost of operations inside the loop.** Group Anagrams called `O(n)` — missed the hidden `sorted()` (D3, D8). **🎯 Mock #1 (D36): `key1 = "".join(sorted(s1))` INSIDE the loop, plus a `sorted()` per window — stated `O(n log n)` for what is `O((n−m)·m log m)`. Measured 5.67 s at the constraint ceiling ⇒ TLE; hoisting the one loop-invariant line halves it to 2.80 s; the `O(n)` version is 0.001 s** | **Price the body of every loop before stating a complexity.** Two habits: (1) anything not depending on the loop variable belongs **outside** the loop; (2) an `O(m log m)` operation inside an `O(n)` loop is `O(n·m log m)`, not `O(n log n)` | **3** | Day 3, 8, **36** | **⛔ ESCALATED → B-10 (Day 36)** |
 | M-007 | 2026-06-26 | strategy | Over-engineered sliding window (4 vars + time guards, buggy) | Not reducing to the **minimum necessary state** | 1 | Day 7 | active |
 | M-008 | 2026-06-26 | strategy | Jumped to code; used `i`/`j`; skipped naming the approach | Coding before verbalizing the pattern | 1 | Day 6 | active |
 | M-009 | 2026-06-28 | strategy | Imported `k log k` from Group Anagrams into Longest Substring (Day 8); **imported #21 Merge's VALUE comparison (`if curr1.val <= curr2.val`) into #143 Reorder, which forbids touching values (Day 23)** | Carrying a template's BODY across problems without re-deriving. Pattern recognition gives the skeleton, not the body — ask "what decides the next step IN THIS problem?" The spec tell: "may not modify values" ⇒ a value comparison is a red flag | 2 | Day 8, **Day 23** | active (watchlist) |
@@ -48,6 +48,7 @@
 | M-037 | 2026-07-29 | impl | **Compared a container to a number.** #46: `if combo == len(nums)` — a list against an int, always `False`, so the base case never fired and `res` returned `[]` on every input. Should be `len(combo) == len(nums)` | **B-5, container vs contents.** Reaching for the box instead of the box's size. Kin to M-021 and to *"the mid value… that is the index"* | 1 | Day 34 | **active — B-5 fired** |
 | M-038 | 2026-07-29 | impl | **Mixed the two binary-search templates.** #74: `while left < right` (converging exit) with `right = mid - 1` (exact-match shrink) → the final single cell is never examined. **4 of 6 cases wrong**, incl. `[[1]]` target `1`. Also stated `O(log n)` where it is `O(log(m·n))` | **Does the `right` assignment discard `mid`?** `mid - 1` ⇒ `while left <= right`. `right = mid` ⇒ `while left < right`, return `left`. Full table now in `binary-search.md`. Kin to M-014/M-015 | 1 | Day 34 | **active — new** |
 | M-039 | 2026-07-31 | impl | **A function defined and never invoked.** #46: `backtrack` fully written, then `return res` — the recursion never started, so `[]` on every input. Add one `backtrack()` line and every permutation is correct | **A nested helper needs a launch line.** Kin to M-026 (dropped terminal line) — the operation isn't done when the definition ends. **Catches instantly on the first example** | 1 | Day 35 | **active — new** |
+| M-040 | 2026-08-01 | strategy | **Identified the optimal approach and rejected it for being harder to write.** 🎯 Mock #1: *"if I were to take a more optimal route, I would have had to complicate it more by using a dictionary like the valid anagram question"* — that dictionary IS the `O(n)` answer, and the submitted version TLEs | **"I know a better approach but it's fiddlier" is not a reason to skip it — it IS the answer.** The interviewer's next words are *"can you do better?"* and you write it anyway, under time pressure. **Script it: "Sorting each window is O(m log m); a frequency map makes it O(26). Let me do that."** | 1 | Day 36 | **active — new** |
 | M-003 | *(reopened)* | impl | **`range(x)` where `range(len(x))` belongs.** Day 35: `for r in range(grid)` on #994 → `TypeError: 'list' object cannot be interpreted as an integer`. **He wrote `len(grid)` correctly four lines later in the same function** | The index-loop idiom. **Cleared as B-2 on Day 18 and clean for 17 sessions** — treat as a watch, not a re-escalation, unless it recurs | 4 | Day 1, 4, 16, **35** | **👁 B-2 reopened as a watch** |
 
 ## Recurrence Watchlist (count ≥ 2 — one rep from escalating)
@@ -65,6 +66,8 @@
 | **M-034** | process | **Checking what the ANSWER is instead of what the CODE does** — Day 34: simulated the correct rotting process instead of tracing his own DFS, then asserted an untraced output (*"it does give 3"*; it gives 4) | **2** *(HELD Day 33; **fired twice Day 34**)* |
 | **M-033** | impl | **Prune/guard written backwards** (right operands, wrong order) | **1** *(Day 32; **HELD Day 33** — #39's prune correct first-draft)* |
 | **M-036 → B-5** | impl | **The wrong object's `neighbors` list** — #133, three sessions running, notes open on the third | **3** ⛔ **→ B-5 REOPENED** |
+| **M-006 → B-10** | strategy | **Not pricing the loop body** — a `sorted()` inside a loop, and a loop-invariant recomputed every pass | **3** ⛔ **→ B-10** |
+| **M-040** | strategy | **Named the optimal approach, then skipped it as "more complicated"** | **1** *(new Day 36)* |
 | **M-039** | impl | **A function defined and never invoked** (#46) | **1** *(new Day 35)* |
 | **M-003** | impl | **`range(x)` for `range(len(x))`** — #994 | **4** *(👁 B-2 reopened; clean Days 18–34)* |
 | **M-037** | impl | **Container compared to a number** (`combo == len(nums)`) — B-5 | **1** *(new Day 34)* |
@@ -187,3 +190,37 @@ Three sessions, three wrong answers to one question: *which `neighbors` list?* O
 **Block 2 went 17:21 and 31:14 — 48 minutes for two new problems, against 116 the day before.** He derived post-order-then-reverse himself, transferred `#323` from `#200` himself, and made two judgment calls unprompted: **he did not bring `path` over** to an undirected problem, and **he wrote a `dfs` that returns nothing** — correctly, because the counting happens outside it. With B-9 live that second one matters: **the drill is *know what the callee hands back*, not *always catch a return*.**
 
 **And he self-reported a notes peek for the second time**, on a problem where nobody would have known. That is the M-030 muscle working.
+
+
+---
+
+## Day 36 addendum — the delta was twenty seconds, and it is now measured
+
+| | Day 35 | Day 36 |
+|---|---|---|
+| #133 | ❌ wrong object's list | ✅ **same bug in the first draft — caught by running** |
+| #46 | ❌ `backtrack()` never called | ✅ |
+| #994 | ❌ `range(grid)` → TypeError | ✅ |
+| #210 | — | ✅ |
+| #323 | — | ✅ 31:14 → **9:56, no prompt** |
+
+**The same five problems, one day apart: 2/5 → 5/5.** Nothing about his understanding changed overnight. **He ran the code before sending it.**
+
+`#133` is the cleanest evidence: its first draft contained the *identical* Day-35 bug (`for neighbor in clone.neighbors`) plus `.children` for `.neighbors`. **He ran it, both surfaced, he fixed them and reported them.** Two sessions ago that arrives here broken and costs a reset. **This retires the "correct algorithms that never executed" finding from Days 34–35 — one clean session; keep watching.**
+
+### 🎯 Mock #1 — what a first unaided data point actually showed
+
+**19:38 against a 35-minute cap, correct, pattern named in the first sentence.** Every prior new problem took 44–72 minutes *with* coaching. The gate `GOALS.md` calls *"name the pattern within 2–3 minutes"* is met.
+
+**His self-scores tracked mine within half a point on every dimension**, and — the part worth keeping — **he was least confident exactly where he was wrong** (complexity, 1.5) and most confident exactly where he was right (communication, 4.5). Four days after asserting *"it does give 3"* about an untraced output, that is a real change.
+
+**Two things the mock caught that nothing else would have:**
+
+1. **M-006 → B-10.** The solution TLEs. He priced the loop as `O(n log n)` when it is `O(n² log n)`, and left a loop-invariant `sorted()` inside the loop. **Only a timed, unaided attempt against real constraints surfaces this** — in a coached session I'd have flagged the sort before he finished writing it.
+2. **M-040.** He knew the frequency-map approach and **chose not to write it because it was harder.** A strategic habit, invisible in reviews (where the approach is already fixed), and exactly what an interviewer probes with *"can you do better?"*
+
+### 🟢 And the judgment call was his
+
+At the 30-minute mark with two items left, he asked to break and finish rather than defer — **because he did the arithmetic on Monday himself** (3 new DP problems + 2 extra full solves = 10 items, 39.5 min, 30% over). He took a real break and came back to a defined twelve minutes.
+
+> **That is the behaviour the hard box was designed to produce**: not obedience to a timer, but noticing when deferral costs more than finishing. He got there without being told.
