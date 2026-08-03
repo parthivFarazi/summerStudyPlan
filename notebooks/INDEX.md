@@ -42,5 +42,6 @@ A verbatim copy of each day's practice notebook: your raw answers (bugs and all)
 | [Day 34](Day34-Practice-Notebook.md) | Jul 29 | **Graphs cont.** — Rotting Oranges #994 (multi-source BFS), Course Schedule #207 (cycle detection, two marks) · Block 1 3/6 · **B-9 opened** |
 | [Day 35](Day35-Practice-Notebook.md) | Jul 31 | **Graphs cont.** — Course Schedule II #210 (topological sort), Connected Components #323 · Block 1 2/5 · **B-5 reopened** |
 | [Day 36](Day36-Practice-Notebook.md) | Aug 1 | 🎯 **MOCK #1** — Permutation in String #567, 19:38 unaided (correct, TLE) · **Block 1 5/5** · B-9 cleared, B-10 opened |
+| [Day 37](Day37-Practice-Notebook.md) | Aug 3 | **FIRST CONTACT: 1-D DP** — Climbing Stairs #70, Min Cost #746, House Robber #198 · memo vs tabulation animated · #567 TLE fixed (5.67s → 0.0022s) |
 
 *New day → save `DayN-Practice-Notebook.md` here and add a row.*

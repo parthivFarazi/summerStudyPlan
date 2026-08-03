@@ -49,6 +49,8 @@
 | M-038 | 2026-07-29 | impl | **Mixed the two binary-search templates.** #74: `while left < right` (converging exit) with `right = mid - 1` (exact-match shrink) → the final single cell is never examined. **4 of 6 cases wrong**, incl. `[[1]]` target `1`. Also stated `O(log n)` where it is `O(log(m·n))` | **Does the `right` assignment discard `mid`?** `mid - 1` ⇒ `while left <= right`. `right = mid` ⇒ `while left < right`, return `left`. Full table now in `binary-search.md`. Kin to M-014/M-015 | 1 | Day 34 | **active — new** |
 | M-039 | 2026-07-31 | impl | **A function defined and never invoked.** #46: `backtrack` fully written, then `return res` — the recursion never started, so `[]` on every input. Add one `backtrack()` line and every permutation is correct | **A nested helper needs a launch line.** Kin to M-026 (dropped terminal line) — the operation isn't done when the definition ends. **Catches instantly on the first example** | 1 | Day 35 | **active — new** |
 | M-040 | 2026-08-01 | strategy | **Identified the optimal approach and rejected it for being harder to write.** 🎯 Mock #1: *"if I were to take a more optimal route, I would have had to complicate it more by using a dictionary like the valid anagram question"* — that dictionary IS the `O(n)` answer, and the submitted version TLEs | **"I know a better approach but it's fiddlier" is not a reason to skip it — it IS the answer.** The interviewer's next words are *"can you do better?"* and you write it anyway, under time pressure. **Script it: "Sorting each window is O(m log m); a frequency map makes it O(26). Let me do that."** | 1 | Day 36 | **active — new** |
+| M-041 | 2026-08-03 | process | **Proposed a fix before completing the diagnosis.** #567: asked twice for the three-line arithmetic that shows why `count == 0` is the wrong test; both times he answered with a patch instead (*"what is the way around it then?"*). The first proposed patch would not have worked | **The diagnosis IS the fix.** Once you see `{'a': -1, 'b': +1}` summing to 0, the correct test is obvious. Patching without it produces a plausible change that doesn't address the cause. Kin to M-034 | 1 | Day 37 | **active — new** |
+| M-042 | 2026-08-03 | strategy | **Priced a doubly-recursive function as `O(n)`.** #70: *"it computes n, then n−1, then n−2… so closer to O(n)"* — that describes a **chain**; each call makes TWO calls, so it is a branching tree. Measured: n=40 ⇒ **204,668,309 calls** | **A recursion that calls itself twice is `O(2ⁿ)` unless something stops the repetition.** B-10's other face: he priced one call, not the number of calls | 1 | Day 37 | **active — B-10 family** |
 | M-003 | *(reopened)* | impl | **`range(x)` where `range(len(x))` belongs.** Day 35: `for r in range(grid)` on #994 → `TypeError: 'list' object cannot be interpreted as an integer`. **He wrote `len(grid)` correctly four lines later in the same function** | The index-loop idiom. **Cleared as B-2 on Day 18 and clean for 17 sessions** — treat as a watch, not a re-escalation, unless it recurs | 4 | Day 1, 4, 16, **35** | **👁 B-2 reopened as a watch** |
 
 ## Recurrence Watchlist (count ≥ 2 — one rep from escalating)
@@ -67,6 +69,8 @@
 | **M-033** | impl | **Prune/guard written backwards** (right operands, wrong order) | **1** *(Day 32; **HELD Day 33** — #39's prune correct first-draft)* |
 | **M-036 → B-5** | impl | **The wrong object's `neighbors` list** — #133, three sessions running, notes open on the third | **3** ⛔ **→ B-5 REOPENED** |
 | **M-006 → B-10** | strategy | **Not pricing the loop body** — a `sorted()` inside a loop, and a loop-invariant recomputed every pass | **3** ⛔ **→ B-10** |
+| **M-041** | process | **Fix proposed before the diagnosis was finished** | **1** *(new Day 37)* |
+| **M-042** | strategy | **A doubly-recursive function priced as linear** (B-10 family) | **1** *(new Day 37)* |
 | **M-040** | strategy | **Named the optimal approach, then skipped it as "more complicated"** | **1** *(new Day 36)* |
 | **M-039** | impl | **A function defined and never invoked** (#46) | **1** *(new Day 35)* |
 | **M-003** | impl | **`range(x)` for `range(len(x))`** — #994 | **4** *(👁 B-2 reopened; clean Days 18–34)* |
@@ -224,3 +228,36 @@ Three sessions, three wrong answers to one question: *which `neighbors` list?* O
 At the 30-minute mark with two items left, he asked to break and finish rather than defer — **because he did the arithmetic on Monday himself** (3 new DP problems + 2 extra full solves = 10 items, 39.5 min, 30% over). He took a real break and came back to a defined twelve minutes.
 
 > **That is the behaviour the hard box was designed to produce**: not obedience to a timer, but noticing when deferral costs more than finishing. He got there without being told.
+
+
+---
+
+## Day 37 addendum — a four-hour acquisition day, and what it cost
+
+**The session bought 1-D DP, and the price was that Block 1 reached 2 of 8 items.** That is the correct trade for a foundational pattern, but it needs saying plainly: **a 3-new-problem first-contact day cannot also deliver a full review block.**
+
+### 🟢 What he produced unaided
+
+- **The `#70` recurrence**, by counting `n=1..4` and splitting the `n=4` sequences by their **last move**. Fibonacci built from the problem, not recognised.
+- **Memoization, named before I said the word**: *"if it has been computed, store it somewhere and retrieve it — so use a dictionary."*
+- **The even/odd idea for `#198`, killed by his own test case** `[2,1,1,2]`.
+- **The `O(1)` collapse on `#198`**, applied without prompting once he'd seen it was general.
+
+### The two misconceptions that were actually blocking him
+
+1. **"The recurrence is recursion."** He asked *"how will I incorporate the recursion within the optimal version?"* — **`dp[i] = dp[i-1] + dp[i-2]` is a formula.** Recursion evaluates it one way, a loop another. **You cannot tabulate without it**, so the recursive thinking happens regardless. Once this landed, `#746` and `#198` went quickly.
+2. **"`a, b = b, a + b` is Fibonacci arithmetic."** It isn't — **the collapse works with any recurrence reaching back a fixed number of steps**; the `+` is incidental and can be `min` or `max`. This was the specific thing stopping him seeing how `#70` transferred to `#746`.
+
+> **Both were about the *shape* of the tool, not the tool.** Worth remembering for 2-D DP: **budget time for "what kind of thing is this", not just "how does it work".**
+
+### 🔴 The twenty seconds, again, and at four hours deep
+
+`[5]` crashed `#198` — **on a test case I named in the instruction before he wrote the code.** `#200`'s one-draft had `==` for `=` and a bounds check off by one in both directions, **both of which he had written correctly an hour earlier on `#994`.**
+
+**Neither is knowledge. Both are the twenty seconds after finishing.** And both landed at the tail of the longest session of the sprint — **which is an argument for the box, not against it.**
+
+### 🔴 M-035 fired twice, and both were mine
+
+Hand-written expected values in the `#746` and `#567` test lists — `[10,1,1,1,10] → 3` and `"abc" in "bbbca" → False`. **Both wrong; his code was right both times.** Caught only because I also ran against reference implementations.
+
+> **A hand-written expected value is a guess wearing a test's clothing.** Reference implementation or brute force, every time.

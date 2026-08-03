@@ -4,80 +4,81 @@
 > "Current Status" is regenerated each update. Readable in under 2 minutes.
 
 ## Current Status
-- **Last updated:** 2026-08-01 (Day 36 logged) · **🎯 Mock #1: 19:38 unaided · Block 1 5/5 · B-9 cleared**
-- **Phase:** Summer Sprint · Block B — *The best session of the sprint. **Mock #1 came in at 19:38 against a 35-minute cap**, correct, with the pattern named in the first sentence. **Block 1 went 5/5** on the same five problems that went 2/5 yesterday — **the understanding didn't change overnight; he ran the code before sending it.** Graphs 3/5 with all six problems now passing. **1-D DP starts Monday.** Aug 9 and Aug 16 are working days.*
-- **Sessions logged:** 36 · **Patterns learned:** 14 · **Mistakes tracked:** 40 · **Open blockers:** 3 (**B-10 price the loop body — new**, B-5 container/contents — 1 clean, B-8 naming) · **✅ B-9 cleared**
-- **Review queue:** **Day 37 (Mon Aug 3) — 8 items, ~27 min:** full **#567** (write the `O(n)` version) · ✍️ **#200 · #79 · #39 · #57** · 🗣 **#739 · #121 · #153**. Drain re-spread through **Aug 11**; every day Aug 3 – Aug 11 sits at 22–28 min.
+- **Last updated:** 2026-08-03 (Day 37 logged) · **1-D DP acquired · #567 TLE fixed · B-10 no progress**
+- **Phase:** Summer Sprint · Block C — ***1-D DP acquired** in a ~4-hour first-contact session — #70, #746, #198, every recurrence derived unaided. **The Mock #1 TLE is dead: 5.67 s → 0.0022 s.** But Block 1 reached only **2 of 8** items, and **at 3 new/day the review load is now the binding constraint**. B-10 made no progress — three prompts for a complexity, zero volunteered. Aug 9 and Aug 16 are working days.*
+- **Sessions logged:** 37 · **Patterns learned:** 15 · **Mistakes tracked:** 42 · **Open blockers:** 3 (**B-10 price the loop body — no progress**, B-5 container/contents, B-8 naming) · ✅ B-9 cleared Day 36
+- **Review queue:** **Day 38 (Tue Aug 4) — 7 items, ~25 min:** full **#70 · #746 · #198** (1d) · **#200** (reset) · 🗣 **#739 · #121 · #153**. Six unreached Day-37 items all landed on real dates; **drain extends to Aug 12**, every day Aug 4 – Aug 12 at 25–30 min.
 
-## 🎯 Mock #1 — the first unaided data point in 36 sessions
+## 🟢 1-D DP acquired — and the four hours were the right call
 
-| | date | problem | time | outcome |
-|---|---|---|---|---|
-| **Mock #1** | Sat Aug 1 | **#567 Permutation in String** | **19:38** ✅ *(cap 35)* | **correct, but would TLE** |
+**#70 · #746 · #198 — one skeleton, three combining operators** (*how many* ⇒ `+`, *cheapest* ⇒ `min`, *most* ⇒ `max`). He didn't spend four hours solving Climbing Stairs; he spent them acquiring the pattern.
 
-**I told him to expect over 35 minutes. He came in fifteen under, with correct code, unaided, on an unseen problem** — against 44–72 minutes for every previous new problem *with* coaching. **And he named the pattern in his first sentence**, so the `GOALS.md` recognition gate is met.
+**What he produced unaided:** the `#70` recurrence, by splitting the `n=4` sequences on their **last move** · **memoization, named before I said the word** (*"if it has been computed, store it somewhere and retrieve it — so use a dictionary"*) · **his own even/odd idea for `#198`, killed by his own test case** `[2,1,1,2]` · and the `O(1)` collapse applied unprompted.
 
-| | self | coach | |
-|---|---|---|---|
-| Communication | 4.5 | **4** | stated his index convention explicitly — interview-grade |
-| Problem-solving | 2.5 | **2.5** | exactly right |
-| Technical correctness | 1.5 | **2** | he was right to be unsure |
-| Testing | 3 | **3** | tested, found a real bug, reported it |
+> **The two things actually blocking him were about the SHAPE of the tool, not the tool:**
+> **(1) "the recurrence is recursion"** — it's a **formula**. Recursion evaluates it one way, a loop another, and **you cannot tabulate without it.**
+> **(2) "`a, b = b, a + b` is Fibonacci arithmetic"** — the collapse works with **any** recurrence reaching back a fixed number of steps; the `+` is incidental.
+> **Budget time for "what kind of thing is this" on 2-D DP, not just "how does it work".**
 
-> **The calibration is the quiet result: he was least confident exactly where he was wrong and most confident exactly where he was right.** Four days after asserting *"it does give 3"* about an untraced output, that is a real change.
+Built `viz/dp-memo-vs-tabulation.html` — **twice**, because the first version showed the stack and the cache but not the **call order**, which is what he actually needed.
 
-**The two gaps it exposed — both invisible in coached reviews:**
+## 🔴 The review load is now the binding constraint
 
-1. **⛔ B-10 opened.** The solution TLEs: `O(n² log n)` where he said `O(n log n)`, with a **loop-invariant `sorted()` inside the loop**. Measured at the constraint ceiling: **5.67 s** as written · **2.80 s** with one line hoisted · **0.001 s** for the `O(n)` version. **M-006's third appearance** (Group Anagrams Day 3, Longest Substring Day 8).
-2. **M-040 — he named the optimal approach and rejected it.** *"I would have had to complicate it more by using a dictionary."* That dictionary is the answer. **"I know a better approach but it's fiddlier" is not a reason to skip it — it's what the interviewer asks for next.**
+Day 37's Block 2 carried **three** new problems ⇒ **three full solves arrive the next day** (18 min) on top of a reset. **Block 1 reached 2 of 8 items inside the 27-minute box.**
 
-## 🟢 The finding of the sprint: the delta was twenty seconds
+**That isn't a scheduling error — it's arithmetic.** Passes advance and stack, failures stay put, new problems keep arriving. Handled for now by spreading six items onto real dates and extending the drain to **Aug 12**.
 
-| | Day 35 | Day 36 |
-|---|---|---|
-| #133 | ❌ wrong object's list | ✅ **same bug in the first draft — caught by running** |
-| #46 | ❌ `backtrack()` never called | ✅ |
-| #994 | ❌ `range(grid)` → TypeError | ✅ |
-| #210 | — | ✅ |
-| #323 | — | ✅ 31:14 → **9:56, no prompt** |
+> **If Block 1 under-delivers again this week, the choice is a longer box or fewer new problems — and that's his call, not mine. Raise it after Day 39.**
 
-**The same five problems, one day apart: 2/5 → 5/5.** `#133` is the proof — its first draft contained the *identical* Day-35 bug plus a `.children`-for-`.neighbors` slip. **He ran it, both surfaced, he fixed them and reported them.** Two sessions ago that arrives broken and costs a reset.
+## 🔴 The honest read — Day 37
 
-> **This retires the "correct algorithms that never executed" finding from Days 34–35** — one clean session, keep watching.
+**🟢 `#567` — the mock's TLE is dead.** At the constraint ceiling: **5.67 s → 0.0022 s, a 2,600× speedup**, verified on 50,000 random cases across two alphabets.
 
-**And the scheduling judgment was his.** At the 30-minute mark with two items left he asked to break and finish rather than defer, **because he did Monday's arithmetic himself** (3 new DP problems + 2 full solves = 10 items, 39.5 min, 30% over). Real break, defined twelve minutes, 5/5. **That's what the hard box exists to teach — not obedience to a timer, but noticing when deferral costs more than finishing.**
+Two bugs on the way, and the second is the keeper: **`count == 0` was the wrong test.** With `s1 = "ab"` and window `"aa"` the counters are `{'a': -1, 'b': +1}` — **sum zero, so it wrongly said `True`.** 2,929 of 20,000 cases wrong.
+
+> **A sum of zero does not mean every value is zero.** A surplus in one character cancels a deficit in another. **When you need "all of these are true", don't reduce to a single number that can cancel.**
+
+**🔴 The twenty seconds, at four hours deep.** `[5]` crashed `#198` — **on a test case I named in the instruction before he wrote the code** (2,007 of 20,000 random inputs crashed, every one a single-element list). And `#200`'s one-draft had **`==` where `=` belongs**, plus a bounds check off by one in **both** directions — 448 of 512 possible 3×3 grids crash. **He wrote that same bounds check correctly on `#994` an hour earlier.**
+
+**Neither is knowledge. Both landed at the tail of the longest session of the sprint — which argues for the box, not against it.**
+
+**🔴 B-10 made no progress.** Three prompts to get both halves of a complexity, **volunteered zero times across four problems.** He also priced the naive `#70` recursion as `O(n)` when it's `O(2ⁿ)` — *"n, then n−1, then n−2"* describes a **chain**, but each call makes **two** calls. **Same disease from the other side: pricing one call rather than the number of calls.** Measured for him: **204,668,309 calls at n=40.**
+
+**🔴 M-035 fired twice — both mine.** Hand-written expected values in the `#746` and `#567` test lists, both wrong, his code right both times. **A hand-written expected value is a guess wearing a test's clothing.**
+
+**⚠️ New watch — M-041.** Twice on `#567` he proposed a patch before finishing the diagnosis. **The arithmetic *is* the fix** — once the cancellation is visible the correct test is obvious; without it you get a plausible change that misses the cause.
 
 ## The one scan (say it OUT LOUD before every submit)
-**Guard present? · Terminal line/mark written? · Did the function actually get CALLED? · What does the callee hand back, and where do I catch it? · Whose list/attribute is this — the original's or the copy's? · 🔴 What does ONE PASS of this loop cost, and is anything in it loop-invariant? · `range(len(x))` not `range(x)`? · Is there a better approach I'm skipping because it's fiddlier?**
+**Guard present? · `=` or `==`? · Bounds `0 <= i < len`? · Terminal line written? · Every branch returns? · Did the function actually get CALLED? · What does the callee hand back, and where do I catch it? · Whose attribute is this — the original's or the copy's? · 🔴 What does ONE PASS of this loop cost, and is anything in it loop-invariant? · Is there a better approach I'm skipping because it's fiddlier?**
 
 ## ⚠️ Standing schedule note
-Depth phase (Heap ✓ → Backtracking 3/5 → Intervals ✓ 3/5 → **Graphs 3/5, six problems, all passing** → **1-D DP starts Mon Aug 3**). Rest was **Aug 2**; **Aug 9 and Aug 16 are worked**. **2 new/day stays and long sessions are accepted** (`COACHING.md` rule 17); Block 2 runs first on first-contact days. Reviews run the drain through **Aug 11** under a **30-min box measured in TIME** (full ≈ 6 min · one-draft ≈ 4, **6 if recursive** · verbal ≈ 0.5).
+Depth phase complete through Graphs; **1-D DP started Mon Aug 3**, 2-D DP and Greedy follow. **Aug 9 and Aug 16 are worked.** **2 new/day minimum stays and long sessions are accepted** (`COACHING.md` rule 17); Block 2 runs first on first-contact days. Reviews run the drain through **Aug 12** under a **30-min box measured in TIME** (full ≈ 6 min · one-draft ≈ 4, **6 if recursive** · verbal ≈ 0.5).
 
 ## 🟡 The slipped session is still owed
-**Jul 29 had no session.** Days 37–53 is **17 sessions**; Aug 3 → Aug 19 is **17 available days.** **Zero buffer.** His call, logged Jul 30: he'll recover it. **The recovery is one triple-new day, and it still needs a date.**
+**Jul 29 had no session.** Days 38–53 is **16 sessions**; Aug 4 → Aug 19 is **16 available days.** **Zero buffer.** His call, logged Jul 30: he'll recover it. **The recovery is one triple-new day, and it still needs a date.**
 
 ## Pace Health
 | Indicator | Value | Status |
 |---|---|---|
-| Days to Aug 20 pivot | **19** | 🟡 runway exists, slack does not |
-| **Sprint throughput** (new/day) | Day 36 = mock day *(0–1 new by design)* | 🟢 on plan |
-| **Schedule fit** (Days 37–53) | **17 sessions into 17 available days** | 🟡 **buffer owed** — needs a date |
+| Days to Aug 20 pivot | **17** | 🟡 runway exists, slack does not |
+| **Sprint throughput** (new/day) | Day 37 = **3** (#70, #746, #198) | 🟢 above the floor |
+| **Schedule fit** (Days 38–53) | **16 sessions into 16 available days** | 🟡 **buffer owed** — needs a date |
 | Sessions last 7 days (target ≥ 6) | 6 | 🟢 |
 | Days since last session | 0 | 🟢 |
-| Queue due (next 2 sessions) | Aug 3 = 8 (27 min) · Aug 4 = 8 (28 min) | 🟢 boxed on TIME |
-| Review backlog carried | **all dated** through Aug 11 · re-spread Day 36 | 🟢 drain on track |
-| **Open blockers** | **3 — B-10 (new), B-5 (1 clean), B-8** | 🟡 **B-9 cleared** |
-| Review pass rate (Day 36) | **5 / 5** (100%) | 🟢 **three resets and two first retrievals, all passed** |
-| **🎯 Unaided timed mediums** | **1 of 3 taken** — **19:38, correct, TLE** | 🟢 **first data point beats expectation** |
+| Queue due (next 2 sessions) | Aug 4 = **7** (25 min) · Aug 5 = 8 (27 min) | 🟡 Block 1 reached 2 of 8 on Day 37 |
+| Review backlog carried | **all dated** through **Aug 12** · re-spread Day 37 | 🟡 **drain extending, not shrinking** |
+| **Open blockers** | **3 — B-10 (no progress), B-5, B-8** | 🔴 **B-10 drill now** |
+| Review pass rate (Day 37) | **1 / 2 reached** | 🔴 **6 of 8 items never reached — the box ran out** |
+| **🎯 Unaided timed mediums** | **1 of 3 taken** · Mock #2 **Sat Aug 8** | 🟢 first data point beat expectation |
 
 ## Pattern Mastery  *(1–5; 5 = solve a novel one cold while narrating)*
 
 | Pattern | Mastery | Note |
 |---|---|---|
-| Big-O & complexity | **3/5** ↓ | `O(V+E)` cold Day 34, the space rule Day 35 — **but Mock #1 mis-priced a loop body into a TLE. B-10** |
+| Big-O & complexity | **3/5** | **B-10 open and static.** Priced a doubly-recursive function as linear (M-042) on top of the Mock #1 TLE |
 | Arrays & Hashing | 3/5 | stable |
 | Two Pointers | 3/5 | stable |
-| **Sliding Window** | **3/5** | **#567 added (Mock #1)** — fixed-size window; when it slides, only TWO characters change |
+| **Sliding Window** | **3/5** | **#567's `O(n)` version written Day 37 — 2,600× faster than the mock's.** When a window slides, only TWO characters change: update, don't rebuild |
 | Binary Search | 3/5 | #74 clean Day 35 — the two-template distinction held |
 | Stack | 3/5 | #155 → 21d |
 | Linked List | 4/5 | #143 clean, LRU rebuilt cold |
@@ -85,31 +86,31 @@ Depth phase (Heap ✓ → Backtracking 3/5 → Intervals ✓ 3/5 → **Graphs 3/
 | Binary Search Tree | 4/5 | stable |
 | Tries | 3/5 | #211 clean Day 30 |
 | Heap | 3/5 | #973/#215 clean |
-| **Backtracking** | **3/5** | **#46 clean Day 36** after two wiring resets. #90 first-draft correct Day 34 |
-| **Intervals** | **3/5** | Four problems clean. 4/5 needs a novel one cold (#253) |
-| **Graphs (BFS/DFS)** | **3/5** | **Six problems, all six now passing.** #133 finally clean on the 4th attempt; #323 went 31:14 → 9:56 in one day |
+| Backtracking | 3/5 | #46 and #90 clean Day 36 |
+| Intervals | 3/5 | Four problems clean. 4/5 needs a novel one cold (#253) |
+| **Graphs (BFS/DFS)** | **3/5** ↓ | Six problems, all passing Day 36 — but **#200's one-draft failed Day 37** on `==` for `=` |
+| **1-D DP** | **2/5** *(new)* | **Day 37 — #70, #746, #198. Every recurrence derived unaided, but a ~4-hour scaffolded first contact. The 1d/3d reps decide the number** |
 | **Greedy** *(previewed)* | **1/5** | Named block Aug 9–11 |
-| **1-D DP** | **0/5** | **Starts Mon Aug 3 — three problems, first contact** |
 
 ## Blockers
 
-- **⛔ B-10 · M-006 — price the loop body. OPENED Day 36.** Third occurrence, first with a measured cost (a TLE). Drill: *"one pass of this loop costs ___"* before stating any complexity, and **nothing loop-invariant inside a loop.**
-- **🟡 B-5 · M-036 — container vs contents. 1 clean session.** `#133` passed on the fourth attempt. Needs one more — and he still wrote `graph[node].neighbors` instead of using the name `clone`.
-- **⛔ B-8 · M-029 — naming precision.** A `.children`-for-`.neighbors` slip on `#133`'s first draft, self-caught by running.
-- **✅ B-9 · M-001 — the recursive return channel. CLEARED Day 36** after two clean sessions. The drill stays a standing habit.
-- **M-040 (skipped the better approach) · M-039 · M-034 · M-037 · M-038 · B-2 · M-027 · M-005** — 👁 watch.
+- **⛔ B-10 · M-006 — price the loop body. NO PROGRESS Day 37.** Three prompts for both halves of a complexity; volunteered zero times across four problems. Plus **M-042**: priced the naive `#70` recursion as `O(n)` when it's `O(2ⁿ)`. **Drill: *"one pass costs ___, there are ___ passes"* — before every complexity statement.**
+- **🟡 B-5 · M-036 — container vs contents.** 1 clean session; `#133` not due Day 37.
+- **⛔ B-8 · M-029 — naming precision.** Not exercised Day 37.
+- **✅ B-9 · M-001 — the recursive return channel. CLEARED Day 36.** Standing habit; re-escalate on recurrence.
+- **M-041 (patch before diagnosis) · M-042 · M-040 · M-039 · M-034 · M-037 · M-038 · B-2 · B-4 · M-027 · M-005** — 👁 watch.
 
 *(Cleared → standing habits: B-1 names, B-3 return, B-4 guards, B-6 target-first, B-7 `self.`/ownership, **B-9 recursive return**, M-025 pointer surgery.)*
 
-## Next Session Focus  → **Day 37 (Mon Aug 3)** · **1-D DP, FIRST CONTACT** ⇒ Block 2 runs FIRST
+## Next Session Focus  → **Day 38 (Tue Aug 4)** · 1-D DP continues ⇒ **Block 2 first**
 
-1. **Block 2 — new:** **#70 Climbing Stairs, #746 Min Cost Climbing Stairs and #198 House Robber** — an entirely new pattern *and* three new problems, which makes it the heaviest teaching day of the sprint. Budget the pre-teach generously and expect it to run long; that is the accepted trade under rule 17.
-2. **Block 1 — 8 items, ~27 min:** full **#567** — write the `O(n)` rolling-count version, the mock's TLE fix → ✍️ **#200 · #79 · #39 · #57** → 🗣 **#739 · #121 · #153**.
-3. **⛔ B-10, every complexity statement:** *"one pass of this loop costs ___."* And check nothing loop-invariant sits inside a loop.
-4. **⛔ M-040:** when a better approach occurs to you, **say it and write it.** "More complicated" is not a reason.
-5. **⛔ B-5 on `#133`:** use the name `clone`. One more clean pass closes it.
-6. **Run everything before sending.** Measured on the same five problems one day apart: 2/5 → 5/5.
-7. **The slipped session still needs a date.**
+1. **Block 2 — new:** **#5 Longest Palindromic Substring and #91 Decode Ways** — `#5` is the one where the expected answer is expand-around-centre rather than a `dp` table, and `#91` is the first recurrence with a **condition** attached: a 1-digit branch and a 2-digit branch, each valid only sometimes.
+2. **Block 1 — 7 items, ~25 min:** full **#70 · #746 · #198** (1d) · **#200** (reset) → 🗣 **#739 · #121 · #153**.
+3. **⛔ B-10 — say BOTH halves unprompted.** *"One pass costs ___, there are ___ passes."* Three prompts on Day 37, volunteered zero times — and it's exactly how the Mock #1 TLE happened.
+4. **⛔ On `#200`:** `=` not `==`, and `0 <= nr < len(grid)`. Both were correct on `#994` an hour before they were wrong here.
+5. **⛔ Diagnose before patching (M-041).** The arithmetic *is* the fix.
+6. **Run everything before sending.**
+7. **The slipped session still needs a date**, and **Mock #2 is Sat Aug 8.**
 
 ---
 *Weekly snapshots can be appended below as the sprint progresses.*
