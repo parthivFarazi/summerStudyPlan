@@ -165,6 +165,8 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 ### Sprint Week 5 · Jul 28–Aug 3  (Day 33–38)  *(dates per Recovered calendar)*
 *Focus: Graphs, 1-D DP*
 
+> **📌 Correction (2026-08-04):** `#5` is filed below under *1-D DP*. **It is not a 1-D DP problem.** Its DP form is `dp[i][j]` — **two** indices, i.e. 2-D DP, which isn't reached until Day 41 — and the expected solution is **expand-around-centre**, a two-pointer method with `O(1)` space against the table's `O(n²)`. The technique named in the row was always right; the block heading was not. **`#5` earns its place here by teaching you to recognise the DP framing, price it, and reject it** — the inverse of Mock #1's M-040.
+
 | Day | Date | Block 1 — Review | Block 2 — New | New Python / skill | Big-O |
 |----|----|----|----|----|----|
 | 33 | Jul 27 | Design Add & Search Words; Kth Largest in a Stream (+1) | **Graphs** — Number of Islands (#200, M)<br>**Graphs** — Clone Graph (#133, M) | grid DFS/BFS; mark visited<br>hashmap old→clone + DFS | O(m·n)<br>O(V+E) |
@@ -172,7 +174,7 @@ These pre-sprint days built the base patterns + Big-O fluency. Full write-ups li
 | 35 | Jul 29 | Min Stack; Subsets (+3) | **Graphs** — Course Schedule II (#210, M)<br>**Graphs** — Connected Components (#323, M) | Kahn's: indegree + queue<br>union-find intro | O(V+E)<br>≈O(V+E) |
 | 36 | Jul 30 | **Interleave** — mixed unlabeled set | — | name the *pattern* first | state complexity unprompted |
 | 37 | Jul 31 | 3Sum; Longest Repeating Char Replace (+2) | **1-D DP** — Climbing Stairs (#70, E)<br>**1-D DP** — Min Cost Climbing Stairs (#746, E)<br>**1-D DP** — House Robber (#198, M) | bottom-up; two rolling vars<br>dp array<br>rob/skip recurrence; 2 vars | O(n) — overlapping subproblems<br>O(n)<br>O(n) |
-| 38 | Aug 1 | Longest Consecutive Sequence; Encode and Decode Strings (+4) | **1-D DP** — Longest Palindromic Substring (#5, M)<br>**1-D DP** — Decode Ways (#91, M) | expand-around-center<br>dp w/ 1- & 2-digit checks | O(n²)<br>O(n) |
+| 38 ✅ | **Aug 4** | ⛔ **Block 1 NOT REACHED — 0 of 7** (Block 2 ran ~2h43m) | **NOT DP** — Longest Palindromic Substring (#5, M) ✅ **61:25**, derived unaided<br>**1-D DP** — Decode Ways (#91, M) ✅ **1:42:00**, recurrence handed | expand-around-center *(two-pointer)*<br>conditional recurrence + memo; **negative slice indices** | O(n²) / **O(1) space**<br>O(n) / O(n) |
 
 ### Sprint Week 6 · Aug 4–Aug 9  (Day 39–44)  *(Aug 9 = Sunday worked)*
 *Focus: 1-D DP, 2-D DP, Greedy*

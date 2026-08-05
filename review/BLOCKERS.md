@@ -33,6 +33,28 @@ Stated `O(n log n)`. Actually **`O((n − m)·m log m)`** — worst case `O(n² 
 > **📉 Day 37 — no progress.** Three prompts were needed to get both halves of a complexity, and he volunteered them **zero** times across four problems. He also priced the naive `#70` recursion as `O(n)` when it is `O(2ⁿ)` (**M-042**) — *"it computes n, then n−1, then n−2"* describes a chain, but each call makes **two** calls. **Same disease from the other side: he priced one call rather than the number of calls.**
 > **The drill is one sentence and it is not optional:** *"one pass costs ___, there are ___ passes."*
 
+> **📈 Day 38 — FIRST REAL MOVEMENT, and one large miss.**
+> **🟢 Volunteered both halves twice, unasked** — `2n−1` centres on `#5` (*"which has a big O of `O(n)`"*), and the memoized `#91` bound with **both space sources named**, dictionary *and* call stack. Day 37 that number was **zero**.
+> **🟢 Self-corrected the trap.** Asked whether `s[i-2:i]` makes one pass `O(n)`, he said **yes** (over-correcting from `#5`), then reversed himself into the complete drill sentence: *"it is always O(2) so essentially it is O(1) so a single pass costs O(1), and there are n passes."*
+> **🔴 But M-042 fired again, one day later, identically:** he wrote the un-memoized `#91` recursion and priced it `O(n)` using *"there are `n` passes"*. **Measured: 3,524,577 calls at n=30, ×11.1 per +5 chars, and 1.15×10²¹ calls ≈ 7.3 million years at the n=100 ceiling.**
+> **🔴 And he guessed `len()` costs `O(n)`.** It is `O(1)` — a `str` stores its own length. **The cost is the SLICE.**
+>
+> ## 🔑 The generalisation, and it is the most valuable thing Day 38 produced
+> **He prices his INTENT, not his CODE.** Day 37: the intent was "walk down the chain", the code branched. Day 38: the intent was "loop over n", the code recursed. **Both times the bound he stated was correct — about a program he had not written.**
+>
+> **⛔ THE DRILL IS NOW TWO QUESTIONS, IN THIS ORDER:**
+> 1. **"Is what I wrote a LOOP or a RECURSION?"** — look at the code, not the plan.
+> 2. **Loop ⇒ *"one pass costs ___, there are ___ passes."* Recursion ⇒ *"one call costs ___, there are ___ CALLS."*** Never "passes" for a recursion.
+>
+> **📈 Day 38 TAIL (Aug 5) — EIGHT complexities volunteered unasked across seven review items, zero prompts.** Day 37: zero. Day 38 Block 2: two. **This blocker is genuinely moving.** Every one was in the drill shape — *"O(1) work per iteration and there are n iterations"* — and the space half was correct every time, including `#200`'s `O(m·n)` recursion depth and `#91`'s *"O(n) space because of the recursion and dictionary"* (both sources named).
+>
+> **🔴 THE REMAINING EDGE, and it is the interview-grade one: AMORTIZED analysis.** On `#739` Daily Temperatures he said *"each iteration requires O(1) work."* **It does not — the inner `while` can pop many times in one pass, so a single iteration can cost `O(n)`.** The bound comes from counting **total** pushes and pops across the whole run: each index enters once and leaves at most once.
+> **⛔ New drill line: when a loop body contains its own loop, "one pass costs ___" is almost always FALSE. Say instead "each element enters and leaves once, so total work is ___."**
+>
+> **🔴 Minor, same family:** `#121`'s `minVal = max(nums)` is a full extra `O(n)` scan before the loop starts — doesn't move the bound, walks the array twice to avoid choosing a starting value. `prices[0]` or `float('inf')` is free. **Same disease as Mock #1's un-hoisted `key1`.**
+
+> **And the slice rule, settled:** a slice costs `O(k)` in its **WIDTH**. `s[left+1:right]` on `#5` is width up to `n`; `s[i-2:i]` on `#91` is width 2 forever. **Same syntax, different cost — read the indices, not the operator.** `len()` is never the expensive part.
+
 
 ### ⛔ B-5 · M-036 — container vs contents, REOPENED  *(Day 35 — three identical failures)*
 **`#133 Clone Graph` has now failed three sessions running, and every failure is the same question: *which `neighbors` list?***
@@ -59,6 +81,31 @@ for neighbor in node.neighbors:                 # the ORIGINAL's list
 3. **When two things are easy to confuse, change the names — don't try harder.** Same move as `answer[-1]` replacing `pop()` + `append()` on `#56`.
 
 **Cleared when:** `#133` passes twice consecutively, and no further container-vs-contents slip appears.
+
+> **🔴 Day 38 — FIRED HARD, on a problem with no graph in it. Clean streak reset to 0.**
+> `#91` took **1:42:00**, and roughly an hour of that was a single base case. He would not accept `ways(0) = 1`:
+>
+> > *"if it's empty shouldn't it be 0 because there are 0 letters to it"*
+>
+> **He was counting the CONTENTS when asked to count the CONTAINERS.**
+>
+> | question | answer |
+> |---|---|
+> | how many **letters** in the decoding of `""`? | **0** — he was right |
+> | how many **decodings** does `""` have? | **1** |
+>
+> ```
+> decodings of ""   =  { [] }    ONE element, which happens to be empty
+> decodings of "0"  =  {   }     ZERO elements — this is what a real 0 looks like
+> ```
+>
+> **`{ [] }` is not `{ }`.** A box containing an empty bag is not an empty box.
+>
+> **Four prose explanations failed** (the arithmetic proof, `0`=impossible/`1`=already-done, routes-from-your-house-to-your-house, one-way-to-climb-zero-stairs). He wrote `ways("") = 0` **three times**, twice immediately after being handed `1`, and on `"10"` produced the right total from **two cancelling errors** — crediting `[1, 0]`, which is not a decoding, and discarding `[10]`, which is the answer.
+>
+> **What finally worked: `viz/decode-ways-dp.html`**, stepping the dp table cell by cell and printing **the actual SET of decodings at each cell**, so `ways(0) = { [] }` sits beside `ways(1) = { }`. *(Rule 9: when prose fails on a counting/recursion concept, visualise — third time this has been the thing that landed it.)*
+>
+> **⛔ The drill extends beyond `#133`.** Whenever a count is in play, say which of these is being counted **out loud, before answering**: *"am I counting the things, or what's inside the things?"* This blocker is not about graphs. It is about **holding a container distinct from its contents, anywhere.**
 
 
 ### ✅ B-9 · M-001 — the recursive return channel — **CLEARED Day 36**

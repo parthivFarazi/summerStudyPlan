@@ -3,22 +3,22 @@
 A beginner working from near-zero toward **FAANG-ready by interview season**, one tracked day at a time. This repo *is* my real prep — the plan, the daily notebooks, the mistakes, and the spaced-repetition system that ties it together. Not polished-for-show: the actual journey, decay and dumb bugs included.
 
 <!-- README-LIVE:START -->
-![Day](https://img.shields.io/badge/Day-37-2563eb)
+![Day](https://img.shields.io/badge/Day-38-2563eb)
 ![Phase](https://img.shields.io/badge/Phase-Summer_Sprint-7c3aed)
-![Focus](https://img.shields.io/badge/Focus-1_D_DP_acquired_in_a_4_hour_first_contact_session_No_70_No_746_No_198_every_recurrence_derived_unaided_The_Mock_No_1_TLE_is_dead_5_67_s_0_0022_s_But_Block_1_reached_only_2_of_8_items_and_at_3_new_day_the_review_load_is_now_the_binding_constraint_B_10_made_no_progress_three_prompts_for_a_complexity_zero_volunteered_Aug_9_and_Aug_16_are_working_days-0891b2)
-![Pace](https://img.shields.io/badge/Pace-above_the_floor-16a34a)
+![Focus](https://img.shields.io/badge/Focus-1_D_DP_consolidated-0891b2)
+![Pace](https://img.shields.io/badge/Pace-at_the_floor-16a34a)
 ![Goal](https://img.shields.io/badge/Goal-FAANG_ready_by_Sept-ea580c)
 ![Language](https://img.shields.io/badge/Language-Python-3776ab)
 
 ## 📍 Where I'm at right now
 
-- **Day 37** · **Summer Sprint → Block C**
-- **Current focus:** 1-D DP acquired in a ~4-hour first-contact session — #70, #746, #198, every recurrence derived unaided. The Mock #1 TLE is dead: 5.67 s → 0.0022 s. But Block 1 reached only 2 of 8 items, and at 3 new/day the review load is now the binding constraint. B-10 made no progress — three prompts for a complexity, zero volunteered. Aug 9 and Aug 16 are working days.
-- **Up next (Day 38 (Tue Aug 4)):** #5 Longest Palindromic Substring and #91 Decode Ways
-- **Tracker totals:** 37 sessions · 15 patterns learned · 42 mistakes tracked
-- **Open blockers:** 3 (B-10 price the loop body — no progress, B-5 container/contents, B-8 naming) · ✅ B-9 cleared Day 36
-- **Review queue:** Day 38 (Tue Aug 4) — 7 items, ~25 min: full #70 · #746 · #198 (1d) · #200 (reset) · 🗣 #739 · #121 · #153. Six unreached Day-37 items all landed on real dates; drain extends to Aug 12, every day Aug 4 – Aug 12 at 25–30 min.
-- **Last dashboard update:** 2026-08-03
+- **Day 38** · **Summer Sprint → Block C**
+- **Current focus:** 1-D DP consolidated
+- **Up next (Day 39):** `#322` Coin Change and `#152` Maximum Product Subarray
+- **Tracker totals:** 38 sessions · 15 patterns learned · 44 mistakes tracked
+- **Open blockers:** 3 (B-5 fired hard, B-10 moving fast, B-8) · ✅ B-9 cleared Day 36
+- **Review queue:** Day 39 (Wed Aug 5, later) — 7 items, ~15 min: full #5 (1d) · 🗣 #347 · #238 · #150 · #21 · #104 · #206. (`#91` already advanced — see below.)
+- **Last dashboard update:** 2026-08-05
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 
 *This block is generated from `DASHBOARD.md`. Run `python3 scripts/sync_readme.py` after dashboard edits; the pre-commit hook also runs it automatically.*

@@ -17,6 +17,23 @@
 5. **⛔ A full solve you hand over WITHOUT EXECUTING is a FAIL.** *(installed Day 33, 2026-07-28.)* Full-solve means **write it, run it, debug it** — no partial credit for "the algorithm was right." #133 was algorithmically correct at submission two and still took three submissions, on a mistyped attribute. Running it costs 20 seconds; not running it costs the interview.
 6. **Weight-balance and batch when scheduling:** heavy Block 2 (Graphs, DP) ⇒ light reviews **and Block 2 runs first**; group same-pattern reviews together, except on interleave days.
 
+
+> ## ✅ THE PACE DECISION — made 2026-08-05, his call, Day 39 opener
+> **2 new/day through Day 46, then re-decide.** Presented with the arithmetic:
+>
+> | | remaining | lands |
+> |---|---|---|
+> | **core** | **14** — `#322 #152 #139 #300 #62 #1143 #72 #53 #55 #134 #763 #136 #191 #338` | **Day 46 ≈ Aug 12** |
+> | depth | 13 — `#213 #647 #416 #309 #518 #494 #695 #417 #261 #131 #17 #110 #90` | Days 47–53 |
+>
+> **`GOALS.md` targets "all 66 core + a head start on depth" by Aug 20 — depth is fall material.** At 2/day the load-bearing curriculum finishes **with 7 sessions to spare**, and the only thing at risk is material that was never meant to land this summer.
+>
+> **Dropping to 1/day now would have cost CORE:** 14 core + 2 zero-new mock days = **16 sessions into 15 available**, pushing core past Aug 19. The intuitive "slow down" option was the one that hurt.
+>
+> **Coach's caveat, stated before he chose:** Day 38's 2h43m was mostly `#91`, and ~1 hour of `#91` was the coach running the Socratic method on a base case — **the exact failure `COACHING.md` rule 20 now forbids.** Day 38's Block 1 took **22 minutes for 7 items** once it ran on its own. **He should not be making schedule decisions off a data point the coach caused.**
+>
+> **⛔ Re-decide at Day 47 (≈ Aug 13), on a week of post-rule-20 session lengths. Put it to him again then; do not let it lapse.**
+
 ## Overflow rule
 A wall of 12-due is a **scheduling** problem, not a work problem. If **due count > 8** after prioritizing: full-solve the fragile ones, verbal the stable ones, and **re-date the leftover** so no day exceeds ~8. Interleave days also drain the queue. Decay is the enemy, not volume.
 
@@ -51,10 +68,11 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 | ~~Day 36~~ | ~~Sat Aug 1~~ | ✅ 🎯 **MOCK #1 — 19:38, correct, 15 min under cap** | ~~#133·#46·#994·#210·#323~~ ✅ **5/5** | — | — | **52:53** |
 | — | **Sun Aug 2** | 🟢 **REST** | — | — | — | — |
 | ~~Day 37~~ | ~~Mon Aug 3~~ | ✅ **DONE** — 1-D DP acquired: #70/#746/#198 | ~~#567~~ ✅ **TLE fixed 5.67s → 0.0022s** | ~~#200~~ ❌ · *(#79/#39/#57 → Aug 5–6)* | *(→ Aug 4)* | **2 of 8 reached** |
-| **Day 38** | **Tue Aug 4** | **1-D DP** (#5/#91) ⇒ B2 first | **#70 · #746 · #198** (1d) · **#200** (reset) | — | **#739 · #121 · #153** | **25 min** |
-| Day 39 | Wed Aug 5 | **DP · HEAVY** ⇒ B2 first | #5 · #91 | **#79 · #39** | #347 · #238 · #150 · **#21 · #104 · #206** | 27 min |
-| Day 40 | Thu Aug 6 | **DP · HEAVY** ⇒ B2 first | #322 · #152 | **#567 · #57 · #56 · #994** | #3 · #167 · #90 · #98 | 30 min |
-| Day 41 | Fri Aug 7 | **DP · HEAVY** ⇒ B2 first | #139 · #300 | #875 · #424 · **#133 · #215** | #235 · #271 · #226 · #128 | 30 min |
+| ~~Day 38~~ | ~~Tue Aug 4~~ | ✅ **DONE** — #5 ✅ 61:25 · #91 ✅ 1:42:00 (~2h43m) | ⛔ **0 of 7 reached — Block 2 consumed the whole session** | — | — | **BLOCK 1 NOT RUN** |
+| ~~Day 38 *tail*~~ | ~~Wed Aug 5~~ | ✅ **DONE — 7 of 7 in ~22 min.** Day 38 CLOSED | ~~#200 ✅ 7:59 · #70 ✅ 2:03 · #746 ✅ 3:39 · #198 ✅ 3:53~~ | — | ~~#739 ✅ · #121 ✅ · #153 ✅~~ | **7/7 · 22 min** ✅ |
+| **Day 39** | **Wed Aug 5 · later** | **DP · HEAVY** ⇒ B2 first | **#5 · #91** (1d) | *(#79 · #39 → Aug 7)* | #347 · #238 · #150 · **#21 · #104 · #206** | **15 min** |
+| Day 40 | Thu Aug 6 | **DP · HEAVY** ⇒ B2 first | #322 · #152 | **#567 · #57 · #56 · #994 · #74** | #3 · #167 · #90 · #98 | ⚠️ **34 min** |
+| Day 41 | Fri Aug 7 | **DP · HEAVY** ⇒ B2 first | #139 · #300 | #875 · #424 · **#133 · #215 · #79 · #39 · #207** | #235 · #271 · #226 · #128 | ⚠️ **48 min — OVER THE BOX** |
 | Day 42 | Sat Aug 8 | 🎯 **MOCK #2** — unaided 35-min medium *(replaces Block 2)* | #62 · #1143 | #1046 · #199 · **#210** | #11 · #125 | 27 min |
 | Day 43 | Sun Aug 9 | *(Sunday worked)* Greedy | — | #242 · #252 · #15 · #20 · **#78 · #46** | — | 28 min |
 | Day 44 | Mon Aug 10 | Greedy / Bit Manip | *(2 new at 1d)* | **#435 · #141 · #230 · #146** | — | 28 min |
@@ -76,6 +94,25 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 
 **🔴 Day-37 — the review load is now the binding constraint. Read this before the next re-fuzz.**
 Day 37's Block 2 carried **three** new problems, which arrive as **three full solves** the next day (18 min) on top of a reset. Block 1 reached **2 of 8 items** inside the 27-minute box. That is not a scheduling error — **it is arithmetic: at 3 new/day the ladder generates more review minutes than a 30-minute box can absorb.**
+
+**🟢🟢 Day-38 tail (Wed Aug 5 morning) — 7 of 7, ~22 minutes, inside the box. Day 38 is CLOSED.**
+**Four full solves, all passing, all verified against INDEPENDENT oracles** (union-find for `#200`, path enumerator for `#746`, subset enumerator for `#198`): 5,706 grids · 500 values of n · 27,840 cost arrays · 14,840 rob arrays, **zero failures across all of it.**
+**Both Day-37 `#200` bugs gone** (`=` not `==`; `0 <= nr < len(grid)`), and **`#198` guarded `[5]` unprompted** — the exact case that threw `IndexError` yesterday after being named out loud beforehand.
+**He self-caught two bugs on `#746` by running the code**; the range off-by-one was wrong on **1,415 of 2,000** random arrays. **Rule 14, in one number.**
+**⛔ B-10: eight complexities volunteered unasked, zero prompts, across seven items.** Day 37 was zero. **Two precision gaps remain:** `#739`'s bound is **amortized** (a loop containing a `while` is not `O(1)` per pass — count total pushes/pops), and `#121`'s `minVal = max(nums)` is a wasted extra `O(n)` scan.
+**This does NOT resolve the capacity problem below** — Block 1 was only reachable because it ran as its own sitting with no Block 2 in front of it. **The decision still stands.**
+
+**🔴🔴 Day-38 — Block 2 day: Block 1 was NOT REACHED AT ALL. Second consecutive under-delivery, and the queue no longer fits.**
+
+Day 38's Block 2 ran **~2 h 43 m** for two new problems (`#5` 61:25, `#91` 1:42:00). **Block 1 reached 0 of 7.** Day 37 reached 2 of 8. **Two sessions running, and the trend is the wrong direction.**
+
+**Re-dated honestly, not rolled:** all 7 Day-38 items → **Wed Aug 5, on waking**, as a separate 25-min sitting that closes Day 38; Day 39 then runs later the same day at **15 min** (its one-drafts `#79`/`#39` displaced to Aug 7). The two genuinely-overdue rows from Aug 3 — `#207`, `#74` — finally have real dates (Aug 7, Aug 6). Four rows whose `Next due` disagreed with this table (`#875`, `#424`, `#347`, `#238`) are now consistent with it.
+
+> **⛔ BUT THE ARITHMETIC NO LONGER CLOSES. Aug 7 is now 48 minutes against a 30-minute box.** Every day Aug 5 – Aug 12 was already at 25–30 min with no absorbency; there is nowhere left to push. **Re-dating has run out of room — this is the third re-spread in eight days and each one has been larger than the last.**
+>
+> **Only three levers exist** (`SYSTEM.md`): fewer new problems/day · fewer rungs · cheaper reviews. **The tiers are already pulled and the 60d rung is already outside the sprint window. The only remaining lever is the new-problem rate**, which `COACHING.md` rule 11 fixes at 2/day and rule 17 confirms as his explicit decision.
+>
+> **This is his call and it must be made on Day 39, not deferred again.** Present the arithmetic: **15 sessions, 15 available days, zero buffer, a slipped session still owed a date, and a review backlog that no longer fits inside its own box.**
 
 **Handled for now** by spreading the six unreached items onto real dates (#739/#121/#153 → **Aug 4**, #79/#39 → **Aug 5**, #57 → **Aug 6**) and **extending the drain to Aug 12**. Every day Aug 4 – Aug 12 sits at **25–30 min**.
 
@@ -114,16 +151,18 @@ Day 37's Block 2 carried **three** new problems, which arrive as **three full so
 | Merge Intervals (#56) | intervals | **3d** | ✍️ | **2026-08-06** | 1 | (new)·**P** |
 | Non-overlapping Intervals (#435) | intervals / greedy | **3d** | ✍️ | **2026-08-10** | 1 | (new)·**P** |
 | Meeting Rooms (#252) | intervals / greedy | **3d** | ✍️ | **2026-08-09** | 1 | (new)·**P** |
-| **Number of Islands (#200)** | graphs (implicit/grid DFS) | **1d (reset)** | full | **2026-08-04** | 0 | (new)·P·**F** |
-| **Climbing Stairs (#70)** | **1-D DP** | **1d** | full | **2026-08-04** | 0 | (new) |
-| **Min Cost Climbing Stairs (#746)** | **1-D DP** | **1d** | full | **2026-08-04** | 0 | (new) |
-| **House Robber (#198)** | **1-D DP** | **1d** | full | **2026-08-04** | 0 | (new) |
+| Number of Islands (#200) | graphs (implicit/grid DFS) | **3d** | ✍️ *(6 min)* | **2026-08-08** | 1 | (new)·P·F·**P** — 7:59, both Day-37 bugs fixed, 5,706 grids clean |
+| Climbing Stairs (#70) | **1-D DP** | **3d** | ✍️ | **2026-08-10** | 1 | (new)·**P** — 2:03, O(1)-space version, n=1..500 clean |
+| Min Cost Climbing Stairs (#746) | **1-D DP** | **3d** | ✍️ | **2026-08-10** | 1 | (new)·**P** — 3:39, self-caught 2 bugs by running (one was wrong on 71% of random inputs) |
+| House Robber (#198) | **1-D DP** | **3d** | ✍️ | **2026-08-11** | 1 | (new)·**P** — 3:53, **guarded `[5]` unprompted** (yesterday's IndexError) |
+| **Longest Palindromic Substring (#5)** | **expand-around-centre** *(two-pointer, NOT dp)* | **1d** | full | **2026-08-05** | 0 | (new) |
+| Decode Ways (#91) | **1-D DP** *(conditional recurrence)* | **3d** | ✍️ | **2026-08-09** | 1 | (new)·**P** — 1d rep met on Aug 5 by writing **tabulation AND the O(1)-space rolling version cold**, both verified on 1.1M strings. Debt cleared |
 | Clone Graph (#133) | graphs (explicit) | **3d** | ✍️ *(6 min)* | **2026-08-07** | 1 | (new)·F·F·F·**P** |
 | Rotting Oranges (#994) | graphs (multi-source BFS) | **3d** | ✍️ | **2026-08-06** | 1 | (new)·F·**P** |
 | Course Schedule II (#210) | graphs (topological sort) | **3d** | ✍️ *(6 min)* | **2026-08-08** | 1 | (new)·**P** |
 | Connected Components (#323) | graphs (undirected) | **3d** | ✍️ *(6 min)* | **2026-08-12** | 1 | (new)·**P** |
 | Permutation in String (#567) | sliding window (fixed size) | **3d** | ✍️ | **2026-08-06** | 1 | (new)·**P** — 🎯 Mock #1's TLE fixed: 5.67 s → 0.0022 s |
-| Course Schedule (#207) | graphs (cycle detect, directed) | **3d** | ✍️ *(6 min)* | **2026-08-03** | 1 | (new)·**P** |
+| Course Schedule (#207) | graphs (cycle detect, directed) | **3d** | ✍️ *(6 min)* | **2026-08-07** | 1 | (new)·**P** |
 | LRU Cache (#146) | design / linked-list | 3d | ✍️ | **2026-08-10** | 1 | (new)·F·P·F·**P** |
 | Binary Search (#704) | binary-search | **21d** | 🗣 | **2026-08-17** | 3 | P·P·**P** |
 | Search in Rotated Array (#33) | binary-search | **21d** | 🗣 | **2026-08-17** | 3 | P·P·**P** |
@@ -131,7 +170,7 @@ Day 37's Block 2 carried **three** new problems, which arrive as **three full so
 | 3Sum (#15) | two-pointers | 3d | ✍️ | **2026-08-09** | 1 | F·P·F·P |
 | Valid Parentheses (#20) | stack | 3d | ✍️ | **2026-08-09** | 1 | P·F·P |
 | Min Stack (#155) | stack | **21d** | 🗣 | **2026-08-19** | 3 | P·P·**P** |
-| Search a 2D Matrix (#74) | binary-search | **3d** | ✍️ | **2026-08-03** | 1 | P·P·F·**P** |
+| Search a 2D Matrix (#74) | binary-search | **3d** | ✍️ | **2026-08-06** | 1 | P·P·F·**P** |
 | Evaluate RPN (#150) | stack | 7d | 🗣 | **2026-08-05** | 2 | P·P |
 | Level Order Traversal (#102) | trees | 3d | ✍️ | **2026-08-05** | 1 | (new)·F·F·P |
 | Same Tree (#100) | trees | 3d | ✍️ | **2026-08-06** | 1 | P |
@@ -143,24 +182,24 @@ Day 37's Block 2 carried **three** new problems, which arrive as **three full so
 | K Closest Points (#973) | heap | 3d | ✍️ | **2026-08-11** | 1 | (new)·**P** |
 | Kth Largest in Array (#215) | heap | 3d | ✍️ | **2026-08-07** | 1 | (new)·**P** |
 | Validate BST (#98) | binary-search-tree | 7d | 🗣 | **2026-08-06** | 2 | (new)·P·**P** |
-| Find Min in Rotated Sorted Array (#153) | binary-search | 7d | 🗣 | **2026-08-04** | 2 | F·P·F·P·P |
+| Find Min in Rotated Sorted Array (#153) | binary-search | **21d** | 🗣 | **2026-08-26** | 3 | F·P·F·P·P·**P** — convergence template clean (M-015 held) |
 | Longest Consecutive Sequence (#128) | arrays-hashing | 7d | 🗣 | **2026-08-07** | 2 | P·P |
 | Reorder List (#143) | linked-list | 3d | ✍️ | **2026-08-12** | 1 | (new)·F·P·F·**P** |
 | Remove Nth Node From End (#19) | linked-list | 3d | ✍️ | **2026-08-12** | 1 | (new)·P |
 | Linked List Cycle (#141) | linked-list | 3d | ✍️ | **2026-08-10** | 1 | P |
 | Kth Smallest in BST (#230) | binary-search-tree | 3d | ✍️ | **2026-08-10** | 1 | (new)·P |
-| Daily Temperatures (#739) | stack | 7d | 🗣 | **2026-08-04** | 2 | P·F·P·P |
-| Best Time to Buy/Sell (#121) | sliding-window | 21d | 🗣 | **2026-08-04** | 3 | P·P·P |
+| Daily Temperatures (#739) | stack | **21d** | 🗣 | **2026-08-26** | 3 | P·F·P·P·**P** — ⚠️ said "O(1) per iteration"; it is AMORTIZED (each index pushed/popped once) |
+| Best Time to Buy/Sell (#121) | sliding-window | **60d** | 🗣 | **2026-10-04** | 4 | P·P·P·**P** — ⚠️ `minVal = max(nums)` is a wasted extra O(n) scan |
 | Balanced Binary Tree (#110) | trees | 3d | ✍️ | **2026-08-12** | 1 | (new)·F·**P** |
 | Add & Search Words (#211) | tries | 3d | ✍️ | **2026-08-12** | 1 | (new)·F·F·**P** |
 | Implement Trie (#208) | tries | 3d | ✍️ | **2026-08-11** | 1 | (new)·F·P |
 | Reverse Linked List (#206) | linked-list | 7d | 🗣 | **2026-08-05** | 2 | P·P |
 | Merge Two Sorted Lists (#21) | linked-list | 7d | 🗣 | **2026-08-05** | 2 | P·P |
 | Maximum Depth of Binary Tree (#104) | trees | 7d | 🗣 | **2026-08-05** | 2 | P·P |
-| Koko Eating Bananas (#875) | binary-search | 3d | ✍️ | **2026-08-04** | 1 | P·F·P·F·P |
-| Longest Repeating Char Replace (#424) | sliding-window | 3d | ✍️ | **2026-08-04** | 1 | P |
-| Top K Frequent (#347) | arrays-hashing | 21d | 🗣 | **2026-08-04** | 3 | P·P·P |
-| Product of Array Except Self (#238) | arrays-hashing | 21d | 🗣 | **2026-08-04** | 3 | P·P·P |
+| Koko Eating Bananas (#875) | binary-search | 3d | ✍️ | **2026-08-07** | 1 | P·F·P·F·P |
+| Longest Repeating Char Replace (#424) | sliding-window | 3d | ✍️ | **2026-08-07** | 1 | P |
+| Top K Frequent (#347) | arrays-hashing | 21d | 🗣 | **2026-08-05** | 3 | P·P·P |
+| Product of Array Except Self (#238) | arrays-hashing | 21d | 🗣 | **2026-08-05** | 3 | P·P·P |
 | Last Stone Weight (#1046) | heap | 3d | ✍️ | **2026-08-05** | 1 | (new)·F·F·**P** |
 | Right Side View (#199) | trees | 3d | ✍️ | **2026-08-05** | 1 | (new)·P·F·F·**P** |
 | Longest Substring No Repeat (#3) | sliding-window | 21d | 🗣 | **2026-08-05** | 3 | P·P·P |
