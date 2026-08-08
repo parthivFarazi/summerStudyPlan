@@ -4,10 +4,10 @@
 > "Current Status" is regenerated each update. Readable in under 2 minutes.
 
 ## Current Status
-- **Last updated:** 2026-08-05 (Day 38 logged) · **`#5` derived unaided · `#91` in all three forms · Block 1 7/7 · pace decision made**
-- **Phase:** Summer Sprint · Block C — **1-D DP consolidated**; `#5` derived unaided and correct on the first draft, `#91` written in all three forms, and **Block 1 hit 7 of 7 in 22 minutes** after 2-of-8 and 0-of-7. Core curriculum completes Day 46.
-- **Sessions logged:** 38 · **Patterns learned:** 15 · **Mistakes tracked:** 44 · **Open blockers:** 3 (**B-5 fired hard**, B-10 moving fast, B-8) · ✅ B-9 cleared Day 36
-- **Review queue:** **Day 39 (Wed Aug 5, later) — 7 items, ~15 min:** full **#5** (1d) · 🗣 **#347 · #238 · #150 · #21 · #104 · #206**. *(`#91` already advanced — see below.)*
+- **Last updated:** 2026-08-05 (Day 39 logged) · **#322 + #152 acquired · Block 1 6/7 · #21 reset · pace decision made**
+- **Phase:** Summer Sprint · Block C — **1-D DP nearly complete**; `#322` and `#152` both acquired with `O(1)`-space-optimal solutions, greedy killed on `#322` in ten seconds, and **M-043 closed on `#5` — he wrote yesterday's wrong expression again and caught it himself.** Core curriculum completes Day 46.
+- **Sessions logged:** 39 · **Patterns learned:** 15 · **Mistakes tracked:** 44 · **Open blockers:** 3 (B-10 near-clear, B-5, B-8) · ✅ B-9 cleared Day 36
+- **Review queue:** **Day 40 (Thu Aug 6) — 10 items, ~30 min:** full **#322 · #152 · #21** (reset) · ✍️ **#567 · #57 · #56 · #994 · #74** · 🗣 **#3 · #167 · #90 · #98**.
 
 ## ✅ The pace decision — made Aug 5, his call
 
@@ -85,16 +85,16 @@ From *"I have no clue how to start"* to a correct first draft, **every step his*
 ## Pace Health
 | Indicator | Value | Status |
 |---|---|---|
-| Days to Aug 20 pivot | **15** | 🟡 runway exists, slack does not |
-| **Sprint throughput** (new/day) | Day 38 = **2** (#5, #91) | 🟢 at the floor |
-| **Core curriculum** | 14 left, **finishes Day 46 ≈ Aug 12** | 🟢 **7 sessions of margin** |
+| Days to Aug 20 pivot | **14** | 🟡 runway exists, slack does not |
+| **Sprint throughput** (new/day) | Day 39 = **2** (#322, #152) | 🟢 at the floor |
+| **Core curriculum** | **12 left**, finishes Day 46 ≈ Aug 12 | 🟢 **7 sessions of margin** |
 | **Schedule fit** (Days 39–53) | 15 sessions into 15 available days | 🟡 buffer owed — needs a date |
 | Sessions last 7 days (target ≥ 6) | 6 | 🟢 |
 | Days since last session | 0 | 🟢 |
-| Queue due (Day 39) | **7** (~15 min) | 🟢 |
-| Review backlog carried | dated through Aug 12, but **Aug 7 ≈ 48 min vs a 30-min box** | 🔴 **needs re-spreading before Aug 7** |
+| Queue due (Day 40) | **10** (~30 min) | 🟡 at the box |
+| Review backlog carried | **Aug 7 re-spread to 28 min** ✅ · drain now extends to **Aug 13** | 🟡 all dated |
 | **Open blockers** | **3 — B-5 (streak 0), B-10 (moving), B-8** | 🟡 |
-| Review pass rate (Day 38 tail) | **7 / 7** | 🟢 **best session of the sprint** |
+| Review pass rate (Day 39) | **6 / 7** | 🟢 `#21` reset — a wrong approach, not a blank |
 | **🎯 Unaided timed mediums** | **1 of 3 taken** · Mock #2 **Sat Aug 8** | 🟢 first data point beat expectation |
 
 ## Pattern Mastery  *(1–5; 5 = solve a novel one cold while narrating)*
@@ -129,7 +129,7 @@ From *"I have no clue how to start"* to a correct first draft, **every step his*
 
 ## Next Session Focus  → **Day 39** · DP heavy ⇒ **Block 2 first**
 
-1. **Block 2 — new:** **`#322` Coin Change** and **`#152` Maximum Product Subarray** — `#322` is the first recurrence whose predecessors are a **loop over choices**, not a fixed 1-or-2 back.
+1. **Block 2 — new:** **`#139` Word Break** and **`#300` Longest Increasing Subsequence** — `#300` is the one with two bounds worth knowing, `O(n²)` and `O(n log n)`.
 2. **Block 1 — 7 items, ~15 min:** full **`#5`** (1d) → 🗣 **`#347` · `#238` · `#150` · `#21` · `#104` · `#206`**.
 3. **⛔ B-10, amortized:** *"does this loop contain a loop?"* If yes, count total pushes/pops, not per-pass cost.
 4. **⛔ B-10, M-042:** *"is what I wrote a loop or a recursion?"* — **before** pricing.

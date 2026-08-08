@@ -3,21 +3,21 @@
 A beginner working from near-zero toward **FAANG-ready by interview season**, one tracked day at a time. This repo *is* my real prep — the plan, the daily notebooks, the mistakes, and the spaced-repetition system that ties it together. Not polished-for-show: the actual journey, decay and dumb bugs included.
 
 <!-- README-LIVE:START -->
-![Day](https://img.shields.io/badge/Day-38-2563eb)
+![Day](https://img.shields.io/badge/Day-39-2563eb)
 ![Phase](https://img.shields.io/badge/Phase-Summer_Sprint-7c3aed)
-![Focus](https://img.shields.io/badge/Focus-1_D_DP_consolidated-0891b2)
+![Focus](https://img.shields.io/badge/Focus-1_D_DP_nearly_complete-0891b2)
 ![Pace](https://img.shields.io/badge/Pace-at_the_floor-16a34a)
 ![Goal](https://img.shields.io/badge/Goal-FAANG_ready_by_Sept-ea580c)
 ![Language](https://img.shields.io/badge/Language-Python-3776ab)
 
 ## 📍 Where I'm at right now
 
-- **Day 38** · **Summer Sprint → Block C**
-- **Current focus:** 1-D DP consolidated
-- **Up next (Day 39):** `#322` Coin Change and `#152` Maximum Product Subarray
-- **Tracker totals:** 38 sessions · 15 patterns learned · 44 mistakes tracked
-- **Open blockers:** 3 (B-5 fired hard, B-10 moving fast, B-8) · ✅ B-9 cleared Day 36
-- **Review queue:** Day 39 (Wed Aug 5, later) — 7 items, ~15 min: full #5 (1d) · 🗣 #347 · #238 · #150 · #21 · #104 · #206. (`#91` already advanced — see below.)
+- **Day 39** · **Summer Sprint → Block C**
+- **Current focus:** 1-D DP nearly complete
+- **Up next (Day 39):** `#139` Word Break and `#300` Longest Increasing Subsequence
+- **Tracker totals:** 39 sessions · 15 patterns learned · 44 mistakes tracked
+- **Open blockers:** 3 (B-10 near-clear, B-5, B-8) · ✅ B-9 cleared Day 36
+- **Review queue:** Day 40 (Thu Aug 6) — 10 items, ~30 min: full #322 · #152 · #21 (reset) · ✍️ #567 · #57 · #56 · #994 · #74 · 🗣 #3 · #167 · #90 · #98.
 - **Last dashboard update:** 2026-08-05
 - 👉 Full live status — pace health, what's due, mastery per pattern — in **[DASHBOARD.md](DASHBOARD.md)**
 

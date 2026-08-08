@@ -70,14 +70,15 @@ A wall of 12-due is a **scheduling** problem, not a work problem. If **due count
 | ~~Day 37~~ | ~~Mon Aug 3~~ | ✅ **DONE** — 1-D DP acquired: #70/#746/#198 | ~~#567~~ ✅ **TLE fixed 5.67s → 0.0022s** | ~~#200~~ ❌ · *(#79/#39/#57 → Aug 5–6)* | *(→ Aug 4)* | **2 of 8 reached** |
 | ~~Day 38~~ | ~~Tue Aug 4~~ | ✅ **DONE** — #5 ✅ 61:25 · #91 ✅ 1:42:00 (~2h43m) | ⛔ **0 of 7 reached — Block 2 consumed the whole session** | — | — | **BLOCK 1 NOT RUN** |
 | ~~Day 38 *tail*~~ | ~~Wed Aug 5~~ | ✅ **DONE — 7 of 7 in ~22 min.** Day 38 CLOSED | ~~#200 ✅ 7:59 · #70 ✅ 2:03 · #746 ✅ 3:39 · #198 ✅ 3:53~~ | — | ~~#739 ✅ · #121 ✅ · #153 ✅~~ | **7/7 · 22 min** ✅ |
-| **Day 39** | **Wed Aug 5 · later** | **DP · HEAVY** ⇒ B2 first | **#5 · #91** (1d) | *(#79 · #39 → Aug 7)* | #347 · #238 · #150 · **#21 · #104 · #206** | **15 min** |
+| ~~Day 39~~ | ~~Wed Aug 5~~ | ✅ **DONE** — #322 ✅ 1:14 · #152 ✅ 1:04 (B2 ~2h18m) | ~~#5~~ ✅ 7:32 | — | ~~#347 ✅ #238 ✅ #150 ✅ #104 ✅ #206 ✅~~ · **#21 ❌ reset** | **6/7** |
 | Day 40 | Thu Aug 6 | **DP · HEAVY** ⇒ B2 first | #322 · #152 | **#567 · #57 · #56 · #994 · #74** | #3 · #167 · #90 · #98 | ⚠️ **34 min** |
-| Day 41 | Fri Aug 7 | **DP · HEAVY** ⇒ B2 first | #139 · #300 | #875 · #424 · **#133 · #215 · #79 · #39 · #207** | #235 · #271 · #226 · #128 | ⚠️ **48 min — OVER THE BOX** |
+| Day 41 | Fri Aug 7 | **DP · HEAVY** ⇒ B2 first | #139 · #300 | #875 · #424 · **#215** | #235 · #271 · #226 · #128 | **28 min** ✅ *(#133/#79/#39/#207 → Aug 13)* |
 | Day 42 | Sat Aug 8 | 🎯 **MOCK #2** — unaided 35-min medium *(replaces Block 2)* | #62 · #1143 | #1046 · #199 · **#210** | #11 · #125 | 27 min |
 | Day 43 | Sun Aug 9 | *(Sunday worked)* Greedy | — | #242 · #252 · #15 · #20 · **#78 · #46** | — | 28 min |
 | Day 44 | Mon Aug 10 | Greedy / Bit Manip | *(2 new at 1d)* | **#435 · #141 · #230 · #146** | — | 28 min |
 | Day 45 | Tue Aug 11 | Bit Manip | *(2 new at 1d)* | **#208 · #703 · #543 · #973** | — | 28 min |
 | Day 46 | Wed Aug 12 | Bit / DP depth | *(2 new at 1d)* | **#323 · #143 · #19 · #110 · #211** | — | 30 min |
+| **Day 47** | **Thu Aug 13** | *(depth begins — re-decide the pace here)* | *(2 new at 1d)* | **#133 · #79 · #39 · #207** *(displaced from Aug 7)* | — | **26 min** |
 
 > ## 🔴 A SESSION SLIPPED — the buffer is gone *(logged 2026-07-30)*
 > **Day 33 ran Thu Jul 28. Jul 29 had no session. Day 34 ran Fri Jul 30.** Every date below has been shifted one day.
@@ -145,8 +146,8 @@ Day 38's Block 2 ran **~2 h 43 m** for two new problems (`#5` 61:25, `#91` 1:42:
 | Subsets II (#90) | backtracking | **7d** | 🗣 | **2026-08-06** | 2 | (new)·F·P·**P** |
 | Permutations (#46) | backtracking | **3d** | ✍️ *(6 min)* | **2026-08-09** | 1 | (new)·F·P·F·F·**P** |
 | Subsets (#78) | backtracking | **3d** | ✍️ *(6 min)* | **2026-08-09** | 1 | (new)·F·**P** |
-| Word Search (#79) | backtracking (grid DFS) | **3d** | ✍️ *(6 min)* | **2026-08-05** | 1 | (new)·F·**P** |
-| Combination Sum (#39) | backtracking | **3d** | ✍️ *(6 min)* | **2026-08-05** | 1 | (new)·F·**P** |
+| Word Search (#79) | backtracking (grid DFS) | **3d** | ✍️ *(6 min)* | **2026-08-13** | 1 | (new)·F·**P** |
+| Combination Sum (#39) | backtracking | **3d** | ✍️ *(6 min)* | **2026-08-13** | 1 | (new)·F·**P** |
 | Insert Interval (#57) | intervals | **3d** | ✍️ | **2026-08-06** | 1 | (new)·F·**P** |
 | Merge Intervals (#56) | intervals | **3d** | ✍️ | **2026-08-06** | 1 | (new)·**P** |
 | Non-overlapping Intervals (#435) | intervals / greedy | **3d** | ✍️ | **2026-08-10** | 1 | (new)·**P** |
@@ -155,14 +156,14 @@ Day 38's Block 2 ran **~2 h 43 m** for two new problems (`#5` 61:25, `#91` 1:42:
 | Climbing Stairs (#70) | **1-D DP** | **3d** | ✍️ | **2026-08-10** | 1 | (new)·**P** — 2:03, O(1)-space version, n=1..500 clean |
 | Min Cost Climbing Stairs (#746) | **1-D DP** | **3d** | ✍️ | **2026-08-10** | 1 | (new)·**P** — 3:39, self-caught 2 bugs by running (one was wrong on 71% of random inputs) |
 | House Robber (#198) | **1-D DP** | **3d** | ✍️ | **2026-08-11** | 1 | (new)·**P** — 3:53, **guarded `[5]` unprompted** (yesterday's IndexError) |
-| **Longest Palindromic Substring (#5)** | **expand-around-centre** *(two-pointer, NOT dp)* | **1d** | full | **2026-08-05** | 0 | (new) |
+| Longest Palindromic Substring (#5) | **expand-around-centre** *(two-pointer, NOT dp)* | **3d** | ✍️ | **2026-08-08** | 1 | (new)·**P** — 7:32, 11,373 cases clean. **Self-caught `right - left + 1` in his own test** (35% wrong) — M-043 closing |
 | Decode Ways (#91) | **1-D DP** *(conditional recurrence)* | **3d** | ✍️ | **2026-08-09** | 1 | (new)·**P** — 1d rep met on Aug 5 by writing **tabulation AND the O(1)-space rolling version cold**, both verified on 1.1M strings. Debt cleared |
-| Clone Graph (#133) | graphs (explicit) | **3d** | ✍️ *(6 min)* | **2026-08-07** | 1 | (new)·F·F·F·**P** |
+| Clone Graph (#133) | graphs (explicit) | **3d** | ✍️ *(6 min)* | **2026-08-13** | 1 | (new)·F·F·F·**P** |
 | Rotting Oranges (#994) | graphs (multi-source BFS) | **3d** | ✍️ | **2026-08-06** | 1 | (new)·F·**P** |
 | Course Schedule II (#210) | graphs (topological sort) | **3d** | ✍️ *(6 min)* | **2026-08-08** | 1 | (new)·**P** |
 | Connected Components (#323) | graphs (undirected) | **3d** | ✍️ *(6 min)* | **2026-08-12** | 1 | (new)·**P** |
 | Permutation in String (#567) | sliding window (fixed size) | **3d** | ✍️ | **2026-08-06** | 1 | (new)·**P** — 🎯 Mock #1's TLE fixed: 5.67 s → 0.0022 s |
-| Course Schedule (#207) | graphs (cycle detect, directed) | **3d** | ✍️ *(6 min)* | **2026-08-07** | 1 | (new)·**P** |
+| Course Schedule (#207) | graphs (cycle detect, directed) | **3d** | ✍️ *(6 min)* | **2026-08-13** | 1 | (new)·**P** |
 | LRU Cache (#146) | design / linked-list | 3d | ✍️ | **2026-08-10** | 1 | (new)·F·P·F·**P** |
 | Binary Search (#704) | binary-search | **21d** | 🗣 | **2026-08-17** | 3 | P·P·**P** |
 | Search in Rotated Array (#33) | binary-search | **21d** | 🗣 | **2026-08-17** | 3 | P·P·**P** |
@@ -171,7 +172,7 @@ Day 38's Block 2 ran **~2 h 43 m** for two new problems (`#5` 61:25, `#91` 1:42:
 | Valid Parentheses (#20) | stack | 3d | ✍️ | **2026-08-09** | 1 | P·F·P |
 | Min Stack (#155) | stack | **21d** | 🗣 | **2026-08-19** | 3 | P·P·**P** |
 | Search a 2D Matrix (#74) | binary-search | **3d** | ✍️ | **2026-08-06** | 1 | P·P·F·**P** |
-| Evaluate RPN (#150) | stack | 7d | 🗣 | **2026-08-05** | 2 | P·P |
+| Evaluate RPN (#150) | stack | **21d** | 🗣 | **2026-08-26** | 3 | P·P·**P** — pop order correct. Taught: `int(a/b)` not `//` (Python rounds toward −inf) |
 | Level Order Traversal (#102) | trees | 3d | ✍️ | **2026-08-05** | 1 | (new)·F·F·P |
 | Same Tree (#100) | trees | 3d | ✍️ | **2026-08-06** | 1 | P |
 | Diameter of Binary Tree (#543) | trees | 3d | ✍️ | **2026-08-11** | 1 | P |
@@ -193,13 +194,13 @@ Day 38's Block 2 ran **~2 h 43 m** for two new problems (`#5` 61:25, `#91` 1:42:
 | Balanced Binary Tree (#110) | trees | 3d | ✍️ | **2026-08-12** | 1 | (new)·F·**P** |
 | Add & Search Words (#211) | tries | 3d | ✍️ | **2026-08-12** | 1 | (new)·F·F·**P** |
 | Implement Trie (#208) | tries | 3d | ✍️ | **2026-08-11** | 1 | (new)·F·P |
-| Reverse Linked List (#206) | linked-list | 7d | 🗣 | **2026-08-05** | 2 | P·P |
-| Merge Two Sorted Lists (#21) | linked-list | 7d | 🗣 | **2026-08-05** | 2 | P·P |
-| Maximum Depth of Binary Tree (#104) | trees | 7d | 🗣 | **2026-08-05** | 2 | P·P |
+| Reverse Linked List (#206) | linked-list | **21d** | 🗣 | **2026-08-26** | 3 | P·P·**P** — three-pointer dance clean, returns `prev` |
+| **Merge Two Sorted Lists (#21)** | linked-list | **1d (reset)** | full | **2026-08-06** | 0 | P·P·**F** — ⛔ **described INTERLEAVING, not merging: no value comparison anywhere, and no leftover-tail step.** `[1,2,3]+[7,8,9]` → `[1,7,2,8,3,9]` |
+| Maximum Depth of Binary Tree (#104) | trees | **21d** | 🗣 | **2026-08-26** | 3 | P·P·**P** — clean. Sharpen: space is `O(h)`, `O(n)` worst / `O(log n)` balanced |
 | Koko Eating Bananas (#875) | binary-search | 3d | ✍️ | **2026-08-07** | 1 | P·F·P·F·P |
 | Longest Repeating Char Replace (#424) | sliding-window | 3d | ✍️ | **2026-08-07** | 1 | P |
-| Top K Frequent (#347) | arrays-hashing | 21d | 🗣 | **2026-08-05** | 3 | P·P·P |
-| Product of Array Except Self (#238) | arrays-hashing | 21d | 🗣 | **2026-08-05** | 3 | P·P·P |
+| Top K Frequent (#347) | arrays-hashing | **60d** | 🗣 | **2026-10-04** | 4 | P·P·P·**P** — ⚠️ narrated `bucket[f] = key` (assign) instead of `.append`; self-caught. B-5 flavour |
+| Product of Array Except Self (#238) | arrays-hashing | **60d** | 🗣 | **2026-10-04** | 4 | P·P·P·**P** — clean; prefix/suffix, `O(1)` auxiliary correctly qualified |
 | Last Stone Weight (#1046) | heap | 3d | ✍️ | **2026-08-05** | 1 | (new)·F·F·**P** |
 | Right Side View (#199) | trees | 3d | ✍️ | **2026-08-05** | 1 | (new)·P·F·F·**P** |
 | Longest Substring No Repeat (#3) | sliding-window | 21d | 🗣 | **2026-08-05** | 3 | P·P·P |
